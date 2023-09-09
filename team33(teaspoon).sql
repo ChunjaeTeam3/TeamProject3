@@ -1,0 +1,3 @@
+USE team32;
+
+SHOW TABLES;
