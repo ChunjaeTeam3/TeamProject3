@@ -15,31 +15,7 @@
 <body>
 
     <!--헤더 영역 시작 -->
-    <header>
-        <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="index.html">
-                    <img src="${path}/resources/images/logo.png" width="112" height="28">
-                </a>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navigation">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navigation" class="navbar-menu">
-                <div class="navbar-end">
-                    <a href="index.html" class="navbar-item">Home</a>
-                    <a href="about.html" class="navbar-item">About</a>
-                    <a href="blog.html" class="navbar-item">blog</a>
-                    <a href="portfolio.html" class="navbar-item">portfolio</a>
-                    <a href="contact.html" class="navbar-item">contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <jsp:include page="layout/header.jsp"/>
     <!--헤더 영역 끝 -->
 
     <!-- 헤더 사이드 영역 시작 -->
@@ -567,33 +543,7 @@
     <!--메인 페이지 영역 끝-->
 
     <!-- 푸터 영영 시작 -->
-    <footer class="has-background-dark footer-section">
-        <div class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-4-tablet">
-                        <h5 class="has-text-light">Email</h5>
-                        <p class="has-text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
-                    </div>
-                    <div class="column is-4-tablet">
-                        <h5 class="has-text-light">Phone</h5>
-                        <p class="has-text-white paragraph-lg font-secondary">+880 2544 658 256</p>
-                    </div>
-                    <div class="column is-4-tablet">
-                        <h5 class="has-text-light">Address</h5>
-                        <p class="has-text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section is-small has-text-centered has-border-top is-border-dark">
-            <p class="has-text-light">Copyright ©
-                <script>
-                    var CurrentYear = new Date().getFullYear()
-                    document.write(CurrentYear)
-                </script> a theme by <a href="themefisher.com">themefisher.com</a></p>
-        </div>
-    </footer>
+   <jsp:include page="layout/footer.jsp"/>
     <!-- 푸터 영역 끝 -->
 
 </body>
