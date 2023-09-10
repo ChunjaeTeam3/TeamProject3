@@ -8,7 +8,7 @@
     <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand" style="padding:0;">
             <a class="navbar-item" href="index.html" style="padding:0;">
-                <img src="${path}/resources/images/tspoon_logo.png">
+                <img src="${path}/resources/images/tspoon_logo.png" style="max-height: none;">
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navigation">
