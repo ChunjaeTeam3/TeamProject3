@@ -3,10 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!-- section3(추천 강의) 영역 시작 -->
-<section class="section">
+<section class="section" id="skills">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="section-title">추천강의</h2>
+            <h2 class="section-title" style="font-weight: bold;">추천강의</h2>
         </div>
         <div class="columns is-multiline" style="margin-left:60px;">
             <div class="column is-4-desktop is-6-tablet">
@@ -36,7 +36,7 @@
                         </div>
                     </figure>
                     <div class="card-content" style="width: 700px;padding-left: 100px;">
-                        <h4 class="mb-10"><a class="has-text-dark" href="blog-single.html">[2024 수능완성]</a>
+                        <h4 class="mb-10" style="font-weight: bold;"><a class="has-text-dark" href="blog-single.html">[2024 수능완성]</a>
                         </h4>
                         <p class="mb-10">수학-확률과통계! 5등급에서 1등급까지! 노력은 배신하지 않아요.</p>
                         <a href="blog-single.html" class="button is-extra-small is-primary">상세보기</a>

@@ -6,7 +6,7 @@
 <div class="section-dark my-work" id="my-work">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="section-title">추천교재</h2>
+            <h2 class="section-title" style="font-weight: bold;">추천교재</h2>
         </div>
         <div class="columns is-multiline shuffle-wrapper">
             <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item">
