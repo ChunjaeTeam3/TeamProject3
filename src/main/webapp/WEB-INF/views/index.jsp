@@ -18,7 +18,7 @@
 <body>
 
     <!--헤더 영역 시작 -->
-    <jsp:include page="setting/header.jsp"></jsp:include>
+    <jsp:include page="layout/header.jsp" />
     <!--헤더 영역 끝 -->
 
     <!-- 헤더 사이드 영역 시작 -->
@@ -180,7 +180,7 @@
     <!--메인 페이지 영역 끝-->
 
     <!-- 푸터 영영 시작 -->
-    <jsp:include page="setting/footer.jsp"></jsp:include>
+    <jsp:include page="layout/footer.jsp"/>
     <!-- 푸터 영역 끝 -->
 
 </body>
