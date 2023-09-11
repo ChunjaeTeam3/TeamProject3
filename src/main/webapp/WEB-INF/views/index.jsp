@@ -71,7 +71,7 @@
     <!-- 메인 페이지 영역 시작-->
 
         <!--위로 가기 아이콘 부분 시작-->
-        <form action="#home">
+        <form action="${path}">
             <button id="toTop" title="Go to top">
                 <i class="fas fa-angle-up"></i>
             </button>

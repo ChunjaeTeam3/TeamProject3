@@ -3,39 +3,36 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!-- section2(소개) 영역 시작 -->
-<section class="section">
+<section class="section" id="services">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="section-title">서비스</h2>
+            <h2 class="section-title" style="font-weight: bold;">서비스</h2>
         </div>
         <div class="columns is-multiline">
             <div class="column">
                 <div class="card hover-shadow shadow">
                     <div class="card-content has-text-centered">
-                        <i class="ti-palette icon mb-10 is-inline-block"></i>
-                        <h4 class="mb-20">UI Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card active-bg-primary hover-shadow shadow">
-                    <div class="card-content has-text-centered">
-                        <i class="ti-vector icon mb-10 is-inline-block"></i>
-                        <h4 class="mb-20">UX Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.</p>
+                        <img src="${path}/resources/images/icons/board2.png" alt="board" class="ti-palette icon mb-10 is-inline-block"/>
+                        <h4 class="mb-20"  style="font-weight: bold;">게시판</h4>
+                        <p>공지사항을 한번에 체크할 수 있습니다.</p>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="card hover-shadow shadow">
                     <div class="card-content has-text-centered">
-                        <i class="ti-panel icon mb-10 is-inline-block"></i>
-                        <h4 class="mb-20">Interaction Design</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.</p>
+                        <img src="${path}/resources/images/icons/check1.png" alt="dailycheck" class="ti-palette icon mb-10 is-inline-block" />
+                        <h4 class="mb-20" style="font-weight: bold;">출석체크</h4>
+                        <p>매일 댓글 남기기로 출석체크를 할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card hover-shadow shadow">
+                    <div class="card-content has-text-centered">
+                        <img src="${path}/resources/images/icons/community.png" alt="community" class="ti-palette icon mb-10 is-inline-block"/>
+                        <h4 class="mb-20"  style="font-weight: bold;">커뮤니티</h4>
+                        <p>많은 학부모들과 교류할 수 있습니다.</p>
                     </div>
                 </div>
             </div>
