@@ -4,10 +4,9 @@
 <c:set var="path" value="<%=request.getContextPath() %>" />
 
 <header>
-
     <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand" style="padding:0;">
-            <a class="navbar-item" href="index.html" style="padding:0;">
+            <a class="navbar-item" href="${path}" style="padding:0;">
                 <img src="${path}/resources/images/tspoon_logo.png" style="max-height: none;">
             </a>
 
@@ -45,7 +44,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="" class="button is-primary">
+                    <a href="${path}/term.do" class="button is-primary">
                         <strong>Sign up</strong>
                     </a>
                     <a href="" class="button is-light" >

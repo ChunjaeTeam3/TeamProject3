@@ -10,6 +10,17 @@
 // GITHUB: https://github.com/themefisher/
 -->
 
+<!-- 파비콘 설정 -->
+<!-- 표준 파비콘 -->
+<link rel="shortcut icon" type="image/png" href="${path1}/resources/images/tspoon_favicon.png">
+<!-- 애플 계열 모바일 -->
+<link rel="apple-touch-icon-precomposed" href="${path1}/resources/images/tspoon_favicon.png">
+<!-- IE 계열 브라우저 -->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="${path1}/resources/images/tspoon_favicon.png">
+<!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+<link rel="icon" href="${path1}/resources/images/tspoon_favicon.png" sizes="64x64">
+
 <!-- Plugin -->
 <link rel="stylesheet" href="${path1}/resources/plugins/bulma/bulma.min.css">
 <link rel="stylesheet" href="${path1 }/resources/plugins/slick/slick.css">
