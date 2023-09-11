@@ -21,7 +21,7 @@
     <jsp:include page="layout/header.jsp" />
     <!--헤더 영역 끝 -->
 
-    <!-- 헤더 사이드 영역 시작 -->
+    <!-- 헤더 배너 영역 시작 -->
     <section class="hero-area has-background-primary" id="parallax">
         <div class="container">
             <div class="columns">
@@ -66,7 +66,7 @@
         </div>
         <!-- /social icon -->
     </section>
-    <!-- 헤더 사이드 영역 끝 -->
+    <!-- 헤더 배너 영역 끝 -->
 
     <!-- 메인 페이지 영역 시작-->
 
@@ -79,7 +79,7 @@
         <!--위로 가기 아이콘 부분 끝-->
 
         <!-- 메인페이지 메뉴바 영역 시작 -->
-        <div class="header-wrapper" id="home">
+        <div class="header-wrapper" id="home" style="padding-bottom: 0;">
             <section class="hero is-large">
                 <!-- 모바일 -->
                 <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
@@ -158,7 +158,7 @@
         <!-- 메인페이지 메뉴바 영역 끝 -->
 
         <!-- 메인페이지 콘텐츠 영역 시작 -->
-        <div class="main-content">
+        <div class="main-content" style="padding-top: 0;">
             <!-- section1(소개) 영역 시작 -->
             <jsp:include page="main/section1.jsp"></jsp:include>
             <!-- section1(소개) 영역 끝 -->
