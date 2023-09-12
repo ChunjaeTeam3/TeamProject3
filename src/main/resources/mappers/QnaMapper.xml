@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna">
+    <!--전체 QnA 목록-->
+    <select id="qnaList" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna order by resdate desc
+    </select>
+    <!--전체 질문 목록-->
+    <select id="questionList" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where lev=0 order by resdate desc
+    </select>
+    <!--전체 답변 목록-->
+    <select id="answerList" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where lev=1 order by resdate desc
+    </select>
+    <!--질문 상세보기-->
+    <select id="questionDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select
+    </select>
+    <!--답변 상세보기-->
+
+    <!--QnA 글 카운트-->
+
+    <!--질문 글 카운트-->
+
+    <!--답변 글 카운트-->
+
+    <!--글 조회수-->
+
+    <!--질문 글 등록-->
+
+    <!--답변 글 등록-->
+
+    <!--질문 글 수정-->
+
+    <!--답변 글 수정-->
+
+    <!--질문 글 삭제-->

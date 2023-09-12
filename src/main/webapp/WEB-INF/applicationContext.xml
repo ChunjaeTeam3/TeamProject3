@@ -19,7 +19,7 @@
         <!-- spring-jdbc-5.3.20.jar 안의 드라이버매니저 연결 -->
         <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
                 <property name="driverClass" value="org.mariadb.jdbc.Driver" />
-                <property name="url" value="jdbc:mariadb://localhost:3306/teaspoon" />
+                <property name="url" value="jdbc:mariadb://localhost:3306/team33" />
                 <property name="username" value="root" />
                 <property name="password" value="1234" />
         </bean>

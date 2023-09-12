@@ -12,11 +12,11 @@ public class DBConTest {
         JDBCConn db = new JDBCConn();
         con = db.connect();
         try {
-            pstmt = con.prepareStatement("select * from sample");
+            pstmt = con.prepareStatement("select * from member");
             rs = pstmt.executeQuery();
             while(rs.next()){
-                System.out.println(rs.getInt("no"));
-                System.out.println(rs.getString("name"));
+                System.out.println(rs.getInt("id"));
+                System.out.println(rs.getString("pw"));
             }
             db.close(rs, pstmt, con);
         } catch (SQLException e) {
