@@ -24,7 +24,7 @@
                     <a href="${path}" class="navbar-item" style="color:#fff;">커뮤니티</a>
                     <div class="navbar-dropdown">
                         <a href="" class="navbar-item">공지사항</a>
-                        <a href="" class="navbar-item">커뮤니티</a>
+                        <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
                         <a href="" class="navbar-item">자료실</a>
                         <a href="" class="navbar-item">식단표</a>
                     </div>

@@ -19,7 +19,7 @@
         <!-- spring-jdbc-5.3.20.jar 안의 드라이버매니저 연결 -->
         <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
                 <property name="driverClass" value="org.mariadb.jdbc.Driver" />
-                <property name="url" value="jdbc:mariadb://localhost:3306/teaspoon" />
+                <property name="url" value="jdbc:mariadb://localhost:3306/team33" />
                 <property name="username" value="root" />
                 <property name="password" value="1234" />
         </bean>
@@ -28,7 +28,7 @@
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
                 <property name="dataSource" ref="dataSource" />
                 <property name="configLocation" value="classpath:/mybatis-config.xml" />
-                <property name="mapperLocations" value="classpath*:/mappers/**/*Mapper.xml" />
+                <property name="mapperLocations" value="classpath*:mappers/**/*Mapper.xml" />
         </bean>
 
         <!-- SqlSession 객체 주입 -->
@@ -42,11 +42,12 @@
         </bean>
 
         <context:annotation-config />
-        <bean id="sampleService" class="kr.co.teaspoon.service.SampleServiceImpl"/>
-        <bean id="sampleDAO" class="kr.co.teaspoon.dao.SampleDAOImpl"/>
-        <bean id="boardService" class="kr.co.teaspoon.service.BoardServiceImpl"/>
-        <bean id="boardDAO" class="kr.co.teaspoon.dao.BoardDAOImpl"/>
-
+        <bean id="sampleService" class="kr.co.teaspoon.service.SampleServiceImpl" />
+        <bean id="sampleDAO" class="kr.co.teaspoon.dao.SampleDAOImpl" />
+        <bean id="boardService" class="kr.co.teaspoon.service.BoardServiceImpl" />
+        <bean id="boardDAO" class="kr.co.teaspoon.dao.BoardDAOImpl" />
+        <bean id="communityService" class="kr.co.teaspoon.service.CommunityServiceImpl" />
+        <bean id="communityDAO" class="kr.co.teaspoon.dao.CommunityDAOImpl" />
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

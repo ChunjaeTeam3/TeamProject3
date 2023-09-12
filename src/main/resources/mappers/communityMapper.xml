@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="community">
+    <select id="communityList" resultType="kr.co.teaspoon.dto.Community">
+        <![CDATA[
+        select * from community
+        ]]>
+        <where>
+            <if test="typeArr != null">
+                <trim prefixOverrides="OR">
+                    <foreach item="type" collection="typeArr">
+                        <trim prefixOverrides="OR">
+                            <choose>
+                                <when test="type == 'T'.toString()">
+                                    title LIKE '%' || #{keyword} || '%'
+                                </when>
+                                <when test="type == 'C'.toString()">
+                                    content LIKE '%' || #{keyword} || '%'
+                                </when>
+                                <when test="type == 'W'.toString()">
+                                    nickname LIKE '%' || #{keyword} || '%'
+                                </when>
+                            </choose>
+                        </trim>
+                    </foreach>
+                </trim>
+            </if>
+            <if test="category != null">
+                AND cate = #{category}
+            </if>
+        </where>
+        <![CDATA[
+        ORDER BY cno, resdate DESC LIMIT #{dbStartNum}, #{postCount}
+        ]]>
+    </select>
+
+    <select id="getCount" resultType="integer">
+        select count(*) from community
+    </select>
+</mapper>
