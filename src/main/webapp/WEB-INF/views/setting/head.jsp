@@ -23,9 +23,6 @@
 <link href="${path1}/resources/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
 <link rel="stylesheet" type="text/css" href="${path1}/resources/css/showcase.css" />
-<link rel="icon" type="${path1}/resources/image/png" href="favicon.png" />
-<link rel="shortcut icon" href="${path1}/resources/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="${path1}/resources/images/favicon.ico" type="image/x-icon">
 <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
 
 <!-- jQuery -->

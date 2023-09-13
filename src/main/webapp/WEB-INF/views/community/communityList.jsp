@@ -71,7 +71,7 @@
                     <c:if test="${!empty curCategory}">
                         <input type="hidden" id="cate" name="cate" value="${curCategory}">
                     </c:if>
-                    <input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
+                    <input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off" value="${page.keyword}">
                 </p>
                 <p class="control">
                     <input type="submit" class="button is-primary" value="검색" />
@@ -94,10 +94,10 @@
                     <tr onclick="location.href='${path}/community/getCommunity.do?cno=${item.cno}&page=${curPage}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>'" style="cursor: pointer">
                         <th class="has-text-centered">${item.cno}</th>
                         <td class="has-text-centered">${item.cateName}</td>
-                        <td class="has-text-centered">${item.title}</td>
+                        <td class="has-text-centered" width="300">${item.title}</td>
                         <td class="has-text-centered">${item.author}</td>
-                        <td class="has-text-centered">${item.resdate}</td>
-                        <td class="has-text-centered">${item.cnt}</td>
+                        <td class="has-text-centered">${fmt:item.resdate}</td>
+                        <td class="has-text-centered" width="80">${item.cnt}</td>
                     </tr>
                 </c:forEach>
                 <c:if test="${empty list}">
