@@ -16,6 +16,47 @@
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
+            <!-- 메인페이지 메뉴바 영역 시작 -->
+            <div class="header-wrapper" id="home">
+                <section class="hero is-large">
+                    <!-- 모바일 -->
+                    <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
+                        <div class="navbar-brand">
+                            <div class="navbar-burger burger" data-target="mobile-nav">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div id="mobile-nav" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="navbar-item">
+                                    <a class="navbar-item" href="${path}">
+                                        소개
+                                    </a>
+                                </div>
+                                <div class="navbar-item">
+                                    <a class="navbar-item" href="${path}">
+                                        커뮤니티
+                                    </a>
+                                </div>
+                                <div class="navbar-item">
+                                    <a class="navbar-item" href="${path}">
+                                        이벤트
+                                    </a>
+                                </div>
+                                <div class="navbar-item">
+                                    <a class="navbar-item" href="${path}">
+                                        고객지원
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- 모바일 -->
+                </section>
+            </div>
+            <!-- 메인페이지 메뉴바 영역 끝 -->
         </div>
 
         <div id="navigation" class="navbar-menu">
@@ -52,7 +93,9 @@
                         <strong>Log in</strong>
                     </a>
                 </div>
+
             </div>
         </div>
     </nav>
+
 </header>

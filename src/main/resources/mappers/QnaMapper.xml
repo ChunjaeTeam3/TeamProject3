@@ -5,34 +5,70 @@
     <select id="qnaList" resultType="kr.co.teaspoon.dto.Qna">
         select * from qna order by resdate desc
     </select>
+
     <!--전체 질문 목록-->
     <select id="questionList" resultType="kr.co.teaspoon.dto.Qna">
         select * from qna where lev=0 order by resdate desc
     </select>
+
     <!--전체 답변 목록-->
     <select id="answerList" resultType="kr.co.teaspoon.dto.Qna">
         select * from qna where lev=1 order by resdate desc
     </select>
+
     <!--질문 상세보기-->
     <select id="questionDetail" resultType="kr.co.teaspoon.dto.Qna">
-        select
+        select * from qna where par=#{par} and lev=0
     </select>
+
     <!--답변 상세보기-->
+    <select id="answerDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where par=#{par} and lev=1
+    </select>
 
     <!--QnA 글 카운트-->
+    <select id="totalQna" resultType="integer">
+        select count(*) from qna
+    </select>
 
     <!--질문 글 카운트-->
+    <select id="totalQuestion" resultType="integer">
+        select count(*) from qna where lev=0
+    </select>
 
     <!--답변 글 카운트-->
+    <select id="totalAnswer" resultType="integer">
+        select count(*) from qna where lev=1
+    </select>
 
     <!--글 조회수-->
+    <update id="visited">
+        update qna set visited=visited+1 where qno=#{qno}
+    </update>
 
     <!--질문 글 등록-->
+    <insert id="questionInsert">
+        insert into qna values (default, #{title}, #{content}, #{author}, default, default, 0, #{par})
+    </insert>
+
+    <!-- par = qno-->
+    <update id="parUpdate">
+        update qna set par=qno where par=0 and lev=0
+    </update>
 
     <!--답변 글 등록-->
+    <insert id="answerInsert">
+        insert into qna values (default, #{title}, #{content}, #{author}, default, default, 1, #{par})
+    </insert>
 
-    <!--질문 글 수정-->
-
-    <!--답변 글 수정-->
+    <!-- 글 수정-->
+    <update id="qnaUpdate">
+        update free set title=#{title}, content=#{content} where qno=#{qno}
+    </update>
 
     <!--질문 글 삭제-->
+    <delete id="qnaDelete">
+        delete from free where qno=#{qno}
+    </delete>
+
+</mapper>

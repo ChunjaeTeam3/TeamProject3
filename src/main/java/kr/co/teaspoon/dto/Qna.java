@@ -9,7 +9,7 @@ public class Qna {
     private String content;
     private String author;
     private String resdate;
-    private int visit;
+    private int visited;
     private int lev;
     private int par;
 }

@@ -1,10 +1,10 @@
-package kr.co.teaspoon.dao;
+package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dto.Qna;
 
 import java.util.List;
 
-public interface QnaDAO {
+public interface QnaService {
 
     public List<Qna> qnaList() throws Exception;
     public Qna qnaDetail(int qno) throws Exception;
