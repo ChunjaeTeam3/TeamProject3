@@ -19,7 +19,7 @@ public class QnaDAOImpl implements QnaDAO{
 
     @Override
     public Qna qnaDetail(int qno) throws Exception {
-        return sqlSession.selectOne("qna.qnaDetail");
+        return sqlSession.selectOne("qna.qnaDetail", qno);
     }
 
     @Override

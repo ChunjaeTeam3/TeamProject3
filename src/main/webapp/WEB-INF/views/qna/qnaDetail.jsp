@@ -41,7 +41,34 @@
 <!--QnA 상세보기-->
 
 <div class="container">
-
+    <table id="table table is-fullwidth is-center">
+        <tbody>
+        <tr>
+            <th style="background-color:#dcdcdc">글 번호</th>
+            <td>${qna.qno }</td>
+        </tr>
+        <tr>
+            <th style="background-color:#dcdcdc">글 제목</th>
+            <td>${qna.title }</td>
+        </tr>
+        <tr>
+            <th style="background-color:#dcdcdc">글 내용</th>
+            <td><p>${qna.content }</p></td>
+        </tr>
+        <tr>
+            <th style="background-color:#dcdcdc">작성자</th>
+            <td>${qna.author }</td>
+        </tr>
+        <tr>
+            <th style="background-color:#dcdcdc">작성일시</th>
+            <td>${qna.resdate }</td>
+        </tr>
+        <tr>
+            <th style="background-color:#dcdcdc">읽은 횟수</th>
+            <td>${qna.visited }</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

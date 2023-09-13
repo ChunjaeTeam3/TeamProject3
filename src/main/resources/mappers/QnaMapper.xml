@@ -12,6 +12,11 @@
         select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) &gt; 2)
     </select>
 
+    <!--상세보기-->
+    <select id="qnaDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where qno=#{qno}
+    </select>
+
     <!--질문 상세보기-->
     <select id="questionDetail" resultType="kr.co.teaspoon.dto.Qna">
         select * from qna where par=#{par} and lev=0

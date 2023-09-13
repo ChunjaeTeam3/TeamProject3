@@ -29,8 +29,8 @@ public class QnaController {
     @GetMapping("detail.do")
     public String getQnaDetail(HttpServletRequest request, Model model) throws Exception {
         int qno = Integer.parseInt(request.getParameter("qno"));
-        Qna dto = qnaService.qnaDetail(qno);
-        model.addAttribute("dto", dto);
+        Qna qna = qnaService.qnaDetail(qno);
+        model.addAttribute("qna", qna);
         return "/qna/qnaDetail";
     }
 }
