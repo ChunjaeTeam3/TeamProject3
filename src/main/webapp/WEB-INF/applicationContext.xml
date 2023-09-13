@@ -42,10 +42,10 @@
         </bean>
 
         <context:annotation-config />
-        <bean id="sampleService" class="kr.co.teaspoon.service.SampleServiceImpl"/>
-        <bean id="sampleDAO" class="kr.co.teaspoon.dao.SampleDAOImpl"/>
-        <bean id="boardService" class="kr.co.teaspoon.service.BoardServiceImpl"/>
-        <bean id="boardDAO" class="kr.co.teaspoon.dao.BoardDAOImpl"/>
+        <bean id="noticeService" class="kr.co.teaspoon.service.NoticeServiceImpl"/>
+        <bean id="noticeDAO" class="kr.co.teaspoon.dao.NoticeDAOImpl"/>
+        <bean id="faqService" class="kr.co.teaspoon.service.FaqServiceImpl"/>
+        <bean id="faqDAO" class="kr.co.teaspoon.dao.FaqDAOImpl"/>
 
 
         <!-- @Transactional 어노테이션 처리 -->
