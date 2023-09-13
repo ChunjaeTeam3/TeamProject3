@@ -9,20 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>TeaSpoon</title>
-    <jsp:include page="setting/head.jsp"></jsp:include>
+    <jsp:include page="./setting/head.jsp"></jsp:include>
     <style>
         button.player_btn {border: none;background-color: #ffffff;}
     </style>
 
 </head>
 <body>
-
     <!--헤더 영역 시작 -->
     <jsp:include page="layout/header.jsp" />
     <!--헤더 영역 끝 -->
 
-    <!-- 헤더 배너 영역 시작 -->
-    <section class="hero-area has-background-primary" id="parallax">
+    <!-- 헤더 사이드 영역 시작 -->
+    <section class="hero-area background-primary" id="parallax">
         <div class="container">
             <div class="columns">
                 <div class="column is-11-desktop is-offset-1-desktop">

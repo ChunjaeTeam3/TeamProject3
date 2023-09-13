@@ -75,6 +75,11 @@ h6, .h6 {
   font-size: 14px;
 }
 
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
 /* Button style */
 .button {
   font-size: 22px;
@@ -104,14 +109,14 @@ h6, .h6 {
   font-size: 15px;
 }
 .button.is-primary {
-  background-color: #41228e;
+  background-color: #41228e!important;
   color: #fff;
 }
 .button.is-primary:active {
   background-color: #542cb7 !important;
 }
 .button.is-primary:hover {
-  background-color: #542cb7;
+  background-color: #542cb7!important;
 }
 .button.is-primary.focus, .button.is-primary.is-active {
   background-color: #542cb7 !important;
@@ -119,14 +124,26 @@ h6, .h6 {
 }
 .button.is-link {
   background-color: transparent;
-  color: #41228e;
+  color: #41228e!important;
   font-weight: bold;
   padding-left: 0;
   padding-right: 0;
 }
 .button.is-link:active, .button.is-link:hover {
-  color: #41228e;
+  color: #41228e!important;
   background: transparent;
+}
+
+.button.is-header-button {
+  background-color: #224d8e!important;
+  border: transparent;
+  color: #fff;
+}
+
+.button.is-header-button:hover {
+  background-color: #1a3f77!important;
+  border: transparent;
+  color: #fff;
 }
 
 body {
@@ -241,19 +258,19 @@ a:hover {
   display: unset !important;
 }
 
-.has-background-primary {
-  background: #41228e !important;
+.background-primary {
+  background: #007cf0!important;
 }
 
-.has-background-gray {
+.background-gray {
   background: #eaeaea !important;
 }
 
-.has-text-primary {
-  color: #41228e !important;
+.text-primary {
+  color: #007cf0!important;
 }
 
-.has-text-color {
+.text-color {
   color: #4c4c4c;
 }
 

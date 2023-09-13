@@ -19,7 +19,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <!-- page title -->
-<section class="page-title has-background-primary is-relative">
+<section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
             <h1 class="has-text-white font-tertiary"> Join Us </h1>
@@ -31,7 +31,6 @@
     <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
     <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
     <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 <!-- /page title -->
@@ -93,6 +92,29 @@
                                 <input type="tel" id="tel" name="tel" placeholder="전화번호를 입력해주세요" class="input" autocomplete="off" required>
                             </div>
                         </div>
+                        <div class="column is-10-tablet">
+                            <label for="tel" class="label"> 주소 </label>
+                            <div class="control">
+                                <input type="text" id="addr1" name="addr1" placeholder="기본 주소를  입력해주세요" class="input" autocomplete="off" readonly>
+                                <input type="text" id="addr2" name="addr2" placeholder="상세 주소를 입력해주세요" class="input mt-3" autocomplete="off" required>
+                                <div class="columns mt-1">
+                                    <div class="column is-10-tablet">
+                                        <div class="control">
+                                            <input type="text" id="postcode" name="postcode" placeholder="우편번호를 입력해주세요" class="input" autocomplete="off" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="column is-2-tablet pl-0">
+                                        <button type="button" class="button is-link" onclick="findAddr()"> 우편번호 검색 </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-10-tablet">
+                            <label for="tel" class="label"> 생년월일 </label>
+                            <div class="control">
+                                <input type="date" id="birth" name="birth" placeholder="생년월일을 입력해주세요" class="input" autocomplete="off" required>
+                            </div>
+                        </div>
                         <div class="column is-10-tablet is-10">
                             <button type="submit" class="button is-primary is-fullwidth"> 회원가입 </button>
                             <p class="has-text-centered mt-4"> 이미 회원이신가요? <a href="${path}/login.do"> 로그인하기 </a> </p>
@@ -141,7 +163,24 @@
             return false;
         }
     }
+    function findAddr(){
+        new daum.Postcode({
+            oncomplete:function(data){
+                console.log(data);
+                var roadAddr = data.roadAddress;
+                var jibunAddr = data.jibunAddress;
+                document.getElementById("postcode").value = data.zonecode;
+                if(roadAddr !== ''){
+                    document.getElementById("addr1").value = roadAddr;
+                } else if(jibunAddr !== ''){
+                    document.getElementById("addr1").value = jibunAddr;
+                }
+                document.getElementById("addr2").focus();
+            }
+        }).open();
+    }
 </script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <form action="#">
     <button id="toTop" title="Go to top">
