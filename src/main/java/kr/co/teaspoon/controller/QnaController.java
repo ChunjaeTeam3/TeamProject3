@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -23,5 +24,13 @@ public class QnaController {
         List<Qna> qnaList = qnaService.qnaList();
         model.addAttribute("qnaList", qnaList);
         return "/qna/qnaList";
+    }
+
+    @GetMapping("detail.do")
+    public String getQnaDetail(HttpServletRequest request, Model model) throws Exception {
+        int qno = Integer.parseInt(request.getParameter("qno"));
+        Qna dto = qnaService.qnaDetail(qno);
+        model.addAttribute("dto", dto);
+        return "/qna/qnaDetail";
     }
 }

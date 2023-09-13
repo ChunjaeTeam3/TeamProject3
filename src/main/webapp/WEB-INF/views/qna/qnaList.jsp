@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Kross | Portfolio Template</title>
+    <title>Q & A</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
 
     <style>
@@ -55,6 +55,7 @@
         <c:forEach items="${qnaList }" var="qna" varStatus="status">
         <tr>
             <td class="has-text-centered">${qna.qno}</td>
+            <!-- 비회원일때 -->
             <c:if test="${empty sid}">
                 <c:if test="${qna.lev==0}">
                     <td>${qna.title}</td>
@@ -63,15 +64,16 @@
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</td>
                 </c:if>
             </c:if>
+            <!-- 회원일때-->
             <c:if test="${!empty sid}">
                 <c:if test="${qna.lev==0}">
                     <td>
-                        <a href="${path}/WEB-INF/views/qna/qnaDetail.do?qno=${qna.qno}">${qna.title}</a>
+                        <a href="${path}/WEB-INF/views/qna/detail.do?qno=${qna.qno}">${qna.title}</a>
                     </td>
                 </c:if>
                 <c:if test="${qna.lev==1}">
                     <td>
-                        <a href="${path}/WEB-INF/views/qna/qnaDetail.do?qno=${qna.qno}">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
+                        <a href="${path}/WEB-INF/views/qna/detail.do?qno=${qna.qno}">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
                     </td>
                 </c:if>
             </c:if>
@@ -80,6 +82,7 @@
             <td class="has-text-centered">${qna.visited}</td>
         </tr>
         </c:forEach>
+        <!--회원일 경우만 글 등록 버튼 보이게-->
         <c:if test="${ !empty sid }">
         <tr>
             <td colspan="2" class="is-right">
