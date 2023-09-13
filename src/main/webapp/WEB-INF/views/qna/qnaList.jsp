@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Kross | Portfolio Template</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
+
+    <style>
+        table tbody tr:nth-child(2n) {
+            background-color: #d3d3d3;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,17 +44,17 @@
     <table class="table is-fullwidth is-center">
         <thead>
         <tr>
-            <th>글번호</th>
-            <th>글제목</th>
-            <th>작성자</th>
-            <th>조회수</th>
-            <th>작성일</th>
+            <th width="10%" class="has-text-centered">글번호</th>
+            <th width="50%" class="has-text-centered">글제목</th>
+            <th width="10%" class="has-text-centered">작성자</th>
+            <th width="15%" class="has-text-centered">조회수</th>
+            <th width="15%" class="has-text-centered">작성일</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${qnaList }" var="qna" varStatus="status">
         <tr>
-            <td>${qna.qno}</td>
+            <td class="has-text-centered">${qna.qno}</td>
             <c:if test="${empty sid}">
                 <c:if test="${qna.lev==0}">
                     <td>${qna.title}</td>
@@ -65,27 +71,22 @@
                 </c:if>
                 <c:if test="${qna.lev==1}">
                     <td>
-                        <a href="${path}/WEB-INF/views/qna/qnaDetail.do?qno=${qna.qno}">&nbsp;⌞${qna.title}</a>
+                        <a href="${path}/WEB-INF/views/qna/qnaDetail.do?qno=${qna.qno}">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
                     </td>
                 </c:if>
             </c:if>
-            <td>${qna.author}</td>
-            <td>${qna.visited}</td>
-            <td>${qna.visited}</td>
+            <td class="has-text-centered">${qna.author}</td>
+            <td class="has-text-centered">${qna.visited}</td>
+            <td class="has-text-centered">${qna.visited}</td>
         </tr>
         </c:forEach>
+        <c:if test="${ !empty sid }">
         <tr>
-            <td colspan="2">
-            <c:if test="${ !empty sid }">
-                <td><a class="button is-right" href="${path}/qna/questionInsert.do?lev=0&par=0"> 질문하기</a></td>
-            </c:if>
-            <c:if test="${ empty sid }">
-                <div class="is-center">
-                    <p>로그인한 사용자만 질문을 등록할 수 있습니다.</p>
-                </div>
-            </c:if>
+            <td colspan="2" class="is-right">
+                <td><a class="button" href="${path}/qna/questionInsert.do?lev=0&par=0"> 질문하기</a></td>
             </td>
         </tr>
+        </c:if>
         </tbody>
     </table>
 </div>

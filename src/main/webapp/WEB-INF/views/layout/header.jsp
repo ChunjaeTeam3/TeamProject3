@@ -82,7 +82,7 @@
                     <a href="${path}" class="navbar-item" style="color:#fff;">고객지원</a>
                     <div class="navbar-dropdown">
                         <a href="" class="navbar-item">FAQ</a>
-                        <a href="" class="navbar-item">Q&A</a>
+                        <a href="${path}/qna/qnaList.do" class="navbar-item">Q&A</a>
                     </div>
                 </div>
                 <div class="buttons">
