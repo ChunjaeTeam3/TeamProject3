@@ -14,18 +14,17 @@ public class Page {
     private int lastPageNum = 0;
     private int curPageNum = 1;
     private int postCount = 10;
-    private int postStart = 1;
+    private int postStart = 0;
     private int pageBlockNum = 1;
     private int totalBlockNum = 1;
     private int totalPageCount = 1;
-    private int dbStartNum = 1;
-    // 검색 시 들어오는 데이터
-    private List<String> typeArr;
+    // 검색어 입력 시 들어오는 데이터
+    private String type;
     private String keyword;
 
     // 전체 페이지 개수 구하기
     public void makePostStart(int curPage, int total){
-        this.postStart = (curPage - 1) * this.postCount + 1;
+        this.postStart = (curPage - 1) * this.postCount;
         this.pageBlockNum = (int)Math.floor(curPage / pageCount);
 
         int comp = pageCount * postCount;
@@ -67,10 +66,5 @@ public class Page {
         } else {
             lastPageNum = (int) Math.floor(total/pageCount) + 1;
         }
-    }
-
-    // 데이터베이스 LIMIT 시작 번호 구하기
-    public void setDbStartNum() {
-        dbStartNum = ((postStart - 1) * postCount);
     }
 }

@@ -3,10 +3,10 @@ package kr.co.teaspoon.dto;
 import lombok.Data;
 
 @Data
-public class Community {
+public class CommunityVO {
 
     private int cno;
-    private String cate;
+    private String cateName;
     private String title;
     private String content;
     private String author;

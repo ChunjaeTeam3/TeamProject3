@@ -30,10 +30,10 @@ CREATE TABLE category(
 );
 
 -- 카테고리 테이블 데이터
-INSERT INTO category VALUES('A', '교육정보');
-INSERT INTO category VALUES('B', '교재/학원 추천');
-INSERT INTO category VALUES('C', '진로상담');
-INSERT INTO category VALUES('D', '자유게시판');
+INSERT INTO category VALUES('A', '자유게시판');
+INSERT INTO category VALUES('B', '교육정보');
+INSERT INTO category VALUES('C', '교재/학원 추천');
+INSERT INTO category VALUES('D', '진로상담');
 
 
 -- 커뮤니티 게시판 테이블 생성
@@ -64,3 +64,5 @@ INSERT INTO community(cate, title, content, author)
 VALUES ('C', '게시판 더미데이터7', '여기는 게시판 더미데이터7입니다', 'admin');
 INSERT INTO community(cate, title, content, author)
 VALUES ('D', '게시판 더미데이터8', '여기는 게시판 더미데이터8입니다', 'admin');
+
+SELECT * FROM community;

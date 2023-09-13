@@ -18,8 +18,7 @@
 <body>
 <%@ include file="../layout/header.jsp"%>
 
-<!-- page title -->
-<section class="page-title has-background-primary is-relative">
+<section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
             <h1 class="has-text-white font-tertiary"> Community </h1>
@@ -31,132 +30,120 @@
     <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
     <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
     <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
-<!-- /page title -->
 
-<!-- portfolio -->
 <section class="section">
     <div class="container">
-        <!-- filter menu -->
-        <div class="buttons has-addons is-centered filter-menu">
-            <label class="button is-primary is-active">
-                <input type="radio" name="shuffle-filter" value="all" checked="checked" /> 전체
-            </label>
-            <label class="button is-primary">
-                <input type="radio" name="shuffle-filter" value="design" /> 교육정보
-            </label>
-            <label class="button is-primary">
-                <input type="radio" name="shuffle-filter" value="branding" />교재/학원 추천
-            </label>
-            <label class="button is-primary">
-                <input type="radio" name="shuffle-filter" value="illustration" />진로상담
-            </label>
-            <label class="button is-primary">
-                <input type="radio" name="shuffle-filter" value="illustration" />자유게시판
-            </label>
+        <div class="buttons has-addons is-centered mb-5">
+            <c:if test="${empty curCategory}">
+                <label class="button is-primary is-active">
+            </c:if>
+            <c:if test="${!empty curCategory}">
+                <label class="button is-primary">
+            </c:if>
+                <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do'"/> 전체
+                </label>
+            <c:forEach var="cate" items="${categories}">
+                <c:if test="${cate.cate eq curCategory}">
+                    <label class="button is-primary is-active">
+                </c:if>
+                <c:if test="${cate.cate ne curCategory}">
+                    <label class="button is-primary">
+                </c:if>
+                    <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do?cate=${cate.cate}'"/> ${cate.cateName}
+                    </label>
+            </c:forEach>
         </div>
-        <!-- /filter menu -->
 
-        <div class="columns shuffle-wrapper">
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-1.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;branding&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-2.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;illustration&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-3.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;design&quot;,&quot;branding&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-6.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;illustration&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-8.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;design&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-5.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item" data-groups="[&quot;branding&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-1.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item"
-                 data-groups="[&quot;design&quot;,&quot;illustration&quot;,&quot;branding&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-3.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4-desktop is-6-tablet mb-20 shuffle-item illustration" data-groups="[&quot;illustration&quot;]">
-                <div class="is-relative hover-wrapper">
-                    <img src="images/portfolio/item-7.png" alt="portfolio-image" class="image is-full is-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="button is-light is-small" href="project-single.html">view project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <form action="${path}/community/list.do" method="get" class="field has-addons has-addons-right">
+                <p class="control">
+                <span class="select">
+                    <select id="type" name="type">
+                        <option value="T"> 제목 </option>
+                        <option value="C"> 내용 </option>
+                        <option value="W"> 작성자 </option>
+                    </select>
+                </span>
+                </p>
+                <p class="control">
+                    <c:if test="${!empty curCategory}">
+                        <input type="hidden" id="cate" name="cate" value="${curCategory}">
+                    </c:if>
+                    <input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
+                </p>
+                <p class="control">
+                    <input type="submit" class="button is-primary" value="검색" />
+                </p>
+            </form>
+
+            <table class="table is-hoverable is-fullwidth">
+                <thead>
+                <tr>
+                    <th class="has-text-centered"> # </th>
+                    <th class="has-text-centered"> 카테고리 </th>
+                    <th class="has-text-centered"> 제목 </th>
+                    <th class="has-text-centered"> 작성자 </th>
+                    <th class="has-text-centered"> 작성일 </th>
+                    <th class="has-text-centered"> 조회수 </th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="item" items="${list}">
+                    <tr onclick="location.href='${path}/community/getCommunity.do?cno=${item.cno}&page=${curPage}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>'" style="cursor: pointer">
+                        <th class="has-text-centered">${item.cno}</th>
+                        <td class="has-text-centered">${item.cateName}</td>
+                        <td class="has-text-centered">${item.title}</td>
+                        <td class="has-text-centered">${item.author}</td>
+                        <td class="has-text-centered">${item.resdate}</td>
+                        <td class="has-text-centered">${item.cnt}</td>
+                    </tr>
+                </c:forEach>
+                <c:if test="${empty list}">
+                    <tr>
+                        <td colspan="6" class="has-text-centered"> 게시글이 없습니다. </td>
+                    </tr>
+                </c:if>
+                </tbody>
+            </table>
+            <!-- pagination -->
+            <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
+                <c:if test="${curPage > 5}">
+                    <a href="${path}/community/list.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
+                </c:if>
+                <c:if test="${page.blockLastNum < page.totalPageCount}">
+                    <a href="${path}/community/list.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
+                </c:if>
+
+                <ul class="pagination-list">
+                    <c:forEach var="i" begin="${page.blockStartNum}" end="${page.blockLastNum}">
+                        <c:choose>
+                            <c:when test="${i == curPage}">
+                                <li>
+                                    <a href="${path}/community/list.do?page=${i}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li>
+                                    <a href="${path}/community/list.do?page=${i}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </ul>
+            </nav>
         </div>
     </div>
 </section>
-<!-- /portfolio -->
 
 <%@ include file="../layout/footer.jsp"%>
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 
 <!-- jQuery -->
 <script src="${path}/resources/plugins/jQuery/jquery.min.js"></script>

@@ -3,13 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
-<!--
-// WEBSITE: https://themefisher.com
-// TWITTER: https://twitter.com/themefisher
-// FACEBOOK: https://www.facebook.com/themefisher
-// GITHUB: https://github.com/themefisher/
--->
-
 <!-- 파비콘 설정 -->
 <!-- 표준 파비콘 -->
 <link rel="shortcut icon" type="image/png" href="${path1}/resources/images/tspoon_favicon.png">

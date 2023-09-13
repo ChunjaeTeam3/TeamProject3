@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="${path}/term.do" class="button is-primary">
+                    <a href="${path}/term.do" class="button is-header-button">
                         <strong>Sign up</strong>
                     </a>
                     <a href="" class="button is-light" >
