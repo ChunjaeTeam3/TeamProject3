@@ -25,8 +25,10 @@ CREATE TABLE qna(qno int PRIMARY KEY AUTO_INCREMENT,   		-- 번호
    content VARCHAR(1000) NOT NULL,   								-- 내용
    author VARCHAR(16),   												-- 작성자
    resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    			-- 등록일
-   visit INT DEFAULT 0,   												-- 조회수
+   visited INT DEFAULT 0,   												-- 조회수
    lev INT DEFAULT 0, 													-- 질문(0), 답변(1)
    par INT,																	-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
    FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
+
+DROP TABLE qna;
