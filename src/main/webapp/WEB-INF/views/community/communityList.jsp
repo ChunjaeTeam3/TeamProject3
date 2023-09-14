@@ -96,7 +96,7 @@
                         <td class="has-text-centered">${item.cateName}</td>
                         <td class="has-text-centered" width="300">${item.title}</td>
                         <td class="has-text-centered">${item.author}</td>
-                        <td class="has-text-centered">${fmt:item.resdate}</td>
+                        <td class="has-text-centered">${item.resdate}</td>
                         <td class="has-text-centered" width="80">${item.cnt}</td>
                     </tr>
                 </c:forEach>
@@ -107,6 +107,7 @@
                 </c:if>
                 </tbody>
             </table>
+
             <!-- pagination -->
             <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
                 <c:if test="${curPage > 5}">
@@ -133,6 +134,10 @@
                     </c:forEach>
                 </ul>
             </nav>
+
+            <div class="buttons is-right">
+                <a href="${path}/community/insert.do" class="button is-primary"> 글 작성하기 </a>
+            </div>
         </div>
     </div>
 </section>

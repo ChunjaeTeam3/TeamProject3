@@ -41,7 +41,7 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public void communityInsert(Community dto) throws Exception {
-
+        communityDAO.communityInsert(dto);
     }
 
     @Override

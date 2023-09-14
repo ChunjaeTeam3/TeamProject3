@@ -1,6 +1,8 @@
 package kr.co.teaspoon.controller;
 
+import kr.co.teaspoon.dto.Board;
 import kr.co.teaspoon.dto.Category;
+import kr.co.teaspoon.dto.Community;
 import kr.co.teaspoon.dto.CommunityVO;
 import kr.co.teaspoon.service.CommunityService;
 import kr.co.teaspoon.util.CommunityPage;
@@ -8,10 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -59,6 +63,26 @@ public class CommunityController {
         model.addAttribute("type", request.getParameter("type"));
         model.addAttribute("keyword", request.getParameter("keyword"));
         return "/community/communityDetail";
+    }
+
+    @GetMapping("insert.do")
+    public String insertForm(HttpServletRequest request, Model model) throws Exception {
+        List<Category> categories = communityService.categoryList();
+        model.addAttribute("categories", categories);
+        return "/community/communityInsert";
+    }
+
+    @PostMapping("insert.do")
+    public String communityInsert(HttpServletRequest request, Model model) throws Exception {
+        HttpSession session = request.getSession();
+        Community community = new Community();
+        community.setCate(request.getParameter("cate"));
+        community.setTitle(request.getParameter("title"));
+        community.setContent(request.getParameter("content"));
+//        community.setAuthor((String) session.getAttribute("sid"));
+        community.setAuthor("shin");
+        communityService.communityInsert(community);
+        return "redirect:list.do";
     }
 
 }
