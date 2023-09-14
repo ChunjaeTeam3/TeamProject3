@@ -3,6 +3,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Qna;
 import kr.co.teaspoon.service.QnaService;
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ public class QnaController {
     @Autowired
     private QnaService qnaService;
 
+    //QnA 목록
     @GetMapping("list.do")
     public String getQnaList(Model model) throws Exception {
         List<Qna> qnaList = qnaService.qnaList();
@@ -27,6 +29,7 @@ public class QnaController {
         return "/qna/qnaList";
     }
 
+    //QnA 상세보기
     @GetMapping("detail.do")
     public String getQnaDetail(HttpServletRequest request, Model model) throws Exception {
         int qno = Integer.parseInt(request.getParameter("qno"));
@@ -35,11 +38,13 @@ public class QnaController {
         return "/qna/qnaDetail";
     }
 
+    //Question 글 쓰기
     @GetMapping("insert.do")
     public String getQuestionInsert(Model model) throws Exception {
         return "/qna/questionInsert";
     }
 
+    //Question 글쓰기 처리
     @PostMapping("insert.do")
     public String getQuestionInsertPro(HttpServletRequest request, Model model) throws Exception {
         Qna dto = new Qna();
@@ -49,6 +54,7 @@ public class QnaController {
         return "redirect:list.do";
     }
 
+    //Question 수정
     @GetMapping("edit.do")
     public String getQnaEdit(HttpServletRequest request, Model model) throws Exception {
         int qno = Integer.parseInt(request.getParameter("qno"));
@@ -56,6 +62,23 @@ public class QnaController {
         model.addAttribute("dto", dto);
         return "/qna/qnaEdit";
     }
+    //Question 수정처리
+    @PostMapping("edit.do")
+    public String getQnaEditPro(HttpServletRequest request, Model model) throws Exception {
+        int qno = Integer.parseInt(request.getParameter("qno"));
+        Qna dto = new Qna();
+        dto.setQno(qno);
+        dto.setTitle(request.getParameter("title"));
+        dto.setContent(request.getParameter("content"));
+        qnaService.qnaEdit(dto);
+        return "redirect:list.do";
+    }
 
-
+    //QnA 삭제
+    @GetMapping("delete.do")
+    public String getQnaDelete(HttpServletRequest request, Model model) throws Exception {
+        int qno = Integer.parseInt(request.getParameter("qno"));
+        qnaService.qnaDelete(qno);
+        return "redirect:list.do";
+    }
 }

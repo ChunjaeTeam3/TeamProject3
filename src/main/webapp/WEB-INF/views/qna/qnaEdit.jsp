@@ -46,6 +46,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
+                        <input type="hidden" name="qno" id="qno" value="${dto.qno }" >
                         <input class="input" type="text" name="title" id="title" placeholder="제목" value="${dto.title }"required>
                     </p>
                 </div>

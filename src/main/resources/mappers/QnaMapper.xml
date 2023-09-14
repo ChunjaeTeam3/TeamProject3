@@ -63,13 +63,13 @@
     </insert>
 
     <!-- 글 수정-->
-    <update id="qnaUpdate">
+    <update id="qnaEdit">
         update qna set title=#{title}, content=#{content} where qno=#{qno}
     </update>
 
     <!--질문 글 삭제-->
     <delete id="qnaDelete">
-        delete from free where qno=#{qno}
+        delete from qna where qno=#{qno}
     </delete>
 
 </mapper>
