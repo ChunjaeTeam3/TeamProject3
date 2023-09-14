@@ -5,10 +5,7 @@ import kr.co.teaspoon.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -32,7 +29,6 @@ public class CommentController {
 //        comment.setAuthor((String) session.getAttribute("sid"));
         comment.setAuthor("shin");
         commentService.commentInsert(comment);
-        System.out.println("cate : " + request.getParameter("cate"));
 
         model.addAttribute("cno", request.getParameter("cno"));
         model.addAttribute("page", request.getParameter("page"));
@@ -46,7 +42,7 @@ public class CommentController {
         return mav;
     }
 
-    @PostMapping("delete.do")
+    @GetMapping("delete.do")
     public ModelAndView commentDelete(HttpServletRequest request, Model model) throws Exception {
         int comNo = Integer.parseInt(request.getParameter("comNo"));
         commentService.communityDelete(comNo);

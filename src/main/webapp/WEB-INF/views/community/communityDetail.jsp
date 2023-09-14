@@ -31,7 +31,7 @@
 <section class="section">
     <div class="container">
         <div class="buttons is-right">
-            <a href="${path}/community/getCommunity.do?page=${page}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button"> 목록 </a>
+            <a href="${path}/community/list.do?page=${curPage}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button"> 목록 </a>
             <a href="${path}/community/edit.do?cno=${detail.cno}" class="button"> 수정 </a>
             <a href="${path}/community/delete.do?cno=${detail.cno}" class="button"> 삭제 </a>
         </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="column">
                 <input type="hidden" id="cno" name="cno" value="${detail.cno}">
-                <input type="hidden" id="page" name="page" value="${page}">
+                <input type="hidden" id="page" name="page" value="${curPage}">
                 <c:if test="${!empty cate}">
                     <input type="hidden" id="cate" name="cate" value="${cate}">
                 </c:if>
@@ -86,44 +86,44 @@
     </div>
     <div class="container">
         <c:forEach var="comment" items="${commentList}">
-            <div class="buttons is-right">
-                <a href="${path}/comment/delete.do?comNo=${comment.comNo}&page=${page}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="button"> 삭제 </a>
+            <div class="buttons is-right mt-5" style="margin-bottom:-10px">
+                <a href="${path}/comment/delete.do?comNo=${comment.comNo}&cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="button is-small"> 삭제 </a>
             </div>
             <div class="columns">
                 <div class="column">
                     <p> ${comment.author} </p>
                 </div>
                 <div class="column">
-                    <p> ${comment.resdate} </p>
+                    <p class="has-text-right"> ${comment.resdate} </p>
                 </div>
             </div>
             <div class="columns">
                 <div class="column">
-                    <p> ${comment.content} </p>
+                    <textarea class="textarea has-fixed-size" readonly>${comment.content}</textarea>
                 </div>
             </div>
         </c:forEach>
     </div>
     <!-- pagination -->
-    <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
-        <c:if test="${curPage > 5}">
-            <a href="${path}/community/getCommunity.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
+    <nav class="pagination is-rounded is-centered mt-5 mb-6" role="navigation" aria-label="pagination">
+        <c:if test="${commentPage > 5}">
+            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockStartNum - 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-previous">Previous</a>
         </c:if>
         <c:if test="${page.blockLastNum < page.totalPageCount}">
-            <a href="${path}/community/getCommunity.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
+            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockLastNum + 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-next">Next page</a>
         </c:if>
 
         <ul class="pagination-list">
             <c:forEach var="i" begin="${page.blockStartNum}" end="${page.blockLastNum}">
                 <c:choose>
-                    <c:when test="${i == curPage}">
+                    <c:when test="${i == commentPage}">
                         <li>
-                            <a href="${path}/community/getCommunity.do?page=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
+                            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
                         </li>
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="${path}/community/getCommunity.do?page=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
+                            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
                         </li>
                     </c:otherwise>
                 </c:choose>

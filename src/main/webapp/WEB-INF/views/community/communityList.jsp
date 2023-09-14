@@ -111,10 +111,10 @@
             <!-- pagination -->
             <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
                 <c:if test="${curPage > 5}">
-                    <a href="${path}/community/list.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
+                    <a href="${path}/community/list.do?page=${page.blockStartNum - 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-previous">Previous</a>
                 </c:if>
                 <c:if test="${page.blockLastNum < page.totalPageCount}">
-                    <a href="${path}/community/list.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
+                    <a href="${path}/community/list.do?page=${page.blockLastNum + 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-next">Next page</a>
                 </c:if>
 
                 <ul class="pagination-list">

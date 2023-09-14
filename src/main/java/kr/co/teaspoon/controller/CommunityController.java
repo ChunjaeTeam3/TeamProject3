@@ -30,7 +30,7 @@ public class CommunityController {
     private CommentService commentService;
 
     @GetMapping("list.do")
-    private String getCommunityList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    private String communityList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 
         int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
         String category = request.getParameter("cate");
@@ -81,6 +81,7 @@ public class CommunityController {
         model.addAttribute("detail", comm);
         model.addAttribute("commentList", commentList);
         model.addAttribute("curPage", curPage);
+        model.addAttribute("commentPage", commentPage);
         model.addAttribute("page", page);
         model.addAttribute("cate", request.getParameter("cate"));
         model.addAttribute("type", request.getParameter("type"));
