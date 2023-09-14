@@ -123,15 +123,15 @@ a {
   box-shadow: none !important;
 }
 .button.is-link {
-  background-color: transparent;
-  color: #41228e!important;
+  background-color: #223e8e!important;
+  color: white;
   font-weight: bold;
   padding-left: 0;
   padding-right: 0;
 }
 .button.is-link:active, .button.is-link:hover {
-  color: #41228e!important;
-  background: transparent;
+  background-color: #433cb1!important;
+  color: white;
 }
 
 .button.is-header-button {

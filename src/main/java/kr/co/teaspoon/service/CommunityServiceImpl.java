@@ -46,11 +46,11 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public void communityDelete(int cno) throws Exception {
-
+        communityDAO.communityDelete(cno);
     }
 
     @Override
     public void communityEdit(Community dto) throws Exception {
-
+        communityDAO.communityEdit(dto);
     }
 }

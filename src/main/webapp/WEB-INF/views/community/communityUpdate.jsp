@@ -29,30 +29,36 @@
 </section>
 
 <section class="section">
-    <form action="${path}/community/insert.do" method="post" class="container">
+    <form action="${path}/community/edit.do" method="post" class="container">
         <div class="columns">
             <div class="column is-one-quarter">
                 <label for="cate"> 카테고리 </label>
                 <select name="cate" id="cate" class="input">
                     <c:forEach var="category" items="${categories}">
-                        <option value="${category.cate}">${category.cateName}</option>
+                        <c:if test="${detail.cateName eq category.cateName}">
+                            <option value="${category.cate}" selected>${category.cateName}</option>
+                        </c:if>
+                        <c:if test="${detail.cateName ne category.cateName}">
+                            <option value="${category.cate}">${category.cateName}</option>
+                        </c:if>
                     </c:forEach>
                 </select>
             </div>
             <div class="column">
                 <label for="title"> 제목 </label>
-                <input type="text" id="title" name="title" class="input">
+                <input type="text" id="title" name="title" class="input" value="${detail.title}">
             </div>
         </div>
         <div class="columns">
             <div class="column">
                 <label for="content"> 내용 </label>
-                <textarea class="textarea" id="content" name="content" cols="30" rows="10"></textarea>
+                <textarea class="textarea" id="content" name="content" cols="30" rows="10" maxlength="1000">${detail.content}</textarea>
             </div>
         </div>
         <div class="columns">
             <div class="column">
-                <input type="submit" class="button is-fullwidth" value="등록하기"/>
+                <input type="hidden" name="cno" id="cno" value="${detail.cno}">
+                <input type="submit" class="button is-fullwidth is-link" value="등록하기"/>
             </div>
         </div>
     </form>

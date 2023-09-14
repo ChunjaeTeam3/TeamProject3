@@ -61,8 +61,8 @@
         </div>
         <div class="buttons is-right">
             <a href="${path}/community/list.do?page=${page}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button is-primary"> 목록 </a>
-            <a href="" class="button is-primary"> 수정 </a>
-            <a href="" class="button is-primary"> 삭제 </a>
+            <a href="${path}/community/edit.do?cno=${detail.cno}" class="button is-primary"> 수정 </a>
+            <a href="${path}/community/delete.do?cno=${detail.cno}" class="button is-primary"> 삭제 </a>
         </div>
     </div>
 </section>

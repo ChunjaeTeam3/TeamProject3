@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -82,6 +83,33 @@ public class CommunityController {
 //        community.setAuthor((String) session.getAttribute("sid"));
         community.setAuthor("shin");
         communityService.communityInsert(community);
+        return "redirect:list.do";
+    }
+
+    @GetMapping("edit.do")
+    public String editForm(@RequestParam int cno, Model model) throws Exception {
+        CommunityVO comm = communityService.communityDetail(cno);
+        List<Category> categories = communityService.categoryList();
+        model.addAttribute("detail", comm);
+        model.addAttribute("categories", categories);
+        return "/community/communityUpdate";
+    }
+
+    @PostMapping("edit.do")
+    public String communityEdit(HttpServletRequest request, Model model) throws Exception {
+        int cno = Integer.parseInt(request.getParameter("cno"));
+        Community comm = new Community();
+        comm.setCno(cno);
+        comm.setCate(request.getParameter("cate"));
+        comm.setTitle(request.getParameter("title"));
+        comm.setContent(request.getParameter("content"));
+        communityService.communityEdit(comm);
+        return "redirect:list.do";
+    }
+
+    @GetMapping("delete.do")
+    public String communityDelete(@RequestParam int cno, Model model) throws Exception {
+        communityService.communityDelete(cno);
         return "redirect:list.do";
     }
 

@@ -52,12 +52,12 @@
         <div class="columns">
             <div class="column">
                 <label for="content"> 내용 </label>
-                <textarea class="textarea" id="content" name="content" cols="30" rows="10"></textarea>
+                <textarea class="textarea" id="content" name="content" cols="30" rows="10" maxlength="1000"></textarea>
             </div>
         </div>
         <div class="columns">
             <div class="column">
-                <input type="submit" class="button is-fullwidth" value="등록하기"/>
+                <input type="submit" class="button is-fullwidth is-link" value="등록하기"/>
             </div>
         </div>
     </form>
