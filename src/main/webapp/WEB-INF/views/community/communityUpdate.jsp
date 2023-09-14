@@ -16,7 +16,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="has-text-white font-tertiary"> 글 상세 보기 </h2>
+            <h2 class="has-text-white font-tertiary"> 글 수정하기 </h2>
         </div>
     </div>
     <!-- background shapes -->
@@ -29,42 +29,33 @@
 </section>
 
 <section class="section">
-    <div class="container">
+    <form action="${path}/community/insert.do" method="post" class="container">
         <div class="columns">
             <div class="column is-one-quarter">
-                <p> 카테고리 </p>
-                <input type="text" value="${detail.cateName}" class="input" readonly>
+                <label for="cate"> 카테고리 </label>
+                <select name="cate" id="cate" class="input">
+                    <c:forEach var="category" items="${categories}">
+                        <option value="${category.cate}">${category.cateName}</option>
+                    </c:forEach>
+                </select>
             </div>
             <div class="column">
-                <p> 제목 </p>
-                <input type="text" value="${detail.title}" class="input" readonly>
+                <label for="title"> 제목 </label>
+                <input type="text" id="title" name="title" class="input">
             </div>
         </div>
         <div class="columns">
             <div class="column">
-                <p> 작성자 </p>
-                <input type="text" value="${detail.author}" class="input" readonly>
-            </div>
-            <div class="column">
-                <p> 작성일 </p>
-                <input type="text" value="${detail.resdate}" class="input" readonly>
-            </div>
-            <div class="column is-one-fifth">
-                <p> 조회수 </p>
-                <input type="text" value="${detail.cnt}" class="input" readonly>
+                <label for="content"> 내용 </label>
+                <textarea class="textarea" id="content" name="content" cols="30" rows="10"></textarea>
             </div>
         </div>
         <div class="columns">
             <div class="column">
-                <textarea class="textarea" cols="30" rows="10"> ${detail.content} </textarea>
+                <input type="submit" class="button is-fullwidth" value="등록하기"/>
             </div>
         </div>
-        <div class="buttons is-right">
-            <a href="${path}/community/list.do?page=${page}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button is-primary"> 목록 </a>
-            <a href="" class="button is-primary"> 수정 </a>
-            <a href="" class="button is-primary"> 삭제 </a>
-        </div>
-    </div>
+    </form>
 </section>
 
 <%@ include file="../layout/footer.jsp"%>
