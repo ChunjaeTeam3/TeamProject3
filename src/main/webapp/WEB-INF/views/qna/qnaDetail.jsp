@@ -58,14 +58,11 @@
             <th style="background-color:#dcdcdc">작성일시</th>
             <td>${dto.resdate }</td>
         </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">읽은 횟수</th>
-            <td>${dto.visited }</td>
-        </tr>
         </tbody>
     </table>
     <div class="button-group">
         <a class="button" href="${path }/qna/list.do">글 목록</a>
+        <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
         <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
         <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
     </div>

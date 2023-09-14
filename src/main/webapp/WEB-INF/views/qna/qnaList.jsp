@@ -46,9 +46,8 @@
         <tr>
             <th width="10%" class="has-text-centered">글번호</th>
             <th width="50%" class="has-text-centered">글제목</th>
-            <th width="10%" class="has-text-centered">작성자</th>
-            <th width="15%" class="has-text-centered">조회수</th>
-            <th width="15%" class="has-text-centered">작성일</th>
+            <th width="15%" class="has-text-centered">작성자</th>
+            <th width="25%" class="has-text-centered">작성일</th>
         </tr>
         </thead>
         <tbody>
@@ -78,8 +77,7 @@
                 </c:if>
 <%--            </c:if>--%>
             <td class="has-text-centered">${qna.author}</td>
-            <td class="has-text-centered">${qna.visited}</td>
-            <td class="has-text-centered">${qna.visited}</td>
+            <td class="has-text-centered">${qna.resdate}</td>
         </tr>
         </c:forEach>
         </tbody>
@@ -87,7 +85,7 @@
         <!--회원일 경우만 글 등록 버튼 보이게-->
 <%--    <c:if test="${ !empty sid }">--%>
         <div class="buttons">
-            <a class="button is-right" href="${path}/qna/insert.do"> 질문하기</a>
+            <a class="button is-right" href="${path}/qna/questionInsert.do"> 질문하기</a>
         </div>
 <%--    </c:if>--%>
 

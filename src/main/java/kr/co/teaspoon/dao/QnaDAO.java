@@ -15,4 +15,5 @@ public interface QnaDAO {
     public void qnaEdit(Qna dto) throws Exception;
 
 
+
 }

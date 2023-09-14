@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>질문 등록하기</title>
+    <title>답변 등록하기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
 
 
@@ -21,7 +21,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> 질문 등록하기 </h1>
+            <h1 class="has-text-white font-tertiary"> 답변 등록하기 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -37,7 +37,7 @@
 <!--질문 등록하기-->
 
 <div class="container">
-    <form action="${path}/qna/questionInsert.do" method="post">
+    <form action="${path}/qna/answerInsert.do" method="post">
         <!--질문 제목-->
         <div class="field is-horizontal">
             <div class="field-label is-normal">
@@ -46,6 +46,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
+                        <input type="hidden" name="par" id="par" value="${dto.qno}">
                         <input class="input" type="text" name="title" id="title" placeholder="제목" required>
                     </p>
                 </div>
@@ -54,12 +55,12 @@
         <!--질문 내용-->
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label">질문 내용</label>
+                <label class="label">답변 내용</label>
             </div>
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <textarea class="textarea" name="content" id="content" placeholder="질문내용을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;"></textarea>
+                        <textarea class="textarea" name="content" id="content" placeholder="답변을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;"></textarea>
                     </p>
                 </div>
             </div>
