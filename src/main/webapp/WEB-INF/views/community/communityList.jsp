@@ -96,7 +96,7 @@
                         <td class="has-text-centered">${item.cateName}</td>
                         <td class="has-text-centered" width="300">${item.title}</td>
                         <td class="has-text-centered">${item.author}</td>
-                        <td class="has-text-centered">${fmt:item.resdate}</td>
+                        <td class="has-text-centered">${item.resdate}</td>
                         <td class="has-text-centered" width="80">${item.cnt}</td>
                     </tr>
                 </c:forEach>
