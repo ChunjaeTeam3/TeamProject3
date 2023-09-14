@@ -2,6 +2,7 @@ package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.QnaDAO;
 import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,11 @@ public class QnaServiceImpl implements QnaService{
     @Override
     public Qna qnaDetail(int qno) throws Exception {
         return qnaDAO.qnaDetail(qno);
+    }
+
+    @Override
+    public int getCount(Page page) throws Exception {
+        return qnaDAO.getCount(page);
     }
 
     @Override

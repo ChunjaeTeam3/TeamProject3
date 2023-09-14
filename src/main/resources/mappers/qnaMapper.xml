@@ -28,7 +28,7 @@
     </select>
 
     <!--QnA 글 카운트-->
-    <select id="totalQna" resultType="integer">
+    <select id="getCount" resultType="integer">
         select count(*) from qna
     </select>
 

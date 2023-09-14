@@ -1,6 +1,7 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.util.Page;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,11 @@ public class QnaDAOImpl implements QnaDAO{
     @Override
     public Qna qnaDetail(int qno) throws Exception {
         return sqlSession.selectOne("qna.qnaDetail", qno);
+    }
+
+    @Override
+    public int getCount(Page page) throws Exception {
+        return sqlSession.selectOne("qna.totalQna",page);
     }
 
     @Override
