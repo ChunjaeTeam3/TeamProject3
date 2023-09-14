@@ -82,16 +82,17 @@
             <td class="has-text-centered">${qna.visited}</td>
         </tr>
         </c:forEach>
-        <!--회원일 경우만 글 등록 버튼 보이게-->
-        <c:if test="${ !empty sid }">
-        <tr>
-            <td colspan="2" class="is-right">
-                <td><a class="button" href="${path}/qna/questionInsert.do?lev=0&par=0"> 질문하기</a></td>
-            </td>
-        </tr>
-        </c:if>
         </tbody>
     </table>
+        <!--회원일 경우만 글 등록 버튼 보이게-->
+<%--    <c:if test="${ !empty sid }">--%>
+        <div class="buttons">
+            <a class="button is-right" href="${path}/qna/insert.do"> 질문하기</a>
+        </div>
+<%--    </c:if>--%>
+
+
+
 </div>
 </body>
 </html>

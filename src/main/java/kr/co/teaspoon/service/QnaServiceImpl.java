@@ -4,6 +4,7 @@ import kr.co.teaspoon.dao.QnaDAO;
 import kr.co.teaspoon.dto.Qna;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,8 +25,10 @@ public class QnaServiceImpl implements QnaService{
     }
 
     @Override
+    @Transactional
     public void questionInsert(Qna dto) throws Exception {
         qnaDAO.questionInsert(dto);
+        qnaDAO.parUpdate(dto);
     }
 
     @Override

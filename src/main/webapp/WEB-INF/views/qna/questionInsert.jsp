@@ -8,8 +8,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Q&A 상세보기</title>
+    <title>질문 등록하기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
+
 
 </head>
 <body>
@@ -20,7 +21,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> Q & A 상세보기 </h1>
+            <h1 class="has-text-white font-tertiary"> 질문 등록하기 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -33,42 +34,42 @@
 </section>
 <!-- 헤더 사이드 영역 끝 -->
 
-<!--QnA 상세보기-->
+<!--질문 등록하기-->
 
 <div class="container">
-    <table id="table is-fullwidth is-center">
-        <tbody>
-        <tr>
-            <th style="background-color:#dcdcdc">글 번호</th>
-            <td>${dto.qno }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">글 제목</th>
-            <td>${dto.title }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">글 내용</th>
-            <td><p>${dto.content }</p></td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">작성자</th>
-            <td>${dto.author }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">작성일시</th>
-            <td>${dto.resdate }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">읽은 횟수</th>
-            <td>${dto.visited }</td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="button-group">
-        <a class="button" href="${path }/qna/list.do">글 목록</a>
-        <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
-        <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
-    </div>
+    <form action="${path}/qna/insert.do" method="post">
+        <!--질문 제목-->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">제목</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" name="title" id="title" placeholder="제목" required>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--질문 내용-->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">질문 내용</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" name="content" id="content" placeholder="질문내용을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;"></textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <a class="button" href="${path }/qna/list.do">글 목록</a>
+            <input class="button" type="submit" value="글등록">
+        </div>
+    </form>
 </div>
 </body>
 </html>

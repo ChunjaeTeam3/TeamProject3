@@ -28,6 +28,11 @@ public class QnaDAOImpl implements QnaDAO{
     }
 
     @Override
+    public void parUpdate(Qna dto) throws Exception {
+        sqlSession.update("qna.parUpdate", dto);
+    }
+
+    @Override
     public void answerInsert(Qna dto) throws Exception {
         sqlSession.insert("qna.answerInsert",dto);
     }

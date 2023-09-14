@@ -49,10 +49,10 @@
 
     <!--질문 글 등록-->
     <insert id="questionInsert">
-        insert into qna values (default, #{title}, #{content}, #{author}, default, default, 0, #{par})
+        insert into qna values (default, #{title}, #{content}, #{author}, default, default, 0, default)
     </insert>
 
-    <!-- par = qno-->
+    <!-- 질문 par = qno-->
     <update id="parUpdate">
         update qna set par=qno where par=0 and lev=0
     </update>
@@ -64,7 +64,7 @@
 
     <!-- 글 수정-->
     <update id="qnaUpdate">
-        update free set title=#{title}, content=#{content} where qno=#{qno}
+        update qna set title=#{title}, content=#{content} where qno=#{qno}
     </update>
 
     <!--질문 글 삭제-->

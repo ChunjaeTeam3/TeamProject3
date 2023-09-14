@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,8 +30,32 @@ public class QnaController {
     @GetMapping("detail.do")
     public String getQnaDetail(HttpServletRequest request, Model model) throws Exception {
         int qno = Integer.parseInt(request.getParameter("qno"));
-        Qna qna = qnaService.qnaDetail(qno);
-        model.addAttribute("qna", qna);
+        Qna dto = qnaService.qnaDetail(qno);
+        model.addAttribute("dto", dto);
         return "/qna/qnaDetail";
     }
+
+    @GetMapping("insert.do")
+    public String getQuestionInsert(Model model) throws Exception {
+        return "/qna/questionInsert";
+    }
+
+    @PostMapping("insert.do")
+    public String getQuestionInsertPro(HttpServletRequest request, Model model) throws Exception {
+        Qna dto = new Qna();
+        dto.setTitle(request.getParameter("title"));
+        dto.setContent(request.getParameter("content"));
+        qnaService.questionInsert(dto);
+        return "redirect:list.do";
+    }
+
+    @GetMapping("edit.do")
+    public String getQnaEdit(HttpServletRequest request, Model model) throws Exception {
+        int qno = Integer.parseInt(request.getParameter("qno"));
+        Qna dto = qnaService.qnaDetail(qno);
+        model.addAttribute("dto", dto);
+        return "/qna/qnaEdit";
+    }
+
+
 }
