@@ -40,10 +40,10 @@
 	<div class="content" id="content" style="margin-top: 20px;">
 	    <div class="row column text-center">
 	      <div class="container">
-			  <div style="display: inline-block;">
+			  <div>
 			  <!-- 공지사항 관리자만 글쓰기 가능 처리 -->
 			  <%-- <c:if test='${sid eq "admin"}'> --%>
-			  <div class="button-group">
+			  <div class="button-group" style="float:right; margin-left:20px;">
 				  <a class="button" href="${path }/notice/insert.do">글쓰기</a>
 			  </div>
 			  <%-- </c:if> --%>
@@ -80,7 +80,7 @@
 		      	<c:forEach items="${noticeList }" var="notice" varStatus="status">
 		      		<tr>
 		      			<td>${status.count }</td>
-		      			<td><a href="${path}/notice/detail.do?seq=${notice.seq }">${notice.title }</a></td>
+		      			<td ><a href="${path}/notice/detail.do?seq=${notice.seq }" style="color: #000000;">${notice.title }</a></td>
 						<td>${notice.nickname }</td>
 		      			<td>
 	      					<fmt:parseDate value="${notice.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
