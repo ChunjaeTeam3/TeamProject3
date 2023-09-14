@@ -37,43 +37,35 @@
 	<!-- 배너 영역 끝 -->
 
 	<!-- 공지사항 글 상세보기 시작-->
-	<div class="content" id="content">
+	<div class="content" id="content" style="margin-top: 100px;">
 	    <div class="row column text-center">
 	      <div class="container">
-		      <table id="table1">
+		      <table id="table">
 		      	<tbody>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 번호</th>
-		      			<td>${notice.seq }</td>
-		      		</tr>	
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 제목</th>
-		      			<td>${notice.title }</td>
+		      		<tr style="border-top: solid grey 1px;">
+						<td style="font-weight: bold; font-size: 30px;">${notice.title }</td>
+						<td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
+							작성자 | ${notice.nickname }
+						</td>
+						<td style="width: 170px; padding-right: 0px; padding-top:30px;">
+							작성일 | <fmt:parseDate value="${notice.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
+									<fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
+						</td>
+						<td style="width: 110px; padding-top:30px;">
+							조회수 | ${notice.visited}
+						</td>
 		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 내용</th>
-		      			<td><p>${notice.content }</p></td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성자</th>
-		      			<td>${notice.nickname }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성일시</th>
-		      			<td>${notice.regdate }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">읽은 횟수</th>
-		      			<td>${notice.visited }</td>
+		      		<tr style="border-bottom: solid grey 1px;">
+		      			<td style="padding-top: 50px; padding-bottom: 50px;"><p>${notice.content }</p></td>
 		      		</tr>
 		      	</tbody>
 		      </table>
-				<div class="button-group">
-				  <a class="button" href="${path }/notice/list.do">글 목록</a>
+				<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
 				  <%-- <c:if test='${sid eq "admin"}'> --%>
-				  <a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">글 삭제</a>
-				  <a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">글 수정</a>
+					  <a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">글 삭제</a>
+					  <a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">글 수정</a>
 				  <%-- </c:if> --%>
+				  <a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
 				</div>
 	      </div>
 	    </div>

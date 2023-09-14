@@ -36,9 +36,20 @@
 	</section>
 	<!-- 배너 영역 끝 -->
 
-	<!-- 검색 엔진 시작 -->
-	<form action="${path}/notice/list.do" method="get" class="field has-addons has-addons-right" style="margin-top: 100px; margin-right: 65px;">
-			<p class="control">
+	<!-- 공지사항 영역 시작 -->
+	<div class="content" id="content" style="margin-top: 20px;">
+	    <div class="row column text-center">
+	      <div class="container">
+			  <div style="display: inline-block;">
+			  <!-- 공지사항 관리자만 글쓰기 가능 처리 -->
+			  <%-- <c:if test='${sid eq "admin"}'> --%>
+			  <div class="button-group">
+				  <a class="button" href="${path }/notice/insert.do">글쓰기</a>
+			  </div>
+			  <%-- </c:if> --%>
+			  <!-- 검색 엔진 시작 -->
+			  <form action="${path}/notice/list.do" method="get" class="field has-addons has-addons-right" style="margin-top: 100px;">
+				  <p class="control">
                 <span class="select">
                     <select id="type" name="type">
                         <option value="T"> 제목 </option>
@@ -46,20 +57,15 @@
                         <option value="W"> 작성자 </option>
                     </select>
                 </span>
-			</p>
-			<p class="control">
-				<input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
-			</p>
-			<p class="control">
-				<input type="submit" class="button is-primary" value="검색" />
-			</p>
-		</form>
-	<!-- 검색 엔진 끝 -->
-
-	<!-- 공지사항 영역 시작 -->
-	<div class="content" id="content" style="margin-top: 20px;">
-	    <div class="row column text-center">
-	      <div class="container">
+				  </p>
+				  <p class="control">
+					  <input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
+				  </p>
+				  <p class="control">
+					  <input type="submit" class="button is-primary" value="검색" />
+				  </p>
+			  </form></div>
+			  <!-- 검색 엔진 끝 -->
 		      <table class="table">
 		      	<thead>
 		      		<tr>
@@ -116,12 +122,6 @@
 					  </c:forEach>
 				  </ul>
 			  </nav>
-			  <!-- 공지사항 관리자만 글쓰기 가능 처리 -->
-			  <%-- <c:if test='${sid eq "admin"}'> --%>
-		      	<div class="button-group">
-				  <a class="button" href="${path }/notice/insert.do">글쓰기</a>
-				</div>
-			  <%-- </c:if> --%>
 	      </div>
 	    </div>
 	</div>
