@@ -1,6 +1,5 @@
 package kr.co.teaspoon;
 
-import kr.co.teaspoon.dto.Sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.junit.*;
@@ -31,23 +30,6 @@ public class LombokTest2 {
         log.info("JUnit 테스트 시작");
     }
 
-    @Test
-    public void testLombok(){
-        Sample dto = new Sample();
-        dto.setNo(1);
-        dto.setName("김기태");
-        System.out.println(dto.toString());
-        log.info(dto.toString());
-    }
-
-    @Test
-    public void testLombok2(){
-        Sample dto = new Sample();
-        dto.setNo(2);
-        dto.setName("서광");
-        System.out.println(dto.toString());
-        log.info(dto.toString());
-    }
 
     @After
     public void testAfterPrint() {
