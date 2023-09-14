@@ -1,11 +1,11 @@
 package kr.co.teaspoon.controller;
 
-import kr.co.teaspoon.dto.Board;
-import kr.co.teaspoon.dto.Category;
-import kr.co.teaspoon.dto.Community;
-import kr.co.teaspoon.dto.CommunityVO;
+import kr.co.teaspoon.dto.*;
+import kr.co.teaspoon.service.CommentService;
 import kr.co.teaspoon.service.CommunityService;
+import kr.co.teaspoon.util.CommentPage;
 import kr.co.teaspoon.util.CommunityPage;
+import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +25,9 @@ public class CommunityController {
 
     @Autowired
     private CommunityService communityService;
+
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("list.do")
     private String getCommunityList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
@@ -58,9 +61,28 @@ public class CommunityController {
     @GetMapping("getCommunity.do")
     public String communityDetail(HttpServletRequest request, Model model) throws Exception {
         CommunityVO comm = communityService.communityDetail(Integer.parseInt(request.getParameter("cno")));
+
+        // 게시판 목록에서 사용자가 선택한 게시물이 속해있는 페이지
+        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+        // 댓글 목록의 페이지
+        int commentPage = request.getParameter("commentPage") != null ? Integer.parseInt(request.getParameter("commentPage")) : 1;
+
+        // 댓글 페이징 처리
+        CommentPage page = new CommentPage();
+        // 페이징에 필요한 데이터 저장
+        int total = commentService.getCount(comm.getCno());
+        page.setCno(comm.getCno());
+        page.makeBlock(commentPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(commentPage, total);
+
+        List<Comment> commentList = commentService.commentList(page);
+
         model.addAttribute("detail", comm);
-        model.addAttribute("page", request.getParameter("page"));
-        model.addAttribute("curCategory", request.getParameter("cate"));
+        model.addAttribute("commentList", commentList);
+        model.addAttribute("curPage", curPage);
+        model.addAttribute("page", page);
+        model.addAttribute("cate", request.getParameter("cate"));
         model.addAttribute("type", request.getParameter("type"));
         model.addAttribute("keyword", request.getParameter("keyword"));
         return "/community/communityDetail";
