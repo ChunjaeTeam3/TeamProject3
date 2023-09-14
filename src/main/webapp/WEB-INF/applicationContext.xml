@@ -48,6 +48,8 @@
         <bean id="boardDAO" class="kr.co.teaspoon.dao.BoardDAOImpl" />
         <bean id="communityService" class="kr.co.teaspoon.service.CommunityServiceImpl" />
         <bean id="communityDAO" class="kr.co.teaspoon.dao.CommunityDAOImpl" />
+        <bean id="commentService" class="kr.co.teaspoon.service.CommentServiceImpl" />
+        <bean id="commentDAO" class="kr.co.teaspoon.dao.CommentDAOImpl" />
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

@@ -74,4 +74,23 @@
         set cnt = cnt + 1
         where cno = #{cno}
     </update>
+
+    <!-- 새로운 글 등록 -->
+    <insert id="communityInsert">
+        insert into community(cate, title, content, author)
+        values(#{cate}, #{title}, #{content}, #{author})
+    </insert>
+
+    <!-- 게시글 수정 -->
+    <update id="communityEdit">
+        update community
+        set title = #{title}, content = #{content}
+        where cno = #{cno}
+    </update>
+
+    <!-- 게시글 삭제 -->
+    <delete id="communityDelete">
+        delete from community
+        where cno = #{cno}
+    </delete>
 </mapper>

@@ -41,16 +41,16 @@ public class CommunityDAOImpl implements CommunityDAO {
 
     @Override
     public void communityInsert(Community dto) throws Exception {
-
+        sqlSession.insert("community.communityInsert", dto);
     }
 
     @Override
     public void communityDelete(int cno) throws Exception {
-
+        sqlSession.delete("community.communityDelete", cno);
     }
 
     @Override
     public void communityEdit(Community dto) throws Exception {
-
+        sqlSession.update("community.communityEdit", dto);
     }
 }

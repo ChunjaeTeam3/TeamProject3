@@ -21,7 +21,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> Community </h1>
+            <h2 class="has-text-white font-tertiary"> Community </h2>
         </div>
     </div>
     <!-- background shapes -->
@@ -107,6 +107,7 @@
                 </c:if>
                 </tbody>
             </table>
+
             <!-- pagination -->
             <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
                 <c:if test="${curPage > 5}">
@@ -133,6 +134,10 @@
                     </c:forEach>
                 </ul>
             </nav>
+
+            <div class="buttons is-right">
+                <a href="${path}/community/insert.do" class="button is-primary"> 글 작성하기 </a>
+            </div>
         </div>
     </div>
 </section>

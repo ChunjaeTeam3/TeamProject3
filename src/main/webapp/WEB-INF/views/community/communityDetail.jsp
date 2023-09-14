@@ -9,11 +9,6 @@
     <title> 커뮤니티 </title>
     <c:set var="path" value="${pageContext.request.contextPath}"/>
     <jsp:include page="../setting/head.jsp" />
-
-    <style>
-        h1 { font-size: 40pt; }
-        h3 { font-size: 20pt; }
-    </style>
 </head>
 <body>
 <%@ include file="../layout/header.jsp"%>
@@ -21,7 +16,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> 글 상세 보기 </h1>
+            <h2 class="has-text-white font-tertiary"> 글 상세 보기 </h2>
         </div>
     </div>
     <!-- background shapes -->
@@ -35,6 +30,11 @@
 
 <section class="section">
     <div class="container">
+        <div class="buttons is-right">
+            <a href="${path}/community/getCommunity.do?page=${page}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button"> 목록 </a>
+            <a href="${path}/community/edit.do?cno=${detail.cno}" class="button"> 수정 </a>
+            <a href="${path}/community/delete.do?cno=${detail.cno}" class="button"> 삭제 </a>
+        </div>
         <div class="columns">
             <div class="column is-one-quarter">
                 <p> 카테고리 </p>
@@ -64,12 +64,72 @@
                 <textarea class="textarea" cols="30" rows="10"> ${detail.content} </textarea>
             </div>
         </div>
-        <div class="buttons is-right">
-            <a href="${path}/community/list.do?page=${page}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button is-primary"> 목록 </a>
-            <a href="" class="button is-primary"> 수정 </a>
-            <a href="" class="button is-primary"> 삭제 </a>
-        </div>
     </div>
+    <div class="container">
+        <form action="${path}/comment/insert.do" method="post" class="columns mt-5">
+            <div class="column is-four-fifths">
+                <textarea name="content" id="content" class="textarea has-fixed-size" maxlength="990" cols="30" rows="2" placeholder="댓글을 달아주세요 :)"></textarea>
+            </div>
+            <div class="column">
+                <input type="hidden" id="cno" name="cno" value="${detail.cno}">
+                <input type="hidden" id="page" name="page" value="${page}">
+                <c:if test="${!empty cate}">
+                    <input type="hidden" id="cate" name="cate" value="${cate}">
+                </c:if>
+                <c:if test="${!empty keyword}">
+                    <input type="hidden" id="type" name="type" value="${type}">
+                    <input type="hidden" id="keyword" name="keyword" value="${keyword}">
+                </c:if>
+                <input type="submit" class="button is-fullwidth is-primary" style="height:72px" value="전송">
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <c:forEach var="comment" items="${commentList}">
+            <div class="buttons is-right">
+                <a href="${path}/comment/delete.do?comNo=${comment.comNo}&page=${page}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="button"> 삭제 </a>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <p> ${comment.author} </p>
+                </div>
+                <div class="column">
+                    <p> ${comment.resdate} </p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <p> ${comment.content} </p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+    <!-- pagination -->
+    <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
+        <c:if test="${curPage > 5}">
+            <a href="${path}/community/getCommunity.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
+        </c:if>
+        <c:if test="${page.blockLastNum < page.totalPageCount}">
+            <a href="${path}/community/getCommunity.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
+        </c:if>
+
+        <ul class="pagination-list">
+            <c:forEach var="i" begin="${page.blockStartNum}" end="${page.blockLastNum}">
+                <c:choose>
+                    <c:when test="${i == curPage}">
+                        <li>
+                            <a href="${path}/community/getCommunity.do?page=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li>
+                            <a href="${path}/community/getCommunity.do?page=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </ul>
+    </nav>
 </section>
 
 <%@ include file="../layout/footer.jsp"%>

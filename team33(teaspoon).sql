@@ -22,6 +22,9 @@ CREATE TABLE MEMBER(
 -- 회원 테이블 더미데이터
 INSERT INTO MEMBER
 VALUES('admin', '1234', '관리자', 'admin@edu.com', '01012345678', NULL, NULL, NULL, DEFAULT, '1990-01-01', DEFAULT, DEFAULT);
+INSERT INTO MEMBER
+VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, NULL, DEFAULT, '2000-01-01', DEFAULT, DEFAULT);
+
 
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
@@ -65,4 +68,19 @@ VALUES ('C', '게시판 더미데이터7', '여기는 게시판 더미데이터7
 INSERT INTO community(cate, title, content, author)
 VALUES ('D', '게시판 더미데이터8', '여기는 게시판 더미데이터8입니다', 'admin');
 
-SELECT * FROM community;
+SELECT * FROM community ORDER BY cno DESC;
+
+
+-- 커뮤니티 댓글 테이블 생성
+CREATE TABLE COMMENT(
+	comNo INT PRIMARY KEY AUTO_INCREMENT,
+	cno INT NOT NULL,
+	author VARCHAR(20) NOT NULL,
+	resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	content VARCHAR(1000) NOT NULL,
+	edit INT CHECK (edit IN (0,1)) DEFAULT 0,
+	FOREIGN KEY(cno) REFERENCES community(cno) ON DELETE CASCADE,
+	FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
+);
+
+SELECT * FROM COMMENT;
