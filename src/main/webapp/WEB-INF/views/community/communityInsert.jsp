@@ -21,7 +21,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="has-text-white font-tertiary"> 글 등록하기 </h2>
+            <h1 class="has-text-white font-tertiary"> 커뮤니티 글 등록 </h1>
         </div>
     </div>
     <!-- background shapes -->

@@ -1,6 +1,5 @@
 package kr.co.teaspoon.dao;
 
-import kr.co.teaspoon.dto.Board;
 import kr.co.teaspoon.dto.Category;
 import kr.co.teaspoon.dto.Community;
 import kr.co.teaspoon.dto.CommunityVO;

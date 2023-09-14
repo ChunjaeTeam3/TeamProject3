@@ -23,8 +23,7 @@
     <resources mapping="/qna/**" location="/WEB-INF/views/qna" />
     <resources mapping="/reservation/**" location="/WEB-INF/views/reservation" />
     <resources mapping="/util/**" location="/WEB-INF/views/util" />
-    <resources mapping="/sample/**" location="/WEB-INF/views/sample" />
-    <resources mapping="/sample2/**" location="/WEB-INF/views/sample2" />
+    <resources mapping="/faq/**" location="/WEB-INF/views/faq" />
 
     <!-- 컨트롤러에서 던진 URL : /notice/noticeList -->
     <!-- 실제 존재하는 URL : /WEB-INF/views/notice/noticeList.jsp -->

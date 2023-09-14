@@ -42,11 +42,11 @@
                 <div class="has-background-white card-content shadow-down p-6">
                     <h3 class="has-text-centered"> 회원가입 </h3>
                     <hr>
-                    <form name="frm1" id="frm1" action="${path}/joinPro.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
+                    <form name="frm1" id="frm1" action="${path}/member/join.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
                         <div class="column is-10-tablet">
                             <label for="id" class="label"> 아이디 </label>
                             <div class="columns">
-                                <div class="column is-10-tablet">
+                                <div class="column is-four-fifths">
                                     <div class="control">
                                         <input type="text" class="input" id="id" name="id" placeholder="영문 소문자, 숫자를 혼용하여 아이디를 입력해주세요"
                                                pattern="^[a-z0-9]{8,16}" maxlength="16" autocomplete="off" autofocus required>
@@ -54,8 +54,8 @@
                                         <p id="msg" style="color: red"></p>
                                     </div>
                                 </div>
-                                <div class="column is-2-tablet pl-0">
-                                    <button type="button" class="button is-success" onclick="idCheck()"> 중복 확인 </button>
+                                <div class="column">
+                                    <button type="button" class="button is-primary is-fullwidth" onclick="idCheck()"> 중복 확인 </button>
                                 </div>
                             </div>
                         </div>
@@ -98,13 +98,13 @@
                                 <input type="text" id="addr1" name="addr1" placeholder="기본 주소를  입력해주세요" class="input" autocomplete="off" readonly>
                                 <input type="text" id="addr2" name="addr2" placeholder="상세 주소를 입력해주세요" class="input mt-3" autocomplete="off" required>
                                 <div class="columns mt-1">
-                                    <div class="column is-10-tablet">
+                                    <div class="column is-9-tablet">
                                         <div class="control">
                                             <input type="text" id="postcode" name="postcode" placeholder="우편번호를 입력해주세요" class="input" autocomplete="off" readonly>
                                         </div>
                                     </div>
-                                    <div class="column is-2-tablet pl-0">
-                                        <button type="button" class="button is-link" onclick="findAddr()"> 우편번호 검색 </button>
+                                    <div class="column is-3-tablet pl-0">
+                                        <button type="button" class="button is-link is-fullwidth" onclick="findAddr()"> 우편번호 검색 </button>
                                     </div>
                                 </div>
                             </div>
@@ -146,8 +146,31 @@
             return;
         }
 
-        var params = { id: $("#id").val() }
-        // DB 연결 후 ajax로 아이디 중복 체크해야 함!!
+        let params = { id:$("#id").val() };
+        $.ajax({
+            url: "${path}/member/idCheck.do",
+            type: "post",
+            dataType: "json",
+            data: params,
+            success:function(data) {
+                console.log("HI");
+                let idPass = data.result;
+                if(!idPass) {
+                    $("#id_chk").val("no");
+                    $("#msg").text("기존에 사용되고 있는 아이디입니다.");
+                    $("#id").focus();
+                } else if(idPass) {
+                    $("#id_chk").val("yes");
+                    $("#msg").text("사용 가능한 아이디입니다.");
+                } else if(idPass == "") {
+                    $("#msg").text("아이디가 확인되지 않았습니다. 다시 시도해주세요.")
+                }
+            },
+            error:function(res) {
+                alert("아이디 중복 확인에 실패했습니다. 잠시 후 다시 시도해주세요.");
+                console.log(res.responseText);
+            }
+        })
     }
 </script>
 <script>

@@ -1,6 +1,5 @@
 package kr.co.teaspoon.service;
 
-import kr.co.teaspoon.dto.Board;
 import kr.co.teaspoon.dto.Category;
 import kr.co.teaspoon.dto.Community;
 import kr.co.teaspoon.dto.CommunityVO;

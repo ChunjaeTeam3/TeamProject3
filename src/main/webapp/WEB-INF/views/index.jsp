@@ -21,14 +21,7 @@
     <!--헤더 영역 끝 -->
 
     <!-- 헤더 사이드 영역 시작 -->
-    <section class="hero-area background-primary" id="parallax">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-11-desktop is-offset-1-desktop">
-                    <h1 class="has-text-white font-tertiary">Hi! I’m <br> Christoher <br> UX designer</h1>
-                </div>
-            </div>
-        </div>
+    <section class="hero-area background-primary" id="parallax" style="height:780px">
         <div class="layer-bg is-full">
             <img class="image is-full" src="${path}/resources/images/illustrations/leaf-bg.png" alt="bg-shape">
         </div>
@@ -58,9 +51,9 @@
         </div>
         <!-- social icon -->
         <div class="list list-hero-social">
+            <a class="list-item has-text-white" href="https://github.com/ChunjaeTeam3/TeamProject3"><i class="ti-github"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-facebook"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-instagram"></i></a>
-            <a class="list-item has-text-white" href="#"><i class="ti-dribbble"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
         </div>
         <!-- /social icon -->
