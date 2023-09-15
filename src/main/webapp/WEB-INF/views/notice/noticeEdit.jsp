@@ -23,7 +23,7 @@
 	<section class="page-title background-primary is-relative">
 		<div class="container">
 			<div class="has-text-centered">
-				<h1 class="has-text-white font-tertiary"> 공지사항 수정하기 </h1>
+				<h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 공지사항 수정하기 </h1>
 			</div>
 		</div>
 		<!-- background shapes -->

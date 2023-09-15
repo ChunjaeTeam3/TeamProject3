@@ -43,7 +43,7 @@
                 <div class="has-background-white card-content shadow-down p-6">
                     <h3 class="has-text-centered"> 회원가입 </h3>
                     <hr>
-                    <form name="frm1" id="frm1" action="${path}/joinPro.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
+                    <form name="frm1" id="frm1" action="${path}/member/insert.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
                         <div class="column is-10-tablet">
                             <label for="id" class="label"> 아이디 </label>
                             <div class="columns">
@@ -125,7 +125,26 @@
         }
 
         var params = { id: $("#id").val() }
-        // DB 연결 후 ajax로 아이디 중복 체크해야 함!!
+        $.ajax({
+            url:"${path }/member/idCheck.do",
+            type:"post",
+            dataType:"json",
+            data:params,
+            success:function(result){
+                console.log(result.result);
+                var idChk = result.result;
+                if(idChk==false){
+                    $("#id_chk").val("no");
+                    $("#msg").html("<strong style='color:red'>기존에 사용되고 있는 아이디 입니다. 다시 입력하시기 바랍니다.</strong>");
+                    $("#id").focus();
+                } else if(idChk==true){
+                    $("#id_chk").val("yes");
+                    $("#msg").html("<strong style='color:blue'>사용가능한 아이디 입니다.</strong>");
+                } else if(idck==""){
+                    $("#msg").html("<strong>아이디가 확인되지 않았습니다. 다시 시도해주시기 바랍니다.</strong>");
+                }
+            }
+        });
     }
 </script>
 <script>

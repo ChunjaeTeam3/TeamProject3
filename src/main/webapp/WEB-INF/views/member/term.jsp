@@ -965,7 +965,7 @@
     let chk = false;
     in_btn1.addEventListener("click", () => {
        if(ck_item1.checked && ck_item2.checked) {
-           location.href = "${path}/join.do?#";
+           location.href = "${path}/member/join.do";
        } else {
            alert("약관 및 개인정보처리 방침에 동의해주세요 :)");
            return;

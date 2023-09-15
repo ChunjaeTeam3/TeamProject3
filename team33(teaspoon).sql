@@ -36,3 +36,29 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다8', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다9', '답변입니다9');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다10', '답변입니다10');
 
+
+CREATE TABLE MEMBER(
+	id VARCHAR(20) NOT NULL PRIMARY KEY,
+	pw VARCHAR(300) NOT NULL,
+	name VARCHAR(50),
+	email VARCHAR(100) NOT NULL,
+	tel VARCHAR(20) NOT NULL,
+	addr1 VARCHAR(200),
+	addr2 VARCHAR(100),
+	postcode VARCHAR(10),
+	regdate DATETIME default CURRENT_TIMESTAMP,
+	birth DATE,
+	pt INT(11) DEFAULT 0,
+	vistied INT(11) DEFAULT 0);
+	
+
+INSERT INTO member VALUES ('admin', '1234', '관리자','admin@teaspoon.co.kr', '0212341234', '서울특별시 금천구 디지털로9길 23 (마리오2 패션타워)','11층 1108호', '08511', DEFAULT, '2023-12-25',DEFAULT, DEFAULT);
+INSERT INTO member VALUES ('kim', '4321', '김천재','kim@teaspoon.co.kr', '01043214321', '서울특별시 금천구 가산로9길 54','천재교과서', '08513', DEFAULT, '1978-12-25',DEFAULT, DEFAULT);
+
+UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
+UPDATE MEMBER SET pw='$2a$10$QpLC604mLK4417l.mYbMtuXo.mssEsv9ePgy1Y6ZZywLZ24fQupoW' WHERE id = 'kim';
+	
+SELECT * FROM member;
+
+
+
