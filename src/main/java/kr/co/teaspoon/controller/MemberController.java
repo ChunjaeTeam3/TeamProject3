@@ -4,6 +4,7 @@ import kr.co.teaspoon.dto.Member;
 import kr.co.teaspoon.service.MemberService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +28,8 @@ public class MemberController {
 
     @Autowired
     HttpSession session;
+
+    BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 
     @RequestMapping("term.do")
     public String term(Model model) {
@@ -84,6 +87,31 @@ public class MemberController {
 
     @GetMapping("logout.do")
     public String memberLogout(HttpSession session) throws Exception {
+        session.invalidate();
+        return "redirect:/";
+    }
+
+    @GetMapping("mypage.do")
+    public String mypage(Model model) throws Exception {
+        String id = (String) session.getAttribute("sid");
+        Member member = memberService.getMember(id);
+        model.addAttribute("member", member);
+        return "/member/mypage";
+    }
+    @RequestMapping(value="update.do", method=RequestMethod.POST)
+    public String memberUpdate(Member member, Model model) throws Exception {
+        String pwd = "";
+        if(member.getPw().length()<=16) {
+            pwd = pwEncoder.encode(member.getPw());
+            member.setPw(pwd);
+        }
+        memberService.memberEdit(member);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value="delete.do", method = RequestMethod.GET)
+    public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
+        memberService.memberDelete(id);
         session.invalidate();
         return "redirect:/";
     }

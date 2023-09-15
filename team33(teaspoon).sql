@@ -27,6 +27,7 @@ VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, N
 UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
+SELECT * FROM MEMBER;
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
 	cate VARCHAR(5) PRIMARY KEY NOT NULL,
