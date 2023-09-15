@@ -81,7 +81,7 @@
                     <div class="navbar-dropdown">
                         <a href="${path}/notice/list.do" class="navbar-item">공지사항</a>
                         <a href="${path}/faq/list.do" class="navbar-item">FAQ</a>
-                        <a href="" class="navbar-item">Q&A</a>
+                        <a href="${path}/qna/list.do" class="navbar-item">Q&A</a>
                     </div>
                 </div>
                 <div class="buttons">
