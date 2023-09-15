@@ -43,7 +43,7 @@
 <div class="container">
     <table class="table is-fullwidth is-center">
         <thead>
-        <tr>
+        <<tr>
             <th width="10%" class="has-text-centered">글번호</th>
             <th width="50%" class="has-text-centered">글제목</th>
             <th width="15%" class="has-text-centered">작성자</th>
@@ -53,7 +53,7 @@
         <tbody>
         <c:forEach items="${qnaList }" var="qna" varStatus="status">
         <tr>
-            <td class="has-text-centered">${qna.qno}</td>
+            <td class="has-text-centered">${status.count}</td>
 <%--            <!-- 비회원일때 -->--%>
 <%--            <c:if test="${empty sid}">--%>
 <%--                <c:if test="${qna.lev==0}">--%>
@@ -67,12 +67,12 @@
 <%--            <c:if test="${!empty sid}">--%>
                 <c:if test="${qna.lev==0}">
                     <td>
-                        <a href="${path}/qna/detail.do?qno=${qna.qno}">${qna.title}</a>
+                        <a href="${path}/qna/detail.do?qno=${qna.qno}" style="color: #000000;">${qna.title}</a>
                     </td>
                 </c:if>
                 <c:if test="${qna.lev==1}">
                     <td>
-                        <a href="${path}/qna/detail.do?qno=${qna.qno}">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
+                        <a href="${path}/qna/detail.do?qno=${qna.qno}" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
                     </td>
                 </c:if>
 <%--            </c:if>--%>
@@ -80,6 +80,11 @@
             <td class="has-text-centered">${qna.resdate}</td>
         </tr>
         </c:forEach>
+        <c:if test="${empty noticeList}">
+            <tr>
+                <td colspan="6" class="has-text-centered"> Q&A ㄱ 없습니다. </td>
+            </tr>
+        </c:if>
         </tbody>
     </table>
     <!-- pagnation -->
@@ -114,9 +119,9 @@
             <a class="button is-right" href="${path}/qna/questionInsert.do"> 질문하기</a>
         </div>
 <%--    </c:if>--%>
-
-
-
 </div>
+<!-- 푸터 영영 시작 -->
+<jsp:include page="../layout/footer.jsp"/>
+<!-- 푸터 영역 끝 -->
 </body>
 </html>

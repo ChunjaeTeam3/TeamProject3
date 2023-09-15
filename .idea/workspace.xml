@@ -12,8 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="414ed467-e370-4c3a-abd9-8afcc3bb55f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/showcase.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/showcase.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +177,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694701945448</updated>
       <workItem from="1694701946456" duration="1291000" />
-      <workItem from="1694734750420" duration="1486000" />
+      <workItem from="1694734750420" duration="2016000" />
     </task>
     <servers />
   </component>
