@@ -94,7 +94,7 @@
                     <tr onclick="location.href='${path}/community/getCommunity.do?cno=${item.cno}&page=${curPage}<c:if test="${!empty curCategory}">&cate=${curCategory}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>'" style="cursor: pointer">
                         <th class="has-text-centered">${item.cno}</th>
                         <td class="has-text-centered">${item.cateName}</td>
-                        <td class="has-text-centered" width="300">${item.title}</td>
+                        <td width="300">${item.title}</td>
                         <td class="has-text-centered">${item.author}</td>
                         <td class="has-text-centered">${item.resdate}</td>
                         <td class="has-text-centered" width="80">${item.cnt}</td>

@@ -22,8 +22,6 @@
             text-align: left;
             color: #777;
         }
-        h1 { font-size: 40pt; }
-        h3 { font-size: 20pt; }
         label span { color: red; }
     </style>
 </head>

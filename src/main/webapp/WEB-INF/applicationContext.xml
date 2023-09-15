@@ -48,6 +48,8 @@
         <bean id="communityDAO" class="kr.co.teaspoon.dao.CommunityDAOImpl" />
         <bean id="commentService" class="kr.co.teaspoon.service.CommentServiceImpl" />
         <bean id="commentDAO" class="kr.co.teaspoon.dao.CommentDAOImpl" />
+        <bean id="filterWordService" class="kr.co.teaspoon.service.FilterWordServiceImpl" />
+        <bean id="filterWordDAO" class="kr.co.teaspoon.dao.FilterWordDAOImpl" />
         <bean id="noticeService" class="kr.co.teaspoon.service.NoticeServiceImpl"/>
         <bean id="noticeDAO" class="kr.co.teaspoon.dao.NoticeDAOImpl"/>
         <bean id="faqService" class="kr.co.teaspoon.service.FaqServiceImpl"/>
