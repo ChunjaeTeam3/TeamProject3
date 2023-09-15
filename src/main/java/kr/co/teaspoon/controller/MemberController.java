@@ -44,8 +44,10 @@ public class MemberController {
     @RequestMapping(value="join.do", method=RequestMethod.POST)
     public String joinPro(ServletRequest request, ServletResponse response, Model model) {
         Member member = new Member();
+        String ppw = request.getParameter("pw");
+        String pw = pwEncoder.encode(ppw);
         member.setId(request.getParameter("id"));
-        member.setPw(request.getParameter("pw"));
+        member.setPw(pw);
         member.setName(request.getParameter("name"));
         member.setEmail(request.getParameter("email"));
         member.setTel(request.getParameter("tel"));
