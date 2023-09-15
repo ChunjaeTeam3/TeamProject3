@@ -71,8 +71,8 @@
 					<ul class="faqlist" style="list-style: none;">
 						<c:forEach items="${faqList }" var="faq" varStatus="status">
 						<li>
-							<div class="message-header" style="margin-bottom: 0px; background-color: #3e8ed0">${faq.question }</div>
-							<div class="message-body" style="margin-bottom: 30px; background-color: rgba(211,211,211,0.73);">${faq.answer }</div>
+							<div class="message-header" style="margin-bottom: 0px; background-color: #485fc7">${faq.question }</div>
+							<div class="message-body" style="margin-bottom: 30px; background-color: rgb(245,245,245);">${faq.answer }</div>
 						</li>
 						</c:forEach>
 						<c:if test="${empty faqList}">

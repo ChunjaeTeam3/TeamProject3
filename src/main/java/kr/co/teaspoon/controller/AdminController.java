@@ -48,5 +48,6 @@ public class AdminController {
         model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
         model.addAttribute("curPage", curPage);     // 현재 페이지
         model.addAttribute("page", page);           // 페이징 데이터
+        return "/admin/noAnswerList";
     }
 }

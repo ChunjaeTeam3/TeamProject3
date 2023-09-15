@@ -20,4 +20,7 @@ public class MemberDAOImpl implements MemberDAO {
     public void memberInsert(Member member) {
         sqlSession.insert("member.memberInsert", member);
     }
+
+    @Override
+    public Member loginCheck(String id) throws Exception { return sqlSession.selectOne("member.loginCheck", id); }
 }
