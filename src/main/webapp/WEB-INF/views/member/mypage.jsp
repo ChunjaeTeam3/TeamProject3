@@ -57,7 +57,7 @@
                     <div class="columns is-centered">
                         <div class="column is-8-desktop">
                             <div class="has-background-white card-content shadow-down p-6">
-                                <h3 class="has-text-centered"> 회원가입 </h3>
+                                <h3 class="has-text-centered"> 나의 정보 수정 </h3>
                                 <hr>
                                 <form name="frm1" id="frm1" action="${path}/member/update.do" class="columns is-multiline is-centered" method="post" onsubmit="return updateCheck(this)">
                                     <div class="column is-10-tablet">

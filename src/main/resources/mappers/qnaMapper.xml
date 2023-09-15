@@ -8,8 +8,8 @@
     </select>
 
     <!--답변없는 질문 목록-->
-    <select id="answerList" resultType="kr.co.teaspoon.dto.Qna">
-        select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) &gt; 2)
+    <select id="noAnswerList" resultType="kr.co.teaspoon.dto.Qna">
+        select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) &lt; 2)
     </select>
 
     <!--상세보기-->
@@ -32,14 +32,11 @@
         select count(*) from qna
     </select>
 
-    <!--질문 글 카운트-->
-    <select id="totalQuestion" resultType="integer">
-        select count(*) from qna where lev=0
-    </select>
-
-    <!--답변 글 카운트-->
-    <select id="totalAnswer" resultType="integer">
-        select count(*) from qna where lev=1
+    <!--미답변 질문 글 카운트-->
+    <select id="noAnswerCount" resultType="integer">
+        <![CDATA[
+        select count(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par)<2)
+        ]]>
     </select>
 
     <!--질문 글 등록-->

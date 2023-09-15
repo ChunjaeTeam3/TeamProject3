@@ -137,3 +137,14 @@ CREATE TABLE fileboard (
   content varchar(2000) NOT NULL,
   regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+<<<<<<< HEAD
+
+INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, DEFAULT,1);
+INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
+
+SELECT * FROM qna;
+
+UPDATE qna SET author='admin' WHERE qno=8;
+select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
+=======
+>>>>>>> 74a12ef5fb4ce32a744e8fe2a2342d77a52b5622

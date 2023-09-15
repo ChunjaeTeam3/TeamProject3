@@ -21,6 +21,11 @@ public class QnaServiceImpl implements QnaService{
     }
 
     @Override
+    public List<Qna> noAnswerList() throws Exception {
+        return qnaDAO.noAnswerList();
+    }
+
+    @Override
     public Qna qnaDetail(int qno) throws Exception {
         return qnaDAO.qnaDetail(qno);
     }
@@ -28,6 +33,11 @@ public class QnaServiceImpl implements QnaService{
     @Override
     public int getCount(Page page) throws Exception {
         return qnaDAO.getCount(page);
+    }
+
+    @Override
+    public int noAnswerCount(Page page) throws Exception {
+        return qnaDAO.noAnswerCount(page);
     }
 
     @Override

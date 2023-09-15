@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
+                <div class="button-group" style="margin-top: 30px; margin-bottom: 100px;">
                     <input class="button is-primary" type="submit" value="글등록" style="float:right; margin-left:10px;">
                     <a class="button" href="${path }/qna/list.do" style="float:right;">글 목록</a>
                 </div>
