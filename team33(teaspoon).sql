@@ -27,6 +27,8 @@ VALUES('admin', '1234', '관리자', 'admin@edu.com', '01012345678', NULL, NULL,
 INSERT INTO MEMBER
 VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, NULL, DEFAULT, '2000-01-01', DEFAULT, DEFAULT);
 
+UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
+UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
