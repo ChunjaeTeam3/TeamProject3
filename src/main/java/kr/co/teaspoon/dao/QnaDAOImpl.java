@@ -25,7 +25,7 @@ public class QnaDAOImpl implements QnaDAO{
 
     @Override
     public int getCount(Page page) throws Exception {
-        return sqlSession.selectOne("qna.totalQna",page);
+        return sqlSession.selectOne("qna.getCount",page);
     }
 
     @Override
