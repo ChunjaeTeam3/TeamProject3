@@ -80,7 +80,7 @@
             <td class="has-text-centered">${qna.resdate}</td>
         </tr>
         </c:forEach>
-        <c:if test="${empty noticeList}">
+        <c:if test="${empty qnaList}">
             <tr>
                 <td colspan="6" class="has-text-centered"> Q&A가 없습니다. </td>
             </tr>
@@ -115,7 +115,7 @@
     </nav>
         <!--회원일 경우만 글 등록 버튼 보이게-->
     <c:if test="${ !empty sid }">
-        <div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
+        <div class="button-group" style="margin-top: 30px; margin-bottom: 100px;">
             <a class="button is-primary" href="${path}/qna/questionInsert.do" style="float:right;"> 질문하기</a>
         </div>
     </c:if>
