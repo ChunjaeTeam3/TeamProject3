@@ -3,9 +3,7 @@ package kr.co.teaspoon.controller;
 import kr.co.teaspoon.dto.*;
 import kr.co.teaspoon.service.CommentService;
 import kr.co.teaspoon.service.CommunityService;
-import kr.co.teaspoon.util.CommentPage;
 import kr.co.teaspoon.util.CommunityPage;
-import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,7 +65,7 @@ public class CommunityController {
         int commentPage = request.getParameter("commentPage") != null ? Integer.parseInt(request.getParameter("commentPage")) : 1;
 
         // 댓글 페이징 처리
-        CommentPage page = new CommentPage();
+        CommunityPage page = new CommunityPage();
         // 페이징에 필요한 데이터 저장
         int total = commentService.getCount(comm.getCno());
         page.setCno(comm.getCno());

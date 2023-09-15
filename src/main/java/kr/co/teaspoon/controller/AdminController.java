@@ -1,8 +1,10 @@
 package kr.co.teaspoon.controller;
 
+import kr.co.teaspoon.dto.CommunityVO;
 import kr.co.teaspoon.dto.FilterWord;
 import kr.co.teaspoon.service.FilterWordService;
 import kr.co.teaspoon.util.CommunityPage;
+import kr.co.teaspoon.util.FilterPage;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +31,7 @@ public class AdminController {
 
         // 필터링 단어 목록 페이징 처리
         Page page = new Page();
-        int total = filterWordService.getcount();
+        int total = filterWordService.getCount();
         page.makeBlock(curPage, total);
         page.makeLastPageNum(total);
         page.makePostStart(curPage, total);
@@ -61,9 +63,16 @@ public class AdminController {
     public String communityMgmt(HttpServletRequest request, Model model) throws Exception {
         int curPage = request.getParameter("page") != null ?Integer.parseInt(request.getParameter("page")) : 1;
 
-        CommunityPage page = new CommunityPage();
+        FilterPage page = new FilterPage();
         int total = filterWordService.getCountBadList();
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
 
+        List<CommunityVO> communityList = filterWordService.badList(page);
+        model.addAttribute("list", communityList);
+        model.addAttribute("page", page);
+        model.addAttribute("curPage", curPage);
 
         return "/admin/communityMgmt";
     }

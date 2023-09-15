@@ -7,12 +7,33 @@
         order by word LIMIT #{postStart}, #{postCount}
     </select>
 
+    <select id="allFilterList" resultType="kr.co.teaspoon.dto.FilterWord">
+        select * from filterWord
+    </select>
+
     <select id="getCount" resultType="integer">
         select count(*) from filterWord
     </select>
 
     <select id="getCountBadList" resultType="integer">
         select count(*) from community
+        <where>
+            <foreach item="filter" collection="list">
+                OR title LIKE concat('%',#{filter.word},'%') OR content LIKE concat('%',#{filter.word},'%')
+            </foreach>
+        </where>
+    </select>
+
+    <select id="badList" resultType="kr.co.teaspoon.dto.CommunityVO">
+        select cno, cateName, title, content, author, resdate, cnt from community comm join category cat on(comm.cate=cat.cate)
+        <where>
+            <foreach item="filter" collection="list">
+                OR title LIKE concat('%',#{filter},'%') OR content LIKE concat('%',#{filter},'%')
+            </foreach>
+        </where>
+        <![CDATA[
+        ORDER BY cno DESC LIMIT #{postStart}, #{postCount}
+        ]]>
     </select>
 
     <select id="filterWordDetail" resultType="kr.co.teaspoon.dto.FilterWord">

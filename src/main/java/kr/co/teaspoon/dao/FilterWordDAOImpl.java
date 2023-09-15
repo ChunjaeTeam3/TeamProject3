@@ -1,6 +1,8 @@
 package kr.co.teaspoon.dao;
 
+import kr.co.teaspoon.dto.CommunityVO;
 import kr.co.teaspoon.dto.FilterWord;
+import kr.co.teaspoon.util.FilterPage;
 import kr.co.teaspoon.util.Page;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +22,23 @@ public class FilterWordDAOImpl implements FilterWordDAO {
     }
 
     @Override
+    public List<FilterWord> filterList() throws Exception {
+        return sqlSession.selectList("filterWord.allFilterList");
+    }
+
+    @Override
     public int getCount() throws Exception {
         return sqlSession.selectOne("filterWord.getCount");
     }
 
     @Override
-    public int getCountBadList() throws Exception {
-        return sqlSession.selectOne("filterWord.getCountBadList");
+    public List<CommunityVO> badList(FilterPage page) throws Exception {
+        return sqlSession.selectList("filterWord.badList", page);
+    }
+
+    @Override
+    public int getCountBadList(List<FilterWord> filterList) throws Exception {
+        return sqlSession.selectOne("filterWord.getCountBadList", filterList);
     }
 
     @Override

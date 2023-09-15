@@ -110,34 +110,34 @@
                 </div>
             </div>
         </c:forEach>
-    </div>
-    <!-- pagination -->
-    <nav class="pagination is-rounded is-centered mt-5 mb-6" role="navigation" aria-label="pagination">
-        <c:if test="${commentPage > 5}">
-            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockStartNum - 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-previous">Previous</a>
-        </c:if>
-        <c:if test="${page.blockLastNum < page.totalPageCount}">
-            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockLastNum + 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-next">Next page</a>
-        </c:if>
+            <!-- pagination -->
+            <nav class="pagination is-rounded is-centered mt-5 mb-6" role="navigation" aria-label="pagination">
+                <c:if test="${commentPage > 5}">
+                    <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockStartNum - 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-previous">Previous</a>
+                </c:if>
+                <c:if test="${page.blockLastNum < page.totalPageCount}">
+                    <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${page.blockLastNum + 1}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-next">Next page</a>
+                </c:if>
 
-        <ul class="pagination-list">
-            <c:forEach var="i" begin="${page.blockStartNum}" end="${page.blockLastNum}">
-                <c:choose>
-                    <c:when test="${i == commentPage}">
-                        <li>
-                            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
-                        </li>
-                    </c:when>
-                    <c:otherwise>
-                        <li>
-                            <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
-                        </li>
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
-        </ul>
-    </nav>
-</section>
+                <ul class="pagination-list">
+                    <c:forEach var="i" begin="${page.blockStartNum}" end="${page.blockLastNum}">
+                        <c:choose>
+                            <c:when test="${i == commentPage}">
+                                <li>
+                                    <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page">${i}</a>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li>
+                                    <a href="${path}/community/getCommunity.do?cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </ul>
+            </nav>
+        </section>
+    </div>
 
 <%@ include file="../layout/footer.jsp"%>
 
