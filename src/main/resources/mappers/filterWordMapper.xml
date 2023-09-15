@@ -11,6 +11,10 @@
         select count(*) from filterWord
     </select>
 
+    <select id="getCountBadList" resultType="integer">
+        select count(*) from community
+    </select>
+
     <select id="filterWordDetail" resultType="kr.co.teaspoon.dto.FilterWord">
         select * from filterWord where word=#{word}
     </select>

@@ -23,7 +23,7 @@
 	<section class="page-title background-primary is-relative">
 		<div class="container">
 			<div class="has-text-centered">
-				<h1 class="has-text-white font-tertiary"> 공지사항 수정하기 </h1>
+				<h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 공지사항 수정하기 </h1>
 			</div>
 		</div>
 		<!-- background shapes -->
@@ -70,9 +70,9 @@
 								</div>
 							</div>
 							<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
-								<%-- <c:if test='${sid eq "admin"}'> --%>
+								<c:if test='${sid eq "admin"}'>
 								<input type="submit" class="submit success button" value="글 수정" style="float:right; margin-left:10px;" >
-								<%-- </c:if> --%>
+								</c:if>
 								<a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
 							</div>
 						</form>

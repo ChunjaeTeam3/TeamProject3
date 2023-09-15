@@ -42,11 +42,11 @@
 	      <div class="container">
 			  <div>
 			  <!-- 공지사항 관리자만 글쓰기 가능 처리 -->
-			  <%-- <c:if test='${sid eq "admin"}'> --%>
+			  <c:if test='${sid eq "admin"}'>
 			  <div class="button-group" style="float:right; margin-left:20px;">
 				  <a class="button" href="${path }/notice/insert.do">글쓰기</a>
 			  </div>
-			  <%-- </c:if> --%>
+			  </c:if>
 			  <!-- 검색 엔진 시작 -->
 			  <form action="${path}/notice/list.do" method="get" class="field has-addons has-addons-right" style="margin-top: 100px;">
 				  <p class="control">

@@ -31,7 +31,6 @@ public class CommunityController {
 
     @GetMapping("list.do")
     private String communityList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-
         int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
         String category = request.getParameter("cate");
 
@@ -103,8 +102,7 @@ public class CommunityController {
         community.setCate(request.getParameter("cate"));
         community.setTitle(request.getParameter("title"));
         community.setContent(request.getParameter("content"));
-//        community.setAuthor((String) session.getAttribute("sid"));
-        community.setAuthor("shin");
+        community.setAuthor((String) session.getAttribute("sid"));
         communityService.communityInsert(community);
         return "redirect:list.do";
     }

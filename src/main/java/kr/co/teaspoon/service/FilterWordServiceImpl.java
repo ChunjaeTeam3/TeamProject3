@@ -20,8 +20,13 @@ public class FilterWordServiceImpl implements FilterWordService {
     }
 
     @Override
-    public int getcount() throws Exception {
+    public int getCount() throws Exception {
         return filterWordDAO.getCount();
+    }
+
+    @Override
+    public int getCountBadList() throws Exception {
+        return filterWordDAO.getCountBadList();
     }
 
     @Override

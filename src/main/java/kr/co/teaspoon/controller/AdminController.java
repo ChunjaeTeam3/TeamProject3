@@ -2,6 +2,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.FilterWord;
 import kr.co.teaspoon.service.FilterWordService;
+import kr.co.teaspoon.util.CommunityPage;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class AdminController {
     @Autowired
     private FilterWordService filterWordService;
 
+    // 필터링 단어 추가 페이지 로딩
     @RequestMapping(value="filterInsert.do", method= RequestMethod.GET)
     public String filterInsertGet(HttpServletRequest request, Model model) throws Exception {
         int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
@@ -40,16 +42,30 @@ public class AdminController {
         return "/admin/filterInsert";
     }
 
+    // 필터링 단어 추가
     @RequestMapping(value="filterInsert.do", method= RequestMethod.POST)
     public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
         filterWordService.filterInsert(word);
         return "redirect:/admin/filterInsert.do";
     }
 
+    // 필터링 단어 삭제
     @GetMapping("filterDelete.do")
     public String filterDelete(@RequestParam int fno, Model model) throws Exception {
         filterWordService.filterDelete(fno);
         return "redirect:/admin/filterInsert.do";
+    }
+
+    // 커뮤니티 관리 페이지 로딩
+    @RequestMapping("communityMgmt.do")
+    public String communityMgmt(HttpServletRequest request, Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ?Integer.parseInt(request.getParameter("page")) : 1;
+
+        CommunityPage page = new CommunityPage();
+        int total = filterWordService.getCountBadList();
+
+
+        return "/admin/communityMgmt";
     }
 
 }

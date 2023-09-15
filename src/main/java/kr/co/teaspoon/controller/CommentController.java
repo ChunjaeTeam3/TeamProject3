@@ -26,8 +26,7 @@ public class CommentController {
         Comment comment = new Comment();
         comment.setCno(Integer.parseInt(request.getParameter("cno")));
         comment.setContent(request.getParameter("content"));
-//        comment.setAuthor((String) session.getAttribute("sid"));
-        comment.setAuthor("shin");
+        comment.setAuthor((String) session.getAttribute("sid"));
         commentService.commentInsert(comment);
 
         model.addAttribute("cno", request.getParameter("cno"));

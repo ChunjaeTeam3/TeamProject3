@@ -25,6 +25,11 @@ public class FilterWordDAOImpl implements FilterWordDAO {
     }
 
     @Override
+    public int getCountBadList() throws Exception {
+        return sqlSession.selectOne("filterWord.getCountBadList");
+    }
+
+    @Override
     public FilterWord filterWordDetail(String word) throws Exception {
         return sqlSession.selectOne("filterWord.filterWordDetail", word);
     }
