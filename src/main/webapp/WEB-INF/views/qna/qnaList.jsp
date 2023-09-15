@@ -75,7 +75,7 @@
                         <a href="${path}/qna/detail.do?qno=${qna.qno}" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</a>
                     </td>
                 </c:if>
-<%--            </c:if>--%>
+            </c:if>
             <td class="has-text-centered">${qna.author}</td>
             <td class="has-text-centered">${qna.resdate}</td>
         </tr>
