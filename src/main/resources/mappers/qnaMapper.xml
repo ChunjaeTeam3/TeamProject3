@@ -35,7 +35,7 @@
     <!--미답변 질문 글 카운트-->
     <select id="noAnswerCount" resultType="integer">
         <![CDATA[
-        select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par)<2)
+        select count(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par)<2)
         ]]>
     </select>
 

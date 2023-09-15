@@ -37,17 +37,17 @@ public class AdminController {
 
         Page page = new Page();
 
-        //페이징에 필요한 데이터 저장
         int total = qnaService.noAnswerCount(page);
+
         page.makeBlock(curPage, total);
         page.makeLastPageNum(total);
         page.makePostStart(curPage, total);
+        model.addAttribute("curPage", curPage);     // 현재 페이지
+        model.addAttribute("page", page);           // 페이징 데이터
 
         //QnaList
         List<Qna> noAnswerList = qnaService.noAnswerList();
         model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
-        model.addAttribute("curPage", curPage);     // 현재 페이지
-        model.addAttribute("page", page);           // 페이징 데이터
         return "/admin/noAnswerList";
     }
 }
