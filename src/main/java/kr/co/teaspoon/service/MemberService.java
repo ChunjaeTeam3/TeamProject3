@@ -7,5 +7,6 @@ public interface MemberService {
     public Member getMember(String id);
     public boolean idCheck(String id);
     public void memberInsert(Member member);
+    public boolean loginCheck(String id, String pw) throws Exception;
 
 }

@@ -61,10 +61,10 @@
 		      	</tbody>
 		      </table>
 				<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
-				  <%-- <c:if test='${sid eq "admin"}'> --%>
+				  <c:if test='${sid eq "admin"}'>
 					  <a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">글 삭제</a>
 					  <a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">글 수정</a>
-				  <%-- </c:if> --%>
+				  </c:if>
 				  <a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
 				</div>
 	      </div>
