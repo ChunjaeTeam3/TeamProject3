@@ -94,7 +94,7 @@
                         </a>
                     </c:if>
                     <c:if test="${sid ne null and sid ne 'admin'}">
-                        <a href="${path}/member/mypage.do" class="button is-primary">
+                        <a href="${path}/member/login2.do" class="button is-primary">
                             <strong>MyPage</strong>
                         </a>
                         <a href="${path}/member/logout.do" class="button is-light">
