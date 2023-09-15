@@ -8,7 +8,7 @@
     </select>
 
     <!--답변없는 질문 목록-->
-    <select id="answerList" resultType="kr.co.teaspoon.dto.Qna">
+    <select id="noAnswerList" resultType="kr.co.teaspoon.dto.Qna">
         select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) &gt; 2)
     </select>
 

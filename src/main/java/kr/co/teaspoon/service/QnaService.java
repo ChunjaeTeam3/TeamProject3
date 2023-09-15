@@ -8,6 +8,7 @@ import java.util.List;
 public interface QnaService {
 
     public List<Qna> qnaList() throws Exception;
+    public List<Qna> noAnswerList() throws Exception;
     public Qna qnaDetail(int qno) throws Exception;
     public int getCount(Page page) throws Exception;
     public void questionInsert(Qna dto) throws Exception;

@@ -8,8 +8,8 @@ import java.util.List;
 public interface QnaDAO {
 
     public List<Qna> qnaList() throws Exception;
+    public List<Qna> noAnswerList() throws Exception;
     public Qna qnaDetail(int qno) throws Exception;
-
     public int getCount(Page page) throws Exception;
     public void questionInsert(Qna dto) throws Exception;
     public void parUpdate(Qna dto) throws Exception;
