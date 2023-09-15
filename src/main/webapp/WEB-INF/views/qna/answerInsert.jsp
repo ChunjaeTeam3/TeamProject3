@@ -34,43 +34,47 @@
 </section>
 <!-- 헤더 사이드 영역 끝 -->
 
-<!--질문 등록하기-->
+<!--답변 등록하기-->
 
-<div class="container">
-    <form action="${path}/qna/answerInsert.do" method="post">
-        <!--질문 제목-->
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">제목</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <input type="hidden" name="par" id="par" value="${dto.qno}">
-                        <input class="input" type="text" name="title" id="title" placeholder="제목" required>
-                    </p>
+<div class="content" style="margin-top: 100px;">
+    <div class="row column text-center">
+        <div class="container">
+            <form action="${path}/qna/answerInsert.do" method="post">
+                <!--질문 제목-->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal" style="height: 60px; margin-bottom:0px;">
+                        <label class="label">제목</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input type="hidden" name="par" id="par" value="${dto.qno}">
+                                <input class="input" type="text" name="title" id="title" maxlength="98" placeholder="제목" required>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--질문 내용-->
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">답변 내용</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" name="content" id="content" placeholder="답변을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;"></textarea>
-                    </p>
+                <!--질문 내용-->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">답변 내용</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <textarea class="textarea" name="content" id="content" placeholder="답변을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;" required</textarea>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="button-group">
-            <a class="button" href="${path }/qna/list.do">글 목록</a>
-            <input class="button" type="submit" value="글등록">
+                <div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
+                    <input class="button is-primary" type="submit" value="글등록" style="float:right; margin-left:10px;">
+                    <a class="button" href="${path }/qna/list.do" style="float:right;">글 목록</a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

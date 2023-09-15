@@ -35,37 +35,40 @@
 
 <!--QnA 상세보기-->
 
-<div class="container">
-    <table id="table is-fullwidth is-center">
-        <tbody>
-        <tr>
-            <th style="background-color:#dcdcdc">글 번호</th>
-            <td>${dto.qno }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">글 제목</th>
-            <td>${dto.title }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">글 내용</th>
-            <td><p>${dto.content }</p></td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">작성자</th>
-            <td>${dto.author }</td>
-        </tr>
-        <tr>
-            <th style="background-color:#dcdcdc">작성일시</th>
-            <td>${dto.resdate }</td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="button-group">
-        <a class="button" href="${path }/qna/list.do">글 목록</a>
-        <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
-        <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
-        <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
+<div class="content" id="content" style="margin-top: 100px;">
+    <div class="row column text-center">
+        <div class="container">
+            <table id="table">
+                <tobody>
+                    <tr style="border-top: solid grey 1px;">
+                        <td style="font-weight: bold; font-size: 30px;">${dto.title }</td>
+                        <td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
+                            작성자 | ${dto.author}
+                        </td>
+                        <td style="width: 170px; padding-right: 0px; padding-top:30px;">
+                            작성일 | <fmt:parseDate value="${dto.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
+                            <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: solid grey 1px;">
+                        <td style="padding-top: 50px; padding-bottom: 50px;"><p>${dto.content }</p></td>
+                    </tr>
+                </tobody>
+            </table>
+            <div class="button-group" style="margin-top: 30px; float: right; margin-bottom: 100px;">
+                <a class="button" href="${path }/qna/list.do">글 목록</a>
+                <c:if test='${sid eq "admin" && not empty sid}'>
+                    <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
+                    <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
+                </c:if>
+                <c:if test='${sid eq dto.author && not empty sid}'>
+                    <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
+                    <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
+                </c:if>
+            </div>
+        </div>
     </div>
 </div>
+
 </body>
 </html>

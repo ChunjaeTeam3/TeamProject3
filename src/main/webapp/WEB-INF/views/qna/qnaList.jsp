@@ -43,7 +43,7 @@
 <div class="container">
     <table class="table is-fullwidth is-center">
         <thead>
-        <<tr>
+        <tr>
             <th width="10%" class="has-text-centered">글번호</th>
             <th width="50%" class="has-text-centered">글제목</th>
             <th width="15%" class="has-text-centered">작성자</th>
@@ -82,7 +82,7 @@
         </c:forEach>
         <c:if test="${empty noticeList}">
             <tr>
-                <td colspan="6" class="has-text-centered"> Q&A ㄱ 없습니다. </td>
+                <td colspan="6" class="has-text-centered"> Q&A가 없습니다. </td>
             </tr>
         </c:if>
         </tbody>
@@ -115,8 +115,8 @@
     </nav>
         <!--회원일 경우만 글 등록 버튼 보이게-->
 <%--    <c:if test="${ !empty sid }">--%>
-        <div class="buttons">
-            <a class="button is-right" href="${path}/qna/questionInsert.do"> 질문하기</a>
+        <div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
+            <a class="button is-primary" href="${path}/qna/questionInsert.do" style="float:right;"> 질문하기</a>
         </div>
 <%--    </c:if>--%>
 </div>
