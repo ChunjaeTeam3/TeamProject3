@@ -55,10 +55,10 @@
         <c:forEach items="${noAnswerList }" var="noAnswer" varStatus="status">
             <tr>
                 <td class="has-text-centered">${status.count}</td>
-                <td><a href="${path}/qna/detail.do?qno=${noAnswerList.qno}" style="color: #000000;">${noAnswer.title}</a></td>
+                <td><a href="${path}/qna/detail.do?qno=${noAnswer.qno}" style="color: #000000;">${noAnswer.title}</a></td>
                 <td class="has-text-centered">${noAnswer.author}</td>
                 <td class="has-text-centered">${noAnswer.resdate}</td>
-                <td class="has-text-centered"><a href="${path}/qna/answerInsert.do?qno=${noAnswerList.qno}" class="button">답변</a></td>
+                <td class="has-text-centered"><a href="${path}/qna/answerInsert.do?qno=${noAnswer.qno}" class="button">답변</a></td>
             </tr>
         </c:forEach>
         <c:if test="${empty noAnswerList}">
@@ -87,7 +87,7 @@
                     </c:when>
                     <c:otherwise>
                         <li>
-                            <a href="${path}/qna/questionList.do?page=${i}" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
+                            <a href="${path}/admin/questionList.do?page=${i}" class="pagination-link" aria-label="Page ${i}" aria-current="page">${i}</a>
                         </li>
                     </c:otherwise>
                 </c:choose>

@@ -11,6 +11,7 @@ public interface QnaService {
     public List<Qna> noAnswerList() throws Exception;
     public Qna qnaDetail(int qno) throws Exception;
     public int getCount(Page page) throws Exception;
+    public int noAnswerCount(Page page) throws Exception;
     public void questionInsert(Qna dto) throws Exception;
     public void answerInsert(Qna dto) throws Exception;
     public void qnaDelete(int qno) throws Exception;

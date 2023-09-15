@@ -34,6 +34,11 @@ public class QnaDAOImpl implements QnaDAO{
     }
 
     @Override
+    public int noAnswerCount(Page page) throws Exception {
+        return sqlSession.selectOne("qna.noAnswerCount", page);
+    }
+
+    @Override
     public void questionInsert(Qna dto) throws Exception {
         sqlSession.insert("qna.questionInsert", dto);
     }

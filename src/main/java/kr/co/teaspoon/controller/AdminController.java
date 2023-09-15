@@ -38,7 +38,7 @@ public class AdminController {
         Page page = new Page();
 
         //페이징에 필요한 데이터 저장
-        int total = qnaService.getCount(page);
+        int total = qnaService.noAnswerCount(page);
         page.makeBlock(curPage, total);
         page.makeLastPageNum(total);
         page.makePostStart(curPage, total);

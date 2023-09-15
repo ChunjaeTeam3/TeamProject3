@@ -36,6 +36,11 @@ public class QnaServiceImpl implements QnaService{
     }
 
     @Override
+    public int noAnswerCount(Page page) throws Exception {
+        return qnaDAO.noAnswerCount(page);
+    }
+
+    @Override
     @Transactional
     public void questionInsert(Qna dto) throws Exception {
         qnaDAO.questionInsert(dto);
