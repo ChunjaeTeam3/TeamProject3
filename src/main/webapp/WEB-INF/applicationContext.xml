@@ -54,6 +54,8 @@
         <bean id="noticeDAO" class="kr.co.teaspoon.dao.NoticeDAOImpl"/>
         <bean id="faqService" class="kr.co.teaspoon.service.FaqServiceImpl"/>
         <bean id="faqDAO" class="kr.co.teaspoon.dao.FaqDAOImpl"/>
+        <bean id="qnaService" class="kr.co.teaspoon.service.QnaServiceImpl"/>
+        <bean id="qnaDAO" class="kr.co.teaspoon.dao.QnaDAOImpl"/>
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />
