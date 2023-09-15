@@ -2,9 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="filterWord">
 
-    <select id="filterWordDetail">
+    <select id="filterList" resultType="kr.co.teaspoon.dto.FilterWord">
+        select * from filterWord
+        order by word LIMIT #{postStart}, #{postCount}
+    </select>
+
+    <select id="getCount" resultType="integer">
+        select count(*) from filterWord
+    </select>
+
+    <select id="filterWordDetail" resultType="kr.co.teaspoon.dto.FilterWord">
         select * from filterWord where word=#{word}
     </select>
 
+    <insert id="filterInsert">
+        insert into filterWord
+        values(default, #{word})
+    </insert>
 
+    <delete id="filterDelete">
+        delete from filterWord
+        where fno=#{fno}
+    </delete>
 </mapper>

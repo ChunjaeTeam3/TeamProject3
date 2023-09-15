@@ -81,7 +81,25 @@ CREATE TABLE COMMENT(
 	FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-SELECT * FROM COMMENT;
+SELECT * FROM comment;
+
+CREATE TABLE filterWord(
+	fno INT PRIMARY KEY AUTO_INCREMENT,
+	word VARCHAR(100) NOT NULL
+);
+
+INSERT INTO filterWord
+VALUES(DEFAULT, '테스트1');
+INSERT INTO filterWord
+VALUES(DEFAULT, '테스트2');
+INSERT INTO filterWord
+VALUES(DEFAULT, '테스트3');
+INSERT INTO filterWord
+VALUES(DEFAULT, '테스트4');
+INSERT INTO filterWord
+VALUES(DEFAULT, '테스트5');
+
+select * from filterWord
 
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
