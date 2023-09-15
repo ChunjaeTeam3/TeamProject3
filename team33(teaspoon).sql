@@ -137,3 +137,18 @@ INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAU
 INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
 
 SELECT * FROM qna;
+
+CREATE TABLE fileInfo(
+  no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  articleno INT,
+  saveFolder VARCHAR(300) NOT NULL,
+  originFile VARCHAR(300) NOT NULL,
+  saveFile VARCHAR(300) NOT NULL);
+
+CREATE TABLE fileboard (
+  articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id varchar(16) NOT NULL,
+  title varchar(100) NOT NULL,
+  content varchar(2000) NOT NULL,
+  regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
