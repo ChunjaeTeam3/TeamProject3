@@ -23,7 +23,7 @@
 	<section class="page-title background-primary is-relative">
 		<div class="container">
 			<div class="has-text-centered">
-				<h1 class="has-text-white font-tertiary"> 공지사항 상세보기 </h1>
+				<h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 공지사항 상세보기 </h1>
 			</div>
 		</div>
 		<!-- background shapes -->
@@ -61,10 +61,10 @@
 		      	</tbody>
 		      </table>
 				<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
-				  <%-- <c:if test='${sid eq "admin"}'> --%>
+				  <c:if test='${sid eq "admin"}'>
 					  <a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">글 삭제</a>
 					  <a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">글 수정</a>
-				  <%-- </c:if> --%>
+				  </c:if>
 				  <a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
 				</div>
 	      </div>

@@ -85,12 +85,30 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="${path}/member/term.do" class="button is-header-button">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a href="" class="button is-light" >
-                        <strong>Log in</strong>
-                    </a>
+                    <c:if test="${sid eq null}">
+                        <a href="${path}/member/term.do" class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a href="${path}/member/login.do" class="button is-light">
+                            Log in
+                        </a>
+                    </c:if>
+                    <c:if test="${sid ne null and sid ne 'admin'}">
+                        <a href="${path}/member/mypage.do" class="button is-primary">
+                            <strong>MyPage</strong>
+                        </a>
+                        <a href="${path}/member/logout.do" class="button is-light">
+                            LogOut
+                        </a>
+                    </c:if>
+                    <c:if test="${sid ne null and sid eq 'admin'}">
+                        <a href="${path}/admin/list.do" class="button is-primary">
+                            <strong>Admin</strong>
+                        </a>
+                        <a href="${path}/member/logout.do" class="button is-light">
+                            LogOut
+                        </a>
+                    </c:if>
                 </div>
 
             </div>

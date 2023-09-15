@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,4 +66,25 @@ public class MemberController {
         out.println(json.toString());
     }
 
+    @RequestMapping("login.do")
+    public String memberLoginForm(Model model) throws Exception {
+        return "/member/login";
+    }
+
+    @RequestMapping(value = "loginpro.do", method = RequestMethod.POST)
+    public String memberLogin(@RequestParam String id, @RequestParam String pw, Model model) throws Exception {
+        boolean ps = memberService.loginCheck(id, pw);
+        if(ps){
+            session.setAttribute("sid", id);
+            return "redirect:/";
+        } else {
+            return "redirect:login.do";
+        }
+    }
+
+    @GetMapping("logout.do")
+    public String memberLogout(HttpSession session) throws Exception {
+        session.invalidate();
+        return "redirect:/";
+    }
 }
