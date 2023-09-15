@@ -11,51 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="414ed467-e370-4c3a-abd9-8afcc3bb55f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommunityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommunityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommunityDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/MemberDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/MemberDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Community.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/CommunityVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommunityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommunityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/MemberServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CommentPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CommunityPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/commentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/communityMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/memberMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityInsert.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityUpdate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/term.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/term.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/answerInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/answerInsert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaEdit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/questionInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/questionInsert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/setting/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/setting/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kr/co/teaspoon/DAOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kr/co/teaspoon/LombokTest2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/team33(teaspoon).sql" beforeDir="false" afterPath="$PROJECT_DIR$/team33(teaspoon).sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/coding/project/TeamProject3/TeamProject3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "8b1dc0e6e12e79ab401aa775b638e116",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/coding/project/TeamProject3/TeamProject3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8b1dc0e6e12e79ab401aa775b638e116&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="TeamProject3" />
@@ -221,6 +178,7 @@
       <updated>1694701945448</updated>
       <workItem from="1694701946456" duration="1291000" />
       <workItem from="1694734750420" duration="5217000" />
+      <workItem from="1694740103777" duration="1387000" />
     </task>
     <servers />
   </component>
