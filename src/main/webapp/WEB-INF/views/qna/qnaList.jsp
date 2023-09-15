@@ -54,17 +54,17 @@
         <c:forEach items="${qnaList }" var="qna" varStatus="status">
         <tr>
             <td class="has-text-centered">${status.count}</td>
-<%--            <!-- 비회원일때 -->--%>
-<%--            <c:if test="${empty sid}">--%>
-<%--                <c:if test="${qna.lev==0}">--%>
-<%--                    <td>${qna.title}</td>--%>
-<%--                </c:if>--%>
-<%--                <c:if test="${qna.lev==1}">--%>
-<%--                    <td>&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</td>--%>
-<%--                </c:if>--%>
-<%--            </c:if>--%>
-<%--            <!-- 회원일때-->--%>
-<%--            <c:if test="${!empty sid}">--%>
+            <!-- 비회원일때 -->
+            <c:if test="${empty sid}">
+                <c:if test="${qna.lev==0}">
+                    <td>${qna.title}</td>
+                </c:if>
+                <c:if test="${qna.lev==1}">
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;⌞${qna.title}</td>
+                </c:if>
+            </c:if>
+            <!-- 회원일때-->
+            <c:if test="${!empty sid}">
                 <c:if test="${qna.lev==0}">
                     <td>
                         <a href="${path}/qna/detail.do?qno=${qna.qno}" style="color: #000000;">${qna.title}</a>
@@ -114,11 +114,11 @@
         </ul>
     </nav>
         <!--회원일 경우만 글 등록 버튼 보이게-->
-<%--    <c:if test="${ !empty sid }">--%>
+    <c:if test="${ !empty sid }">
         <div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
             <a class="button is-primary" href="${path}/qna/questionInsert.do" style="float:right;"> 질문하기</a>
         </div>
-<%--    </c:if>--%>
+    </c:if>
 </div>
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
