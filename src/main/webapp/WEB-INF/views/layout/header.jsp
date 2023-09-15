@@ -23,7 +23,7 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a href="${path}" class="navbar-item" style="color:#fff;">커뮤니티</a>
                     <div class="navbar-dropdown">
-                        <a href="" class="navbar-item">커뮤니티</a>
+                        <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
                         <a href="" class="navbar-item">자료실</a>
                         <a href="" class="navbar-item">식단표</a>
                     </div>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a href="${path}/term.do" class="button is-primary">
+                    <a href="${path}/member/term.do" class="button is-header-button">
                         <strong>Sign up</strong>
                     </a>
                     <a href="" class="button is-light" >

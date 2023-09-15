@@ -3,13 +3,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
-<!--
-// WEBSITE: https://themefisher.com
-// TWITTER: https://twitter.com/themefisher
-// FACEBOOK: https://www.facebook.com/themefisher
-// GITHUB: https://github.com/themefisher/
--->
-
 <!-- 파비콘 설정 -->
 <!-- 표준 파비콘 -->
 <link rel="shortcut icon" type="image/png" href="${path1}/resources/images/tspoon_favicon.png">
@@ -30,9 +23,6 @@
 <link href="${path1}/resources/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
 <link rel="stylesheet" type="text/css" href="${path1}/resources/css/showcase.css" />
-<link rel="icon" type="${path1}/resources/image/png" href="favicon.png" />
-<link rel="shortcut icon" href="${path1}/resources/images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="${path1}/resources/images/favicon.ico" type="image/x-icon">
 <script src="https://kit.fontawesome.com/2828f7885a.js" integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG" crossorigin="anonymous"></script>
 
 <!-- jQuery -->
