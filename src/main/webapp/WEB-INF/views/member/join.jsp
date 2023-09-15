@@ -9,11 +9,6 @@
     <title> 회원가입 </title>
     <c:set var="path" value="${pageContext.request.contextPath}"/>
     <jsp:include page="../setting/head.jsp" />
-
-    <style>
-        h1 { font-size: 40pt; }
-        h3 { font-size: 20pt; }
-    </style>
 </head>
 <body>
 <%@ include file="../layout/header.jsp"%>
