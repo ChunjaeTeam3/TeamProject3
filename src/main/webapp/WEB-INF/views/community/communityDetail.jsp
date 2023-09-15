@@ -87,7 +87,7 @@
     <div class="container">
         <c:forEach var="comment" items="${commentList}">
             <div class="buttons is-right mt-5" style="margin-bottom:-10px">
-                <a href="${path}/comment/delete.do?comNo=${comment.comNo}&cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="button is-small"> 삭제 </a>
+                <a href="${path}/comment/delete.do?comNo=${comment.comNo}&cno=${detail.cno}&page=${curPage}&commentPage=${i}<c:if test="${!empty cate}">&cate=${cate}</c:if><c:if test="${!empty keyword}">&type=${type}&keyword=${keyword}</c:if>" class="button is-small"> 삭제 </a>
             </div>
             <div class="columns">
                 <div class="column">

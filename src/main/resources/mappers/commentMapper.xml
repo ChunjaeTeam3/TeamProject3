@@ -18,4 +18,10 @@
         insert into comment
         values(default, #{cno}, #{author}, default, #{content})
     </insert>
+
+    <!-- comment DELETE -->
+    <delete id="commentDelete">
+        delete from comment
+        where comNo=#{comNo}
+    </delete>
 </mapper>

@@ -31,12 +31,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void communityEdit(Comment dto) throws Exception {
-
-    }
-
-    @Override
     public void communityDelete(int comNo) throws Exception {
-
+        commentDAO.communityDelete(comNo);
     }
 }

@@ -53,6 +53,8 @@ public class CommentController {
         model.addAttribute("type", request.getParameter("type"));
         model.addAttribute("keyword", request.getParameter("keyword"));
 
+        System.out.println(request.getParameter("type") + " " + request.getParameter("keyword"));
+
         // 다른 컨트롤러(CommunityController)의 페이지로 redirect하기
         ModelAndView mav = new ModelAndView();
         mav.setView(new RedirectView(request.getContextPath() + "/community/getCommunity.do"));

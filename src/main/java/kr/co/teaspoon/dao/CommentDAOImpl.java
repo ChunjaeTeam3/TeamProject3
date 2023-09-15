@@ -31,12 +31,7 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
-    public void communityEdit(Comment dto) throws Exception {
-
-    }
-
-    @Override
     public void communityDelete(int comNo) throws Exception {
-
+        sqlSession.delete("comment.commentDelete", comNo);
     }
 }
