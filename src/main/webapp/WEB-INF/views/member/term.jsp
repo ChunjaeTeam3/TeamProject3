@@ -31,7 +31,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <!-- page title -->
-<section class="page-title has-background-primary is-relative">
+<section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
             <h1 class="has-text-white font-tertiary"> Join Us </h1>
@@ -43,7 +43,6 @@
     <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
     <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
     <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 <!-- /page title -->
@@ -965,7 +964,7 @@
     let chk = false;
     in_btn1.addEventListener("click", () => {
        if(ck_item1.checked && ck_item2.checked) {
-           location.href = "${path}/member/join.do";
+           location.href = "${path}/member/join.do?#";
        } else {
            alert("약관 및 개인정보처리 방침에 동의해주세요 :)");
            return;

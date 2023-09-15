@@ -1,17 +1,11 @@
 package kr.co.teaspoon;
 
-
-import org.apache.ibatis.session.SqlSession;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import javax.inject.Inject;
-import java.util.List;
 
 @Repository
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="community">
+    <!-- community 리스트 구하기 -->
+    <select id="communityList" resultType="kr.co.teaspoon.dto.CommunityVO">
+        <![CDATA[
+        select cno, cateName, title, content, author, resdate, cnt from community comm join category cat on(comm.cate=cat.cate)
+        ]]>
+        <where>
+            <if test="type != null">
+                <trim prefixOverrides="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            title LIKE concat('%', #{keyword}, '%')
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            content LIKE concat('%', #{keyword}, '%')
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            author LIKE concat('%', #{keyword}, '%')
+                        </when>
+                    </choose>
+                </trim>
+            </if>
+            <if test="category != null">
+                AND comm.cate = #{category}
+            </if>
+        </where>
+        <![CDATA[
+        ORDER BY cno DESC LIMIT #{postStart}, #{postCount}
+        ]]>
+    </select>
+
+    <!-- community의 전체 개수 구하기 -->
+    <select id="getCount" resultType="integer">
+        select count(*) from community
+        <where>
+            <if test="type != null">
+                <trim prefixOverrides="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            title LIKE concat('%', #{keyword}, '%')
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            content LIKE concat('%', #{keyword}, '%')
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            author LIKE concat('%', #{keyword}, '%')
+                        </when>
+                    </choose>
+                </trim>
+            </if>
+            <if test="category != null">
+                AND cate = #{category}
+            </if>
+        </where>
+    </select>
+
+    <!-- 카테고리 종류 SELECT -->
+    <select id="cateList" resultType="kr.co.teaspoon.dto.Category">
+        select * from category
+    </select>
+
+    <!-- 게시글 상세보기 -->
+    <select id="communityDetail" resultType="kr.co.teaspoon.dto.CommunityVO">
+        select cno, cateName, title, content, author, resdate, cnt
+        from community com join category cat on (com.cate = cat.cate)
+        where cno = #{cno}
+    </select>
+
+    <!-- 조회수 처리 -->
+    <update id="cntCount">
+        update community
+        set cnt = cnt + 1
+        where cno = #{cno}
+    </update>
+
+    <!-- 새로운 글 등록 -->
+    <insert id="communityInsert">
+        insert into community(cate, title, content, author)
+        values(#{cate}, #{title}, #{content}, #{author})
+    </insert>
+
+    <!-- 게시글 수정 -->
+    <update id="communityEdit">
+        update community
+        set title = #{title}, content = #{content}
+        where cno = #{cno}
+    </update>
+
+    <!-- 게시글 삭제 -->
+    <delete id="communityDelete">
+        delete from community
+        where cno = #{cno}
+    </delete>
+</mapper>

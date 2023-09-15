@@ -19,7 +19,7 @@
 <%@ include file="../layout/header.jsp"%>
 
 <!-- page title -->
-<section class="page-title has-background-primary is-relative">
+<section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
             <h1 class="has-text-white font-tertiary"> Join Us </h1>
@@ -31,7 +31,6 @@
     <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
     <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/dots-group-cyan.png" alt="illustrations" class="bg-shape-6">
     <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 <!-- /page title -->
@@ -43,11 +42,11 @@
                 <div class="has-background-white card-content shadow-down p-6">
                     <h3 class="has-text-centered"> 회원가입 </h3>
                     <hr>
-                    <form name="frm1" id="frm1" action="${path}/member/insert.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
+                    <form name="frm1" id="frm1" action="${path}/member/join.do" class="columns is-multiline is-centered" method="post" onsubmit="return joinCheck(this)">
                         <div class="column is-10-tablet">
                             <label for="id" class="label"> 아이디 </label>
                             <div class="columns">
-                                <div class="column is-10-tablet">
+                                <div class="column is-four-fifths">
                                     <div class="control">
                                         <input type="text" class="input" id="id" name="id" placeholder="영문 소문자, 숫자를 혼용하여 아이디를 입력해주세요"
                                                pattern="^[a-z0-9]{8,16}" maxlength="16" autocomplete="off" autofocus required>
@@ -55,8 +54,8 @@
                                         <p id="msg" style="color: red"></p>
                                     </div>
                                 </div>
-                                <div class="column is-2-tablet pl-0">
-                                    <button type="button" class="button is-success" onclick="idCheck()"> 중복 확인 </button>
+                                <div class="column">
+                                    <button type="button" class="button is-primary is-fullwidth" onclick="idCheck()"> 중복 확인 </button>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +92,29 @@
                                 <input type="tel" id="tel" name="tel" placeholder="전화번호를 입력해주세요" class="input" autocomplete="off" required>
                             </div>
                         </div>
+                        <div class="column is-10-tablet">
+                            <label for="tel" class="label"> 주소 </label>
+                            <div class="control">
+                                <input type="text" id="addr1" name="addr1" placeholder="기본 주소를  입력해주세요" class="input" autocomplete="off" readonly>
+                                <input type="text" id="addr2" name="addr2" placeholder="상세 주소를 입력해주세요" class="input mt-3" autocomplete="off" required>
+                                <div class="columns mt-1">
+                                    <div class="column is-9-tablet">
+                                        <div class="control">
+                                            <input type="text" id="postcode" name="postcode" placeholder="우편번호를 입력해주세요" class="input" autocomplete="off" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="column is-3-tablet pl-0">
+                                        <button type="button" class="button is-link is-fullwidth" onclick="findAddr()"> 우편번호 검색 </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-10-tablet">
+                            <label for="tel" class="label"> 생년월일 </label>
+                            <div class="control">
+                                <input type="date" id="birth" name="birth" placeholder="생년월일을 입력해주세요" class="input" autocomplete="off" required>
+                            </div>
+                        </div>
                         <div class="column is-10-tablet is-10">
                             <button type="submit" class="button is-primary is-fullwidth"> 회원가입 </button>
                             <p class="has-text-centered mt-4"> 이미 회원이신가요? <a href="${path}/login.do"> 로그인하기 </a> </p>
@@ -124,27 +146,31 @@
             return;
         }
 
-        var params = { id: $("#id").val() }
+        let params = { id:$("#id").val() };
         $.ajax({
-            url:"${path }/member/idCheck.do",
-            type:"post",
-            dataType:"json",
-            data:params,
-            success:function(result){
-                console.log(result.result);
-                var idChk = result.result;
-                if(idChk==false){
+            url: "${path}/member/idCheck.do",
+            type: "post",
+            dataType: "json",
+            data: params,
+            success:function(data) {
+                console.log("HI");
+                let idPass = data.result;
+                if(!idPass) {
                     $("#id_chk").val("no");
-                    $("#msg").html("<strong style='color:red'>기존에 사용되고 있는 아이디 입니다. 다시 입력하시기 바랍니다.</strong>");
+                    $("#msg").text("기존에 사용되고 있는 아이디입니다.");
                     $("#id").focus();
-                } else if(idChk==true){
+                } else if(idPass) {
                     $("#id_chk").val("yes");
-                    $("#msg").html("<strong style='color:blue'>사용가능한 아이디 입니다.</strong>");
-                } else if(idck==""){
-                    $("#msg").html("<strong>아이디가 확인되지 않았습니다. 다시 시도해주시기 바랍니다.</strong>");
+                    $("#msg").text("사용 가능한 아이디입니다.");
+                } else if(idPass == "") {
+                    $("#msg").text("아이디가 확인되지 않았습니다. 다시 시도해주세요.")
                 }
+            },
+            error:function(res) {
+                alert("아이디 중복 확인에 실패했습니다. 잠시 후 다시 시도해주세요.");
+                console.log(res.responseText);
             }
-        });
+        })
     }
 </script>
 <script>
@@ -160,7 +186,24 @@
             return false;
         }
     }
+    function findAddr(){
+        new daum.Postcode({
+            oncomplete:function(data){
+                console.log(data);
+                var roadAddr = data.roadAddress;
+                var jibunAddr = data.jibunAddress;
+                document.getElementById("postcode").value = data.zonecode;
+                if(roadAddr !== ''){
+                    document.getElementById("addr1").value = roadAddr;
+                } else if(jibunAddr !== ''){
+                    document.getElementById("addr1").value = jibunAddr;
+                }
+                document.getElementById("addr2").focus();
+            }
+        }).open();
+    }
 </script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <form action="#">
     <button id="toTop" title="Go to top">

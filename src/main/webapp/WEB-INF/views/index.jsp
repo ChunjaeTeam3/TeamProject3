@@ -9,27 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>TeaSpoon</title>
-    <jsp:include page="setting/head.jsp"></jsp:include>
+    <jsp:include page="./setting/head.jsp"></jsp:include>
     <style>
         button.player_btn {border: none;background-color: #ffffff;}
     </style>
 
 </head>
 <body>
-
     <!--헤더 영역 시작 -->
     <jsp:include page="layout/header.jsp" />
     <!--헤더 영역 끝 -->
 
-    <!-- 헤더 배너 영역 시작 -->
-    <section class="hero-area has-background-primary" id="parallax">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-11-desktop is-offset-1-desktop">
-                    <h1 class="has-text-white font-tertiary">Hi! I’m <br> Christoher <br> UX designer</h1>
-                </div>
-            </div>
-        </div>
+    <!-- 헤더 사이드 영역 시작 -->
+    <section class="hero-area background-primary" id="parallax" style="height:780px">
         <div class="layer-bg is-full">
             <img class="image is-full" src="${path}/resources/images/illustrations/leaf-bg.png" alt="bg-shape">
         </div>
@@ -59,9 +51,9 @@
         </div>
         <!-- social icon -->
         <div class="list list-hero-social">
+            <a class="list-item has-text-white" href="https://github.com/ChunjaeTeam3/TeamProject3"><i class="ti-github"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-facebook"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-instagram"></i></a>
-            <a class="list-item has-text-white" href="#"><i class="ti-dribbble"></i></a>
             <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
         </div>
         <!-- /social icon -->
