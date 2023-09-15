@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -65,9 +66,11 @@ public class QnaController {
     //Question 글쓰기 처리
     @PostMapping("questionInsert.do")
     public String getQuestionInsertPro(HttpServletRequest request, Model model) throws Exception {
+        HttpSession session = request.getSession();
         Qna dto = new Qna();
         dto.setTitle(request.getParameter("title"));
         dto.setContent(request.getParameter("content"));
+        dto.setAuthor((String) session.getAttribute("sid"));
         qnaService.questionInsert(dto);
         return "redirect:list.do";
     }
@@ -112,10 +115,12 @@ public class QnaController {
     //답변 등록 처리
     @PostMapping("answerInsert.do")
     public String getAnswerInsertPro(HttpServletRequest request, Model model) throws Exception {
+        HttpSession session = request.getSession();
         Qna dto = new Qna();
         dto.setTitle(request.getParameter("title"));
         dto.setContent(request.getParameter("content"));
         dto.setPar(Integer.parseInt(request.getParameter("par")));
+        dto.setAuthor((String) session.getAttribute("sid"));
         qnaService.answerInsert(dto);
         return "redirect:list.do";
     }

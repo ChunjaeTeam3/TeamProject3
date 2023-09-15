@@ -62,7 +62,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <textarea class="textarea" name="content" id="content" placeholder="답변을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;" required</textarea>
+                                <textarea class="textarea" name="content" id="content" placeholder="답변을 입력하시오" rows="8" cols="100" maxlength="800" style="resize: none;" required></textarea>
                             </p>
                         </div>
                     </div>

@@ -90,10 +90,10 @@
     <!-- pagnation -->
     <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
         <c:if test="${curPage > 5}">
-            <a href="${path}/notice/list.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
+            <a href="${path}/qna/list.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
         </c:if>
         <c:if test="${page.blockLastNum < page.totalPageCount}">
-            <a href="${path}/notice/list.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
+            <a href="${path}/qna/list.do?page=${page.blockLastNum + 1}" class="pagination-next">Next page</a>
         </c:if>
 
         <ul class="pagination-list">

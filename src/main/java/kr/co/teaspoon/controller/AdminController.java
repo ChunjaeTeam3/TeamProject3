@@ -30,7 +30,7 @@ public class AdminController {
         return "/admin/filterInsert";
     }
 
-    @GetMapping("list.do")
+    @GetMapping("questionList.do")
     public String getNoAnswerList(HttpServletRequest request, Model model) throws Exception {
         //Page
         int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
