@@ -19,6 +19,11 @@ public class QnaDAOImpl implements QnaDAO{
     }
 
     @Override
+    public List<Qna> noAnswerList() throws Exception {
+        return sqlSession.selectList("qna.noAnswerList");
+    }
+
+    @Override
     public Qna qnaDetail(int qno) throws Exception {
         return sqlSession.selectOne("qna.qnaDetail", qno);
     }
@@ -26,6 +31,11 @@ public class QnaDAOImpl implements QnaDAO{
     @Override
     public int getCount(Page page) throws Exception {
         return sqlSession.selectOne("qna.getCount",page);
+    }
+
+    @Override
+    public int noAnswerCount(Page page) throws Exception {
+        return sqlSession.selectOne("qna.noAnswerCount", page);
     }
 
     @Override

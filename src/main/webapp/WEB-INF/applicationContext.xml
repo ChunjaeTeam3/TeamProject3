@@ -56,6 +56,10 @@
         <bean id="faqDAO" class="kr.co.teaspoon.dao.FaqDAOImpl"/>
         <bean id="qnaService" class="kr.co.teaspoon.service.QnaServiceImpl"/>
         <bean id="qnaDAO" class="kr.co.teaspoon.dao.QnaDAOImpl"/>
+        <bean id="fileboardService" class="kr.co.teaspoon.service.FileboardServiceImpl"/>
+        <bean id="fileboard" class="kr.co.teaspoon.dao.FileboardDAOImpl"/>
+        <bean id="fileInfoService" class="kr.co.teaspoon.service.FileInfoServiceImpl"/>
+        <bean id="fileInfo" class="kr.co.teaspoon.dao.FileInfoDAOImpl"/>
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

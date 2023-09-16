@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fileboard">
+    <!-- 자료실 목록 -->
+    <select id="fileboardList" resultType="kr.co.teaspoon.dto.Fileboard">
+        select * from fileboard order by regdate desc
+    </select>
+    <!-- 자료실 상세보기 -->
+    <select id="fileboardDetail" resultType="kr.co.teaspoon.dto.Fileboard">
+        select * from fileboard where articleno=#{articleno}
+    </select>
+    <!-- 글 수 카운트 -->
+    <select id="totalCount" resultType="integer" >
+        select count(*) from fileboard
+    </select>
+    <!-- 자료실 글 추가 -->
+    <insert id="writeArticle" parameterType="fileboard">
+        insert into fileboard (id, title, content, regdate)
+        values (#{id}, #{title}, #{content}, default)
+        <selectKey resultType="int" keyProperty="articleno" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+    <!--글 삭제-->
+    <delete id="fileboardDelete">
+        delete from fileboard where articleno=#{articleno}
+    </delete>
+    <!--	글수정-->
+    <update id="fileboardEdit">
+        update fileboard set title=#{title}, content=#{content} where articleno=#{articleno}
+    </update>
+
+    <!-- 파일 추가 -->
+    <insert id="fileRegister" parameterType="fileboard">
+        insert into fileinfo (articleno, savefolder, originfile, savefile)
+        values
+        <foreach collection="fileInfos" item="fileinfo" separator=" , ">
+            (#{articleno}, #{fileinfo.saveFolder}, #{fileinfo.originFile}, #{fileinfo.saveFile})
+        </foreach>
+    </insert>
+    <resultMap type="fileboard" id="fileboardList">
+        <result property="articleno" column="articleno"/>
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="regdate" column="regdate"/>
+        <collection property="fileInfos" column="articleno" javaType="list" ofType="FileInfo" select="fileInfoList"/>
+    </resultMap>
+    <!-- 업로드 파일을 List로 출력 -->
+    <select id="listArticle" parameterType="map" resultMap="fileboardList">
+        select articleno, id, title, content, regdate
+        from fileboard
+        <if test="word != null and word != ''">
+            <if test="key == 'title'">
+                where rirle like concat('%', #{word}, '%')
+            </if>
+            <if test="key != 'title'">
+                where ${key} = #{word}
+            </if>
+        </if>
+        order by articleno desc
+        limit #{start}, #{spp}
+    </select>
+    <select id="fileInfoList" resultType="FileInfo">
+        select savefolder, originfile, savefile
+        from fileinfo
+        where articleno = #{articleno}
+    </select>
+
+</mapper>

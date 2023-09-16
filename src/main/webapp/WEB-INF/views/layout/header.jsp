@@ -65,7 +65,7 @@
                     <a href="${path}" class="navbar-item" style="color:#fff;">커뮤니티</a>
                     <div class="navbar-dropdown">
                         <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
-                        <a href="" class="navbar-item">자료실</a>
+                        <a href="${path}/fileboard/list.do" class="navbar-item">자료실</a>
                         <a href="" class="navbar-item">식단표</a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         </a>
                     </c:if>
                     <c:if test="${sid ne null and sid ne 'admin'}">
-                        <a href="${path}/member/mypage.do" class="button is-primary">
+                        <a href="${path}/member/login2.do" class="button is-primary">
                             <strong>MyPage</strong>
                         </a>
                         <a href="${path}/member/logout.do" class="button is-light">
