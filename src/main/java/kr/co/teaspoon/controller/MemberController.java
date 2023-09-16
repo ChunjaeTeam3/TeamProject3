@@ -39,7 +39,7 @@ public class MemberController {
     }
 
     @RequestMapping(value="join.do", method=RequestMethod.POST)
-    public String joinPro(ServletRequest request, ServletResponse response, Model model) {
+    public String joinPro(ServletRequest request, ServletResponse response, Model model) throws Exception {
         Member member = new Member();
         member.setId(request.getParameter("id"));
         member.setPw(request.getParameter("pw"));

@@ -92,9 +92,8 @@ CREATE TABLE filterWord(
 
 select * from filterWord
 
-SELECT * 
-FROM community
-WHERE title LIKE (SELECT word FROM 
+SELECT * FROM community
+WHERE title LIKE CONCAT('%','욕설','%') OR content LIKE CONCAT('%','욕설','%');
 
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
