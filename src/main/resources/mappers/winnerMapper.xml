@@ -20,4 +20,9 @@
         select count(*) from apply where eno=#{eno}
     </select>
 
+    <!-- 당첨자 발표 글쓰기 -->
+    <insert id="winnerInsert">
+        insert into winner values (default, #{eno}, #{title}, #{content}, #{author}, default)
+    </insert>
+
 </mapper>

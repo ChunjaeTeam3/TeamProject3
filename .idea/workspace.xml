@@ -10,7 +10,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3339ef9a-b578-4f22-a51b-5cde239b1b7a" name="Changes" comment="" />
+    <list default="true" id="3339ef9a-b578-4f22-a51b-5cde239b1b7a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerListDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerListDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/WinnerListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/WinnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/WinnerListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/WinnerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/winnerListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/winnerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,8 +31,8 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,6 +53,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/kim/project/tproj/TeamProject3",
@@ -162,6 +173,7 @@
       <workItem from="1694774397052" duration="680000" />
       <workItem from="1694994836331" duration="48000" />
       <workItem from="1695000058998" duration="18601000" />
+      <workItem from="1695047849796" duration="480000" />
     </task>
     <servers />
   </component>
@@ -172,7 +184,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerListDAOImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/WinnerDAOImpl.java</url>
           <line>24</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>

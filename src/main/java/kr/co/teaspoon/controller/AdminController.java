@@ -5,7 +5,7 @@ import kr.co.teaspoon.dto.Qna;
 import kr.co.teaspoon.dto.WinnerList;
 import kr.co.teaspoon.service.FilterWordService;
 import kr.co.teaspoon.service.QnaService;
-import kr.co.teaspoon.service.WinnerListService;
+import kr.co.teaspoon.service.WinnerService;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class AdminController {
     @Autowired
     private QnaService qnaService;
     @Autowired
-    private WinnerListService winnerListService;
+    private WinnerService winnerListService;
 
     @RequestMapping("filterInsert.do")
     public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
