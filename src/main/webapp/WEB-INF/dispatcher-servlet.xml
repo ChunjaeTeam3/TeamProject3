@@ -27,6 +27,7 @@
     <resources mapping="/filboard/**" location="/WEB-INF/views/fileboard" />
     <resources mapping="/event/**" location="/WEB-INF/views/event" />
     <resources mapping="/apply/**" location="/WEB-INF/views/apply" />
+    <resources mapping="/news/**" location="/WEB-INF/views/news" />
 
     <!-- 컨트롤러에서 던진 URL : /notice/noticeList -->
     <!-- 실제 존재하는 URL : /WEB-INF/views/notice/noticeList.jsp -->
