@@ -219,11 +219,12 @@ create table winnerList(
 	foreign key(id) references member(id) on delete cascade);
 	
 
-insert into winnerList select * from apply where eno=1 order by rand() limit 5;
+insert into winnerList select * from apply where eno=2 AND eno NOT IN (SELECT distinct eno FROM winnerList) order by rand() limit 5;
 
-select * from apply where eno=1 order by rand() limit 5;
+select * from apply where eno=2 AND eno NOT IN (SELECT distinct eno FROM winnerList) order by rand() limit 5;
 
-SELECT * FROM winnerList WHERE eno=1;
+
+SELECT * FROM winnerList;
 
 -- select distinct id, appno, eno, NAME, tel from apply where eno=1 order by rand() limit 5;
 
