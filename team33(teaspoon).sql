@@ -29,7 +29,8 @@ VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, N
 UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
-SELECT * FROM MEMBER;
+SELECT * FROM member;
+
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
 	cate VARCHAR(5) PRIMARY KEY NOT NULL,
@@ -42,13 +43,12 @@ INSERT INTO category VALUES('B', '교육정보');
 INSERT INTO category VALUES('C', '교재/학원 추천');
 INSERT INTO category VALUES('D', '진로상담');
 
-
 -- 커뮤니티 게시판 테이블 생성
 CREATE TABLE community(
     cno INT PRIMARY KEY AUTO_INCREMENT,
     cate VARCHAR(5) NOT NULL,
     title VARCHAR(200) NOT NULL,
-    content VARCHAR(1000),
+    content VARCHAR(1500),
     author VARCHAR(20),
     resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
     cnt INT DEFAULT 0,
@@ -93,7 +93,7 @@ CREATE TABLE filterWord(
 	word VARCHAR(100) NOT NULL
 );
 
-select * from filterWord
+select * from filterword;
 
 SELECT * FROM community
 WHERE title LIKE CONCAT('%','욕설','%') OR content LIKE CONCAT('%','욕설','%');
@@ -121,7 +121,6 @@ CREATE TABLE faq (
    answer VARCHAR(1000) NOT NULL,
    cnt INT DEFAULT 0 NOT NULL
 );
-
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다1', '답변입니다1');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다2', '답변입니다2');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다3', '답변입니다3');
@@ -154,3 +153,20 @@ INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAU
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
 
+-- 출석체크 테이블 생성
+CREATE TABLE attendance (
+	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id VARCHAR(20),
+	attend DATE DEFAULT current_date
+);
+
+SELECT * FROM attendance;
+
+INSERT INTO attendance(id, attend)
+VALUES('shin', '2023-09-08');
+
+SELECT day(attend) AS attendDay FROM attendance
+WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
+
+SELECT CONCAT(' ',day(attend),' ') AS attendDay FROM attendance
+WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);

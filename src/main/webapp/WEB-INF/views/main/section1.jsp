@@ -3,25 +3,35 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!-- section1(소개) 영역 시작 -->
-<section class="section has-background-primary is-relative testimonial-bg-shapes" id="about-me">
+<section class="section is-relative testimonial-bg-shapes mb-100" id="about-me">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="section-title has-text-white" style="margin-bottom:50px;font-weight:bold; ">소개</h2>
+            <br><br>
+            <h2 class="section-title m-0" style="font-weight:bold"> 티스푼 소개 </h2>
+            <p class="mb-100"> 티스푼은 학부모를 위한 교육 플랫폼으로, 효율적인 학습 관리와 개인 맞춤형 교육을 제공합니다. </p>
         </div>
-        <div class="columns is-centered">
+        <div class="columns is-centered mb-100">
             <div class="column is-10 testimonial-slider">
                 <div class="has-text-centered testimonial-content">
-                    <i class="ti-quote-right has-text-white icon mb-20 is-inline-block"></i><br><br>
-                    <p class="has-text-white mb-20">교육 정보가 한눈에, 학습 관리가 한번에 스마트한 학부모를 위한 토탈 교육 플랫폼! TSPOON로 완성하다.
-                        <br><strong style="color:#413f3f; font-weight: bold;">내 아이의 하루를 담다! 부모의 하루를 열다!</strong>
-                        아이 교육에 필요한 정보만을 한 번에 담은 우리 아이 통합 관리 플랫폼!어느덧 성큼 다가온 새학기!근심 없는 학부모가 되기 위한 꼼꼼한 준비!
-                        입학 전 무엇을 어떻게 준비해야 하는지 티스푼과 함께 살펴볼까요?천재그룹 계열사의 정보를 한번에 확인
-                        <strong style="color:#413f3f; font-weight: bold;">다른 알림장 앱 다운로드 없이 공지사항을 한번에 체크할 수 있습니다.</strong>
-                        우리 아이 학교의 급식정보를 편하게 확인할 수 있습니다.</p>
-                    <img class="image is-rounded is-inline-block mb-20" src="${path}/resources/images/tspoon.png" alt="티스푼 이미지">
-                    <h4 class="has-text-white" style="font-weight: bold;">Tspoon</h4><br>
-                    <h6 class="has-text-light mb-20" style="font-weight: bold;">천재교육, 티스푼</h6>
+                    <i class="fa-solid fa-quote-left fa-2xl mb-50"></i>
+                    <h3 class="mb-10"> 한눈에 교육 정보를 체계적으로, 학습 관리를 똑똑하게! </h3>
+                    <h4 class="mb-50"> 스마트한 학부모를 위한 토탈 교육 플랫폼, 티스푼🚀 </h4>
+                    <i class="fa-solid fa-quote-right fa-2xl"></i>
                 </div>
+            </div>
+        </div>
+        <div class="columns is-centered">
+            <div class="column has-text-centered rounded-lg p-5" style="border: 3px solid #ddd; margin: 0px 10px;">
+                <i class="fa-solid fa-children fa-flip fa-2xl mb-40" style="color: #007cf0;"></i><br>
+                아이 교육의 핵심, 티스푼과 함께!
+            </div>
+            <div class="column has-text-centered rounded-lg p-5" style="border: 3px solid #ddd; margin: 0px 10px;">
+                <i class="fa-solid fa-school fa-flip fa-2xl mb-40" style="color: #007cf0;"></i><br>
+                티스푼과 함께 대비하는 새학기!
+            </div>
+            <div class="column has-text-centered rounded-lg p-5" style="border: 3px solid #ddd; margin: 0px 10px;">
+                <i class="fa-solid fa-circle-info fa-flip fa-2xl mb-40" style="color: #007cf0;"></i><br>
+                쉽게 제공받는 천재교육 계열사의 정보,<br>티스푼에서 한 번에 확인해요!
             </div>
         </div>
     </div>

@@ -41,17 +41,25 @@
                         <th class="has-text-centered"> 작성자 </th>
                         <th class="has-text-centered"> 작성일 </th>
                         <th class="has-text-centered"> 조회수 </th>
+                        <th class="has-text-centered"> 비고 </th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="item" items="${list}">
                         <tr onclick="location.href='${path}/community/getCommunity.do?cno=${item.cno}'" style="cursor: pointer">
-                            <th class="has-text-centered">${item.cno}</th>
-                            <td class="has-text-centered">${item.cateName}</td>
-                            <td width="300">${item.title}</td>
-                            <td class="has-text-centered">${item.author}</td>
-                            <td class="has-text-centered">${item.resdate}</td>
-                            <td class="has-text-centered" width="80">${item.cnt}</td>
+                            <th class="has-text-centered" style="line-height: 40px">${item.cno}</th>
+                            <td class="has-text-centered" style="line-height: 40px">${item.cateName}</td>
+                            <td width="300" style="line-height: 40px">${item.title}</td>
+                            <td class="has-text-centered" style="line-height: 40px">${item.author}</td>
+                            <td class="has-text-centered" style="line-height: 40px">${item.resdate}</td>
+                            <td class="has-text-centered" width="80" style="line-height: 40px">${item.cnt}</td>
+                            <td class="has-text-centered" width="80">
+                                <a href="${path}/admin/communityDelete.do?cno=${item.cno}&page=${curPage}" class="button is-danger is-outlined mb-0">
+                                    <span class="icon is-small" style="font-size: 20px">
+                                      <i class="fas fa-times"></i>
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                     </c:forEach>
                     <c:if test="${empty list}">

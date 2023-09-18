@@ -3,42 +3,49 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <!-- section2(소개) 영역 시작 -->
-<section class="section" id="services">
+<section class="section" id="services" style="background-color: #0f2e41;">
     <div class="container">
         <div class="has-text-centered">
-            <h2 class="section-title" style="font-weight: bold;">서비스</h2>
+            <br><br>
+            <h2 class="section-title has-text-white mb-20" style="font-weight: bold;">티스푼만의 서비스</h2>
         </div>
-        <div class="columns is-multiline">
+
+        <div class="has-text-centered">
+            <img src="${path}/resources/images/about/service.png" alt="service" class="mb-40"/>
+        </div>
+
+        <div class="has-text-centered">
+            <h3 class="has-text-white mb-20"> 서비스로 이동 </h3>
+        </div>
+
+        <div class="columns is-multiline mb-50">
             <div class="column">
-                <div class="card hover-shadow shadow">
-                    <div class="card-content has-text-centered">
-                        <img src="${path}/resources/images/icons/board2.png" alt="board" class="ti-palette icon mb-10 is-inline-block"/>
-                        <h4 class="mb-20"  style="font-weight: bold;">게시판</h4>
-                        <p>공지사항을 한번에 체크할 수 있습니다.</p>
+                <div class="card card hover-wrapper">
+                    <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/community/list.do'" style="cursor:pointer;">
+                        <img src="${path}/resources/images/icons/community.png" alt="community" class="ti-palette icon mb-10 is-inline-block"/>
+                        <h4 class="mb-20"  style="font-weight: bold;"> 학부모 커뮤니티 </h4>
+                        <p> 학부모를 위한 손쉬운 정보 공유 공간 </p>
                     </div>
                 </div>
             </div>
             <div class="column">
-                <div class="card hover-shadow shadow">
-                    <div class="card-content has-text-centered">
+                <div class="card hover-wrapper">
+                    <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/attendance/attendance.do'" style="cursor:pointer;">
                         <img src="${path}/resources/images/icons/check1.png" alt="dailycheck" class="ti-palette icon mb-10 is-inline-block" />
                         <h4 class="mb-20" style="font-weight: bold;">출석체크</h4>
-                        <p>매일 댓글 남기기로 출석체크를 할 수 있습니다.</p>
+                        <p>매일 버튼을 눌러 출석체크를 할 수 있습니다.</p>
                     </div>
                 </div>
             </div>
             <div class="column">
-                <div class="card hover-shadow shadow">
-                    <div class="card-content has-text-centered">
-                        <img src="${path}/resources/images/icons/community.png" alt="community" class="ti-palette icon mb-10 is-inline-block"/>
-                        <h4 class="mb-20"  style="font-weight: bold;">커뮤니티</h4>
-                        <p>많은 학부모들과 교류할 수 있습니다.</p>
+                <div class="card hover-wrapper">
+                    <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/attendance/attendance.do'" style="cursor:pointer;">
+                        <img src="${path}/resources/images/icons/board2.png" alt="board" class="ti-palette icon mb-10 is-inline-block"/>
+                        <h4 class="mb-20"  style="font-weight: bold;">이벤트</h4>
+                        <p>이벤트에 참여해 무료 도서를 획득할 수 있습니다.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="width: 100%;">
-            <img src="${path}/resources/images/about/service.png" alt="service"/>
         </div>
     </div>
 </section>
