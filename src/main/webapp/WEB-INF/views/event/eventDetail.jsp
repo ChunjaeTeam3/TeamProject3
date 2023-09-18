@@ -62,48 +62,17 @@
             </table>
             <c:if test='${sid ne null}'>
             <div class="container">
-            <div>
-                <p style="font-weight: bold;text-align:center; font-size:35px;">이벤트 신청</p>
-            </div>
-                <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
-                    <div class="field-label is-normal">
-                        <label class="label">이름</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <p class="control">
-                                <input type="text" name="name" id="name" placeholder="이름 입력" maxlength="98" class="input" required>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
-                    <div class="field-label is-normal">
-                        <label class="label">전화번호</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <p class="control">
-                                <input type="tel" name="tel" id="tel" placeholder="전화번호 입력" maxlength="98" class="input" required>
-                            </p>
-                        </div>
-                    </div>
-                </div>
                 <input type="hidden" name="id" id="id" value="sid">
                 <input type="hidden" id="eno" name="eno" value="${event.eno}">
                 <input type="hidden" name="app_chk" id="app_chk" value="no">
-                <button type="button" id="ck_btn" class="button is-fullwidth is-primary" onclick="appcheck()" style="height:72px">아이디 중복 체크</button>
+                <button type="button" id="ck_btn" class="button is-fullwidth is-primary" onclick="appcheck()" style="height:72px">신청하기</button>
+            </div>
             <script>
                 function appCheck() {
-                    if($("#name").val() == "" || $("#tel").val() == "") {
-                        $("#msg").html("신청서를 입력한 후 진행해주세요");
-                        $("#name").focus();
-                        return;
-                    }
-                    var child;
-                    let params = { id:sid, name:$("#name").val(), tel:$("#tel").val(), eno:${event.eno } };
+                    var w = window.open("about:blank","_blank");
+                    let params = { id: $("#id").val("sid") };
                     $.ajax({
-                        url: "${path}/event/appCheck.do",
+                        url: "${path}/apply/appCheck.do",
                         type: "post",
                         dataType: "json",
                         data: params,
@@ -112,14 +81,14 @@
                             let appPass = data.result;
                             if(!appPass) {
                                 $("#app_chk").val("no");
-                                alert("이미 신청된 참여자입니다.");
-                            } else if(appPass) {
-                                $("#app_chk").val("yes");
-                                child = window.open("${path}/apply/insert.do?id="+sid, "child", "width=250, height=100");
+                                alert("이미 신청한 회원입니다.");
+                            } else if (idPass) {
+                                $("#id_chk").val("yes");
+                                w.location.href = "${path}/apply/insert.do";
                             }
                         },
                         error:function(res) {
-                            alert("신청 실패했습니다. 잠시 후 다시 시도해주세요.");
+                            alert(" 잠시 후 다시 시도해주세요.");
                             console.log(res.responseText);
                         }
                     })

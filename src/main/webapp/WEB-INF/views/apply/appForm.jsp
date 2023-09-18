@@ -19,8 +19,8 @@
     <div>
         <p style="font-weight: bold;text-align:center; font-size:35px;">이벤트 신청</p>
     </div>
-    <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
-        <div class="field-label is-normal">
+    <div class="field is-horizontal" style="height: 60px; margin-bottom:50px;">
+        <div class="field-label is-normal" >
             <label class="label">이름</label>
         </div>
         <div class="field-body">
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
+    <div class="field is-horizontal" style="height: 60px; margin-bottom:50px;">
         <div class="field-label is-normal">
             <label class="label">전화번호</label>
         </div>
@@ -45,8 +45,8 @@
     </div>
     <input type="hidden" name="id" id="id" value="sid">
     <input type="hidden" id="eno" name="eno" value="${event.eno}">
-    <input type="hidden" name="app_chk" id="app_chk" value="no">
-    <button type="button" id="ck_btn" class="button is-fullwidth is-primary" onclick="appcheck()" style="height:72px">아이디 중복 체크</button>
+    <input type="submit" class="button is-fullwidth is-primary" style="height:72px" value="신청">
+    </form>
 
 </body>
 </html>
