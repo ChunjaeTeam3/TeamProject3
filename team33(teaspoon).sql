@@ -137,7 +137,18 @@ CREATE TABLE fileboard (
   content varchar(2000) NOT NULL,
   regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-<<<<<<< HEAD
+
+-- QNA
+CREATE TABLE qna(
+                    qno int PRIMARY KEY AUTO_INCREMENT,   			-- 번호
+                    title VARCHAR(100) NOT NULL,   					-- 제목
+                    content VARCHAR(1000) NOT NULL,   				-- 내용
+                    author VARCHAR(16),   								-- 작성자
+                    resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
+                    lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
+                    par INT,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
+                    FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
+);
 
 INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, DEFAULT,1);
 INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
@@ -146,5 +157,69 @@ SELECT * FROM qna;
 
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
-=======
->>>>>>> 74a12ef5fb4ce32a744e8fe2a2342d77a52b5622
+
+SELECT COUNT(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
+
+--이벤트글
+CREATE TABLE event (
+	eno int  PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(1000) NOT NULL,
+	STATUS VARCHAR(5) CHECK(status IN(0, 1)),
+	sdate DATE,
+	edate DATE,
+	author VARCHAR(16),
+	regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	cnt INT DEFAULT 0 NOT NULL
+);
+
+SELECT * FROM EVENT;
+
+INSERT INTO EVENT VALUES(DEFAULT, '이벤트1','이벤트1내용', 1, 20230917,20230918,'admin',DEFAULT, DEFAULT);
+
+-- 회원의 이벤트 접수
+create table apply(
+	appno int AUTO_INCREMENT PRIMARY KEY,		--접수 번호
+	eno int not NULL,									--이벤트글 번호
+	id varchar(100) not NULL,						--당첨자 아이디
+	name varchar(100) not null,					--당첨자 이름
+	tel varchar(13),									--전화번호	
+	foreign key(eno) references event(eno) on delete cascade,
+	foreign key(id) references member(id) on delete cascade);
+	
+select * from apply order by rand() limit 5;
+
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk111', '김보경', '01011111111');
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk222', '김보경', '01022222222');
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk333', '김보경', '01033333333');
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk444', '김보경', '01044444444');
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk555', '김보경', '01055555555');
+INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk666', '김보경', '01066666666');
+
+
+-- 당첨자 리스트
+create table winnerList(
+	appno int auto-increment primary key not null,			--접수 번호
+	eno int not NULL,													--이벤트글 번호
+	id varchar(100) not NULL,										--당첨자 아이디
+	name varchar(100) not NULL,									--당첨자 이름
+	tel varchar(13),													--전화번호	
+	foreign key(eno) references event(eno) on delete cascade,
+	foreign key(id) references member(id) on delete cascade);
+	
+
+insert into winnerList select * from apply order by rand() limit 5;
+
+SELECT * FROM winnerList;
+--당첨자 발표 글
+create table winner(
+	wno int primary key auto_increment,			--당첨글 번호
+	eno int not NULL,									--이벤트 글 번호
+	title varchar(100),								--글 제목
+	content varchar(1000),							--글 내용	
+	author varchar(100),								--작성자
+	resdate datetime default current_timestamp,	--작성일
+	foreign key(eno) references event(eno));
+
+
+

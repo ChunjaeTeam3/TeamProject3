@@ -1,8 +1,10 @@
 package kr.co.teaspoon.controller;
 
+import kr.co.teaspoon.dto.Apply;
 import kr.co.teaspoon.dto.Qna;
 import kr.co.teaspoon.service.FilterWordService;
 import kr.co.teaspoon.service.QnaService;
+import kr.co.teaspoon.service.WinnerListService;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,8 @@ public class AdminController {
     private FilterWordService filterWordService;
     @Autowired
     private QnaService qnaService;
+    @Autowired
+    private WinnerListService winnerListService;
 
     @RequestMapping("filterInsert.do")
     public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
@@ -46,8 +50,17 @@ public class AdminController {
         model.addAttribute("page", page);           // 페이징 데이터
 
         //QnaList
-        List<Qna> noAnswerList = qnaService.noAnswerList();
+        List<Qna> noAnswerList = qnaService.noAnswerList(page);
         model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
         return "/admin/noAnswerList";
     }
+    @GetMapping("applyList.do")
+    public String applyList(HttpServletRequest request, Model model) throws Exception {
+        int eno = Integer.parseInt(request.getParameter("eno"));
+        //WinnerList
+        List<Apply> applyList = winnerListService.applyList(eno);
+        model.addAttribute("applyList", applyList);
+        return "/admin/applyList";
+    }
+
 }
