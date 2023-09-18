@@ -62,8 +62,8 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column">
-                <textarea class="textarea" cols="30" rows="10"> ${detail.content} </textarea>
+            <div class="column m-3 p-5" style="border: 1px solid #ddd; border-radius: 5px;">
+                ${detail.content}
             </div>
         </div>
     </div>

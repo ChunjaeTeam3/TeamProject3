@@ -43,13 +43,12 @@ INSERT INTO category VALUES('B', '교육정보');
 INSERT INTO category VALUES('C', '교재/학원 추천');
 INSERT INTO category VALUES('D', '진로상담');
 
-
 -- 커뮤니티 게시판 테이블 생성
 CREATE TABLE community(
     cno INT PRIMARY KEY AUTO_INCREMENT,
     cate VARCHAR(5) NOT NULL,
     title VARCHAR(200) NOT NULL,
-    content VARCHAR(1000),
+    content VARCHAR(1500),
     author VARCHAR(20),
     resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
     cnt INT DEFAULT 0,
@@ -164,7 +163,10 @@ CREATE TABLE attendance (
 SELECT * FROM attendance;
 
 INSERT INTO attendance(id, attend)
-VALUES('shin', '2023-08-15');
+VALUES('shin', '2023-09-08');
 
 SELECT day(attend) AS attendDay FROM attendance
+WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
+
+SELECT CONCAT(' ',day(attend),' ') AS attendDay FROM attendance
 WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
