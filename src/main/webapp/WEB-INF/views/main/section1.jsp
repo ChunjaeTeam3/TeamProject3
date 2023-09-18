@@ -6,6 +6,7 @@
 <section class="section has-background-primary is-relative testimonial-bg-shapes" id="about-me">
     <div class="container">
         <div class="has-text-centered">
+            <br><br>
             <h2 class="section-title has-text-white" style="margin-bottom:50px;font-weight:bold; ">소개</h2>
         </div>
         <div class="columns is-centered">

@@ -139,6 +139,9 @@
                                     <li>
                                         <a href="#my-work">추천 교재</a>
                                     </li>
+                                    <li>
+                                        <a href="#location">회사 위치</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -166,6 +169,10 @@
             <!-- section4(추천 교재) 영역 시작 -->
             <jsp:include page="main/section4.jsp"></jsp:include>
             <!-- section4(추천 교재) 영역 시작 -->
+
+            <!-- section5(회사 위치) 영역 시작 -->
+            <jsp:include page="main/section5.jsp"></jsp:include>
+            <!-- section4(회사 위치) 영역 시작 -->
         </div>
         <!-- 메인페이지 콘텐츠 영역 끝 -->
 
