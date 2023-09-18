@@ -72,7 +72,7 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a href="${path}" class="navbar-item" style="color:#fff;">이벤트</a>
                     <div class="navbar-dropdown">
-                        <a href="" class="navbar-item">진행 중 이벤트</a>
+                        <a href="${path}/event/list.do" class="navbar-item">이벤트</a>
                         <a href="" class="navbar-item">당첨자 발표</a>
                     </div>
                 </div>
