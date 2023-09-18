@@ -94,13 +94,9 @@ public class CommunityController {
     }
 
     @PostMapping("insert.do")
-    public String communityInsert(HttpServletRequest request, Model model) throws Exception {
+    public String communityInsert(Community community, HttpServletRequest request, Model model) throws Exception {
         HttpSession session = request.getSession();
-        Community community = new Community();
-        community.setCate(request.getParameter("cate"));
-        community.setTitle(request.getParameter("title"));
-        community.setContent(request.getParameter("content"));
-        community.setAuthor((String) session.getAttribute("sid"));
+        community.setAuthor((String)session.getAttribute("sid"));
         communityService.communityInsert(community);
         return "redirect:list.do";
     }
@@ -115,14 +111,8 @@ public class CommunityController {
     }
 
     @PostMapping("edit.do")
-    public String communityEdit(HttpServletRequest request, Model model) throws Exception {
-        int cno = Integer.parseInt(request.getParameter("cno"));
-        Community comm = new Community();
-        comm.setCno(cno);
-        comm.setCate(request.getParameter("cate"));
-        comm.setTitle(request.getParameter("title"));
-        comm.setContent(request.getParameter("content"));
-        communityService.communityEdit(comm);
+    public String communityEdit(Community community, HttpServletRequest request, Model model) throws Exception {
+        communityService.communityEdit(community);
         return "redirect:list.do";
     }
 

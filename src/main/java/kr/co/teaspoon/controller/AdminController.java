@@ -2,6 +2,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.CommunityVO;
 import kr.co.teaspoon.dto.FilterWord;
+import kr.co.teaspoon.service.CommunityService;
 import kr.co.teaspoon.service.FilterWordService;
 import kr.co.teaspoon.util.FilterPage;
 import kr.co.teaspoon.dto.Qna;
@@ -25,6 +26,8 @@ public class AdminController {
 
     @Autowired
     private FilterWordService filterWordService;
+    @Autowired
+    private CommunityService communityService;
     @Autowired
     private QnaService qnaService;
 
@@ -79,6 +82,15 @@ public class AdminController {
         model.addAttribute("curPage", curPage);
 
         return "/admin/communityMgmt";
+    }
+
+    // 커뮤니티 삭제
+    @RequestMapping("communityDelete.do")
+    public String communityDelete(@RequestParam int cno, HttpServletRequest request, Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ?Integer.parseInt(request.getParameter("page")) : 1;
+        communityService.communityDelete(cno);
+        model.addAttribute("curPage", curPage);
+        return "redirect:/admin/communityMgmt.do";
     }
 
     @GetMapping("questionList.do")
