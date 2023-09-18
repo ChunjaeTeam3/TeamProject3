@@ -43,10 +43,10 @@
             </div>
         </div>
     </div>
-    <input type="hidden" name="id" id="id" value="sid">
-    <input type="hidden" id="eno" name="eno" value="${event.eno}">
+    <input type="hidden" name="id" id="id" value="${sid}">
+    <input type="hidden" id="eno" name="eno" value="${event.eno} ">
     <input type="submit" class="button is-fullwidth is-primary" style="height:72px" value="신청">
     </form>
-
+</div>
 </body>
 </html>

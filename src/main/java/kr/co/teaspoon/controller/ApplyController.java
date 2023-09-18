@@ -1,7 +1,9 @@
 package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Apply;
+import kr.co.teaspoon.dto.Event;
 import kr.co.teaspoon.service.ApplyService;
+import kr.co.teaspoon.service.EventService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,29 +25,31 @@ public class ApplyController {
 
     @Autowired
     private ApplyService applyService;
+    @Autowired
+    private EventService eventService;
 
     @GetMapping("insert.do")
     public String insertForm(HttpServletRequest request, Model model) throws Exception {
+        Event event = eventService.eventDetail(Integer.parseInt(request.getParameter("eno").trim())); //
+        request.setAttribute("event", event);
         return "/apply/appForm";
     }
 
     @RequestMapping(value="insert.do", method= RequestMethod.POST)
-    public ModelAndView applyInsert(HttpServletRequest request, Model model) throws Exception {
+    public String applyInsert(HttpServletRequest request, Model model) throws Exception {
         HttpSession session = request.getSession();
-        int eno = Integer.parseInt(request.getParameter("eno"));
+        int eno = Integer.parseInt(request.getParameter("eno").trim());
+        Event event = eventService.eventDetail(eno);
+        model.addAttribute("event", event);
 
         Apply apply = new Apply();
-        apply.setEno(eno);
+        apply.setEno(event.getEno());
         apply.setName(request.getParameter("name"));
         apply.setId((String) session.getAttribute("sid"));
         apply.setTel(request.getParameter("tel"));
         applyService.applyInsert(apply);
 
-        model.addAttribute("eno", request.getParameter("eno"));
-
-        ModelAndView mav = new ModelAndView();
-        mav.setView(new RedirectView(request.getContextPath() + "/event/list.do"));
-        return mav;
+        return "/apply/appSuc";
     }
 
     @GetMapping("delete.do")
@@ -62,7 +66,7 @@ public class ApplyController {
 
     @RequestMapping(value = "appCheck.do", method = RequestMethod.POST)
     public void appCheck(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-        String id = request.getParameter("sid");
+        String id = request.getParameter("id");
         boolean result = applyService.appCheck(id);
 
         JSONObject json = new JSONObject();

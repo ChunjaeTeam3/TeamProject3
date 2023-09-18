@@ -62,15 +62,15 @@
             </table>
             <c:if test='${sid ne null}'>
             <div class="container">
-                <input type="hidden" name="id" id="id" value="sid">
+                <input type="hidden" name="id" id="id" value="${sid}">
                 <input type="hidden" id="eno" name="eno" value="${event.eno}">
                 <input type="hidden" name="app_chk" id="app_chk" value="no">
-                <button type="button" id="ck_btn" class="button is-fullwidth is-primary" onclick="appcheck()" style="height:72px">신청하기</button>
+                <button type="button" id="ck_btn" class="button is-fullwidth is-primary" onclick="appCheck()" style="height:72px">신청하기</button>
             </div>
             <script>
                 function appCheck() {
-                    var w = window.open("about:blank","_blank");
-                    let params = { id: $("#id").val("sid") };
+                    var child;
+                    let params = { id: $("#id").val() };
                     $.ajax({
                         url: "${path}/apply/appCheck.do",
                         type: "post",
@@ -80,11 +80,11 @@
                             console.log("HI");
                             let appPass = data.result;
                             if(!appPass) {
-                                $("#app_chk").val("no");
+                                //$("#app_chk").val("no");
                                 alert("이미 신청한 회원입니다.");
-                            } else if (idPass) {
-                                $("#id_chk").val("yes");
-                                w.location.href = "${path}/apply/insert.do";
+                            } else {
+                                //$("#app_chk").val("yes");
+                                child = window.open("${path}/apply/insert.do?eno="+$("#eno").val()+"&id="+$("#id").val(), "child", "width=700, height=500");
                             }
                         },
                         error:function(res) {
