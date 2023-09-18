@@ -11,7 +11,17 @@
     <title>TeaSpoon</title>
     <jsp:include page="./setting/head.jsp"></jsp:include>
     <style>
-        button.player_btn {border: none;background-color: #ffffff;}
+        .player_btn {
+            border: none;
+            background-color: #ffffff;
+        }
+        #progressBar {
+            width: 0px;
+            height: 10px;
+            background-color: #007cf0;
+            transition: 1s;
+            margin-top: -10px;
+        }
     </style>
 
 </head>

@@ -13,8 +13,7 @@
             <div class="column is-4-desktop is-6-tablet">
                 <article class="card shadow">
                     <figure class="image is-4by3" style="padding-top: 0;">
-                        <div class="player" style="
-                            width:800px; margin: 0 100px;">
+                        <div class="player" style="width:800px; margin: 0 100px;">
                             <div class="vdo_fr">
                                 <video id="video" style="width: 100%">
                                     <source src="${path}/resources/images/lecture_video03.mp4" type="video/mp4"/>
@@ -24,13 +23,16 @@
                                 <div id="progressBar"></div>
                             </div>
                             <div id="buttonbar" style="width: 100%">
-                                <button id="play" class="player_btn"> <i class="fas fa-play"></i> </button>
-                                <button id="pause" class="player_btn"> <i class="fas fa-pause"></i> </button>
-                                <button id="stop" class="player_btn"> <i class="fas fa-stop"></i> </button>
-                                <div class="btn float-right">
+                                <div id="d-inblock">
+                                    <button id="play" class="player_btn"> <i class="fas fa-play"></i> </button>
+                                    <button id="pause" style="display: none" class="player_btn"> <i class="fas fa-pause"></i> </button>
+                                    <button id="stop" class="player_btn"> <i class="fas fa-stop"></i> </button>
+                                    <span id="currentTime"> 00:00 / 02:11 </span>
+                                </div>
+                                <div class="buttons is-right">
                                     <input id="vol" type="range" value="500" min="0" max="1000">
                                     <button id="volTxt" class="player_btn">50%</button>
-                                    <button id="full" class="player_btn"> <i class="fas fa-expand-arrows-alt"></i> </button>
+                                    <button id="full" class="player_btn"><i class="fa-solid fa-expand"></i></button>
                                 </div>
                             </div>
                             <script src="${path}/resources/js/vdo.js"></script>
