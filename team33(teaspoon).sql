@@ -122,7 +122,6 @@ CREATE TABLE faq (
    answer VARCHAR(1000) NOT NULL,
    cnt INT DEFAULT 0 NOT NULL
 );
-
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다1', '답변입니다1');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다2', '답변입니다2');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다3', '답변입니다3');
@@ -155,3 +154,17 @@ INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAU
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
 
+-- 출석체크 테이블 생성
+CREATE TABLE attendance (
+	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id VARCHAR(20),
+	attend DATE DEFAULT current_date
+);
+
+SELECT * FROM attendance;
+
+INSERT INTO attendance(id, attend)
+VALUES('shin', '2023-08-15');
+
+SELECT day(attend) AS attendDay FROM attendance
+WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
