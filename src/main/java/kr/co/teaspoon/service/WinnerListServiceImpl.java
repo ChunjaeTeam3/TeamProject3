@@ -6,6 +6,7 @@ import kr.co.teaspoon.dto.WinnerList;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,18 +16,15 @@ public class WinnerListServiceImpl implements WinnerListService{
     private WinnerListDAO winnerListDAO;
 
     @Override
-    public void random(WinnerList dto) throws Exception {
-        winnerListDAO.random(dto);
-    }
-
-    @Override
     public List<Apply> applyList(int eno) throws Exception {
         return winnerListDAO.applyList(eno);
     }
 
     @Override
-    public List<WinnerList> winnerList(int eno) throws Exception {
-        return winnerListDAO.winnerList(eno);
+    @Transactional
+    public List<WinnerList> winners(int eno) throws Exception {
+        winnerListDAO.random(eno);
+        return winnerListDAO.winners(eno);
     }
 
     @Override

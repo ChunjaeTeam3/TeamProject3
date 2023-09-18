@@ -8,7 +8,7 @@
     </select>
     <!-- 5명 당첨자 추첨 -->
     <insert id="random">
-        insert into winnerList select * from apply where eno=#{eno} order by rand() limit 5;
+        insert into winnerList select * from apply where eno=#{eno} AND eno NOT IN (SELECT distinct eno FROM winnerList) order by rand() limit 5;
     </insert>
     <!-- 5명 당첨자 목록 -->
     <select id="winners" resultType="kr.co.teaspoon.dto.WinnerList">

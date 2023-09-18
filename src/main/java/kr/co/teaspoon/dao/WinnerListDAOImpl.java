@@ -16,8 +16,8 @@ public class WinnerListDAOImpl implements WinnerListDAO {
     private SqlSession sqlSession;
 
     @Override
-    public void random(WinnerList dto) throws Exception {
-        sqlSession.insert("winnerList.random",dto);
+    public void random(int eno) throws Exception {
+        sqlSession.insert("winnerList.random",eno);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class WinnerListDAOImpl implements WinnerListDAO {
     }
 
     @Override
-    public List<WinnerList> winnerList(int eno) throws Exception {
+    public List<WinnerList> winners(int eno) throws Exception {
         return sqlSession.selectList("winnerList.winnerList", eno);
     }
 

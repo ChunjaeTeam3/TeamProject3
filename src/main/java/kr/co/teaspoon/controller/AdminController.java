@@ -2,6 +2,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Apply;
 import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.dto.WinnerList;
 import kr.co.teaspoon.service.FilterWordService;
 import kr.co.teaspoon.service.QnaService;
 import kr.co.teaspoon.service.WinnerListService;
@@ -62,5 +63,15 @@ public class AdminController {
         model.addAttribute("applyList", applyList);
         return "/admin/applyList";
     }
+
+    @GetMapping("winners.do")
+    public String winners(HttpServletRequest request, Model model) throws Exception {
+        int eno = Integer.parseInt(request.getParameter("eno"));
+
+        List<WinnerList> winners = winnerListService.winners(eno);
+        model.addAttribute("winners", winners);
+        return "/admin/winners";
+    }
+
 
 }

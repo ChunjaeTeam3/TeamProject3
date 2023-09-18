@@ -176,6 +176,7 @@ CREATE TABLE event (
 SELECT * FROM EVENT;
 
 INSERT INTO EVENT VALUES(DEFAULT, '이벤트1','이벤트1내용', 1, 20230917,20230918,'admin',DEFAULT, DEFAULT);
+INSERT INTO EVENT VALUES(DEFAULT, '이벤트2','이벤트2내용', 1, 20230917,20230918,'admin',DEFAULT, DEFAULT);
 
 -- 회원의 이벤트 접수
 create table apply(
@@ -187,7 +188,10 @@ create table apply(
 	foreign key(eno) references event(eno) on delete cascade,
 	foreign key(id) references member(id) on delete cascade);
 	
-select * from apply order by rand() limit 5;
+	SELECT * FROM apply;
+	select * from apply where eno=1;
+	
+-- seLECT a.appno as appno, a.eno as eno, a.id as id, a.name as NAME, a.tel as tel, b.email as email, b. addr1 as addr1, b.addr2 as addr2, b.postcode as postcode FROM apply a, member b WHERE a.id=b.id and eno=1 order by rand() limit 5;  
 
 INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk111', '김보경', '01011111111');
 INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk222', '김보경', '01022222222');
@@ -195,6 +199,13 @@ INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk333', '김보경', '01033333333');
 INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk444', '김보경', '01044444444');
 INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk555', '김보경', '01055555555');
 INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk666', '김보경', '01066666666');
+
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk111', '김보경', '01011111111');
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk222', '김보경', '01022222222');
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk333', '김보경', '01033333333');
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk444', '김보경', '01044444444');
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk555', '김보경', '01055555555');
+INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk666', '김보경', '01066666666');
 
 
 -- 당첨자 리스트
@@ -208,9 +219,16 @@ create table winnerList(
 	foreign key(id) references member(id) on delete cascade);
 	
 
-insert into winnerList select * from apply order by rand() limit 5;
+insert into winnerList select * from apply where eno=1 order by rand() limit 5;
 
-SELECT * FROM winnerList;
+select * from apply where eno=1 order by rand() limit 5;
+
+SELECT * FROM winnerList WHERE eno=1;
+
+-- select distinct id, appno, eno, NAME, tel from apply where eno=1 order by rand() limit 5;
+
+DELETE FROM winnerList WHERE appno=14;
+
 --당첨자 발표 글
 create table winner(
 	wno int primary key auto_increment,			--당첨글 번호
