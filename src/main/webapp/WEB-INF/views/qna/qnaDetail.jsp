@@ -61,7 +61,7 @@
                     <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
                     <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
                 </c:if>
-                <c:if test='${sid eq dto.author && not empty sid}'>
+                <c:if test='${sid eq dto.author && not empty sid && sid != "admin"}'>
                     <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
                     <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
                 </c:if>

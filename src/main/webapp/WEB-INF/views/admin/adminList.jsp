@@ -44,10 +44,11 @@
                     관리자 페이지
                 </p>
                 <ul class="menu-list">
-                    <li><a href="${path}/admin/adminMemberList.do"> 회원통계</a></li>
-                    <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
-                    <li><a >공지사항</a></li>
-                    <li><a href="${path}/admin/noAnswerList.do">QnA</a></li>
+                    <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
+                    <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
+                    <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
+                    <li><a href="${path}/admin/filterInsert.do">게시판 관리</a></li>
+                    <li><a href="${path}/admin/questionList.do">QnA 관리</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                 </ul>
             </aside>

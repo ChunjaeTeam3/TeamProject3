@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 페이지</title>
+    <title>QnA 관리</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
     <style>
         table tbody tr:nth-child(2n) {
@@ -52,10 +52,11 @@
                 <aside class="menu is-hidden-mobile">
                     <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
                         <br>
-                        <li><a href="${path}/admin/adminMemberList.do"> 회원통계</a></li>
-                        <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
-                        <li><a >공지사항</a></li>
-                        <li><a href="${path}/admin/noAnswerList.do">QnA</a></li>
+                        <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
+                        <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
+                        <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
+                        <li><a href="${path}/admin/filterInsert.do">게시판 관리</a></li>
+                        <li><a href="${path}/admin/questionList.do">QnA 관리</a></li>
                         <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                     </ul>
                 </aside>

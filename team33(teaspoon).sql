@@ -28,7 +28,6 @@ VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, N
 UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
-
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
 	cate VARCHAR(5) PRIMARY KEY NOT NULL,
@@ -41,13 +40,12 @@ INSERT INTO category VALUES('B', '교육정보');
 INSERT INTO category VALUES('C', '교재/학원 추천');
 INSERT INTO category VALUES('D', '진로상담');
 
-
 -- 커뮤니티 게시판 테이블 생성
 CREATE TABLE community(
     cno INT PRIMARY KEY AUTO_INCREMENT,
     cate VARCHAR(5) NOT NULL,
     title VARCHAR(200) NOT NULL,
-    content VARCHAR(1000),
+    content VARCHAR(1500),
     author VARCHAR(20),
     resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
     cnt INT DEFAULT 0,
@@ -85,7 +83,15 @@ CREATE TABLE COMMENT(
 	FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-SELECT * FROM COMMENT;
+SELECT * FROM comment;
+
+CREATE TABLE filterWord(
+	fno INT PRIMARY KEY AUTO_INCREMENT,
+	word VARCHAR(100) NOT NULL
+);
+
+select * from filterword;
+
 
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
@@ -111,7 +117,6 @@ CREATE TABLE faq (
    answer VARCHAR(1000) NOT NULL,
    cnt INT DEFAULT 0 NOT NULL
 );
-
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다1', '답변입니다1');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다2', '답변입니다2');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다3', '답변입니다3');
@@ -136,10 +141,30 @@ CREATE TABLE qna(qno int PRIMARY KEY AUTO_INCREMENT,   		-- 번호
    FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, DEFAULT,1);
-INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
+CREATE TABLE fileInfo(
+  no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  articleno INT,
+  saveFolder VARCHAR(300) NOT NULL,
+  originFile VARCHAR(300) NOT NULL,
+  saveFile VARCHAR(300) NOT NULL);
 
-SELECT * FROM qna;
+CREATE TABLE fileboard (
+  articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id varchar(16) NOT NULL,
+  title varchar(100) NOT NULL,
+  content varchar(2000) NOT NULL,
+  regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 출석체크 테이블 생성
+CREATE TABLE attendance (
+	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id VARCHAR(20),
+	attend DATE DEFAULT current_date
+);
+
+SELECT * FROM attendance;
+
 
 CREATE TABLE fileInfo(
   no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -183,3 +208,4 @@ create table apply(
 	foreign key(id) references member(id) on delete cascade);
 	
 SELECT * FROM apply;
+

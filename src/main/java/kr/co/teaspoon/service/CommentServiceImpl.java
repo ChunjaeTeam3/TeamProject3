@@ -2,8 +2,7 @@ package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.CommentDAO;
 import kr.co.teaspoon.dto.Comment;
-import kr.co.teaspoon.util.CommentPage;
-import kr.co.teaspoon.util.Page;
+import kr.co.teaspoon.util.CommunityPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,7 @@ public class CommentServiceImpl implements CommentService {
     private CommentDAO commentDAO;
 
     @Override
-    public List<Comment> commentList(CommentPage page) throws Exception {
+    public List<Comment> commentList(CommunityPage page) throws Exception {
         return commentDAO.commentList(page);
     }
 

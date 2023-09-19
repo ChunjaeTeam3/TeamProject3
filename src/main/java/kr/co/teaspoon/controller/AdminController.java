@@ -1,14 +1,10 @@
 package kr.co.teaspoon.controller;
 
-
-import kr.co.teaspoon.dto.Event;
-
-
-import kr.co.teaspoon.dto.Fileboard;
-import kr.co.teaspoon.dto.Member;
-import kr.co.teaspoon.dto.Qna;
+import kr.co.teaspoon.dto.*;
 import kr.co.teaspoon.service.*;
+import kr.co.teaspoon.util.FilterPage;
 import kr.co.teaspoon.util.Page;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,22 +32,103 @@ public class AdminController {
     private MemberService memberService;
     @Autowired
     private FilterWordService filterWordService;
+
     @Autowired
-    private EventService eventService;
+    private CommunityService communityService;
+
     @Autowired
     private QnaService qnaService;
+    @Autowired
+    private EventService eventService;
 
-    @RequestMapping("filterInsert.do")
-    public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
-//        boolean wordCheck = filterWordService.filterInsert(word);
+    // 필터링 단어 추가 페이지 로딩
+    @RequestMapping(value="filterInsert.do", method= RequestMethod.GET)
+    public String filterInsertGet(HttpServletRequest request, Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+
+        // 필터링 단어 목록 페이징 처리
+        Page page = new Page();
+        int total = filterWordService.getCount();
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
+        
+        List<FilterWord> filterList = filterWordService.filterList(page);
+        model.addAttribute("filterList", filterList);
+        model.addAttribute("page", page);
+        model.addAttribute("curPage", curPage);
 
         return "/admin/filterInsert";
+    }
+
+    // 필터링 단어 추가
+    @RequestMapping(value="filterInsert.do", method= RequestMethod.POST)
+    public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
+        filterWordService.filterInsert(word);
+        return "redirect:/admin/filterInsert.do";
+    }
+
+    // 필터링 단어 삭제
+    @GetMapping("filterDelete.do")
+    public String filterDelete(@RequestParam int fno, Model model) throws Exception {
+        filterWordService.filterDelete(fno);
+        return "redirect:/admin/filterInsert.do";
+    }
+
+    // 커뮤니티 관리 페이지 로딩
+    @RequestMapping("communityMgmt.do")
+    public String communityMgmt(HttpServletRequest request, Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ?Integer.parseInt(request.getParameter("page")) : 1;
+
+        FilterPage page = new FilterPage();
+        int total = filterWordService.getCountBadList();
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
+
+        List<CommunityVO> communityList = filterWordService.badList(page);
+        model.addAttribute("list", communityList);
+        model.addAttribute("page", page);
+        model.addAttribute("curPage", curPage);
+
+        return "/admin/communityMgmt";
+    }
+
+    // 커뮤니티 삭제
+    @RequestMapping("communityDelete.do")
+    public String communityDelete(@RequestParam int cno, HttpServletRequest request, Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ?Integer.parseInt(request.getParameter("page")) : 1;
+        communityService.communityDelete(cno);
+        model.addAttribute("curPage", curPage);
+        return "redirect:/admin/communityMgmt.do";
+    }
+
+    @GetMapping("questionList.do")
+    public String getNoAnswerList(HttpServletRequest request, Model model) throws Exception {
+        //Page
+        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+
+        Page page = new Page();
+
+        int total = qnaService.noAnswerCount(page);
+
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
+        model.addAttribute("curPage", curPage);     // 현재 페이지
+        model.addAttribute("page", page);           // 페이징 데이터
+
+        //QnaList
+        List<Qna> noAnswerList = qnaService.noAnswerList(page);
+        model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
+        return "/admin/noAnswerList";
     }
 
     @RequestMapping("list.do")
     public String adminList(HttpServletRequest request, HttpServletResponse response, Model model) {
         return "/admin/adminList";
     }
+
     @GetMapping("adminFileList.do")		//board/list.do
     public String getBoardList(Model model) throws Exception {
         List<Fileboard> fileboardList = fileboardService.fileList();
@@ -87,6 +164,21 @@ public class AdminController {
 
         return "/admin/adminEventList";
     }
+
+    @GetMapping("adminMemberList.do")
+    public String adminMemberList(Model model) throws Exception {
+        List<Member> memberList = memberService.memberList();
+        model.addAttribute("memberList", memberList);
+        return "/admin/adminMemberList";
+    }
+
+    @RequestMapping(value="memberDelete.do", method = RequestMethod.GET)
+    public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
+        memberService.memberDelete(id);
+        session.invalidate();
+        return "/admin/adminMemberList";
+    }
+
 }
 
 

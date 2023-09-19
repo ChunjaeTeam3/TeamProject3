@@ -8,10 +8,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>TeaSpoon</title>
+    <title> 티스푼 </title>
     <jsp:include page="./setting/head.jsp"></jsp:include>
     <style>
-        button.player_btn {border: none;background-color: #ffffff;}
+        .player_btn {
+            border: none;
+            background-color: #ffffff;
+        }
+        #progressBar {
+            width: 0px;
+            height: 10px;
+            background-color: #007cf0;
+            transition: 1s;
+            margin-top: -10px;
+        }
+        #btn-right {
+            display: inline-block;
+            float: right;
+        }
+        h4 {
+            font-family: 'Roboto', 'sans-serif';
+        }
     </style>
 
 </head>
@@ -169,9 +186,10 @@
             <!-- section4(추천 교재) 영역 시작 -->
             <jsp:include page="main/section4.jsp"></jsp:include>
             <!-- section4(추천 교재) 영역 시작 -->
-            <!-- section4(추천 교재) 영역 시작 -->
+
+            <!-- section5(회사 위치) 영역 시작 -->
             <jsp:include page="main/section5.jsp"></jsp:include>
-            <!-- section4(추천 교재) 영역 시작 -->
+            <!-- section4(회사 위치) 영역 시작 -->
         </div>
         <!-- 메인페이지 콘텐츠 영역 끝 -->
 
