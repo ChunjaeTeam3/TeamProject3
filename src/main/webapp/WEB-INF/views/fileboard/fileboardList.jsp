@@ -14,7 +14,8 @@
     <jsp:include page="../setting/head.jsp"></jsp:include>
 </head>
 <body>
-
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <!-- 헤더 영역 시작 -->
 <jsp:include page="../layout/header.jsp" />
 <!-- 헤더 영역 끝 -->
@@ -49,26 +50,7 @@
                 </div>
                 </c:if>
                 <%-- </c:if> --%>
-                <!-- 검색 엔진 시작 -->
-                <form action="${path}/fileboard/list.do" method="get" class="field has-addons has-addons-right" style="margin-top: 100px;">
-                    <p class="control">
-                <span class="select">
-                    <select id="type" name="type">
-                        <option value="T"> 제목 </option>
-                        <option value="C"> 내용 </option>
-                        <option value="W"> 작성자 </option>
-                    </select>
-                </span>
-                    </p>
-                    <p class="control">
-                        <input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
-                    </p>
-                    <p class="control">
-                        <input type="submit" class="button is-primary" value="검색" />
-                    </p>
-                </form></div>
-            <!-- 검색 엔진 끝 -->
-            <table class="table">
+            <table class="table" id="file-table">
                 <thead>
                 <tr>
                     <th width="80">번호</th>
@@ -130,6 +112,10 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
-
+<script type="text/javascript">
+    jQuery(function ($){
+        $("#file-table").DataTable();
+    })
+</script>
 </body>
 </html>

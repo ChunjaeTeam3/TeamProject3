@@ -10,6 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="daaf84c9-bbfd-46b2-bf37-c9d288e84002" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appSuc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appSuc.jsp" afterDir="false" />
@@ -167,6 +168,9 @@
       <workItem from="1695057843496" duration="783000" />
       <workItem from="1695058692312" duration="17000" />
       <workItem from="1695080847427" duration="949000" />
+
+      <updated>1695011270590</updated>
+      <workItem from="1695011271604" duration="2197000" />
     </task>
     <servers />
   </component>
