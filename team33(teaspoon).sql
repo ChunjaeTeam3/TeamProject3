@@ -158,7 +158,7 @@ CREATE TABLE attendance (
 CREATE TABLE qna(
                     qno int PRIMARY KEY AUTO_INCREMENT,   			-- 번호
                     title VARCHAR(100) NOT NULL,   					-- 제목
-                    content VARCHAR(1000) NOT NULL,   				-- 내용
+                    content VARCHAR(1000) NOT NULL,   				-- 내용`
                     author VARCHAR(16),   								-- 작성자
                     resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
                     lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
