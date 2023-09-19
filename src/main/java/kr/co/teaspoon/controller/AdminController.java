@@ -1,6 +1,9 @@
 package kr.co.teaspoon.controller;
 
+
 import kr.co.teaspoon.dto.Event;
+
+
 import kr.co.teaspoon.dto.Fileboard;
 import kr.co.teaspoon.dto.Member;
 import kr.co.teaspoon.dto.Qna;
@@ -22,6 +25,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
+
     @Autowired
     HttpSession session;
     @Autowired
@@ -55,6 +59,7 @@ public class AdminController {
         return "/admin/adminFileboard";
     }
 
+
     @GetMapping("delete.do")
     public String noticeDelete(HttpServletRequest request, Model model) throws Exception {
         int articleno = Integer.parseInt(request.getParameter("articleno"));
@@ -82,43 +87,6 @@ public class AdminController {
 
         return "/admin/adminEventList";
     }
-
-    @GetMapping("adminMemberList.do")
-    public String adminMemberList(Model model) throws Exception {
-        List<Member> memberList = memberService.memberList();
-        model.addAttribute("memberList", memberList);
-        return "/admin/adminMemberList";
-    }
-
-    @RequestMapping(value="memberDelete.do", method = RequestMethod.GET)
-    public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
-        memberService.memberDelete(id);
-        session.invalidate();
-        return "/admin/adminMemberList";
-    }
-
-    @GetMapping("noAnswerList.do")
-    public String noAnswerList(HttpServletRequest request, Model model) throws Exception {
-        //Page
-        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
-
-        Page page = new Page();
-        page.setKeyword(request.getParameter("keyword"));   //검색 키워드 set
-        page.setType(request.getParameter("type"));         //검색 타입 set
-
-        //페이징에 필요한 데이터 저장
-        int total = qnaService.getCount(page);
-        page.makeBlock(curPage, total);
-        page.makeLastPageNum(total);
-        page.makePostStart(curPage, total);
-
-        List<Qna> noAnswerList = qnaService.noAnswerList(page);
-
-        model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
-        model.addAttribute("curPage", curPage);     // 현재 페이지
-        model.addAttribute("page", page);           // 페이징 데이터
-
-        return "/admin/noAnswerList";
-    }
-
 }
+
+
