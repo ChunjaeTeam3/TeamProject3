@@ -1,8 +1,8 @@
 package kr.co.teaspoon.controller;
 
+import kr.co.teaspoon.dto.Fileboard;
 import kr.co.teaspoon.dto.Qna;
-import kr.co.teaspoon.service.FilterWordService;
-import kr.co.teaspoon.service.QnaService;
+import kr.co.teaspoon.service.*;
 import kr.co.teaspoon.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,16 +12,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
-
+    @Autowired
+    HttpSession session;
+    @Autowired
+    private FileboardService fileboardService;
+    @Autowired
+    private FileInfoService fileInfoService;
+    @Autowired
+    private MemberService memberService;
     @Autowired
     private FilterWordService filterWordService;
-    @Autowired
-    private QnaService qnaService;
 
     @RequestMapping("filterInsert.do")
     public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
@@ -30,24 +37,23 @@ public class AdminController {
         return "/admin/filterInsert";
     }
 
-    @GetMapping("questionList.do")
-    public String getNoAnswerList(HttpServletRequest request, Model model) throws Exception {
-        //Page
-        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
-
-        Page page = new Page();
-
-        int total = qnaService.noAnswerCount(page);
-
-        page.makeBlock(curPage, total);
-        page.makeLastPageNum(total);
-        page.makePostStart(curPage, total);
-        model.addAttribute("curPage", curPage);     // 현재 페이지
-        model.addAttribute("page", page);           // 페이징 데이터
-
-        //QnaList
-        List<Qna> noAnswerList = qnaService.noAnswerList();
-        model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
-        return "/admin/noAnswerList";
+    @RequestMapping("list.do")
+    public String adminList(HttpServletRequest request, HttpServletResponse response, Model model) {
+        return "/admin/adminList";
     }
+    @GetMapping("adminFileList.do")		//board/list.do
+    public String getBoardList(Model model) throws Exception {
+        List<Fileboard> fileboardList = fileboardService.fileList();
+        model.addAttribute("fileboardList", fileboardList);
+        return "/admin/adminFileboard";
+    }
+
+    @GetMapping("delete.do")
+    public String noticeDelete(HttpServletRequest request, Model model) throws Exception {
+        int articleno = Integer.parseInt(request.getParameter("articleno"));
+        fileboardService.fileboardDelete(articleno);
+        return "redirect:adminList.do";
+    }
+
 }
+
