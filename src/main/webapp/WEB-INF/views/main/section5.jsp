@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!-- section2(소개) 영역 시작 -->
+<!-- section5(오시는 길) 영역 시작 -->
 <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/54/2/intl/ko_ALL/common.js"></script>
 <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/54/2/intl/ko_ALL/util.js"></script></head>
 
@@ -9,19 +9,19 @@
     <div class="container">
         <div class="has-text-centered">
             <br><br>
-            <h2 class="section-title" style="font-weight: bold;">회사 위치</h2>
+            <h2 class="section-title mb-20" style="font-weight: bold;">오시는 길</h2>
         </div>
         <div class="is-center">
-            <div id="map" style="margin-left:350px;	margin-top:50px; width:600px;height:400px; background:white; "></div>
+            <div id="map" style="margin: 0px auto; width: 700px; height: 400px; background: white;"></div>
         </div>
         <hr>
         <div style="border: grey; margin-left: 350px;">
-            <h3>주소</h3>
-            <p>서울 금천구 디지털로9길 23 마리오아울렛2관<p>
-            <h3>Tel</h3>
-            011-234-3515
-            <br><h3>Fax</h3>
-            02-1111-111
+            <h4 class="mb-20"> <i class="fa-solid fa-location-dot"></i> 주소 </h4>
+            <p class="mb-50"> 서울 금천구 디지털로9길 23 마리오아울렛2관 <p>
+            <h4 class="mb-20"> <i class="fa-solid fa-mobile"></i> Tel</h4>
+            <p class="mb-50"> 011-234-3515 </p>
+            <h4 class="mb-20"> <i class="fa-solid fa-fax"></i> Fax </h4>
+            <p class="mb-50"> 02-1111-111 </p>
         </div>
     </div>
 </section>
@@ -53,4 +53,4 @@
     // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
     infowindow.open(map, marker);
 </script>
-<!-- section2(소개) 영역 끝 -->
+<!-- section5(오시는 길) 영역 끝 -->

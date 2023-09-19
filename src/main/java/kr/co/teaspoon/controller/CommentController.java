@@ -20,14 +20,9 @@ public class CommentController {
     private CommentService commentService;
 
     @RequestMapping(value="insert.do", method= RequestMethod.POST)
-    public ModelAndView commentInsert(HttpServletRequest request, Model model) throws Exception {
+    public ModelAndView commentInsert(Comment comment, HttpServletRequest request, Model model) throws Exception {
         HttpSession session = request.getSession();
-
-        Comment comment = new Comment();
-        comment.setCno(Integer.parseInt(request.getParameter("cno")));
-        comment.setContent(request.getParameter("content"));
-//        comment.setAuthor((String) session.getAttribute("sid"));
-        comment.setAuthor("shin");
+        comment.setAuthor((String) session.getAttribute("sid"));
         commentService.commentInsert(comment);
 
         model.addAttribute("cno", request.getParameter("cno"));
@@ -52,8 +47,6 @@ public class CommentController {
         model.addAttribute("cate", request.getParameter("cate"));
         model.addAttribute("type", request.getParameter("type"));
         model.addAttribute("keyword", request.getParameter("keyword"));
-
-        System.out.println(request.getParameter("type") + " " + request.getParameter("keyword"));
 
         // 다른 컨트롤러(CommunityController)의 페이지로 redirect하기
         ModelAndView mav = new ModelAndView();

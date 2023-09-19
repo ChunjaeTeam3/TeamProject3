@@ -135,9 +135,11 @@
                 </ul>
             </nav>
 
-            <div class="buttons is-right">
-                <a href="${path}/community/insert.do" class="button is-primary"> 글 작성하기 </a>
-            </div>
+            <c:if test="${sid ne null}">
+                <div class="buttons is-right">
+                    <a href="${path}/community/insert.do" class="button is-primary"> 글 작성하기 </a>
+                </div>
+            </c:if>
         </div>
     </div>
 </section>

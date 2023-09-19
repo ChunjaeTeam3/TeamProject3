@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> 커뮤니티 </title>
-    <c:set var="path" value="${pageContext.request.contextPath}"/>
     <jsp:include page="../setting/head.jsp" />
+    <script type="text/javascript" src="${path}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 <%@ include file="../layout/header.jsp"%>
@@ -52,7 +53,10 @@
         <div class="columns">
             <div class="column">
                 <label for="content"> 내용 </label>
-                <textarea class="textarea" id="content" name="content" cols="30" rows="10" maxlength="1000">${detail.content}</textarea>
+                <textarea name="content" id="content" class="textarea" placeholder="내용 입력" rows="8" cols="100" maxlength="1400" required> ${detail.content} </textarea>
+                <script>
+                    CKEDITOR.replace('content',	{filebrowserUploadUrl:'${path}/community/imageUpload.do'});
+                </script>
             </div>
         </div>
         <div class="columns">
