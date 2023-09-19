@@ -16,13 +16,13 @@ public class QnaServiceImpl implements QnaService{
     private QnaDAO qnaDAO;
 
     @Override
-    public List<Qna> qnaList() throws Exception {
-        return qnaDAO.qnaList();
+    public List<Qna> qnaList(Page page) throws Exception {
+        return qnaDAO.qnaList(page);
     }
 
     @Override
-    public List<Qna> noAnswerList() throws Exception {
-        return qnaDAO.noAnswerList();
+    public List<Qna> noAnswerList(Page page) throws Exception {
+        return qnaDAO.noAnswerList(page);
     }
 
     @Override

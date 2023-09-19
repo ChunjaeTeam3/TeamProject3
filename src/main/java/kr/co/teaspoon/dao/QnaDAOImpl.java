@@ -14,13 +14,13 @@ public class QnaDAOImpl implements QnaDAO{
     private SqlSession sqlSession;
 
     @Override
-    public List<Qna> qnaList() throws Exception {
-        return sqlSession.selectList("qna.qnaList");
+    public List<Qna> qnaList(Page page) throws Exception {
+        return sqlSession.selectList("qna.qnaList",page);
     }
 
     @Override
-    public List<Qna> noAnswerList() throws Exception {
-        return sqlSession.selectList("qna.noAnswerList");
+    public List<Qna> noAnswerList(Page page) throws Exception {
+        return sqlSession.selectList("qna.noAnswerList", page);
     }
 
     @Override
