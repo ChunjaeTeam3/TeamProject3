@@ -71,7 +71,7 @@ public class ApplyController {
 
         boolean result = applyService.appCheck(id, eno);
 
-        Apply apply = applyService.getApply(id);
+        Apply apply = applyService.getApply(id, eno);
 
         if (result) {
             result = true;

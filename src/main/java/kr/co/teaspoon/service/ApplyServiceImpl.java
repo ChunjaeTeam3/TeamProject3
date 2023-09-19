@@ -12,13 +12,13 @@ public class ApplyServiceImpl implements ApplyService{
     private ApplyDAO applyDAO;
 
     @Override
-    public Apply getApply(String id) throws Exception {
-        return applyDAO.getApply(id);
+    public Apply getApply(String id, int eno) throws Exception {
+        return applyDAO.getApply(id,eno);
     }
 
     @Override
     public boolean appCheck(String id, int eno) throws Exception {
-        Apply apply = applyDAO.getApply(id);
+        Apply apply = applyDAO.getApply(id,eno);
 
         if (apply!= null && apply.getEno() == eno) {
             return false;
