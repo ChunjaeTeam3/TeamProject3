@@ -13,7 +13,7 @@
 <body>
 
     <!-- 헤더 영역 시작-->
-    <%@ include file="../layout/header.jsp"%>
+    <jsp:include page="../layout/header.jsp" />
     <!-- 헤더 영역 끝 -->
 
     <!-- 배너 영역 시작 -->

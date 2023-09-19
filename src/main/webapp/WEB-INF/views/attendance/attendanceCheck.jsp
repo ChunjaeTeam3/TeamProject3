@@ -12,7 +12,7 @@
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<jsp:include page="../layout/header.jsp" />
 
 <section class="page-title background-primary is-relative">
     <div class="container">

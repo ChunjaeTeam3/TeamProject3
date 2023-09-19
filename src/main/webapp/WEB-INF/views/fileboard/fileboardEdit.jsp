@@ -106,6 +106,13 @@
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
 
+<form action="#">
+    <input type="hidden" id="articleno" name="articleno" value="${fileboard.articleno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

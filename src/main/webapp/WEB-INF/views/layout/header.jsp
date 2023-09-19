@@ -16,7 +16,7 @@
                 <span aria-hidden="true"></span>
             </a>
             <!-- 메인페이지 메뉴바 영역 시작 -->
-            <div class="header-wrapper" id="home">
+            <div class="header-wrapper" id="home" style="padding-bottom: 0">
                 <section class="hero is-large">
                     <!-- 모바일 -->
                     <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
@@ -30,24 +30,35 @@
                         <div id="mobile-nav" class="navbar-menu">
                             <div class="navbar-end">
                                 <div class="navbar-item">
-                                    <a class="navbar-item" href="${path}">
-                                        소개
-                                    </a>
+                                    <a href="${path}/community/list.do" class="navbar-item"><strong style="color: #41228e">커뮤니티</strong></a> |
+                                    <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
+                                    <a href="${path}/fileboard/list.do" class="navbar-item">자료실</a>
+                                    <a href="${path}/news/list.do" class="navbar-item">교육뉴스</a>
                                 </div>
                                 <div class="navbar-item">
-                                    <a class="navbar-item" href="${path}">
-                                        커뮤니티
-                                    </a>
+                                    <a href="${path}/event/list.do" class="navbar-item"><strong style="color: #41228e">이벤트</strong></a> |
+                                    <a href="${path}/event/list.do" class="navbar-item">이벤트</a>
+                                    <a href="" class="navbar-item">당첨자 발표</a>
                                 </div>
                                 <div class="navbar-item">
-                                    <a class="navbar-item" href="${path}">
-                                        이벤트
-                                    </a>
+                                    <a href="${path}/notice/list.do" class="navbar-item"><strong style="color: #41228e">고객지원</strong></a> |
+                                    <a href="${path}/notice/list.do" class="navbar-item">공지사항</a>
+                                    <a href="${path}/faq/list.do" class="navbar-item">FAQ</a>
+                                    <a href="${path}/qna/list.do" class="navbar-item">Q&A</a>
                                 </div>
                                 <div class="navbar-item">
-                                    <a class="navbar-item" href="${path}">
-                                        고객지원
-                                    </a>
+                                    <c:if test="${sid eq null}">
+                                        <a href="${path}/member/term.do" class="navbar-item">Sign up</a>
+                                        <a href="${path}/member/login.do" class="navbar-item">Log in</a>
+                                    </c:if>
+                                    <c:if test="${sid ne null and sid ne 'admin'}">
+                                        <a href="${path}/member/login2.do" class="navbar-item">MyPage</a>
+                                        <a href="${path}/member/logout.do" class="navbar-item">LogOut</a>
+                                    </c:if>
+                                    <c:if test="${sid ne null and sid eq 'admin'}">
+                                        <a href="${path}/admin/list.do" class="navbar-item">Admin</a>
+                                        <a href="${path}/member/logout.do" class="navbar-item">LogOut</a>
+                                    </c:if>
                                 </div>
                             </div>
                         </div>
@@ -57,12 +68,11 @@
             </div>
             <!-- 메인페이지 메뉴바 영역 끝 -->
         </div>
-
+        <!-- PC -->
         <div id="navigation" class="navbar-menu">
             <div class="navbar-end">
-                <a href="${path}" class="navbar-item">소개</a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="${path}" class="navbar-item" style="color:#fff;">커뮤니티</a>
+                    <a href="${path}/community/list.do" class="navbar-item" style="color:#fff;">커뮤니티</a>
                     <div class="navbar-dropdown">
                         <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
                         <a href="${path}/fileboard/list.do" class="navbar-item">자료실</a>
@@ -70,14 +80,14 @@
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="${path}" class="navbar-item" style="color:#fff;">이벤트</a>
+                    <a href="{path}/event/list.do" class="navbar-item" style="color:#fff;">이벤트</a>
                     <div class="navbar-dropdown">
                         <a href="${path}/event/list.do" class="navbar-item">이벤트</a>
                         <a href="" class="navbar-item">당첨자 발표</a>
                     </div>
                 </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="${path}" class="navbar-item" style="color:#fff;">고객지원</a>
+                <div class="navbar-item has-dropdown is-hoverable mr-5">
+                    <a href="${path}/notice/list.do" class="navbar-item" style="color:#fff;">고객지원</a>
                     <div class="navbar-dropdown">
                         <a href="${path}/notice/list.do" class="navbar-item">공지사항</a>
                         <a href="${path}/faq/list.do" class="navbar-item">FAQ</a>
@@ -110,8 +120,8 @@
                         </a>
                     </c:if>
                 </div>
-
             </div>
+            <!-- PC -->
         </div>
     </nav>
 

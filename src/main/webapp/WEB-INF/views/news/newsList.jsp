@@ -37,28 +37,34 @@
 <!-- 배너 영역 끝 -->
 <br>
 <!-- 뉴스 영역 시작 -->
-<div class="box">
-        <article class="media">
-            <div class="media-content">
-                <div class="content" style="margin-left: 150px;  margin-right: 150px;">
-                    <c:forEach var="url" items="${urls}" varStatus="status" begin="64" end="72"> <%-- 가져온 url중 64-72번째만 나오게한다--%>
-                        <br>
-                        <p>
-                            <a href="${url}" target="_blank"><strong style="color: black;font-size: 30px;font-weight: bold;">${titles[status.index]}</strong></a>   <small>${regdates[status.index]}</small>
-                            <br><br>
-                                ${contents[status.index]}..<a href="${url}" style="color: black">더보기</a>
-                            <hr>
-                        </p>
-                    </c:forEach>
-                </div>
+<div class="container">
+    <article class="media">
+        <div class="media-content">
+            <div class="container mb-80">
+                <c:forEach var="url" items="${urls}" varStatus="status" begin="64" end="72"> <%-- 가져온 url중 64-72번째만 나오게한다--%>
+                    <br>
+                    <p class="mb-50" style="margin-top:10px">
+                        <a href="${url}" target="_blank"><strong style="color: black;font-size: 30px;font-weight: bold;">${titles[status.index]}</strong></a>   <small>${regdates[status.index]}</small>
+                        <br><br>
+                            ${contents[status.index]}..<a href="${url}" style="color: black">더보기</a>
+                        <hr>
+                    </p>
+                </c:forEach>
             </div>
-        </article>
+        </div>
+    </article>
 </div>
 <!-- 뉴스 영역 끝-->
 
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 
 </body>
 </html>

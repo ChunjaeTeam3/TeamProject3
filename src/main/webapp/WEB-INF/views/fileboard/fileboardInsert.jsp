@@ -38,7 +38,7 @@
 
 
 <!-- 자료실 글쓰기 시작 -->
-<div class="content" id="content" style="margin-top: 100px;">
+<div class="content" id="contents" style="margin-top: 100px;">
     <div class="row column text-center">
         <div class="container">
             <form action="${path }/fileboard/insert.do" id="writeform" method="post" enctype="multipart/form-data">
@@ -72,12 +72,12 @@
                     <label class="file-label">
                         <input class="file-input" type="file" name="upfile" multiple="multiple">
                              <span class="file-cta">
-                                <span class="file-icon">
+                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>
-                                </span>
-                                  <span class="file-label">
-                                              파일 선택
-                                  </span>
+                                 </span>
+                                 <span class="file-label">
+                                    파일 선택
+                                 </span>
                              </span>
                     </label>
                     <p id="file-name-display"></p>
@@ -88,8 +88,8 @@
                     <div class="field-body">
                         <div class="field is-grouped is-grouped-right">
                             <div class="control">
-                                <button type="submit" id="writeBtn" class="button is-primary">글작성</button>
                                 <button type="reset" class="button is-info">초기화</button>
+                                <button type="submit" id="writeBtn" class="button is-primary">작성하기</button>
                             </div>
                         </div>
                     </div>
@@ -103,6 +103,12 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -8,20 +8,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Q & A 수정하기</title>
+    <title>QnA 수정하기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
 
 
 </head>
 <body>
 
-<!--헤더 영역 시작 -->
+<!-- 헤더 영역 시작 -->
 <jsp:include page="../layout/header.jsp"/>
-<!--헤더 영역 끝 -->
+<!-- 헤더 영역 끝 -->
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> Q & A 수정하기 </h1>
+            <h1 class="has-text-white font-tertiary"> QnA 수정하기 </h1>
         </div>
     </div>
     <!-- background shapes -->

@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<jsp:include page="../layout/header.jsp" />
 
 <!-- page title -->
 <section class="page-title background-primary is-relative">
