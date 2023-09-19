@@ -29,7 +29,9 @@ VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, N
 UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
-SELECT * FROM MEMBER;
+SELECT * FROM member;
+
+
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
 	cate VARCHAR(5) PRIMARY KEY NOT NULL,
@@ -88,6 +90,13 @@ CREATE TABLE COMMENT(
 
 SELECT * FROM COMMENT;
 
+CREATE TABLE filterWord(
+	fno INT PRIMARY KEY AUTO_INCREMENT,
+	word VARCHAR(100) NOT NULL
+);
+
+select * from filterword;
+
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
     seq INT AUTO_INCREMENT PRIMARY KEY,
@@ -138,6 +147,13 @@ CREATE TABLE fileboard (
   regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 출석체크 테이블 생성
+CREATE TABLE attendance (
+	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id VARCHAR(20),
+	attend DATE DEFAULT current_date
+);
+
 -- QNA
 CREATE TABLE qna(
                     qno int PRIMARY KEY AUTO_INCREMENT,   			-- 번호
@@ -160,7 +176,6 @@ select qno, title, author, resdate from qna q join member m on(q.author=m.id) wh
 
 SELECT COUNT(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
 
---이벤트글
 CREATE TABLE event (
 	eno int  PRIMARY KEY AUTO_INCREMENT,
 	title VARCHAR(100) NOT NULL,
@@ -190,20 +205,6 @@ create table apply(
 	
 	SELECT * FROM apply;
 	select * from apply where eno=1;
-	
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk111', '김보경', '01011111111');
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk222', '김보경', '01022222222');
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk333', '김보경', '01033333333');
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk444', '김보경', '01044444444');
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk555', '김보경', '01055555555');
-INSERT INTO apply VALUES(DEFAULT, 1, 'kimbk666', '김보경', '01066666666');
-
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk111', '김보경', '01011111111');
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk222', '김보경', '01022222222');
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk333', '김보경', '01033333333');
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk444', '김보경', '01044444444');
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk555', '김보경', '01055555555');
-INSERT INTO apply VALUES(DEFAULT, 2, 'kimbk666', '김보경', '01066666666');
 
 
 -- 당첨자 리스트
