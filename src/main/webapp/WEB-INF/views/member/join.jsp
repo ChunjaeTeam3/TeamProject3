@@ -1,13 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
+<!-- date input의 최소값 구하기 -->
+<c:set var="minYear" value="<%=new java.util.Date().getYear() + 1881%>"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title> 회원가입 </title>
-    <c:set var="path" value="${pageContext.request.contextPath}"/>
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
@@ -107,12 +112,12 @@
                         <div class="column is-10-tablet">
                             <label for="tel" class="label"> 생년월일 </label>
                             <div class="control">
-                                <input type="date" id="birth" name="birth" placeholder="생년월일을 입력해주세요" class="input" autocomplete="off" required>
+                                <input type="date" id="birth" name="birth" max="${minYear}-12-31" placeholder="생년월일을 입력해주세요" class="input" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="column is-10-tablet is-10">
                             <button type="submit" class="button is-primary is-fullwidth"> 회원가입 </button>
-                            <p class="has-text-centered mt-4"> 이미 회원이신가요? <a href="${path}/login.do"> 로그인하기 </a> </p>
+                            <p class="has-text-centered mt-4"> 이미 회원이신가요? <a href="${path}/member/login.do"> 로그인하기 </a> </p>
                         </div>
                     </form>
                 </div>

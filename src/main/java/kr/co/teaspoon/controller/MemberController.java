@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -80,8 +81,20 @@ public class MemberController {
         return "/member/loginmypage";
     }
     @RequestMapping(value = "loginpro.do", method = RequestMethod.POST)
-    public String memberLogin(@RequestParam String id, @RequestParam String pw, Model model) throws Exception {
+    public String memberLogin(@RequestParam String id, @RequestParam String pw, HttpServletResponse response, HttpServletRequest request, Model model) throws Exception {
         boolean ps = memberService.loginCheck(id, pw);
+        String saveId = request.getParameter("saveId");
+        
+        // 로그인 성공 시 쿠키에 아이디 기억하기
+        Cookie cookie = new Cookie("userID", id);
+        if(ps && saveId != null) {
+            response.addCookie(cookie);
+        } else if(ps && saveId == null) {           // '아이디 기억하기' 체크 해제한 경우
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
+        }
+        
+        // 로그인 성공 시
         if(ps){
             session.setAttribute("sid", id);
             return "redirect:/";

@@ -33,7 +33,7 @@
     <div class="container">
         <div class="buttons has-addons is-centered mb-5">
             <div class="container is-max-desktop has-text-centered">
-                <h3 class="mb-40"> ${calendarInfo.month}월 출석 달력📆 </h3>
+                <h3 class="mb-40" style="font-family:'Roboto', 'sans-serif'"> ${calendarInfo.month}월 출석 달력 <i class="fa-regular fa-calendar"></i> </h3>
                 <c:forEach var="i" begin="0" end="5">
                     <div class="columns">
                     <c:forEach var="j" begin="0" end="6">
