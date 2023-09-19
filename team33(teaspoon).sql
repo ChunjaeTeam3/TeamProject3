@@ -1,4 +1,5 @@
 CREATE DATABASE team33;
+
 USE team33;
 
 SHOW TABLES;

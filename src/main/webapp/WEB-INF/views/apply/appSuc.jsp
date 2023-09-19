@@ -16,7 +16,13 @@
 <body>
 
 <div style="margin-top: 50px;">
- <strong style="font-weight: bold; font-size:40px; text-align: center;">이벤트에 성공적으로 신청되셨습니다! </strong>
+ <p style="font-weight: bold; font-size:24px; text-align: center;">이벤트에 성공적으로 신청되셨습니다! </p>
+ <div>
+     <button class="button is-dark" onclick="check()" style="margin-top:24px; margin-left:300px;">닫기</button>
+ </div>
+ <script>
+     function check(){ window.close(); }
+ </script>
 </div>
 </body>
 </html>
