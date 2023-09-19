@@ -62,6 +62,10 @@
         <bean id="fileInfo" class="kr.co.teaspoon.dao.FileInfoDAOImpl"/>
         <bean id="attendanceService" class="kr.co.teaspoon.service.AttendanceServiceImpl"/>
         <bean id="attendanceDAO" class="kr.co.teaspoon.dao.AttendanceDAOImpl"/>
+        <bean id="eventService" class="kr.co.teaspoon.service.EventServiceImpl" />
+        <bean id="eventDAO" class="kr.co.teaspoon.dao.EventDAOImpl" />
+        <bean id="applyService" class="kr.co.teaspoon.service.ApplyServiceImpl" />
+        <bean id="applyDAO" class="kr.co.teaspoon.dao.ApplyDAOImpl" />
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

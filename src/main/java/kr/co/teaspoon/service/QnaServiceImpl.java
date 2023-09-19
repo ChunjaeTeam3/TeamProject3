@@ -21,8 +21,8 @@ public class QnaServiceImpl implements QnaService{
     }
 
     @Override
-    public List<Qna> noAnswerList() throws Exception {
-        return qnaDAO.noAnswerList();
+    public List<Qna> noAnswerList(Page page) throws Exception {
+        return qnaDAO.noAnswerList(page);
     }
 
     @Override

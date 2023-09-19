@@ -1,11 +1,12 @@
 CREATE DATABASE team33;
+
 USE team33;
 
 SHOW TABLES;
 
--- 회원 테이블
+-- 회원
 CREATE TABLE MEMBER(
-	id VARCHAR(20) PRIMARY KEY NOT NULL,
+	id VARCHAR(20) NOT NULL PRIMARY KEY,
 	pw VARCHAR(300) NOT NULL,
 	NAME VARCHAR(50),
 	email VARCHAR(100) NOT NULL,
@@ -13,12 +14,10 @@ CREATE TABLE MEMBER(
 	addr1 VARCHAR(200),
 	addr2 VARCHAR(100),
 	postcode VARCHAR(10),
-	regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	regdate DATETIME default CURRENT_TIMESTAMP,
 	birth DATE,
 	pt INT(11) DEFAULT 0,
 	vistied INT(11) DEFAULT 0);
-
-SELECT * FROM member;
 
 -- 회원 테이블 더미데이터
 INSERT INTO MEMBER
@@ -30,6 +29,7 @@ UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQq
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
 SELECT * FROM member;
+
 
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
@@ -95,8 +95,6 @@ CREATE TABLE filterWord(
 
 select * from filterword;
 
-SELECT * FROM community
-WHERE title LIKE CONCAT('%','욕설','%') OR content LIKE CONCAT('%','욕설','%');
 
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
@@ -115,6 +113,7 @@ INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목4  입니다.','여기는 �
 INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목5  입니다.','여기는 샘플 글 5의 내용입니다.','admin',DEFAULT, DEFAULT);
 INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목6  입니다.','여기는 샘플 글 6의 내용입니다.','admin',DEFAULT, DEFAULT);
 
+
 CREATE TABLE faq (
    fno INT  PRIMARY KEY AUTO_INCREMENT ,
    question VARCHAR(1000) NOT NULL,
@@ -131,6 +130,19 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다7', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다8', '답변입니다8');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다9', '답변입니다9');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다10', '답변입니다10');
+	
+	
+-- qna
+CREATE TABLE qna(qno int PRIMARY KEY AUTO_INCREMENT,   		-- 번호
+   title VARCHAR(100) NOT NULL,   									-- 제목
+   content VARCHAR(1000) NOT NULL,   								-- 내용
+   author VARCHAR(16),   												-- 작성자
+   resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    			-- 등록일
+   visited INT DEFAULT 0,   												-- 조회수
+   lev INT DEFAULT 0, 													-- 질문(0), 답변(1)
+   par INT,																	-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
+   FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
+);
 
 CREATE TABLE fileInfo(
   no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -147,12 +159,6 @@ CREATE TABLE fileboard (
   regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, DEFAULT,1);
-INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
-
-UPDATE qna SET author='admin' WHERE qno=8;
-select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
-
 -- 출석체크 테이블 생성
 CREATE TABLE attendance (
 	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -162,11 +168,29 @@ CREATE TABLE attendance (
 
 SELECT * FROM attendance;
 
-INSERT INTO attendance(id, attend)
-VALUES('shin', '2023-09-08');
 
-SELECT day(attend) AS attendDay FROM attendance
-WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
+CREATE TABLE event (
+	eno int  PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(1000) NOT NULL,
+	STATUS VARCHAR(5) CHECK(status IN(0, 1)),
+	sdate DATE,
+	edate DATE,
+	author VARCHAR(16),
+	regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	cnt INT DEFAULT 0 NOT NULL
+);
 
-SELECT CONCAT(' ',day(attend),' ') AS attendDay FROM attendance
-WHERE id='shin' AND MONTH(attend) = MONTH(CURRENT_DATE);
+SELECT * FROM event;
+
+create table apply(
+	appno int AUTO_INCREMENT PRIMARY KEY,		
+	eno int not NULL,								
+	id varchar(100) not NULL,						
+	name varchar(100) not null,
+	tel varchar(13),			
+	foreign key(eno) references event(eno) on delete cascade,
+	foreign key(id) references member(id) on delete cascade);
+	
+SELECT * FROM apply;
+
