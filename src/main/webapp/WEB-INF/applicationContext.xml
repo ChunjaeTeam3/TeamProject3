@@ -60,8 +60,8 @@
         <bean id="fileboard" class="kr.co.teaspoon.dao.FileboardDAOImpl"/>
         <bean id="fileInfoService" class="kr.co.teaspoon.service.FileInfoServiceImpl"/>
         <bean id="fileInfo" class="kr.co.teaspoon.dao.FileInfoDAOImpl"/>
-        <bean id="WinnerListService" class="kr.co.teaspoon.service.WinnerServiceImpl"/>
-        <bean id="WinnerList" class="kr.co.teaspoon.dao.WinnerDAOImpl"/>
+        <bean id="WinnerService" class="kr.co.teaspoon.service.WinnerServiceImpl"/>
+        <bean id="Winner" class="kr.co.teaspoon.dao.WinnerDAOImpl"/>
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />
