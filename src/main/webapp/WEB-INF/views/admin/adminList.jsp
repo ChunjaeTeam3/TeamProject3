@@ -45,7 +45,7 @@
                 </p>
                 <ul class="menu-list">
                     <li><a > 회원통계</a></li>
-                    <li><a >이벤트</a></li>
+                    <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
                     <li><a >공지사항</a></li>
                     <li><a >QnA</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>

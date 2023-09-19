@@ -3,24 +3,23 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="team33:war" />
+      <artifact name="team33:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43e74fd0-6eca-4c59-8df9-7fdb6e34b5f8" name="Changes" comment="" />
+
+    <list default="true" id="daaf84c9-bbfd-46b2-bf37-c9d288e84002" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appSuc.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appSuc.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team33(teaspoon).sql" beforeDir="false" afterPath="$PROJECT_DIR$/team33(teaspoon).sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Jsp File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,24 +31,41 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="2VYRx5TsWaUDZarQsMHnpnTxcZt" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2VZyKyCA2WTKFCbvZ9hl7S6vFeF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/kimleeho/TeamProject3",
+    "git-widget-placeholder": "beubeu95",
+    "last_opened_file_path": "C:/hkdev/proj/team/Chunjae_Team_Proj03/team33/src/main/webapp/WEB-INF/views/admin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "spring.configuration.checksum": "8b1dc0e6e12e79ab401aa775b638e116",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\hkdev\proj\team\Chunjae_Team_Proj03\team33\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="C:\hkdev\proj\team\Chunjae_Team_Proj03\team33\src\main\java\kr\co\teaspoon\controller" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.78" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.78" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -62,7 +78,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="dc9a1f26-b184-4298-99f6-274434b22262" />
+        <option name="BASE_DIRECTORY_NAME" value="3edf442f-87ad-4575-8da6-6d46169f28aa" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -70,7 +86,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57399" />
+        <option name="DEBUG_PORT" value="63803" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -136,6 +152,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="team33:war" />
+          <artifact name="team33:war exploded" />
         </option>
       </method>
     </configuration>
@@ -143,10 +160,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="43e74fd0-6eca-4c59-8df9-7fdb6e34b5f8" name="Changes" comment="" />
-      <created>1695011270590</created>
+      <changelist id="daaf84c9-bbfd-46b2-bf37-c9d288e84002" name="Changes" comment="" />
+      <created>1695057842264</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+      <updated>1695057842264</updated>
+      <workItem from="1695057843496" duration="783000" />
+      <workItem from="1695058692312" duration="17000" />
+      <workItem from="1695080847427" duration="949000" />
+
       <updated>1695011270590</updated>
       <workItem from="1695011271604" duration="2197000" />
     </task>

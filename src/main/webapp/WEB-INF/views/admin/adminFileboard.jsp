@@ -45,7 +45,7 @@
                 <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
                     <br>
                     <li><a > 회원통계</a></li>
-                    <li><a >이벤트</a></li>
+                    <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
                     <li><a >공지사항</a></li>
                     <li><a >QnA</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>

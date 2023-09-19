@@ -1,5 +1,9 @@
 package kr.co.teaspoon.controller;
 
+
+import kr.co.teaspoon.dto.Event;
+
+
 import kr.co.teaspoon.dto.Fileboard;
 import kr.co.teaspoon.dto.Qna;
 import kr.co.teaspoon.service.*;
@@ -19,6 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin/*")
 public class AdminController {
+
     @Autowired
     HttpSession session;
     @Autowired
@@ -29,6 +34,10 @@ public class AdminController {
     private MemberService memberService;
     @Autowired
     private FilterWordService filterWordService;
+
+    @Autowired
+    private EventService eventService;
+
 
     @RequestMapping("filterInsert.do")
     public String filterInsertGet(@RequestParam String word, Model model) throws Exception {
@@ -48,6 +57,37 @@ public class AdminController {
         return "/admin/adminFileboard";
     }
 
+
+    @GetMapping("delete.do")
+    public String noticeDelete(HttpServletRequest request, Model model) throws Exception {
+        int articleno = Integer.parseInt(request.getParameter("articleno"));
+        fileboardService.fileboardDelete(articleno);
+        return "redirect:adminList.do";
+    }
+
+    @GetMapping("adminEventList.do")
+    public String getEventList(HttpServletRequest request, HttpServletResponse response,Model model) throws Exception {
+        int curPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+
+        Page page = new Page();
+
+        // 페이징에 필요한 데이터 저장
+        int total = eventService.getCount(page);
+        page.makeBlock(curPage, total);
+        page.makeLastPageNum(total);
+        page.makePostStart(curPage, total);
+
+        List<Event> eventList = eventService.eventList(page);
+
+        model.addAttribute("eventList", eventList);
+        model.addAttribute("curPage", curPage);
+        model.addAttribute("page", page);
+
+        return "/admin/adminEventList";
+    }
+}
+
+
     @GetMapping("delete.do")
     public String noticeDelete(HttpServletRequest request, Model model) throws Exception {
         int articleno = Integer.parseInt(request.getParameter("articleno"));
@@ -56,4 +96,5 @@ public class AdminController {
     }
 
 }
+
 
