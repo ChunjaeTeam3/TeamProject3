@@ -21,4 +21,5 @@
         delete from apply where appno = #{appno}
     </delete>
 
+
 </mapper>

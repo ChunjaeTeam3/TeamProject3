@@ -10,16 +10,19 @@ public class ApplyDAOImpl implements ApplyDAO{
     @Autowired
     private SqlSession sqlSession;
 
-
-
     @Override
     public Apply getApply(String id) throws Exception {
-        return sqlSession.selectOne("apply.getApply", id);
+        return sqlSession.selectOne("apply.getApply",id);
     }
 
     @Override
     public int getCount(int appno) throws Exception {
         return sqlSession.selectOne("apply.getCount", appno);
+    }
+
+    @Override
+    public Apply appCheck(String id) throws Exception {
+        return sqlSession.selectOne("apply.appCheck", id);
     }
 
     @Override
@@ -31,4 +34,5 @@ public class ApplyDAOImpl implements ApplyDAO{
     public void applyDelete(int appno) throws Exception {
         sqlSession.delete("apply.applyDelete", appno);
     }
+
 }

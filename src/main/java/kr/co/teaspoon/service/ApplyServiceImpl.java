@@ -17,8 +17,14 @@ public class ApplyServiceImpl implements ApplyService{
     }
 
     @Override
-    public boolean appCheck(String id) throws Exception {
-        return applyDAO.getApply(id) == null ? true : false;
+    public boolean appCheck(String id, int eno) throws Exception {
+        Apply apply = applyDAO.getApply(id);
+
+        if (apply!= null && apply.getEno() == eno) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
