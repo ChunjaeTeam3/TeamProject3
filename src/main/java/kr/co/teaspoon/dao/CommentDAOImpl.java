@@ -1,8 +1,7 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Comment;
-import kr.co.teaspoon.util.CommentPage;
-import kr.co.teaspoon.util.Page;
+import kr.co.teaspoon.util.CommunityPage;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +15,7 @@ public class CommentDAOImpl implements CommentDAO {
     private SqlSession sqlSession;
 
     @Override
-    public List<Comment> commentList(CommentPage page) throws Exception {
+    public List<Comment> commentList(CommunityPage page) throws Exception {
         return sqlSession.selectList("comment.commentList", page);
     }
 
