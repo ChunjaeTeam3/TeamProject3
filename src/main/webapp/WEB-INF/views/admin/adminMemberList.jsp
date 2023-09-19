@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
@@ -24,7 +25,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 이벤트 목록 </h1>
+            <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 회원 관리 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -37,13 +38,14 @@
 </section>
 
 <br>
+<div class="row column text-center" >
 <div class="container" style="margin-bottom: 200px;">
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
                 <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
                     <br>
-                    <li><a href="${path}/admin/adminMemberList.do">회원통계</a></li>
+                    <li><a href="${path}/admin/adminMemberList.do"> 회원통계</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
                     <li><a >공지사항</a></li>
                     <li><a href="${path}/admin/noAnswerList.do">QnA</a></li>
@@ -51,52 +53,43 @@
                 </ul>
             </aside>
         </div>
-        <div class="row column text-center">
+        <div class="row column text-center" >
             <br>
             <div class="container">
                 <div>
-                    <%--이벤트 목록--%>
-                    <table class="table" id="event-table">
-                            <thead>
+                    <%--회원 목록--%>
+                    <table class="table" id="member-table">
+                        <thead>
+                        <tr>
+                            <th width="100">아이디</th>
+                            <th width="100">이름</th>
+                            <th width="120">가입일</th>
+                            <th width="80">강퇴</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${memberList}" var="member" varStatus="status">
                             <tr>
-                                <th width="80">번호</th>
-                                <th>제목</th>
-                                <th width="200">이벤트상태</th>
-                                <th width="100">작성자</th>
-                                <th width="120">작성일</th>
-                                <th width="100">당첨</th>
+                                <td>${member.id }</td>
+                                <td>${member.name}</td>
+                                <td>
+                                    <fmt:parseDate value="${member.regdate}" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
+                                    <fmt:formatDate value="${resdate}" pattern="yyyy-MM-dd" />
+                                </td>
+                                <td>
+                                    <div class="button-group" style="align-items: center">
+                                        <a class="button is-danger" href="${path}/admin/memberDelete.do?id=${member.id }">강퇴</a>
+                                    </div>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${eventList }" var="event" varStatus="status">
-                                <tr>
-                                    <td>${status.count }</td>
-                                    <td ><a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none;">${event.title }</a></td>
-                                    <c:if test='${event.status eq "1"}'>
-                                        <td>이벤트 진행중</td>
-                                    </c:if>
-                                    <c:if test='${event.status eq "0"}'>
-                                        <td>이벤트 종료</td>
-                                    </c:if>
-                                    <td>${event.author }</td>
-                                    <td>
-                                        <fmt:parseDate value="${event.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-                                        <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
-                                    </td>
-                                    <td>
-                                        <div class="button-group" style="align-items: center">
-                                            <a class="button is-link" href="${path}/admin/" style="width: 60px; height: 30px;">당첨</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            <c:if test="${empty eventList}">
-                                <tr>
-                                    <td colspan="6" class="has-text-centered"> 작성된 이벤트가 없습니다. </td>
-                                </tr>
-                            </c:if>
-                            </tbody>
-                        </table>
+                        </c:forEach>
+                        <c:if test="${empty memberList}">
+                            <tr>
+                                <td colspan="5" class="has-text-centered"> 가입한 회원이 없습니다. </td>
+                            </tr>
+                        </c:if>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -105,12 +98,13 @@
     <script async type="text/javascript" src="../js/bulma.js"></script>
     <script type="text/javascript">
         jQuery(function ($){
-            $("#event-table").DataTable();
+            $("#member-table").DataTable();
         })
     </script>
 
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
 </body>
 </html>

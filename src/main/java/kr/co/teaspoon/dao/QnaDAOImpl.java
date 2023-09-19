@@ -19,8 +19,8 @@ public class QnaDAOImpl implements QnaDAO{
     }
 
     @Override
-    public List<Qna> noAnswerList() throws Exception {
-        return sqlSession.selectList("qna.noAnswerList");
+    public List<Qna> noAnswerList(Page page) throws Exception {
+        return sqlSession.selectList("qna.noAnswerList", page);
     }
 
     @Override

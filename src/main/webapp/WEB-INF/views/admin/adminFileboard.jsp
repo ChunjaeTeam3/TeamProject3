@@ -38,16 +38,16 @@
 </section>
 
 <br>
-<div class="container">
+<div class="container" style="margin-bottom: 200px;">
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
                 <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
                     <br>
-                    <li><a > 회원통계</a></li>
+                    <li><a href="${path}/admin/adminMemberList.do"> 회원통계</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
                     <li><a >공지사항</a></li>
-                    <li><a >QnA</a></li>
+                    <li><a href="${path}/admin/noAnswerList.do">QnA</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                 </ul>
             </aside>
@@ -102,6 +102,9 @@
             $("#file-table").DataTable();
         })
     </script>
-</body>
 
+    <!-- 푸터 영영 시작 -->
+    <jsp:include page="../layout/footer.jsp"/>
+    <!-- 푸터 영역 끝 -->
+</body>
 </html>
