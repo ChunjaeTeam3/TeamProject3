@@ -70,7 +70,7 @@
             <script>
                 function appCheck() {
                     var child;
-                    let params = { id: $("#id").val() };
+                    let params = { id: $("#id").val(), eno: $("#eno").val()};
                     $.ajax({
                         url: "${path}/apply/appCheck.do",
                         type: "post",

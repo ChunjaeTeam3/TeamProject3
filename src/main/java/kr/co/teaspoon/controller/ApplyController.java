@@ -2,6 +2,7 @@ package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.Apply;
 import kr.co.teaspoon.dto.Event;
+import kr.co.teaspoon.dto.Member;
 import kr.co.teaspoon.service.ApplyService;
 import kr.co.teaspoon.service.EventService;
 import org.json.JSONObject;
@@ -67,11 +68,24 @@ public class ApplyController {
     @RequestMapping(value = "appCheck.do", method = RequestMethod.POST)
     public void appCheck(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
         String id = request.getParameter("id");
-        boolean result = applyService.appCheck(id);
+        int eno = Integer.parseInt(request.getParameter("eno"));
+
+        Apply apply = new Apply();
+        int eeno = apply.getEno();
+
+        boolean  result = false;
+        boolean check = applyService.appCheck(id);
+
+        if(eeno == eno && check) {
+            result = false;
+        }else{
+            result = true;
+        }
 
         JSONObject json = new JSONObject();
         json.put("result", result);
         PrintWriter out = response.getWriter();
         out.println(json.toString());
+
     }
 }

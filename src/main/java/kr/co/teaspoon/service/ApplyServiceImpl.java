@@ -18,7 +18,7 @@ public class ApplyServiceImpl implements ApplyService{
 
     @Override
     public boolean appCheck(String id) throws Exception {
-        return applyDAO.getApply(id) == null ? true : false;
+        return applyDAO.getApply(id) != null ? true : false;
     }
 
     @Override
