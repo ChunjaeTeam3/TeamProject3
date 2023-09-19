@@ -9,9 +9,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -19,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/apply/*")
@@ -64,28 +64,30 @@ public class ApplyController {
         mav.setView(new RedirectView(request.getContextPath() + "/member/eventMypage.do"));
         return mav;
     }
-
     @RequestMapping(value = "appCheck.do", method = RequestMethod.POST)
-    public void appCheck(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+    @ResponseBody
+    public Map<String, Boolean> appCheck(HttpServletRequest request) throws Exception {
         String id = request.getParameter("id");
         int eno = Integer.parseInt(request.getParameter("eno"));
 
-        Apply apply = new Apply();
-        int eeno = apply.getEno();
+        boolean result = applyService.appCheck(id, eno);
 
-        boolean  result = false;
-        boolean check = applyService.appCheck(id);
+        Apply apply = applyService.getApply(id, eno);
 
-        if(eeno == eno && check) {
-            result = false;
-        }else{
+        if (result) {
             result = true;
+        } else {
+            // 이미 참여한 이벤트인 경우
+            if (apply.getEno() == eno) {
+                result = false; // 해당 이벤트에 대한 신청은 거부
+            } else {
+                result = true; // 다른 이벤트에 대한 신청은 허용
+            }
         }
 
-        JSONObject json = new JSONObject();
-        json.put("result", result);
-        PrintWriter out = response.getWriter();
-        out.println(json.toString());
-
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("result", result);
+        return response;
     }
+
 }
