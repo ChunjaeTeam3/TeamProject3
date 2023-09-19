@@ -1,11 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="path" value="${pageContext.request.contextPath }"/>
-<c:set var="fileboard" value="${dto}"/>
-<c:set var="fileboard2" value="${dto2}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +15,8 @@
 <body>
 
 <!-- 헤더 영역 시작 -->
-<jsp:include page="../layout/header.jsp"/>
+<%@ include file="../layout/header.jsp"%>
+<%--<jsp:include page="../layout/header.jsp"/>--%>
 <!-- 헤더 영역 끝 -->
 
 <!-- 배너 영역 시작 -->
@@ -67,12 +65,11 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <c:if test="${!empty fileboard2.originFile}">
-                            <a href="${pageContext.request.contextPath}/resources/upload/${fileboard2.saveFolder}/${fileboard2.saveFile}"
-                               download="${fileboard2.originFile }"><i class="fas fa-file"
-                                                                       style="color: #54c066;"></i> ${fileboard2.originFile }
+                        <c:forEach var="item" items="${fileboard2}">
+                            <a href="${pageContext.request.contextPath}/resources/upload/${item.saveFolder}/${item.saveFile}"
+                               download="${item.originFile }"><i class="fas fa-file" style="color: #54c066;"></i> ${item.originFile }
                             </a>
-                        </c:if>
+                        </c:forEach>
                     </td>
                 </tr>
                 </tbody>

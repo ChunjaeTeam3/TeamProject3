@@ -29,4 +29,6 @@
     <update id="Count">
         update event set cnt=cnt+1 where eno=#{eno}
     </update>
+
+
 </mapper>

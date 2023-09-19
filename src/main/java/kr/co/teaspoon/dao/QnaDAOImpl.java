@@ -14,8 +14,8 @@ public class QnaDAOImpl implements QnaDAO{
     private SqlSession sqlSession;
 
     @Override
-    public List<Qna> qnaList() throws Exception {
-        return sqlSession.selectList("qna.qnaList");
+    public List<Qna> qnaList(Page page) throws Exception {
+        return sqlSession.selectList("qna.qnaList",page);
     }
 
     @Override

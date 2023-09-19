@@ -27,7 +27,9 @@
     </delete>
     <!--	글수정-->
     <update id="fileboardEdit">
-        update fileboard set title=#{title}, content=#{content} where articleno=#{articleno}
+        update fileboard
+        set title=#{title}, content=#{content}
+        where articleno = #{articleno}
     </update>
 
     <!-- 파일 추가 -->
@@ -44,7 +46,7 @@
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <result property="regdate" column="regdate"/>
-        <collection property="fileInfos" column="articleno" javaType="list" ofType="FileInfo" select="fileInfoList"/>
+        <collection property="fileInfos" column="articleno" javaType="list" ofType="FileInfo" select="fileInfos"/>
     </resultMap>
     <!-- 업로드 파일을 List로 출력 -->
     <select id="listArticle" parameterType="map" resultMap="fileboardList">
@@ -61,10 +63,6 @@
         order by articleno desc
         limit #{start}, #{spp}
     </select>
-    <select id="fileInfoList" resultType="FileInfo">
-        select savefolder, originfile, savefile
-        from fileinfo
-        where articleno = #{articleno}
-    </select>
+
 
 </mapper>

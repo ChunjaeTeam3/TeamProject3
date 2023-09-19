@@ -40,7 +40,7 @@
 
 
 <!-- 자료실 글쓰기 시작 -->
-<div class="content" id="content" style="margin-top: 100px;">
+<div class="content" id="contents" style="margin-top: 100px;">
     <div class="row column text-center">
         <div class="container">
             <form action="${path }/fileboard/edit.do" id="writeform" method="post" enctype="multipart/form-data">
@@ -51,6 +51,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
+                                <input type="hidden" id="articleno" name="articleno" value="${fileboard.articleno}">
                                 <input type="text" name="title" id="title" value="${fileboard.title }" placeholder="제목 입력" maxlength="98" class="input" required>
                             </p>
                         </div>
@@ -72,7 +73,7 @@
                 <%--                파일 선택부분--%>
                 <div class="file is-horizontal" style="margin-left: 180px">
                     <label class="file-label">
-                        <input class="file-input" value="${fileboard.fileInfos}" type="file" name="upfile" multiple="multiple">
+                        <input class="file-input" type="file" name="upfile" multiple="multiple">
                         <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>

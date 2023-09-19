@@ -66,6 +66,8 @@
         <bean id="eventDAO" class="kr.co.teaspoon.dao.EventDAOImpl" />
         <bean id="applyService" class="kr.co.teaspoon.service.ApplyServiceImpl" />
         <bean id="applyDAO" class="kr.co.teaspoon.dao.ApplyDAOImpl" />
+        <bean id="winnerService" class="kr.co.teaspoon.service.WinnerServiceImpl" />
+        <bean id="winnerDAO" class="kr.co.teaspoon.dao.WinnerDAOImpl" />
 
         <!-- @Transactional 어노테이션 처리 -->
         <tx:annotation-driven transaction-manager="transactionManager" />

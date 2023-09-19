@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface QnaDAO {
 
-    public List<Qna> qnaList() throws Exception;
+    public List<Qna> qnaList(Page page) throws Exception;
     public List<Qna> noAnswerList(Page page) throws Exception;
     public Qna qnaDetail(int qno) throws Exception;
     public int getCount(Page page) throws Exception;

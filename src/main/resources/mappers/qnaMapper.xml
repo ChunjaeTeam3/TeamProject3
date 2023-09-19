@@ -7,11 +7,6 @@
         SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.lev AS lev, a.par AS par, b.name AS NAME FROM qna a, member b WHERE a.author=b.id order BY a.par DESC, a.lev ASC, a.qno ASC
     </select>
 
-    <!--답변없는 질문 목록-->
-    <select id="noAnswerList" resultType="kr.co.teaspoon.dto.Qna">
-        select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) &lt; 2)
-    </select>
-
     <!--상세보기-->
     <select id="qnaDetail" resultType="kr.co.teaspoon.dto.Qna">
         select * from qna where qno=#{qno}

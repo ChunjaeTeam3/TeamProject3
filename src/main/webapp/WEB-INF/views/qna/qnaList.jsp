@@ -81,7 +81,10 @@
                     </c:if>
                 </c:if>
                 <td class="has-text-centered">${qna.author}</td>
-                <td class="has-text-centered">${qna.resdate}</td>
+                <td class="has-text-centered">
+                    <fmt:parseDate value="${qna.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
+                    <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
+                </td>
             </tr>
             </c:forEach>
             <c:if test="${empty qnaList}">
