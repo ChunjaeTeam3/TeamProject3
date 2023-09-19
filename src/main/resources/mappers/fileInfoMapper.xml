@@ -8,4 +8,26 @@
     <update id="fileboardEdit">
         update fileInfo set saveFolder=#{saveFolder}, originFile=#{originFile}, saveFile=#{saveFile} where articleno=#{articleno}
     </update>
+
+
+    <!-- 자료실 번호 별 파일 리스트 가져오기 -->
+    <select id="fileInfoList" resultType="kr.co.teaspoon.dto.FileInfo">
+        select * from fileInfo
+        where articleno = #{articleno}
+    </select>
+
+    <!-- 파일 삭제 -->
+    <delete id="fileInfoDelete">
+        delete from fileInfo
+        where articleno = #{articleno}
+    </delete>
+
+    <!-- 파일 추가 -->
+    <insert id="fileInfoInsert">
+        insert into fileInfo(articleno, savefolder, originfile, savefile)
+        values
+        <foreach collection="fileInfos" item="fileInfo" separator=" , ">
+            (#{articleno}, #{fileInfo.saveFolder}, #{fileInfo.originFile}, #{fileInfo.saveFile})
+        </foreach>
+    </insert>
 </mapper>

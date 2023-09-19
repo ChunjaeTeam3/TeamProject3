@@ -1,6 +1,7 @@
 package kr.co.teaspoon.service;
 
 
+import kr.co.teaspoon.dao.FileInfoDAO;
 import kr.co.teaspoon.dao.FileboardDAO;
 import kr.co.teaspoon.dto.Fileboard;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,10 @@ import java.util.List;
 @Service
 public class FileboardServiceImpl implements FileboardService {
     @Autowired
-   private FileboardDAO fileboardDAO;
+    private FileboardDAO fileboardDAO;
+
+    @Autowired
+    private FileInfoDAO fileInfoDAO;
 
     @Override
     @Transactional
@@ -44,8 +48,13 @@ public class FileboardServiceImpl implements FileboardService {
         fileboardDAO.fileboardDelete(articleno);
     }
 
+    @Transactional
     @Override
     public void fileboardEdit(Fileboard dto) throws Exception {
         fileboardDAO.fileboardEdit(dto);
+        if(dto.getFileInfos().get(0).getSaveFolder() != null) {
+            fileInfoDAO.fileInfoDelete(dto.getArticleno());
+            fileInfoDAO.fileInfoInsert(dto);
+        }
     }
 }
