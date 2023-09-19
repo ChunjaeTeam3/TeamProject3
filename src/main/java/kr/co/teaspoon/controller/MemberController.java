@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
+import java.util.List;
 
 @Controller
 @RequestMapping("/member/*")
@@ -144,5 +145,13 @@ public class MemberController {
         memberService.memberDelete(id);
         session.invalidate();
         return "redirect:/";
+    }
+
+    @RequestMapping(value="list.do", method = RequestMethod.GET)
+    public String memberList(Model model) throws Exception {
+        List<Member> memberList = memberService.memberList();
+        model.addAttribute("memberList", memberList);
+
+        return "/member/memberList";
     }
 }

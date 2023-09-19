@@ -28,9 +28,6 @@ VALUES('shin', '1234', '신이름', 'shin@edu.com', '01032146578', NULL, NULL, N
 UPDATE MEMBER SET pw='$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO' WHERE id = 'admin';
 UPDATE MEMBER SET pw='$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm' WHERE id = 'shin';
 
-SELECT * FROM member;
-
-
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
 	cate VARCHAR(5) PRIMARY KEY NOT NULL,
@@ -168,6 +165,24 @@ CREATE TABLE attendance (
 
 SELECT * FROM attendance;
 
+
+CREATE TABLE fileInfo(
+  no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  articleno INT,
+  saveFolder VARCHAR(300) NOT NULL,
+  originFile VARCHAR(300) NOT NULL,
+  saveFile VARCHAR(300) NOT NULL);
+  
+  SELECT * FROM fileinfo;
+  
+
+CREATE TABLE fileboard (
+  articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id varchar(16) NOT NULL,
+  title varchar(100) NOT NULL,
+  content varchar(2000) NOT NULL,
+  regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE event (
 	eno int  PRIMARY KEY AUTO_INCREMENT,

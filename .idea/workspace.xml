@@ -1,51 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="team33:war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac8ae4d5-d860-4518-ad5b-0f413c04c6d9" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/ApplyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/ApplyDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/ApplyDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/EventDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/EventDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Apply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/ApplyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/ApplyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/EventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/EventServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/applyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/eventMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminEventList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminFileboard.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/apply/appSuc.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/event/eventDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/event/eventEdit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/event/eventInsert.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/event/eventList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/27c5c1bc-e441-4290-b2e2-12ca1c9e8ec5_bookEvent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/28c66ed6-57a3-4de9-b940-b0d2ef103e68_bookEvent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/67ce2a58-6400-4343-a67d-8e542eb243b7_bookEvent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/8f2caa68-1889-4122-a0ea-6bab73ef3cdb_bookEvent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/d4db12cf-4fbe-49a1-99a5-bc512f39d352_bookEvent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/e16070b8-b088-470c-a9be-5b44a16efc23_bookEvent.png" afterDir="false" />
+    <list default="true" id="f85d2931-7ff0-4001-898f-010b7670d07c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/AttendanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/AttendanceDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/AttendanceDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dto/Attendance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/AttendanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/AttendanceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CalendarInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/FilterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/attendanceMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/communityMgmt.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/attendance/attendanceCheck.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/upload/community/1540fcf0-91de-46ca-aae8-149e249103d6_education02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/upload/community/6078ac63-7d0b-4c59-82be-e04a2422db6e_education02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/upload/community/7c1c1a39-9580-4e0e-9571-58a714619e93_lecture01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/uploadckImage/2409fea1-c76f-46ba-9169-62efbb6a2591_admin_page.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kr/co/teaspoon/DateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/QnaDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/QnaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/QnaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/QnaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/QnaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommunityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/CommunityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/CommentDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/FilterWordDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/FilterWordDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/FilterWordDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/dao/FilterWordDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/FilterWordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/FilterWordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/FilterWordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/service/FilterWordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CommentPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CommunityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/util/CommunityPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/filterWordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/filterWordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fileboard/fileboardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fileboard/fileboardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section4.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section4.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminEventList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminEventList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminFileboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminFileboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminMemberList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/adminMemberList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/filterInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/filterInsert.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/noAnswerList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/noAnswerList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityInsert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityInsert.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/community/communityUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section1.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section3.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section3.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section5.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section5.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/qna/qnaDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/setting/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/setting/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/about/author.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/about/service.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/about/service.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/about/signature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/clients-logo/client-logo-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/clients-logo/client-logo-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/clients-logo/client-logo-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/clients-logo/client-logo-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/clients-logo/client-logo-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/about.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/blog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/contact.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/homepage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/kross-homepage.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/github/portfolio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/showcase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/showcase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/vdo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/vdo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team33(teaspoon).sql" beforeDir="false" afterPath="$PROJECT_DIR$/team33(teaspoon).sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,35 +94,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2VatIiNUqHWRNHkRIz2cAUCAnSf" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "8b1dc0e6e12e79ab401aa775b638e116",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">
@@ -97,14 +119,9 @@
             <option name="CONTEXT_PATH" value="/team33_war" />
           </settings>
         </artifact>
-        <artifact name="team33:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/team33" />
-          </settings>
-        </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="ce363581-7693-4efc-a6c0-d32b18713cd0" />
+        <option name="BASE_DIRECTORY_NAME" value="d790977c-34d2-4eb5-bbb7-16b9f192a125" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -112,7 +129,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54217" />
+        <option name="DEBUG_PORT" value="59593" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -178,25 +195,11 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="team33:war" />
-          <artifact name="team33:war exploded" />
         </option>
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="ac8ae4d5-d860-4518-ad5b-0f413c04c6d9" name="변경" comment="" />
-      <created>1695085943909</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1695085943909</updated>
-      <workItem from="1695085945719" duration="212000" />
-      <workItem from="1695086169929" duration="308000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

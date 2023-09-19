@@ -36,7 +36,7 @@
     <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 
-<div class="container">
+<div class="container" style="margin-bottom: 200px;">
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
@@ -44,10 +44,11 @@
                     관리자 페이지
                 </p>
                 <ul class="menu-list">
-                    <li><a > 회원통계</a></li>
-                    <li><a href="${path}/admin/adminEventList.do">이벤트</a></li>
-                    <li><a >공지사항</a></li>
-                    <li><a >QnA</a></li>
+                    <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
+                    <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
+                    <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
+                    <li><a href="${path}/admin/filterInsert.do">게시판 관리</a></li>
+                    <li><a href="${path}/admin/questionList.do">QnA 관리</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                 </ul>
             </aside>
@@ -130,6 +131,9 @@
 </div>
 <script async type="text/javascript" src="../js/bulma.js"></script>
 
-</body>
+<!-- 푸터 영영 시작 -->
+<jsp:include page="../layout/footer.jsp"/>
+<!-- 푸터 영역 끝 -->
 
+</body>
 </html>

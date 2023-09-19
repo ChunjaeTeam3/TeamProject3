@@ -165,6 +165,20 @@ public class AdminController {
         return "/admin/adminEventList";
     }
 
+    @GetMapping("adminMemberList.do")
+    public String adminMemberList(Model model) throws Exception {
+        List<Member> memberList = memberService.memberList();
+        model.addAttribute("memberList", memberList);
+        return "/admin/adminMemberList";
+    }
+
+    @RequestMapping(value="memberDelete.do", method = RequestMethod.GET)
+    public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
+        memberService.memberDelete(id);
+        session.invalidate();
+        return "/admin/adminMemberList";
+    }
+
 }
 
 
