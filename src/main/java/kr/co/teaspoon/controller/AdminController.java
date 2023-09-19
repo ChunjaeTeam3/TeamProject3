@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -127,8 +128,7 @@ public class AdminController {
         model.addAttribute("noAnswerList", noAnswerList);     //QnA 목록
         return "/admin/noAnswerList";
     }
-
-    @RequestMapping("list.do")
+@RequestMapping("list.do")
     public String adminList(HttpServletRequest request, HttpServletResponse response, Model model) {
         return "/admin/adminList";
     }
@@ -228,5 +228,7 @@ public class AdminController {
         return "redirect:/winner/list.do";
     }
 }
+
+
 
 
