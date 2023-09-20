@@ -41,6 +41,10 @@
         ]]>
     </select>
 
+    <select id="noAnswerCnt" resultType="integer">
+        SELECT COUNT(*) FROM qna GROUP BY par HAVING COUNT(par) = 1
+    </select>
+
     <!--질문 글 등록-->
     <insert id="questionInsert">
         insert into qna values (default, #{title}, #{content}, #{author}, default, 0, default)

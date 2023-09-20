@@ -88,14 +88,14 @@ public class EventController {
     }
 
     @PostMapping("edit.do")
-    public String eventEdit(HttpServletRequest request, Model model) throws Exception {
-        int eno = Integer.parseInt(request.getParameter("eno"));
-        Event event = new Event();
-        event.setEno(eno);
-        event.setTitle(request.getParameter("title"));
-        event.setContent(request.getParameter("content"));
-        event.setSdate(request.getParameter("sdate"));
-        event.setEdate(request.getParameter("edate"));
+    public String eventEdit(Event event, HttpServletRequest request, Model model) throws Exception {
+//        int eno = Integer.parseInt(request.getParameter("eno"));
+//        Event event = new Event();
+//        event.setEno(eno);
+//        event.setTitle(request.getParameter("title"));
+//        event.setContent(request.getParameter("content"));
+//        event.setSdate(request.getParameter("sdate"));
+//        event.setEdate(request.getParameter("edate"));
         eventService.eventEdit(event);
         return "redirect:list.do";
     }

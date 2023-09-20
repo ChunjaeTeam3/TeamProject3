@@ -12,4 +12,5 @@ public interface EventService {
     public void eventInsert(Event event) throws Exception;
     public void eventDelete(int eno) throws Exception;
     public void eventEdit(Event event) throws Exception;
+    public List<Event> ongoingEvents() throws Exception;
 }

@@ -21,6 +21,11 @@ public class NoticeDAOImpl implements NoticeDAO {
     }
 
     @Override
+    public List<Notice> noticeListLimit() throws Exception {
+        return sqlSession.selectList("notice.noticeListLimit");
+    }
+
+    @Override
     public int getCount(Page page) throws Exception {
         return sqlSession.selectOne("notice.getCount", page);
     }

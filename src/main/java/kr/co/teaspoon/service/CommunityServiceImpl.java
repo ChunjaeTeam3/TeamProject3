@@ -53,4 +53,9 @@ public class CommunityServiceImpl implements CommunityService {
     public void communityEdit(Community dto) throws Exception {
         communityDAO.communityEdit(dto);
     }
+
+    @Override
+    public int communityCnt() throws Exception {
+        return communityDAO.communityCnt();
+    }
 }

@@ -12,6 +12,7 @@ public interface QnaDAO {
     public Qna qnaDetail(int qno) throws Exception;
     public int getCount(Page page) throws Exception;
     public int noAnswerCount(Page page) throws Exception;
+    public int noAnswerCount() throws Exception;
     public void questionInsert(Qna dto) throws Exception;
     public void parUpdate(Qna dto) throws Exception;
     public void answerInsert(Qna dto) throws Exception;

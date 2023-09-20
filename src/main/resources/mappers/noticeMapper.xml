@@ -28,6 +28,10 @@
         ]]>
 	</select>
 
+	<select id="noticeListLimit" resultType="kr.co.teaspoon.dto.Notice">
+		select * from notice order by seq desc limit 6;
+	</select>
+
 	<!-- 공지사항 전체 글수 구하기 -->
 	<select id="getCount" resultType="integer">
 		select count(*) from notice

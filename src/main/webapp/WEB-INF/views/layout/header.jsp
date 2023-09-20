@@ -30,6 +30,11 @@
                         <div id="mobile-nav" class="navbar-menu">
                             <div class="navbar-end">
                                 <div class="navbar-item">
+                                    <a class="navbar-item" href="${path}/introduce/company.do">
+                                        소개
+                                    </a>
+                                </div>
+                                <div class="navbar-item">
                                     <a href="${path}/community/list.do" class="navbar-item"><strong style="color: #41228e">커뮤니티</strong></a> |
                                     <a href="${path}/community/list.do" class="navbar-item">커뮤니티</a>
                                     <a href="${path}/fileboard/list.do" class="navbar-item">자료실</a>
@@ -71,6 +76,7 @@
         <!-- PC -->
         <div id="navigation" class="navbar-menu">
             <div class="navbar-end">
+                <a href="${path}/introduce/company.do" class="navbar-item">소개</a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a href="${path}/community/list.do" class="navbar-item" style="color:#fff;">커뮤니티</a>
                     <div class="navbar-dropdown">

@@ -42,4 +42,8 @@ public class ApplyDAOImpl implements ApplyDAO{
         sqlSession.delete("apply.applyDelete", appno);
     }
 
+    @Override
+    public int applyCnt() throws Exception {
+        return sqlSession.selectOne("apply.applyCnt");
+    }
 }

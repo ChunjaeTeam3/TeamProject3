@@ -41,7 +41,7 @@
     <div class="row column text-center">
         <div class="container">
             <form action="${path }/event/insert.do" method="post">
-                <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
+                <div class="field is-horizontal mb-0" style="height: 60px;">
                     <div class="field-label is-normal">
                         <label class="label">제목</label>
                     </div>
@@ -118,6 +118,20 @@
                     </c:if>
                 </div>
             </form>
+            <script>
+                // 시작일 변경 시 종료일 처리
+                $("#sdate").change(() => {
+                    $("#edate").prop("min", $("#sdate").val());
+                    // 종료일이 변경한 시작일보다 빠른 경우
+                    if($("#edate").val() < $("#sdate").val()) {
+                        $("#edate").val($("#sdate").val());
+                    }
+                });
+                // 종료일 변경 시 시작일 처리
+                $("#edate").change(() => {
+                    $("#sdate").prop("max", $("#edate").val());
+                })
+            </script>
         </div>
     </div>
 </div>

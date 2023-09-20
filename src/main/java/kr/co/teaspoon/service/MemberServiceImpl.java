@@ -52,4 +52,9 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void memberDelete(String id) throws Exception { memberDAO.memberDelete(id);}
+
+    @Override
+    public int memberCnt() throws Exception {
+        return memberDAO.memberCnt();
+    }
 }

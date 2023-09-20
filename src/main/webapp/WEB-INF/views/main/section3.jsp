@@ -1,47 +1,41 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="path" value="${pageContext.request.contextPath }" />
-<!-- section3(추천 강의) 영역 시작 -->
-<section class="section" id="skills">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath }"/>
+<!-- section3(이벤트) 영역 시작 -->
+<section class="section mb-100">
     <div class="container">
         <div class="has-text-centered">
             <br><br>
-            <h2 class="section-title mb-20" style="font-weight: bold;">추천강의</h2>
+            <h2 class="section-title mb-20" style="font-weight: bold;">티스푼이 제공하는</h2>
         </div>
-        <div class="columns is-multiline mb-40">
-            <div class="column">
-                <article class="card shadow">
-                    <figure class="image is-4by3" style="padding-top: 0;">
-                        <div class="player" style="width:800px; margin: 0 auto;">
-                            <div class="vdo_fr">
-                                <video id="video" style="width: 100%">
-                                    <source src="${path}/resources/images/lecture_video03.mp4" type="video/mp4"/>
-                                </video>
-                            </div>
-                            <div id="progress">
-                                <div id="progressBar" class="mb-2"></div>
-                            </div>
-                            <div id="buttonbar" style="width: 100%">
-                                <button id="play" class="player_btn"> <i class="fas fa-play"></i> </button>
-                                <button id="pause" style="display: none" class="player_btn"> <i class="fas fa-pause"></i> </button>
-                                <button id="stop" class="player_btn"> <i class="fas fa-stop"></i> </button>
-                                <span id="currentTime"> 00:00 / 02:11 </span>
-                                <div id="btn-right">
-                                    <input id="vol" type="range" value="500" min="0" max="1000">
-                                    <button id="volTxt" class="player_btn">50%</button>
-                                    <button id="full" class="player_btn"><i class="fa-solid fa-expand"></i></button>
-                                </div>
-                            </div>
-                            <script src="${path}/resources/js/vdo.js"></script>
-                        </div>
-                    </figure>
-                    <div class="card-content has-text-centered">
-                        <h4 class="mb-10" style="font-family:'sans-serif'; font-weight: bold;">[2024 수능 완성] 5등급에서 1등급까지! 노력은 배신하지 않아요! </h4>
-                    </div>
-                </article>
+        <div class="columns" style="margin-top: 50px">
+            <div class="column is-half">
+                <h4 class="section-title mb-0" style="font-weight: bold;"> 공지사항 </h4>
+                <table class="table is-fullwidth">
+                    <c:forEach var="notice" items="${noticeList}">
+                        <tr onclick="javascript: location.href='${path}/notice/detail.do?seq=${notice.seq}'" style="cursor: pointer;">
+                            <td>${notice.seq}</td>
+                            <td>${notice.title}</td>
+                            <td>${notice.regdate}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </div>
+            <div class="column is-half">
+                <h4 class="section-title mb-0" style="font-weight: bold;"> 진행 중인 이벤트 </h4>
+                <table class="table is-fullwidth">
+                    <c:forEach var="event" items="${eventList}" varStatus="state">
+                        <tr onclick="javascript: location.href='${path}/eventt/detail.do?eno=${event.eno}'" style="cursor:pointer;">
+                            <td>${state.index + 1}</td>
+                            <td>${event.title}</td>
+                            <td>${event.sdate}</td>
+                            <td>${event.edate}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
             </div>
         </div>
     </div>
 </section>
-<!-- section3(추천 강의) 영역 끝 -->
+<!-- section3(이벤트) 영역 끝 -->

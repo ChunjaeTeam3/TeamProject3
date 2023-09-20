@@ -12,4 +12,5 @@ public interface MemberService {
     public boolean loginCheck(String id, String pw) throws Exception;
     public void memberEdit(Member member) throws Exception;
     public void memberDelete(String id) throws Exception;
+    public int memberCnt() throws Exception;
 }

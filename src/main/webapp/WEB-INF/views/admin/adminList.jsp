@@ -51,60 +51,56 @@
         <div class="column is-9">
             <section class="info-tiles">
                 <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
+                    <div class="tile is-parent hover-shadow">
                         <article class="tile is-child box">
-                            <p class="title">전체 게시글</p>
-                            <p class="subtitle">Users</p>
+                            <p class="subtitle"> <i class="fa-solid fa-user"></i> 회원 수 </p>
+                            <p class="title"> ${memberCnt}명 </p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">전체 게시글</p>
-                            <p class="subtitle">전체 게시글</p>
+                            <p class="subtitle"> <i class="fa-solid fa-list-ul"></i> 전체 게시글</p>
+                            <p class="title"> ${communityCnt}개 </p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">전체 게시글</p>
-                            <p class="subtitle">이벤트 참여자수</p>
+                            <p class="subtitle"> <i class="fa-solid fa-gift"></i> 이벤트 참여자</p>
+                            <p class="title"> ${applyCnt}명 </p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">전체 게시글</p>
-                            <p class="subtitle">미완료질문글</p>
+                            <p class="subtitle"> <i class="fa-solid fa-question"></i> 미완료 질문글</p>
+                            <p class="title"> ${noAnswerCnt}개 </p>
                         </article>
                     </div>
                 </div>
             </section>
             <div class="columns" style="height: 400px">
-                <div class="column is-6">
-                    <div class="card events-card">
+                <div class="column is-12">
+                    <div class="card events-card p-5">
                         <header class="card-header">
                             <p class="card-header-title">
-                                이벤트
+                                진행 중인 이벤트
                             </p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                            </a>
                         </header>
                         <div class="card-table">
                             <div class="content">
                                 <table class="table is-fullwidth is-striped">
                                     <tbody>
-                                    <tr>
-                                        <td width="5%"><i class="fa fa-bell-o"></i></td>
-                                        <td>진행중인 이벤트1</td>
-                                        <td class="level-right"><a class="button is-small is-primary" href="#">Action</a></td>
-                                    </tr>
+                                    <c:forEach var="event" items="${ongoingEvents}" varStatus="state">
+                                        <tr>
+                                            <td style="vertical-align: middle"> <i class="fa-solid fa-bell"></i> ${event.title} </td>
+                                            <td class="has-text-right" style="vertical-align: middle"><a class="button is-small is-primary" href="${path}/event/detail.do?eno=${event.eno}"> 상세보기 </a></td>
+                                        </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="#" class="card-footer-item">View All</a>
+                            <a href="${path}/event/list.do" class="card-footer-item"> view all </a>
                         </footer>
                     </div>
                 </div>

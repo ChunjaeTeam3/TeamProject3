@@ -23,7 +23,7 @@ public class EventDAOImpl implements EventDAO{
     @Transactional
     @Override
     public Event eventDetail(int eno) throws Exception {
-        sqlSession.update("event.getCount", eno);
+        sqlSession.update("event.updateCnt", eno);
         return sqlSession.selectOne("event.eventDetail", eno);
     }
 
@@ -45,5 +45,10 @@ public class EventDAOImpl implements EventDAO{
     @Override
     public void eventEdit(Event event) throws Exception {
         sqlSession.update("event.eventEdit", event);
+    }
+
+    @Override
+    public List<Event> ongoingEvents() throws Exception {
+        return sqlSession.selectList("event.ongoingEvents");
     }
 }

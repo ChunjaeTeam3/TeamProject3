@@ -16,5 +16,6 @@ public interface CommunityService {
     public void communityInsert(Community dto) throws Exception;
     public void communityDelete(int cno) throws Exception;
     public void communityEdit(Community dto) throws Exception;
+    public int communityCnt() throws Exception;
 
 }

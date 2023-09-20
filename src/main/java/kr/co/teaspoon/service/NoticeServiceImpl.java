@@ -20,6 +20,11 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public List<Notice> noticeListLimit() throws Exception {
+        return noticeDAO.noticeListLimit();
+    }
+
+    @Override
     public int getCount(Page page) throws Exception {
         return noticeDAO.getCount(page);
     }

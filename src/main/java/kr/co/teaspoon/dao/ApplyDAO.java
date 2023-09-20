@@ -9,4 +9,5 @@ public interface ApplyDAO {
     public Apply appCheck(String id) throws Exception;
     public void applyInsert(Apply apply) throws Exception;
     public void applyDelete(int appno) throws Exception;
+    public int applyCnt() throws Exception;
 }

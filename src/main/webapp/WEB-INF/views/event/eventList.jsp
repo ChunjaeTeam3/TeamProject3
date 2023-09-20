@@ -50,31 +50,30 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th width="80">번호</th>
-                    <th>제목</th>
-                    <th width="200">이벤트상태</th>
-                    <th width="100">작성자</th>
-                    <th width="120">작성일</th>
-                    <th width="100">조회수</th>
+                    <th class="has-text-centered" width="80">번호</th>
+                    <th class="has-text-centered">제목</th>
+                    <th class="has-text-centered" width="200">이벤트상태</th>
+                    <th class="has-text-centered" width="120">시작일</th>
+                    <th class="has-text-centered" width="120">종료일</th>
+                    <th class="has-text-centered" width="100">조회수</th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach items="${eventList }" var="event" varStatus="status">
                     <tr>
-                        <td>${status.count }</td>
-                        <td ><a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none;">${event.title }</a></td>
+                        <td class="has-text-centered" style="line-height: 83px">${status.count }</td>
+                        <td >
+                            <a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none; line-height: 83px;">${event.title }</a>
+                        </td>
                         <c:if test='${event.status eq "1"}'>
-                            <td>이벤트 진행중</td>
+                            <td class="has-text-centered" style="line-height: 83px"><span class="tag is-success is-light is-medium">진행 중</span></td>
                         </c:if>
                         <c:if test='${event.status eq "0"}'>
-                            <td>이벤트 종료</td>
+                            <td class="has-text-centered" style="line-height: 83px"><span class="tag is-danger is-light is-medium">종료</span></td>
                         </c:if>
-                        <td>${event.author }</td>
-                        <td>
-                            <fmt:parseDate value="${event.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-                            <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
-                        </td>
-                        <td style="text-align: center;">${event.cnt }</td>
+                        <td class="has-text-centered" style="line-height: 83px">${event.sdate}</td>
+                        <td class="has-text-centered" style="line-height: 83px">${event.edate}</td>
+                        <td class="has-text-centered" style="line-height: 83px">${event.cnt }</td>
                     </tr>
                 </c:forEach>
                 <c:if test="${empty eventList}">
