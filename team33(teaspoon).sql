@@ -161,19 +161,20 @@ CREATE TABLE attendance (
 );
 
 -- QNA
+-- QNA
 CREATE TABLE qna(
-                    qno int PRIMARY KEY AUTO_INCREMENT,   			-- 번호
-                    title VARCHAR(100) NOT NULL,   					-- 제목
-                    content VARCHAR(1000) NOT NULL,   				-- 내용`
-                    author VARCHAR(16),   								-- 작성자
-                    resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
-                    lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
-                    par INT,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
-                    FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
+  qno int PRIMARY KEY AUTO_INCREMENT,   			-- 번호
+  title VARCHAR(100) NOT NULL,   					-- 제목
+  content VARCHAR(1000) NOT NULL,   				-- 내용`
+  author VARCHAR(16),   								-- 작성자
+  resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
+  lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
+  par INT,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
+  FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, DEFAULT,1);
-INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT, 1,1);
+INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT,1);
+INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, DEFAULT,1);
 
 SELECT * FROM qna;
 

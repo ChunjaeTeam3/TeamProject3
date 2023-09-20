@@ -66,11 +66,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
+				<div class="buttons is-right mb-100">
+					<a class="button" href="${path }/notice/list.do">글 목록</a>
 					<c:if test='${sid eq "admin"}'>
-					<input type="submit" class="submit success button" value="글 등록" style="float:right; margin-left:10px;" >
+						<input type="submit" class="button is-primary" value="글 등록">
 					</c:if>
-					<a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
 				</div>
 		   </form>
 	      </div>
@@ -82,5 +82,10 @@
 	<jsp:include page="../layout/footer.jsp"/>
 	<!-- 푸터 영역 끝 -->
 
+	<form action="#">
+		<button id="toTop" title="Go to top">
+			<i class="fas fa-angle-up"></i>
+		</button>
+	</form>
 </body>
 </html>

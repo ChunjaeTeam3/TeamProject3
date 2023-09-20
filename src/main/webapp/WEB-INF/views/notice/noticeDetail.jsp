@@ -60,12 +60,12 @@
 		      		</tr>
 		      	</tbody>
 		      </table>
-				<div class="button-group" style="margin-top: 30px; margin-left: 1070px; margin-bottom: 100px;">
-				  <c:if test='${sid eq "admin"}'>
-					  <a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">글 삭제</a>
-					  <a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">글 수정</a>
-				  </c:if>
-				  <a class="button" href="${path }/notice/list.do" style="float:right;">글 목록</a>
+				<div class="buttons is-right mb-100">
+					<a class="button" href="${path }/notice/list.do">목록</a>
+					<c:if test='${sid eq "admin"}'>
+						<a class="button" href="${path }/notice/delete.do?seq=${notice.seq}">삭제</a>
+						<a class="button" href="${path }/notice/edit.do?seq=${notice.seq}">수정</a>
+					</c:if>
 				</div>
 	      </div>
 	    </div>

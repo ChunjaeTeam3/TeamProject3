@@ -53,16 +53,15 @@
                             <label class="checkbox">
                                 <input type="checkbox" name="saveId" value="save" ${checked}> 아이디 기억하기
                             </label>
-
                         </div>
                       <button class="button is-block is-info is-large is-fullwidth">로그인 <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                     </form>
                     <!-- 로그인 하단 메뉴 -->
                 </div>
                 <div class="has-text-white">
-                    <a href="${path}/member/term.do">회원가입</a> &nbsp;·&nbsp;
-                    <a href="../..">비밀번호를 잊어버리셨나요?</a> &nbsp;·&nbsp;
-                    <a href="${path}/faq/list.do">고객지원</a>
+                    <a href="${path}" class="has-text-white">HOME</a> &nbsp;·&nbsp;
+                    <a href="${path}/member/term.do" class="has-text-white">회원가입</a> &nbsp;·&nbsp;
+                    <a href="${path}/faq/list.do" class="has-text-white">자주 묻는 질문</a>
                 </div>
             </div>
         </div>

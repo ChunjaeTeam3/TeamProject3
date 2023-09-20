@@ -20,7 +20,7 @@
 <!-- 헤더 영역 끝 -->
 
 <!-- 배너 영역 시작 -->
-<section class="page-title background-primary is-relative">
+<section class="page-title background-primary is-relative mb-80">
     <div class="container">
         <div class="has-text-centered">
             <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 뉴스 </h1>

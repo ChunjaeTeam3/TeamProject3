@@ -45,19 +45,21 @@
                 <thead>
                 <tr>
                     <th class="item2">제목</th>
-                    <th class="item3">작성일</th>
-                    <th class="item4">작성자</th>
+                    <th class="item3">작성자</th>
+                    <th class="item4">작성일</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td class="item2">${fileboard.title}</td>
-                    <td class="item3">${fileboard.regdate}</td>
-                    <td class="item4">${fileboard.id}</td>
+                    <td class="item3">${fileboard.id}</td>
+                    <td class="item4">${fileboard.regdate}</td>
                 </tr>
                 <tr>
                     <td colspan="3">
-                        ${fileboard.content}
+                        <div style="display: block; min-height: 300px">
+                            ${fileboard.content}
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -66,9 +68,7 @@
                 <tr>
                     <td colspan="3">
                         <c:forEach var="item" items="${fileboard2}">
-                            <a href="${pageContext.request.contextPath}/resources/upload/${item.saveFolder}/${item.saveFile}"
-                               download="${item.originFile }"><i class="fas fa-file" style="color: #54c066;"></i> ${item.originFile }
-                            </a>
+                            <a href="${pageContext.request.contextPath}/resources/upload/${item.saveFolder}/${item.saveFile}" download="${item.originFile }" style="margin-right: 20px"><i class="fa-solid fa-file"></i> ${item.originFile } </a>
                         </c:forEach>
                     </td>
                 </tr>

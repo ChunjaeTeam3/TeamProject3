@@ -38,66 +38,50 @@
 
 
 <!-- 자료실 글쓰기 시작 -->
-<div class="content" id="contents" style="margin-top: 100px;">
-    <div class="row column text-center">
-        <div class="container">
-            <form action="${path }/fileboard/insert.do" id="writeform" method="post" enctype="multipart/form-data">
-                <div class="field is-horizontal" style="height: 60px; margin-bottom:0px;">
-                    <div class="field-label is-normal">
-                        <label class="label">제목</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <p class="control">
-                                <input type="text" name="title" id="title" placeholder="제목 입력" maxlength="98" class="input" required>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-<%--        내용 입력부분--%>
-                <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">내용</label>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <div class="control">
-                                <textarea name="content" id="content" class="textarea is-focused" placeholder="내용 입력" rows="8" cols="100" maxlength="800" required></textarea>
+<section class="section">
+    <div class="container">
+        <div class="columns is-desktop is-justify-content-center">
+            <div class="column is-8-desktop">
+                <div class="p-6 bg-white shadow rounded content">
+                    <form action="${path }/fileboard/insert.do" id="writeform" method="post" enctype="multipart/form-data">
+                        <div class="columns is-multiline">
+                            <div class="form-group column is-12">
+                                <label for="title"> 제목 </label>
+                                <input type="text" class="input" id="title" name="title" placeholder="제목을 입력해주세요" autocomplete="off" autofocus required>
+                            </div>
+                            <!-- 내용 입력 부분 -->
+                            <div class="form-group column is-12">
+                                <label for="content"> 내용 </label>
+                                <textarea name="content" id="content" class="textarea has-fixed-size" cols="30" rows="20" placeholder="내용을 입력해주세요" required></textarea>
+                            </div>
+                            <!-- 파일 선택 부분 -->
+                            <div class="form-group column is-8">
+                                <div class="file has-name">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="upfile" multiple="multiple">
+                                        <span class="file-cta">
+                                            <span class="file-icon mb-0">
+                                                <i class="fas fa-upload mb-0"></i>
+                                            </span>
+                                            <span class="file-label mb-0">
+                                                파일 선택
+                                            </span>
+                                        </span>
+                                        <span class="file-name">선택된 파일이 없습니다.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="column is-4 has-text-right">
+                                <button type="reset" class="button"> 초기화 </button>
+                                <button type="submit" class="button is-primary"> 작성하기 </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-<%--                파일 선택부분--%>
-                <div class="file is-horizontal" style="margin-left: 180px">
-                    <label class="file-label">
-                        <input class="file-input" type="file" name="upfile" multiple="multiple">
-                             <span class="file-cta">
-                                 <span class="file-icon">
-                                    <i class="fas fa-upload"></i>
-                                 </span>
-                                 <span class="file-label">
-                                    파일 선택
-                                 </span>
-                             </span>
-                    </label>
-                    <p id="file-name-display"></p>
-                </div>
-<%--                글작성 초기화 버튼부분--%>
-                <div class="field is-horizontal" style="margin-top: 30px;">
-                    <div class="field-label"></div>
-                    <div class="field-body">
-                        <div class="field is-grouped is-grouped-right">
-                            <div class="control">
-                                <button type="reset" class="button is-info">초기화</button>
-                                <button type="submit" id="writeBtn" class="button is-primary">작성하기</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
 <!-- 공지사항 글쓰기 끝 -->
 
 <!-- 푸터 영영 시작 -->
@@ -111,12 +95,18 @@
 </form>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 파일 입력 요소 변경 시 파일 이름 표시 -->
 <script>
-    // 파일 입력 요소 변경 시 파일 이름 표시
-    $('.file-input').on('change', function () {
-        var fileName = $(this).val().split('\\').pop();
-        $('#file-name-display').text('\t선택한 파일: ' + fileName);
+    $(".file-input").on("change", () => {
+        let fileName = '';
+        let fileLength = $(".file-input")[0].files.length;
+        if(fileLength > 1) {
+            fileName = fileLength + "개의 파일";
+        } else {
+            fileName = $(".file-input").val().split("\\").pop();
+        }
+        $(".file-name").text("\t 선택한 파일 : " + fileName);
     });
 </script>
 </html>
