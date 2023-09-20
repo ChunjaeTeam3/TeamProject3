@@ -60,7 +60,7 @@
                 </tr>
                 </tbody>
             </table>
-            <c:if test='${sid ne null}'>
+            <c:if test="${sid ne null && event.status eq '1'}">
             <div class="container">
                 <input type="hidden" name="id" id="id" value="${sid}">
                 <input type="hidden" id="eno" name="eno" value="${event.eno}">
@@ -70,7 +70,7 @@
             <script>
                 function appCheck() {
                     var child;
-                    let params = { id: $("#id").val() };
+                    let params = { id: $("#id").val(), eno: $("#eno").val()};
                     $.ajax({
                         url: "${path}/apply/appCheck.do",
                         type: "post",

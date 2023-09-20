@@ -5,18 +5,18 @@ SHOW TABLES;
 
 -- 회원 테이블
 CREATE TABLE MEMBER(
-	id VARCHAR(20) PRIMARY KEY NOT NULL,
-	pw VARCHAR(300) NOT NULL,
-	NAME VARCHAR(50),
-	email VARCHAR(100) NOT NULL,
-	tel VARCHAR(20) NOT NULL,
-	addr1 VARCHAR(200),
-	addr2 VARCHAR(100),
-	postcode VARCHAR(10),
-	regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
-	birth DATE,
-	pt INT(11) DEFAULT 0,
-	vistied INT(11) DEFAULT 0);
+                       id VARCHAR(20) PRIMARY KEY NOT NULL,
+                       pw VARCHAR(300) NOT NULL,
+                       NAME VARCHAR(50),
+                       email VARCHAR(100) NOT NULL,
+                       tel VARCHAR(20) NOT NULL,
+                       addr1 VARCHAR(200),
+                       addr2 VARCHAR(100),
+                       postcode VARCHAR(10),
+                       regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+                       birth DATE,
+                       pt INT(11) DEFAULT 0,
+                       vistied INT(11) DEFAULT 0);
 
 SELECT * FROM member;
 
@@ -34,8 +34,8 @@ SELECT * FROM member;
 
 -- 커뮤니티 카테고리 테이블 생성
 CREATE TABLE category(
-	cate VARCHAR(5) PRIMARY KEY NOT NULL,
-	cateName VARCHAR(100) NOT NULL
+                         cate VARCHAR(5) PRIMARY KEY NOT NULL,
+                         cateName VARCHAR(100) NOT NULL
 );
 
 -- 카테고리 테이블 데이터
@@ -47,16 +47,16 @@ INSERT INTO category VALUES('D', '진로상담');
 
 -- 커뮤니티 게시판 테이블 생성
 CREATE TABLE community(
-    cno INT PRIMARY KEY AUTO_INCREMENT,
-    cate VARCHAR(5) NOT NULL,
-    title VARCHAR(200) NOT NULL,
-    content VARCHAR(1000),
-    author VARCHAR(20),
-    resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
-    cnt INT DEFAULT 0,
-    FOREIGN KEY(cate) REFERENCES category(cate) ON DELETE CASCADE,
-    FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
-    
+                          cno INT PRIMARY KEY AUTO_INCREMENT,
+                          cate VARCHAR(5) NOT NULL,
+                          title VARCHAR(200) NOT NULL,
+                          content VARCHAR(1000),
+                          author VARCHAR(20),
+                          resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+                          cnt INT DEFAULT 0,
+                          FOREIGN KEY(cate) REFERENCES category(cate) ON DELETE CASCADE,
+                          FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE);
+
 INSERT INTO community(cate, title, content, author)
 VALUES ('A', '게시판 더미데이터1', '여기는 게시판 더미데이터1입니다', 'admin');
 INSERT INTO community(cate, title, content, author)
@@ -79,32 +79,32 @@ SELECT * FROM community ORDER BY cno DESC;
 
 -- 커뮤니티 댓글 테이블 생성
 CREATE TABLE COMMENT(
-	comNo INT PRIMARY KEY AUTO_INCREMENT,
-	cno INT NOT NULL,
-	author VARCHAR(20) NOT NULL,
-	resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
-	content VARCHAR(1000) NOT NULL,
-	FOREIGN KEY(cno) REFERENCES community(cno) ON DELETE CASCADE,
-	FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
+                        comNo INT PRIMARY KEY AUTO_INCREMENT,
+                        cno INT NOT NULL,
+                        author VARCHAR(20) NOT NULL,
+                        resdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+                        content VARCHAR(1000) NOT NULL,
+                        FOREIGN KEY(cno) REFERENCES community(cno) ON DELETE CASCADE,
+                        FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
 SELECT * FROM COMMENT;
 
 CREATE TABLE filterWord(
-	fno INT PRIMARY KEY AUTO_INCREMENT,
-	word VARCHAR(100) NOT NULL
+                           fno INT PRIMARY KEY AUTO_INCREMENT,
+                           word VARCHAR(100) NOT NULL
 );
 
 select * from filterword;
 
 /* 공지사항 테이블 생성 */
 CREATE TABLE notice (
-    seq INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    content VARCHAR(1000) NOT NULL,
-    nickname VARCHAR(20),
-    regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
-    visited INT DEFAULT 0
+                        seq INT AUTO_INCREMENT PRIMARY KEY,
+                        title VARCHAR(100) NOT NULL,
+                        content VARCHAR(1000) NOT NULL,
+                        nickname VARCHAR(20),
+                        regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
+                        visited INT DEFAULT 0
 );
 
 INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목1  입니다.','여기는 샘플 글 1의 내용입니다.','admin',DEFAULT, DEFAULT);
@@ -115,10 +115,10 @@ INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목5  입니다.','여기는 �
 INSERT INTO notice VALUES (DEFAULT,'샘플 글 제목6  입니다.','여기는 샘플 글 6의 내용입니다.','admin',DEFAULT, DEFAULT);
 
 CREATE TABLE faq (
-   fno INT  PRIMARY KEY AUTO_INCREMENT ,
-   question VARCHAR(1000) NOT NULL,
-   answer VARCHAR(1000) NOT NULL,
-   cnt INT DEFAULT 0 NOT NULL
+                     fno INT  PRIMARY KEY AUTO_INCREMENT ,
+                     question VARCHAR(1000) NOT NULL,
+                     answer VARCHAR(1000) NOT NULL,
+                     cnt INT DEFAULT 0 NOT NULL
 );
 
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다1', '답변입니다1');
@@ -133,25 +133,25 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다9', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다10', '답변입니다10');
 
 CREATE TABLE fileInfo(
-  no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  articleno INT,
-  saveFolder VARCHAR(300) NOT NULL,
-  originFile VARCHAR(300) NOT NULL,
-  saveFile VARCHAR(300) NOT NULL);
+                         no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                         articleno INT,
+                         saveFolder VARCHAR(300) NOT NULL,
+                         originFile VARCHAR(300) NOT NULL,
+                         saveFile VARCHAR(300) NOT NULL);
 
 CREATE TABLE fileboard (
-  articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  id varchar(16) NOT NULL,
-  title varchar(100) NOT NULL,
-  content varchar(2000) NOT NULL,
-  regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+                           articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                           id varchar(16) NOT NULL,
+                           title varchar(100) NOT NULL,
+                           content varchar(2000) NOT NULL,
+                           regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- 출석체크 테이블 생성
 CREATE TABLE attendance (
-	ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	id VARCHAR(20),
-	attend DATE DEFAULT current_date
+                            ano INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                            id VARCHAR(20),
+                            attend DATE DEFAULT current_date
 );
 
 -- QNA
@@ -176,16 +176,17 @@ select qno, title, author, resdate from qna q join member m on(q.author=m.id) wh
 
 SELECT COUNT(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
 
+--이벤트 글 테이블
 CREATE TABLE event (
-	eno int  PRIMARY KEY AUTO_INCREMENT,
-	title VARCHAR(100) NOT NULL,
-	content VARCHAR(1000) NOT NULL,
-	STATUS VARCHAR(5) CHECK(status IN(0, 1)),
-	sdate DATE,
-	edate DATE,
-	author VARCHAR(16),
-	regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	cnt INT DEFAULT 0 NOT NULL
+                       eno int  PRIMARY KEY AUTO_INCREMENT,
+                       title VARCHAR(100) NOT NULL,
+                       content VARCHAR(1000) NOT NULL,
+                       STATUS VARCHAR(5) CHECK(status IN(0, 1)),
+                       sdate DATE,
+                       edate DATE,
+                       author VARCHAR(16),
+                       regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                       cnt INT DEFAULT 0 NOT NULL
 );
 
 SELECT * FROM EVENT;
@@ -195,28 +196,28 @@ INSERT INTO EVENT VALUES(DEFAULT, '이벤트2','이벤트2내용', 1, 20230917,2
 
 -- 회원의 이벤트 접수
 create table apply(
-	appno int AUTO_INCREMENT PRIMARY KEY,		--접수 번호
-	eno int not NULL,									--이벤트글 번호
-	id varchar(100) not NULL,						--당첨자 아이디
-	name varchar(100) not null,					--당첨자 이름
-	tel varchar(13),									--전화번호	
-	foreign key(eno) references event(eno) on delete cascade,
-	foreign key(id) references member(id) on delete cascade);
-	
-	SELECT * FROM apply;
-	select * from apply where eno=1;
+                      appno int AUTO_INCREMENT PRIMARY KEY,		--접수 번호
+                      eno int not NULL,									--이벤트글 번호
+                      id varchar(100) not NULL,						--당첨자 아이디
+                      name varchar(100) not null,					--당첨자 이름
+                      tel varchar(13),									--전화번호
+                      foreign key(eno) references event(eno) on delete cascade,
+                      foreign key(id) references member(id) on delete cascade);
+
+SELECT * FROM apply;
+select * from apply where eno=1;
 
 
 -- 당첨자 리스트
 create table winnerList(
-	appno int auto-increment primary key not null,			--접수 번호
-	eno int not NULL,													--이벤트글 번호
-	id varchar(100) not NULL,										--당첨자 아이디
-	name varchar(100) not NULL,									--당첨자 이름
-	tel varchar(13),													--전화번호	
-	foreign key(eno) references event(eno) on delete cascade,
-	foreign key(id) references member(id) on delete cascade);
-	
+                           appno int auto-increment primary key not null,			--접수 번호
+                           eno int not NULL,													--이벤트글 번호
+                           id varchar(100) not NULL,										--당첨자 아이디
+                           name varchar(100) not NULL,									--당첨자 이름
+                           tel varchar(13),													--전화번호
+                           foreign key(eno) references event(eno) on delete cascade,
+                           foreign key(id) references member(id) on delete cascade);
+
 
 insert into winnerList select * from apply where eno=2 AND eno NOT IN (SELECT distinct eno FROM winnerList) order by rand() limit 5;
 
@@ -230,10 +231,10 @@ DELETE FROM winnerList WHERE appno=14;
 
 --당첨자 발표 글
 create table winner(
-	wno int primary key auto_increment,			--당첨글 번호
-	eno int not NULL,									--이벤트 글 번호
-	title varchar(100),								--글 제목
-	content varchar(1000),							--글 내용	
-	author varchar(100),								--작성자
-	resdate datetime default current_timestamp,	--작성일
-	foreign key(eno) references event(eno));
+                       wno int primary key auto_increment,			--당첨글 번호
+                       eno int not NULL,									--이벤트 글 번호
+                       title varchar(100),								--글 제목
+                       content varchar(1000),							--글 내용
+                       author varchar(100),								--작성자
+                       resdate datetime default current_timestamp,	--작성일
+                       foreign key(eno) references event(eno));

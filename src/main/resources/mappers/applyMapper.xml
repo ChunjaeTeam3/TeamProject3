@@ -3,7 +3,7 @@
 <mapper namespace="apply">
     <!-- 신청차 정보 조회-->
     <select id="getApply" resultType="kr.co.teaspoon.dto.Apply">
-        select * from apply where id = #{id}
+        select * from apply where id = #{id} and eno= #{eno}
     </select>
 
     <!-- 이벤트 신청하기 -->
@@ -20,5 +20,6 @@
     <delete id="applyDelete">
         delete from apply where appno = #{appno}
     </delete>
+
 
 </mapper>
