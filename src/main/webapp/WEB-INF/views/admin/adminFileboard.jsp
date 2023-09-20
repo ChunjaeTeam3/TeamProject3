@@ -81,7 +81,7 @@
                                         </td>
                                         <td>
                                             <div class="button-group" style="align-items: center">
-                                                <a class="button is-danger" href="${path}/admin/delete.do?articleno=${fileboard.articleno}">삭제</a>
+                                                <a class="button is-danger" href="${path}/fileboard/delete.do?articleno=${fileboard.articleno}">삭제</a>
                                             </div>
                                         </td>
                                     </tr>
