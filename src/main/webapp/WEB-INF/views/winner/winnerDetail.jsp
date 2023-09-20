@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>당첨자 발표 상세보기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
-
+<link rel="stylesheet" href="${path}/resources/css/firework.css">
 </head>
 <body>
 
@@ -64,6 +64,6 @@
         </div>
     </div>
 </div>
-
+<script src="${path}/resources/js/firework.js"></script>
 </body>
 </html>
