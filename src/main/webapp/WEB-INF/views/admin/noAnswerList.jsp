@@ -79,7 +79,7 @@
                             <tbody>
                             <c:forEach items="${noAnswerList }" var="noAnswer" varStatus="status">
                                 <tr>
-                                    <td class="has-text-centered">${status.count}</td>
+                                    <td class="has-text-centered">${noAnswer.qno}</td>
                                     <td><a href="${path}/qna/detail.do?qno=${noAnswer.qno}" style="color: #000000;">${noAnswer.title}</a></td>
                                     <td class="has-text-centered">${noAnswer.author}</td>
                                     <td class="has-text-centered">${noAnswer.resdate}</td>

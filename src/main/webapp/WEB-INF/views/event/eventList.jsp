@@ -61,7 +61,7 @@
                 <tbody>
                 <c:forEach items="${eventList }" var="event" varStatus="status">
                     <tr>
-                        <td>${status.count }</td>
+                        <td>${event.eno }</td>
                         <td ><a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none;">${event.title }</a></td>
                         <c:if test='${event.status eq "1"}'>
                             <td>이벤트 진행중</td>

@@ -72,7 +72,7 @@
                                 <tbody>
                                 <c:forEach items="${fileboardList}" var="fileboard" varStatus="status">
                                     <tr>
-                                        <td>${status.count}</td>
+                                        <td>${fileboard.articleno}</td>
                                         <td><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno}" style="color: #000000;">${fileboard.title}</a></td>
                                         <td>${fileboard.id}</td>
                                         <td>
