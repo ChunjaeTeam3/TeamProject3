@@ -62,8 +62,13 @@
                 <tbody>
                 <c:forEach items="${fileboardList }" var="fileboard" varStatus="status">
                     <tr>
-                        <td>${status.count }</td>
+                        <td>${fileboard.articleno }</td>
+                        <c:if test="${empty sid}">
+                            <td>${fileboard.title }</td>
+                        </c:if>
+                        <c:if test="${!empty sid}">
                         <td ><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno }" style="color: #000000;">${fileboard.title }</a></td>
+                        </c:if>
                         <td>${fileboard.id }</td>
                         <td>
                             <fmt:parseDate value="${fileboard.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />

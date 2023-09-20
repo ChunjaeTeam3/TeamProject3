@@ -53,7 +53,7 @@
                     <tbody>
                     <c:forEach items="${winnerList }" var="win" varStatus="status">
                         <tr>
-                            <td>${status.count }</td>
+                            <td>${win.wno }</td>
                             <td ><a href="${path}/winner/detail.do?wno=${win.wno}" style="color: #000000;">${win.title }</a></td>
                             <td class="has-text-centered">${win.author }</td>
                             <td class="has-text-centered">

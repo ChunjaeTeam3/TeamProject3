@@ -72,7 +72,7 @@
                                 <tbody>
                                 <c:forEach items="${fileboardList}" var="fileboard" varStatus="status">
                                     <tr>
-                                        <td>${status.count}</td>
+                                        <td>${fileboard.articleno}</td>
                                         <td><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno}" style="color: #000000;">${fileboard.title}</a></td>
                                         <td>${fileboard.id}</td>
                                         <td>
@@ -81,7 +81,7 @@
                                         </td>
                                         <td>
                                             <div class="button-group" style="align-items: center">
-                                                <a class="button is-danger" href="${path}/admin/delete.do?articleno=${fileboard.articleno}">삭제</a>
+                                                <a class="button is-danger" href="${path}/fileboard/delete.do?articleno=${fileboard.articleno}">삭제</a>
                                             </div>
                                         </td>
                                     </tr>
