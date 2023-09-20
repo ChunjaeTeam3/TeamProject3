@@ -11,8 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="281beefe-bce0-4905-9104-1ba33944ab6b" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/IntroduceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/introduce/company.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section6.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/slideBanner.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/main/banner1.jpg" afterDir="false" />
@@ -237,7 +235,7 @@
       <updated>1695133779076</updated>
       <workItem from="1695133780625" duration="318000" />
       <workItem from="1695134114051" duration="5271000" />
-      <workItem from="1695167670477" duration="29765000" />
+      <workItem from="1695167670477" duration="29946000" />
     </task>
     <servers />
   </component>
