@@ -164,6 +164,7 @@ public class AdminController {
         model.addAttribute("curPage", curPage);
         model.addAttribute("page", page);
 
+
         return "/admin/adminEventList";
     }
 
@@ -208,9 +209,23 @@ public class AdminController {
     public String winnerInsert(HttpServletRequest request, Model model) throws Exception {
         int eno = Integer.parseInt(request.getParameter("eno"));
         List<WinnerList> winners = winnerService.winners(eno);
+        for(WinnerList winner : winners) {
+            String name = winner.getName();
+            String firstName = name.substring(0,1);
+            String lastName = name.substring(2,3);
+            name = firstName+"*"+lastName;
+
+            String id = winner.getId();
+            String hiddenid = id.substring(0,4);
+            id = hiddenid+"***";
+
+            winner.setName(name);
+            winner.setId(id);
+        }
         Event event = eventService.eventDetail(eno);
         model.addAttribute("winners", winners);
         model.addAttribute("event", event);
+
         return "/admin/winnerInsert";
     }
 
@@ -223,6 +238,8 @@ public class AdminController {
         dto.setContent(request.getParameter("content"));
         dto.setAuthor((String) session.getAttribute("sid"));
         winnerService.winnerInsert(dto);
+
+
         return "redirect:/winner/list.do";
     }
 }
