@@ -86,7 +86,7 @@
                                     </td>
                                     <td>
                                         <div class="button-group" style="align-items: center">
-                                            <a class="button is-link" href="${path}/admin/">참여자 확인</a>
+                                            <a class="button is-link" href="${path}/admin/applyList.do?eno=${event.eno }">참여자 확인</a>
                                         </div>
                                     </td>
                                 </tr>
