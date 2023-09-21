@@ -53,15 +53,10 @@
                 <table class="table mb-100" id="file-table">
                     <thead>
                     <tr>
-                        <td>${fileboard.articleno }</td>
-                        <c:if test="${empty sid}">
-                            <td>${fileboard.title }</td>
-                        </c:if>
-                        <c:if test="${!empty sid}">
-                        <td ><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno }" style="color: #000000;">${fileboard.title }</a></td>
-                        </c:if>
-                        <td>${fileboard.id }</td>
-                        <td>
+                        <td class="has-text-centered" style="width: 10%">#</td>
+                        <td style="width: 65%">제목</td>
+                        <td class="has-text-centered" style="width: 10%">작성자</td>
+                        <td class="has-text-centered" style="width: 15%">
                             <fmt:parseDate value="${fileboard.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
                             <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
                         </td>
@@ -71,8 +66,12 @@
                     <c:forEach items="${fileboardList }" var="fileboard" varStatus="status">
                         <tr>
                             <td class="has-text-centered">${status.count }</td>
-                            <td><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno }"
-                                   style="color: #000000;">${fileboard.title }</a></td>
+                            <c:if test="${empty sid}">
+                                <td>${fileboard.title }</td>
+                            </c:if>
+                            <c:if test="${!empty sid}">
+                                <td ><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno }" style="color: #000000;">${fileboard.title }</a></td>
+                            </c:if>
                             <td>${fileboard.id }</td>
                             <td class="has-text-centered">
                                 <fmt:parseDate value="${fileboard.regdate }" var="resdate"

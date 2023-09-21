@@ -104,13 +104,16 @@
                             <div class="control">
                                 <fmt:parseDate value="${member.birth }" var="birth" pattern="yyyy-MM-dd" />
                                 <span style="display:none"><fmt:formatDate var="br" value="${birth }" pattern="yyyy-MM-dd" /></span>
-                                <input type="birth" name="birth" id="birth" value="${br }" class="input">
+                                <input type="birth" name="birth" id="birth" max="${minYear}-12-31" value="${br }" class="input">
                             </div>
                         </div>
-                        <div class="column is-10-tablet is-10">
+                        <div class="buttons is-right">
+                            <c:if test="${sid!='admin' }">
+                                <a href="${path}/member/myInfo.do" class="button"> 개인정보 페이지로 이동 </a>
+                            </c:if>
                             <input type="submit" class="button btn-writer" value="회원정보수정">
                             <c:if test="${sid!='admin' }">
-                                <a href="${path }/member/delete.do?id=${sid }" class="button is-primary">회원 탈퇴</a>
+                                <a href="${path }/member/delete.do?id=${sid }" class="button is-danger">회원 탈퇴</a>
                             </c:if>
                             <c:if test="${sid=='admin' }">
                                 <a href="${path }/member/list.do" class="button is-primary">회원 목록</a>
