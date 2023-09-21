@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a href="{path}/event/list.do" class="navbar-item" style="color:#fff;">이벤트</a>
+                    <a href="${path}/event/list.do" class="navbar-item" style="color:#fff;">이벤트</a>
                     <div class="navbar-dropdown">
                         <a href="${path}/event/list.do" class="navbar-item">이벤트</a>
                         <a href="${path}/winner/list.do" class="navbar-item">당첨자 발표</a>

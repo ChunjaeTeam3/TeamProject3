@@ -27,13 +27,13 @@
                 </div>
                 <div class="column is-one-quarter">
                     <p class="title is-5">
-                        <a href="{path}/event/list.do">이벤트</a>
+                        <a href="${path}/event/list.do">이벤트</a>
                     </p>
                     <p class="bd-footer-link">
-                        <a href="{path}/event/list.do">진행 중 이벤트</a>
+                        <a href="${path}/event/list.do">진행 중 이벤트</a>
                     </p>
                     <p class="bd-footer-link">
-                        <a href="${path}">당첨자 발표</a>
+                        <a href="${path}/winner/list.do">당첨자 발표</a>
                     </p>
                 </div>
                 <div class="column is-one-quarter">
