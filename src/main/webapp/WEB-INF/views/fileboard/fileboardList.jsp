@@ -53,18 +53,10 @@
                 <table class="table mb-100" id="file-table">
                     <thead>
                     <tr>
-                        <td>${fileboard.articleno }</td>
-                        <c:if test="${empty sid}">
-                            <td>${fileboard.title }</td>
-                        </c:if>
-                        <c:if test="${!empty sid}">
-                        <td ><a href="${path}/fileboard/detail.do?articleno=${fileboard.articleno }" style="color: #000000;">${fileboard.title }</a></td>
-                        </c:if>
-                        <td>${fileboard.id }</td>
-                        <td>
-                            <fmt:parseDate value="${fileboard.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-                            <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
-                        </td>
+                        <td class="has-text-centered" style="width: 10%">#</td>
+                        <td style="width: 65%">제목</td>
+                        <td class="has-text-centered" style="width: 10%">작성자</td>
+                        <td class="has-text-centered" style="width: 15%">작성일</td>
                     </tr>
                     </thead>
                     <tbody>
