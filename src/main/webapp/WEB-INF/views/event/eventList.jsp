@@ -97,12 +97,12 @@
                             <c:choose>
                                 <c:when test="${i == curPage}">
                                     <li>
-                                        <a href="${path}/event/list.do?page=${ipe}<c:if test="${!empty page.keyword}">&ty=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page" >${i}</a>
+                                        <a href="${path}/event/list.do?page=${i}" class="pagination-link is-current" aria-label="Page ${i}" aria-current="page" >${i}</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
                                     <li>
-                                        <a href="${path}/event/list.do?page=${i}<c:if test="${!empty page.keyword}">&type=${page.type}&keyword=${page.keyword}</c:if>" class="pagination-link" aria-label="Page ${i}" aria-current="page" >${i}</a>
+                                        <a href="${path}/event/list.do?page=${i}" class="pagination-link" aria-label="Page ${i}" aria-current="page" >${i}</a>
                                     </li>
                                 </c:otherwise>
                             </c:choose>
