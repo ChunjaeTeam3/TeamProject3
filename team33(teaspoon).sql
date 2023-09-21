@@ -150,7 +150,7 @@ CREATE TABLE fileboard (
 );
 
 SELECT * FROM fileboard;
-SELECT * FROM fileInfo;
+SELECT * FROM fileinfo;
 
 -- 출석체크 테이블 생성
 CREATE TABLE attendance (
@@ -167,12 +167,15 @@ CREATE TABLE qna(
   author VARCHAR(16),   								-- 작성자
   resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- 등록일
   lev INT DEFAULT 0, 									-- 질문(0), 답변(1)
-  par INT,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
+  par INT DEFAULT 0,													-- 질문(자신 레코드의 qno), 답변(질문의 글번호)
   FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-INSERT INTO	qna VALUES(DEFAULT, '질문2','질문1내용','admin',DEFAULT, DEFAULT, 2);
+DESC qna;
+
+INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, 1);
 INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, 1, 1);
+INSERT INTO	qna VALUES(DEFAULT, '질문2','질문1내용','admin',DEFAULT, DEFAULT, 2);
 
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);

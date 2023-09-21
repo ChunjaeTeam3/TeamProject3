@@ -40,7 +40,7 @@ public class QnaDAOImpl implements QnaDAO{
 
     @Override
     public int noAnswerCount() throws Exception {           // 관리자 페이지에서 사용
-        return sqlSession.selectOne("qna.noAnswerCnt");
+        return sqlSession.selectOne("qna.noAnswerCount");
     }
 
     @Override
