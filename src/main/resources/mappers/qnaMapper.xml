@@ -32,8 +32,8 @@
 
     <select id="noAnswerList" resultType="kr.co.teaspoon.dto.Qna">
     <![CDATA[
-        select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) <
-                                                                                                                                            2)
+        select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2)
+        order BY qno desc limit #{postStart}, #{postCount}
         ]]>
     </select>
 
