@@ -1,7 +1,6 @@
 package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.AttendanceDAO;
-import kr.co.teaspoon.dto.Attendance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +30,5 @@ public class AttendanceServiceImpl implements AttendanceService {
     public void addAttend(String id) throws Exception {
         attendanceDAO.addAttend(id);
     }
+
 }

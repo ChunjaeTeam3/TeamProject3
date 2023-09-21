@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 게시판</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -77,7 +80,7 @@
                     </div>
                 </div>
             </section>
-            <div class="columns" style="height: 400px">
+            <div class="columns mb-50">
                 <div class="column is-12">
                     <div class="card events-card p-5">
                         <header class="card-header">
@@ -105,6 +108,10 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <h3 class="mb-30"> DASHBOARD <i class="fa-solid fa-chart-simple"></i> </h3>
+                <canvas id="myChart" style="display: block; box-sizing: border-box; height: 373px; width: 884px;"></canvas>
+            </div>
         </div>
     </div>
 </div>
@@ -120,6 +127,61 @@
         <i class="fas fa-angle-up"></i>
     </button>
 </form>
+
+
+<script>
+    $(document).ready(function() {
+        const labelList = [];
+        const visits = [];
+        const members = [];
+
+        $.ajax({
+            url:"${path}/admin/getAdminChart.do",
+            type:"post",
+            dataType:"json",
+            success: function(data) {
+                for(let i=0; i<data.length; i++) {
+                    let temp = data[i];
+                    labelList[i] = temp.label;
+                    visits[i] = temp.attendCnt;
+                    members[i] = temp.memberCnt;
+                }
+
+                let ctx = document.getElementById("myChart");
+
+                let mixedChart = {
+                    type: 'bar',
+                    labels: labelList,
+                    datasets: [
+                        {
+                            label: '출석 수',
+                            data: visits,
+                            type: 'line',
+                            backgroundColor: 'transparent',
+                            borderColor: '#282c37',
+                            tension: 0.5
+                        },
+                        {
+                            label: '회원 수',
+                            data: members,
+                            backgroundColor: '#9baec8'
+                        }
+                    ]
+                };
+
+                let myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: mixedChart,
+                    options: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

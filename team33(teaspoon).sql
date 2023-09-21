@@ -20,6 +20,9 @@ CREATE TABLE MEMBER(
 
 SELECT * FROM member;
 
+UPDATE member SET regdate='2022-09-01' WHERE id='admin'
+UPDATE member SET regdate='2023-08-01' WHERE id='shin'
+
 -- 회원 테이블 더미데이터
 INSERT INTO MEMBER
 VALUES('admin', '1234', '관리자', 'admin@edu.com', '01012345678', NULL, NULL, NULL, DEFAULT, '1990-01-01', DEFAULT, DEFAULT);
@@ -171,11 +174,10 @@ CREATE TABLE qna(
   FOREIGN KEY(author) REFERENCES member(id) ON DELETE CASCADE
 );
 
-DESC qna;
+SELECT * FROM qna;
 
 INSERT INTO	qna VALUES(DEFAULT, '질문1','질문1내용','admin',DEFAULT, DEFAULT, 1);
 INSERT INTO	qna VALUES(DEFAULT, '답변1','답변1내용','admin',DEFAULT, 1, 1);
-INSERT INTO	qna VALUES(DEFAULT, '질문2','질문1내용','admin',DEFAULT, DEFAULT, 2);
 
 UPDATE qna SET author='admin' WHERE qno=8;
 select qno, title, author, resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2);
@@ -234,8 +236,6 @@ select * from apply where eno=2 AND eno NOT IN (SELECT distinct eno FROM winnerL
 SELECT * FROM winnerList;
 
 
-DELETE FROM winnerList WHERE appno=14;
-
 --당첨자 발표 글
 create table winner(
                        wno int primary key auto_increment,			--당첨글 번호
@@ -245,3 +245,12 @@ create table winner(
                        author varchar(100),								--작성자
                        resdate datetime default current_timestamp,	--작성일
                        foreign key(eno) references event(eno));
+                     
+
+-- 관리자 페이지 출석 및 회원 수를 가져오는 뷰
+CREATE VIEW memberMonth AS SELECT concat(year(regdate),' ', month(regdate)) AS regMonth, COUNT(*) AS memberCnt FROM member GROUP BY year(regdate), month(regdate) ORDER BY YEAR(regdate), MONTH(regdate) LIMIT 6;
+CREATE VIEW attendanceMonth AS SELECT CONCAT(YEAR(attend), ' ', MONTH(attend)) AS attendMonth,  COUNT(*) AS attendCnt FROM attendance GROUP BY YEAR(attend), MONTH(attend) ORDER BY YEAR(attend), MONTH(attend) LIMIT 6;
+
+SELECT if(regMonth IS NULL,attendMonth,regMonth) AS label, if(memberCnt IS NULL,0,memberCnt) AS memberCnt, if(attendCnt IS NULL,0,attendCnt) AS attendCnt FROM memberMonth AS m LEFT JOIN attendanceMonth AS a ON m.regMonth = a.attendMonth
+UNION
+SELECT if(regMonth IS NULL,attendMonth,regMonth) AS label, if(memberCnt IS NULL,0,memberCnt) AS memberCnt, if(attendCnt IS NULL,0,attendCnt) AS attendCnt FROM memberMonth AS m RIGHT JOIN attendanceMonth AS a ON m.regMonth = a.attendMonth

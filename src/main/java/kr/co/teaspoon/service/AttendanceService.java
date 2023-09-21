@@ -1,7 +1,5 @@
 package kr.co.teaspoon.service;
 
-import kr.co.teaspoon.dto.Attendance;
-
 import java.util.List;
 
 public interface AttendanceService {

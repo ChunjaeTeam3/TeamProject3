@@ -137,6 +137,10 @@
 
 <!-- 메인페이지 콘텐츠 영역 시작 -->
 <div class="main-content" style="padding-top: 0;">
+    <!-- 사이드 메뉴 시작 -->
+    <jsp:include page="layout/sidemenu.jsp"/>
+    <!-- 사이드 메뉴 끝 -->
+
     <!-- section1(소개) 영역 시작 -->
     <jsp:include page="main/section1.jsp"></jsp:include>
     <!-- section1(소개) 영역 끝 -->

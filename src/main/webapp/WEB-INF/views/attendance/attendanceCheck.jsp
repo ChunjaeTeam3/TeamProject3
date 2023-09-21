@@ -58,7 +58,7 @@
                 <!-- 오늘 이미 출석체크를 했다면 버튼 비활성화 -->
                 <div class="has-text-centered">
                     <c:if test="${attendChk}">
-                        <a href="${path}/attendance/addAttend.do" class="button is-info is-rounded is-large" disabled> 출석체크 완료 </a>
+                        <button type="button" class="button is-info is-rounded is-large" disabled> 출석체크 완료 </button>
                     </c:if>
                     <!-- 오늘 출석체크를 하지 않았다면 버튼 활성화 -->
                     <c:if test="${!attendChk}">

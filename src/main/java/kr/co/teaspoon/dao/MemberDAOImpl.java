@@ -1,5 +1,6 @@
 package kr.co.teaspoon.dao;
 
+import kr.co.teaspoon.dto.AdminChartVO;
 import kr.co.teaspoon.dto.Member;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,10 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
     public int memberCnt() throws Exception {
         return sqlSession.selectOne("member.memberCnt");
+    }
+
+    @Override
+    public List<AdminChartVO> adminChart() throws Exception {
+        return sqlSession.selectList("member.adminChart");
     }
 }
