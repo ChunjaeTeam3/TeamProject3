@@ -54,7 +54,7 @@ public class FileboardController {
             File folder = new File(saveFolder);
             if (!folder.exists()) // 폴더가 존재하지 않으면 생성함
                 folder.mkdirs();
-            List<FileInfo> fileInfos = new ArrayList<FileInfo>(); //첨부파일 정보를 리스트로 생성
+            List<FileInfo> fileInfos = new ArrayList<>(); //첨부파일 정보를 리스트로 생성
             for (MultipartFile mfile : files) {
                 FileInfo fileInfoDto = new FileInfo();
                 String originalFileName = mfile.getOriginalFilename(); //첨부파일의 실제 파일명을 저장
@@ -97,16 +97,27 @@ public class FileboardController {
     @GetMapping("detail.do")    //board/detail.do?seq=1
     public String getBoardDetail(HttpServletRequest request, Model model) throws Exception {
         int articleno = Integer.parseInt(request.getParameter("articleno"));
-        Fileboard dto = fileboardService.fileDetail(articleno); //해당 자료실 객체 값 생성
-        List<FileInfo> dto2 = fileInfoService.fileInfoDetail(articleno); //해당 자료실에 첨부된 파일 객체 값 생성
-        model.addAttribute("dto", dto);
-        model.addAttribute("dto2", dto2);
+        Fileboard fileboard = fileboardService.fileDetail(articleno); //해당 자료실 객체 값 생성
+        List<FileInfo> fileboard2 = fileInfoService.fileInfoDetail(articleno); //해당 자료실에 첨부된 파일 객체 값 생성
+        model.addAttribute("fileboard", fileboard);
+        model.addAttribute("fileboard2", fileboard2);
         return "/fileboard/fileboardDetail";
     }
 
     @GetMapping("delete.do")
     public String noticeDelete(HttpServletRequest request, Model model) throws Exception {
         int articleno = Integer.parseInt(request.getParameter("articleno"));
+
+        // 파일 삭제 처리
+        List<FileInfo> fileList = fileInfoService.fileInfoList(articleno);
+        ServletContext application = request.getSession().getServletContext();
+        for (FileInfo fileInfo : fileList) {
+            File oldFile = new File(application.getRealPath("/") + "/resources/upload/" + fileInfo.getSaveFolder() + "/" + fileInfo.getSaveFile());
+            if (oldFile.exists()) {
+                oldFile.delete();
+            }
+        }
+
         fileboardService.fileboardDelete(articleno);
         return "redirect:list.do";
     }
@@ -122,7 +133,6 @@ public class FileboardController {
 
     @PostMapping("edit.do")
     public String write2(Fileboard fileboardDto, @RequestParam("upfile") MultipartFile[] files, Model model, HttpServletRequest req) throws Exception {
-        //    Member member = (Member) session.getAttribute("member");
         String id = (String) session.getAttribute("sid");
         if (id != null && id.equals("admin")) { //관리자만 등록가능
             //String realPath = req.getRealPath("/pro3_war/resources/upload");
@@ -136,16 +146,17 @@ public class FileboardController {
             if (!folder.exists()) // 폴더가 존재하지 않으면 생성함
                 folder.mkdirs();
 
-            System.out.println(files[0] == null);
-            List<FileInfo> fileList = fileInfoService.fileInfoList(fileboardDto.getArticleno());
-            ServletContext application = req.getSession().getServletContext();
-            for (FileInfo fileInfo : fileList) {
-                File oldFile = new File(application.getRealPath("/") + "/resources/upload/" + fileInfo.getSaveFolder() + "/" + fileInfo.getSaveFile());
-                if (oldFile.exists()) {
-                    oldFile.delete();
+            // 파일이 새롭게 업로드되지 않았다면 삭제하지 않도록 처리
+            if(files[0].getSize() != 0) {
+                List<FileInfo> fileList = fileInfoService.fileInfoList(fileboardDto.getArticleno());
+                ServletContext application = req.getSession().getServletContext();
+                for (FileInfo fileInfo : fileList) {
+                    File oldFile = new File(application.getRealPath("/") + "/resources/upload/" + fileInfo.getSaveFolder() + "/" + fileInfo.getSaveFile());
+                    if (oldFile.exists()) {
+                        oldFile.delete();
+                    }
                 }
             }
-
 
             List<FileInfo> fileInfos = new ArrayList<FileInfo>(); //첨부파일 정보를 리스트로 생성
             for (MultipartFile mfile : files) {
@@ -161,7 +172,6 @@ public class FileboardController {
                 }
                 fileInfos.add(fileInfoDto);
             }
-
 
             fileboardDto.setFileInfos(fileInfos);
             fileboardDto.setId(id);

@@ -21,5 +21,8 @@
         delete from apply where appno = #{appno}
     </delete>
 
-
+    <!-- 이벤트 참여자 수 -->
+    <select id="applyCnt" resultType="integer">
+        select count(*) from apply
+    </select>
 </mapper>

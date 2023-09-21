@@ -28,9 +28,13 @@
         update member set pw=#{pw }, name=#{name }, email=#{email }, tel=#{tel }, birth=#{birth }, addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }
     </update>
 
-    <!--회원 탈퇴 -->
+    <!-- 회원 탈퇴 -->
     <delete id="memberDelete">
         delete from member where id=#{id}
     </delete>
 
+    <!-- 회원 수 조회 -->
+    <select id="memberCnt" resultType="integer">
+        select count(*) from member
+    </select>
 </mapper>

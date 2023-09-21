@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Q&A 상세보기</title>
+    <title>QnA 상세보기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
 
 </head>
@@ -20,7 +20,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> Q & A 상세보기 </h1>
+            <h1 class="has-text-white font-tertiary"> QnA 상세보기 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -38,8 +38,8 @@
 <div class="content" id="content" style="margin-top: 100px;">
     <div class="row column text-center">
         <div class="container">
-            <table id="table">
-                <tobody>
+            <table id="table" class="table">
+                <tbody>
                     <tr style="border-top: solid grey 1px;">
                         <td style="font-weight: bold; font-size: 30px;">${dto.title }</td>
                         <td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
@@ -53,22 +53,32 @@
                     <tr style="border-bottom: solid grey 1px;">
                         <td style="padding-top: 50px; padding-bottom: 50px;"><p>${dto.content }</p></td>
                     </tr>
-                </tobody>
+                </tbody>
             </table>
-            <div class="button-group" style="margin-top: 30px; float: right; margin-bottom: 100px;">
-                <a class="button" href="${path }/qna/list.do">글 목록</a>
-                <c:if test='${sid eq "admin" && not empty sid}'>
+
+            <div class="buttons is-right mb-100">
+                <a class="button" href="${path }/qna/list.do">목록</a>
+                <c:if test='${sid eq "admin" && not empty sid && dto.par == 0}'>
                     <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
-                    <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
                 </c:if>
-                <c:if test='${sid eq dto.author && not empty sid && sid != "admin"}'>
-                    <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">글 삭제</a>
-                    <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">글 수정</a>
+                <c:if test='${(sid eq dto.author || sid eq "admin") && not empty sid}'>
+                    <a class="button" href="${path }/qna/delete.do?qno=${dto.qno}">삭제</a>
+                    <a class="button" href="${path }/qna/edit.do?qno=${dto.qno}">수정</a>
                 </c:if>
             </div>
         </div>
     </div>
 </div>
 
+<!-- 푸터 영역 시작 -->
+<jsp:include page="../layout/footer.jsp"/>
+<!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <input type="hidden" name="qno" value="${dto.qno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 </body>
 </html>

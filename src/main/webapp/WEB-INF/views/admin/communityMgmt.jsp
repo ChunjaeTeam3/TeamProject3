@@ -11,10 +11,9 @@
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" />
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-<%@ include file="../layout/header.jsp"%>
 
 <!-- page title -->
 <section class="page-title background-primary is-relative">

@@ -14,10 +14,10 @@
     <jsp:include page="../setting/head.jsp"></jsp:include>
 </head>
 <body>
-<div class="container">
+<div class="container" style="padding: 20px">
     <form name="child" action="${path}/apply/insert.do" method="post">
     <div>
-        <p style="font-weight: bold;text-align:center; font-size:35px;">이벤트 신청</p>
+        <p style="font-weight: bold; text-align:center; font-size:35px;">이벤트 신청</p>
     </div>
     <div class="field is-horizontal" style="height: 60px; margin-bottom:50px;">
         <div class="field-label is-normal" >

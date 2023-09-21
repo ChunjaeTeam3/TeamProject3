@@ -53,4 +53,9 @@ public class CommunityDAOImpl implements CommunityDAO {
     public void communityEdit(Community dto) throws Exception {
         sqlSession.update("community.communityEdit", dto);
     }
+
+    @Override
+    public int communityCnt() throws Exception {
+        return sqlSession.selectOne("community.communityCnt");
+    }
 }

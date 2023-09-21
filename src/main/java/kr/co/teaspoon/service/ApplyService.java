@@ -8,4 +8,5 @@ public interface ApplyService {
     public int getCount(int appno) throws Exception;
     public void applyInsert(Apply apply) throws Exception;
     public void applyDelete(int appno) throws Exception;
+    public int applyCnt() throws Exception;
 }

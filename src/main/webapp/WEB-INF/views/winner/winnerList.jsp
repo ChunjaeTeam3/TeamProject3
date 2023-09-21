@@ -38,7 +38,7 @@
 
 <!-- 공지사항 영역 시작 -->
 <div class="content" id="content" style="margin-top: 20px;">
-    <div class="row column text-center">
+    <div class="row column text-center" style="margin-top:100px;">
         <div class="container">
             <div>
                 <table class="table">

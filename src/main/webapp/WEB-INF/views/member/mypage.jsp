@@ -16,9 +16,11 @@
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<!-- 헤더 영역 시작-->
+<jsp:include page="../layout/header.jsp" />
+<!-- 헤더 영역 끝 -->
 
-<!-- page title -->
+<!-- 배너 영역 시작 -->
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">

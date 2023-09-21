@@ -41,4 +41,9 @@ public class ApplyServiceImpl implements ApplyService{
     public void applyDelete(int appno) throws Exception {
         applyDAO.applyDelete(appno);
     }
+
+    @Override
+    public int applyCnt() throws Exception {
+        return applyDAO.applyCnt();
+    }
 }

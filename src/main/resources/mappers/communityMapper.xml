@@ -93,4 +93,9 @@
         delete from community
         where cno = #{cno}
     </delete>
+
+    <!-- 게시글 개수 -->
+    <select id="communityCnt" resultType="integer">
+        select count(*) from community
+    </select>
 </mapper>

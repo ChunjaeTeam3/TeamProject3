@@ -9,14 +9,13 @@
     <title> 커뮤니티 </title>
     <c:set var="path" value="${pageContext.request.contextPath}"/>
     <jsp:include page="../setting/head.jsp" />
-
     <style>
         h1 { font-size: 40pt; }
         h3 { font-size: 20pt; }
     </style>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<jsp:include page="../layout/header.jsp" />
 
 <section class="page-title background-primary is-relative">
     <div class="container">
@@ -144,7 +143,7 @@
     </div>
 </section>
 
-<%@ include file="../layout/footer.jsp"%>
+<jsp:include page="../layout/footer.jsp"></jsp:include>
 
 <form action="#">
     <button id="toTop" title="Go to top">

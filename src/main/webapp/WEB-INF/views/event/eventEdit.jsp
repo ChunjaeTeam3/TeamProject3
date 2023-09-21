@@ -62,12 +62,20 @@
                         <div class="field">
                             <div class="control" style="padding-top:10px;">
                                 <label class="radio">
-                                    <input type="radio" name="status" id="now" value="1" checked>
-                                    진행중
+                                    <c:if test="${event.status == 1}">
+                                        <input type="radio" name="status" id="now" value="1" checked> 진행중
+                                    </c:if>
+                                    <c:if test="${event.status != 1}">
+                                        <input type="radio" name="status" id="now" value="1"> 진행중
+                                    </c:if>
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="status" id="end" value="0">
-                                    종료
+                                    <c:if test="${event.status == 0}">
+                                        <input type="radio" name="status" id="end" value="0" checked> 종료
+                                    </c:if>
+                                    <c:if test="${event.status != 0}">
+                                        <input type="radio" name="status" id="end" value="0"> 종료
+                                    </c:if>
                                 </label>
                             </div>
                         </div>
@@ -121,6 +129,21 @@
                     </c:if>
                 </div>
             </form>
+
+            <script>
+                // 시작일 변경 시 종료일 처리
+                $("#sdate").change(() => {
+                    $("#edate").prop("min", $("#sdate").val());
+                    // 종료일이 변경한 시작일보다 빠른 경우
+                    if($("#edate").val() < $("#sdate").val()) {
+                        $("#edate").val($("#sdate").val());
+                    }
+                });
+                // 종료일 변경 시 시작일 처리
+                $("#edate").change(() => {
+                    $("#sdate").prop("max", $("#edate").val());
+                })
+            </script>
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<jsp:include page="../layout/header.jsp" />
 
 <section class="page-title background-primary is-relative">
     <div class="container">
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column m-3 p-5" style="border: 1px solid #ddd; border-radius: 5px;">
+            <div class="column m-3 p-5" style="border: 1px solid #ddd; border-radius: 5px; min-height:500px;">
                 ${detail.content}
             </div>
         </div>

@@ -12,7 +12,7 @@
     <script type="text/javascript" src="${path}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+<jsp:include page="../layout/header.jsp" />
 
 <section class="page-title background-primary is-relative">
     <div class="container">
@@ -65,7 +65,6 @@
 <%@ include file="../layout/footer.jsp"%>
 
 <form action="#">
-    <input type="hidden" id="cno" name="cno" value="${detail.cno}">
     <button id="toTop" title="Go to top">
         <i class="fas fa-angle-up"></i>
     </button>

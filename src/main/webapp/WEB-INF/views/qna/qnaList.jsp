@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Q & A</title>
+    <title>QnA</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
 
     <style>
@@ -28,7 +28,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> Q & A </h1>
+            <h1 class="has-text-white font-tertiary"> QnA </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -89,13 +89,13 @@
             </c:forEach>
             <c:if test="${empty qnaList}">
                 <tr>
-                    <td colspan="6" class="has-text-centered"> Q&A가 없습니다. </td>
+                    <td colspan="6" class="has-text-centered"> QnA가 없습니다. </td>
                 </tr>
             </c:if>
             </tbody>
         </table>
         <!-- pagnation -->
-        <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
+        <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
             <c:if test="${curPage > 5}">
                 <a href="${path}/qna/list.do?page=${page.blockStartNum - 1}" class="pagination-previous">Previous</a>
             </c:if>
@@ -122,7 +122,7 @@
         </nav>
             <!--회원일 경우만 글 등록 버튼 보이게-->
         <c:if test="${ !empty sid }">
-            <div class="button-group" style="margin-top: 30px; margin-bottom: 100px;">
+            <div class="buttons is-right mb-100">
                 <a class="button is-primary" href="${path}/qna/questionInsert.do" style="float:right;"> 질문하기</a>
             </div>
         </c:if>

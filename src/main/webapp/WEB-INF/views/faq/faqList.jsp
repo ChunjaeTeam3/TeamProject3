@@ -27,21 +27,20 @@
 
 	<!-- 배너 영역 시작 -->
 	<section class="page-title background-primary is-relative">
-	<div class="container">
-		<div class="has-text-centered">
-			<h1 class="has-text-white font-tertiary" style="font-size: 40px;"> FAQ </h1>
+		<div class="container">
+			<div class="has-text-centered">
+				<h1 class="has-text-white font-tertiary" style="font-size: 40px;"> FAQ </h1>
+			</div>
 		</div>
-	</div>
-	<!-- background shapes -->
-	<img src="${path}/resources/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-	<img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
-	<img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
-	<img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
-	<img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-	<img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
-</section>
+		<!-- background shapes -->
+		<img src="${path}/resources/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
+		<img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
+		<img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
+		<img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
+		<img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
+		<img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
+	</section>
 	<!-- 배너 영역 끝 -->
-
 
 	<!-- FAQ 영역 시작 -->
 	<div class="content" id="content" style="margin-top: 20px;">
@@ -51,13 +50,13 @@
 					<!-- 검색 엔진 시작 -->
 					<form action="${path}/faq/list.do" method="get" class="field has-addons has-addons-right" style="margin-top: 100px;">
 						<p class="control">
-                <span class="select">
-                    <select id="type" name="type">
-                        <option value="T"> 제목 </option>
-                        <option value="C"> 내용 </option>
-                        <option value="W"> 작성자 </option>
-                    </select>
-                </span>
+							<span class="select">
+								<select id="type" name="type">
+									<option value="T"> 제목 </option>
+									<option value="C"> 내용 </option>
+									<option value="W"> 작성자 </option>
+								</select>
+							</span>
 						</p>
 						<p class="control">
 							<input class="input" type="text" id="keyword" name="keyword" placeholder="검색어를 입력하세요" value="${page.keyword}" autocomplete="false">
@@ -68,7 +67,7 @@
 					</form>
 					<!-- 검색 엔진 끝 -->
 
-					<ul class="faqlist" style="list-style: none;">
+					<ul class="faqlist mb-100" style="list-style: none;">
 						<c:forEach items="${faqList }" var="faq" varStatus="status">
 						<li>
 							<div class="message-header" style="margin-bottom: 0px; background-color: #485fc7">${faq.question }</div>
@@ -91,11 +90,17 @@
 			</div>
 	    </div>
 	</div>
+
 	<!-- FAQ 영역 끝-->
 
 	<!-- 푸터 영영 시작 -->
 	<jsp:include page="../layout/footer.jsp"/>
 	<!-- 푸터 영역 끝 -->
 
+	<form action="#">
+		<button id="toTop" title="Go to top">
+			<i class="fas fa-angle-up"></i>
+		</button>
+	</form>
 </body>
 </html>

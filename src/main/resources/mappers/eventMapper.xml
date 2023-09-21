@@ -3,7 +3,10 @@
 <mapper namespace="event">
     <!-- 이벤트 리스트 구하기-->
     <select id="eventList" resultType="kr.co.teaspoon.dto.Event">
-        select * from event order by status desc
+        select * from event
+        <![CDATA[
+            ORDER BY sdate desc, edate desc LIMIT #{postStart}, #{postCount}
+        ]]>
     </select>
     <!-- 이벤트 상세보기 -->
     <select id="eventDetail" resultType="kr.co.teaspoon.dto.Event">
@@ -23,12 +26,14 @@
     </delete>
     <!-- 이벤트 글 수정하기 -->
     <update id="eventEdit">
-        update event set title=#{title}, content=#{content}, sdate=#{sdate}, edate=#{edate} where eno=#{eno}
+        update event set title=#{title}, content=#{content}, sdate=#{sdate}, edate=#{edate}, status=#{status} where eno=#{eno}
     </update>
     <!--조회수 -->
-    <update id="Count">
+    <update id="updateCnt">
         update event set cnt=cnt+1 where eno=#{eno}
     </update>
-
-
+    <!-- 현재 중인 이벤트 목록 랜덤으로 6개 가져오기 (관리자 페이지에서 사용) -->
+    <select id="ongoingEvents" resultType="kr.co.teaspoon.dto.Event">
+        SELECT * FROM event where STATUS = 1 ORDER BY RAND() LIMIT 6
+    </select>
 </mapper>

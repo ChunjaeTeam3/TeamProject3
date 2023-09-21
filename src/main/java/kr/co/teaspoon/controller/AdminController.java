@@ -1,16 +1,13 @@
 package kr.co.teaspoon.controller;
 
 import kr.co.teaspoon.dto.*;
-
 import kr.co.teaspoon.service.*;
-import kr.co.teaspoon.util.FilterPage;
-import kr.co.teaspoon.util.Page;
+import kr.co.teaspoon.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +25,7 @@ public class AdminController {
     HttpSession session;
     @Autowired
     private FileboardService fileboardService;
+
     @Autowired
     private FileInfoService fileInfoService;
     @Autowired
@@ -43,8 +41,11 @@ public class AdminController {
 
     @Autowired
     private QnaService qnaService;
+
     @Autowired
     private EventService eventService;
+    @Autowired
+    private ApplyService applyService;
 
     // 필터링 단어 추가 페이지 로딩
     @RequestMapping(value="filterInsert.do", method= RequestMethod.GET)
@@ -129,7 +130,27 @@ public class AdminController {
         return "/admin/noAnswerList";
     }
 @RequestMapping("list.do")
-    public String adminList(HttpServletRequest request, HttpServletResponse response, Model model) {
+    public String adminList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        // 회원 수
+        int memberCnt = memberService.memberCnt();
+        model.addAttribute("memberCnt", memberCnt);
+
+        // 게시글 수
+        int communityCnt = communityService.communityCnt();
+        model.addAttribute("communityCnt", communityCnt);
+
+        // 이벤트 참여자 수
+        int applyCnt = applyService.applyCnt();
+        model.addAttribute("applyCnt", applyCnt);
+
+        // 미답변 질문 수
+        int noAnswerCnt = qnaService.noAnswerCount();
+        model.addAttribute("noAnswerCnt", noAnswerCnt);
+        
+        // 진행 중인 이벤트 목록
+        List<Event> ongoingEvents = eventService.ongoingEvents();
+        model.addAttribute("ongoingEvents", ongoingEvents);
+
         return "/admin/adminList";
     }
 
