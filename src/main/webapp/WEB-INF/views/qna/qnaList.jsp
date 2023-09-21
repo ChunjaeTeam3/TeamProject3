@@ -57,7 +57,7 @@
             <tbody>
             <c:forEach items="${qnaList }" var="qna" varStatus="status">
             <tr>
-                <td class="has-text-centered">${status.count}</td>
+                <td class="has-text-centered">${qna.qno}</td>
                 <!-- 비회원일때 -->
                 <c:if test="${empty sid}">
                     <c:if test="${qna.lev==0}">

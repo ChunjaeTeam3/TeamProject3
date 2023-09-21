@@ -79,7 +79,7 @@
 		      	<tbody>
 		      	<c:forEach items="${noticeList }" var="notice" varStatus="status">
 		      		<tr>
-		      			<td>${status.count }</td>
+		      			<td>${notice.seq }</td>
 		      			<td ><a href="${path}/notice/detail.do?seq=${notice.seq }" style="color: #000000;">${notice.title }</a></td>
 						<td>${notice.nickname }</td>
 		      			<td>

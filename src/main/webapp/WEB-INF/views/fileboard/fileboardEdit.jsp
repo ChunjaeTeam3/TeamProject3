@@ -25,7 +25,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 자료실 글쓰기 </h1>
+            <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 자료실 글 수정하기 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -49,12 +49,13 @@
                         <div class="columns is-multiline">
                             <div class="form-group column is-12">
                                 <label for="title"> 제목 </label>
-                                <input type="text" class="input" id="title" name="title" placeholder="제목을 입력해주세요" autocomplete="off" autofocus required>
+                                <input type="hidden" id="articleno" name="articleno" value="${fileboard.articleno}">
+                                <input type="text" class="input" id="title" name="title" placeholder="제목을 입력해주세요" autocomplete="off" value="${fileboard.title}" autofocus required>
                             </div>
                             <!-- 내용 입력 부분 -->
                             <div class="form-group column is-12">
                                 <label for="content"> 내용 </label>
-                                <textarea name="content" id="content" class="textarea has-fixed-size" cols="30" rows="20" placeholder="내용을 입력해주세요" required></textarea>
+                                <textarea name="content" id="content" class="textarea has-fixed-size" cols="30" rows="20" placeholder="내용을 입력해주세요" required>${fileboard.content}</textarea>
                             </div>
                             <!-- 파일 선택 부분 -->
                             <div class="form-group column is-8">

@@ -5,6 +5,7 @@
     <select id="fileInfoDetail" resultType="kr.co.teaspoon.dto.FileInfo">
         select * from fileInfo where articleno=#{articleno}
     </select>
+
     <update id="fileboardEdit">
         update fileInfo set saveFolder=#{saveFolder}, originFile=#{originFile}, saveFile=#{saveFile} where articleno=#{articleno}
     </update>

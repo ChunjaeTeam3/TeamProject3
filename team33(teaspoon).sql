@@ -132,15 +132,14 @@ INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다8', '답�
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다9', '답변입니다9');
 INSERT INTO faq(question, answer) VALUES('자주 묻는 질문입니다10', '답변입니다10');
 
-<<<<<<< HEAD
-=======
+
 CREATE TABLE fileInfo(
                          no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
                          articleno INT,
                          saveFolder VARCHAR(300) NOT NULL,
                          originFile VARCHAR(300) NOT NULL,
                          saveFile VARCHAR(300) NOT NULL);
->>>>>>> a2cdec851157c32354147f9f3588b4c51e97972c
+                         
 
 CREATE TABLE fileboard (
                            articleno int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -148,15 +147,6 @@ CREATE TABLE fileboard (
                            title varchar(100) NOT NULL,
                            content varchar(2000) NOT NULL,
                            regdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE fileInfo(
-  no int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  articleno INT,
-  saveFolder VARCHAR(300) NOT NULL,
-  originFile VARCHAR(300) NOT NULL,
-  saveFile VARCHAR(300) NOT NULL,
-  FOREIGN KEY(articleno) REFERENCES fileboard(articleno) ON DELETE CASCADE
 );
 
 SELECT * FROM fileboard;
