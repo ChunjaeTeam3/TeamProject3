@@ -9,6 +9,7 @@ public interface MemberDAO {
     public Member getMember(String id);
     public void memberInsert(Member member);
     public Member loginCheck(String id) throws Exception;
+    public void updateVisited(String id) throws Exception;
     public void memberEdit(Member member) throws Exception;
     public void memberDelete(String id) throws Exception;
     public int memberCnt() throws Exception;

@@ -30,6 +30,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public void updateVisited(String id) throws Exception {
+        memberDAO.updateVisited(id);
+    }
+
+    @Override
     public void memberInsert(Member member) {
         memberDAO.memberInsert(member);
     }
