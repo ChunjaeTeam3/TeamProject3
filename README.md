@@ -201,6 +201,9 @@
 
 # 📎기능 구현
 ## 메인 페이지
+- 사이드바
+- 카카오톡 1:1 상담 기능
+<p align="center"><img alt="메인페이지" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d640b37c-0983-4b74-9170-d876649e445f"></p>
 
 ## 🗂 회원 기능
 ### 1. 로그인
