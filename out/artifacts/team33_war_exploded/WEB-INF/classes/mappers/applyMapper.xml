@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="apply">
+    <!-- 신청차 정보 조회-->
+    <select id="getApply" resultType="kr.co.teaspoon.dto.Apply">
+        select * from apply where id = #{id} and eno=#{eno}
+    </select>
+
+    <!-- 이벤트 신청하기 -->
+    <insert id="applyInsert">
+        insert into apply (eno, name, id, tel) values( #{eno}, #{name}, #{id}, #{tel})
+    </insert>
+
+    <!-- 신청자 수 구하기 -->
+    <select id="getCount" resultType="integer">
+        select count(*) from apply
+    </select>
+
+    <!-- 신청 취소하기 -->
+    <delete id="applyDelete">
+        delete from apply where appno = #{appno}
+    </delete>
+
+    <!-- 이벤트 참여자 수 -->
+    <select id="applyCnt" resultType="integer">
+        select count(*) from apply
+    </select>
+</mapper>

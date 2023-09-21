@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="attendance">
+    <select id="attendanceList" resultType="string">
+        SELECT CONCAT(' ',day(attend),' ') AS attendDay FROM attendance
+        WHERE id=#{id} AND MONTH(attend) = MONTH(CURRENT_DATE)
+    </select>
+
+    <select id="getAttendance" resultType="kr.co.teaspoon.dto.Attendance">
+        select * from attendance
+        where id = #{id} and attend = CURRENT_DATE
+    </select>
+
+    <insert id="addAttend">
+        insert into attendance(id)
+        values(#{id})
+    </insert>
+</mapper>

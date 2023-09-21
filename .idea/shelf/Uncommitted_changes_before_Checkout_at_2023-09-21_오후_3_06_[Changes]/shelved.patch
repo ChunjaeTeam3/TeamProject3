@@ -1,0 +1,522 @@
+Index: src/main/webapp/WEB-INF/views/index.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page contentType=\"text/html;\" pageEncoding=\"UTF-8\" language=\"java\" %>\r\n<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>\r\n<%@ taglib prefix=\"fmt\" uri=\"http://java.sun.com/jsp/jstl/fmt\" %>\r\n<c:set var=\"path\" value=\"${pageContext.request.contextPath }\"/>\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\"/>\r\n    <title> 티스푼 </title>\r\n    <jsp:include page=\"./setting/head.jsp\"></jsp:include>\r\n    <style>\r\n        .player_btn {\r\n            border: none;\r\n            background-color: #ffffff;\r\n        }\r\n\r\n        #progressBar {\r\n            width: 0px;\r\n            height: 10px;\r\n            background-color: #007cf0;\r\n            transition: 1s;\r\n            margin-top: -10px;\r\n        }\r\n\r\n        #btn-right {\r\n            display: inline-block;\r\n            float: right;\r\n        }\r\n\r\n        h4 {\r\n            font-family: 'Roboto', 'sans-serif';\r\n        }\r\n    </style>\r\n\r\n</head>\r\n<body>\r\n<!--헤더 영역 시작 -->\r\n<jsp:include page=\"./layout/header.jsp\"/>\r\n<!--헤더 영역 끝 -->\r\n\r\n<!-- 슬라이드 배너 영역 시작 -->\r\n<jsp:include page=\"./main/slideBanner.jsp\"/>\r\n<!-- 슬라이드 배너 영역 끝 -->\r\n\r\n<!-- 메인 페이지 영역 시작-->\r\n<!-- 메인페이지 메뉴바 영역 시작 -->\r\n<div class=\"header-wrapper\" id=\"home\" style=\"padding-bottom: 0;\">\r\n    <section class=\"hero is-large\">\r\n        <!-- 모바일 -->\r\n        <nav class=\"navbar is-fixed-top is-transparent is-hidden-desktop\">\r\n            <div class=\"navbar-brand\">\r\n                <div class=\"navbar-burger burger\" data-target=\"mobile-nav\">\r\n                    <span></span>\r\n                    <span></span>\r\n                    <span></span>\r\n                </div>\r\n            </div>\r\n            <div id=\"mobile-nav\" class=\"navbar-menu\">\r\n                <div class=\"navbar-end\">\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#home\">\r\n                            Home\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#about-me\">\r\n                            About Me\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#services\">\r\n                            Services\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#skills\">\r\n                            Skills\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#my-work\">\r\n                            My Work\r\n                        </a>\r\n                    </div>\r\n                    <div class=\"navbar-item\">\r\n                        <a class=\"navbar-item\" href=\"#contact\">\r\n                            Contact\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </nav>\r\n        <!-- 모바일 -->\r\n        <!-- PC -->\r\n        <div class=\"hero-foot \">\r\n            <div class=\"hero-foot--wrapper\">\r\n                <div class=\"columns\">\r\n                    <div class=\"column is-12 hero-menu-desktop has-text-centered is-fixed-top\">\r\n                        <ul>\r\n                            <li class=\"is-active\">\r\n                                <a href=\"${path}\">Home</a>\r\n                            </li>\r\n                            <li>\r\n                                <a href=\"#about-me\">소개</a>\r\n                            </li>\r\n                            <li>\r\n                                <a href=\"#services\">서비스</a>\r\n                            </li>\r\n                            <li>\r\n                                <a href=\"#skills\">추천 강의</a>\r\n                            </li>\r\n                            <li>\r\n                                <a href=\"#my-work\">추천 교재</a>\r\n                            </li>\r\n                            <li>\r\n                                <a href=\"#location\">회사 위치</a>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- PC -->\r\n    </section>\r\n</div>\r\n<!-- 메인페이지 메뉴바 영역 끝 -->\r\n\r\n<!--위로 가기 아이콘 부분 시작-->\r\n<form action=\"${path}\">\r\n    <button id=\"toTop\" title=\"Go to top\">\r\n        <i class=\"fas fa-angle-up\"></i>\r\n    </button>\r\n</form>\r\n<!--위로 가기 아이콘 부분 끝-->\r\n\r\n<!-- 메인페이지 콘텐츠 영역 시작 -->\r\n<div class=\"main-content\" style=\"padding-top: 0;\">\r\n    <!-- section1(소개) 영역 시작 -->\r\n    <jsp:include page=\"main/section1.jsp\"></jsp:include>\r\n    <!-- section1(소개) 영역 끝 -->\r\n\r\n    <!-- section2(서비스 소개) 영역 시작 -->\r\n    <jsp:include page=\"main/section2.jsp\"></jsp:include>\r\n    <!-- section2(서비스 소개) 영역 끝 -->\r\n\r\n    <!-- section3(이벤트) 영역 시작 -->\r\n    <jsp:include page=\"main/section3.jsp\"></jsp:include>\r\n    <!-- section3(이벤트) 영역 끝 -->\r\n\r\n    <!-- section4(추천 교재) 영역 시작 -->\r\n    <jsp:include page=\"main/section5.jsp\"></jsp:include>\r\n    <!-- section4(추천 교재) 영역 시작 -->\r\n\r\n    <!-- section5(추천 강의) 영역 시작 -->\r\n    <jsp:include page=\"main/section4.jsp\"></jsp:include>\r\n    <!-- section5(추천 강의) 영역 끝 -->\r\n\r\n    <!-- section6(회사 위치) 영역 시작 -->\r\n    <jsp:include page=\"main/section6.jsp\"></jsp:include>\r\n    <!-- section6(회사 위치) 영역 시작 -->\r\n</div>\r\n<!-- 메인페이지 콘텐츠 영역 끝 -->\r\n<!--메인 페이지 영역 끝-->\r\n\r\n<!-- 푸터 영영 시작 -->\r\n<jsp:include page=\"./layout/footer.jsp\"/>\r\n<!-- 푸터 영역 끝 -->\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/index.jsp b/src/main/webapp/WEB-INF/views/index.jsp
+--- a/src/main/webapp/WEB-INF/views/index.jsp	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ b/src/main/webapp/WEB-INF/views/index.jsp	(date 1695272080440)
+@@ -137,6 +137,9 @@
+ 
+ <!-- 메인페이지 콘텐츠 영역 시작 -->
+ <div class="main-content" style="padding-top: 0;">
++    <!-- 사이드 메뉴 시작 -->
++    <jsp:include page="layout/sidemenu.jsp"/>
++    <!-- 사이드 메뉴 끝 -->
+     <!-- section1(소개) 영역 시작 -->
+     <jsp:include page="main/section1.jsp"></jsp:include>
+     <!-- section1(소개) 영역 끝 -->
+Index: src/main/webapp/WEB-INF/views/main/section1.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page contentType=\"text/html;charset=UTF-8\" pageEncoding=\"UTF-8\" language=\"java\" %>\r\n<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>\r\n<%@ taglib prefix=\"fmt\" uri=\"http://java.sun.com/jsp/jstl/fmt\"%>\r\n<c:set var=\"path\" value=\"${pageContext.request.contextPath }\" />\r\n<!-- section1(소개) 영역 시작 -->\r\n<section class=\"section is-relative testimonial-bg-shapes mb-100\" id=\"about-me\">\r\n    <div class=\"container\">\r\n        <div class=\"has-text-centered\">\r\n            <br><br>\r\n            <h2 class=\"section-title m-0\" style=\"font-weight:bold\"> 티스푼 소개 </h2>\r\n            <p class=\"mb-100\"> 티스푼은 학부모를 위한 교육 플랫폼으로, 효율적인 학습 관리와 개인 맞춤형 교육을 제공합니다. </p>\r\n        </div>\r\n        <div class=\"columns is-centered mb-100\">\r\n            <div class=\"column is-10 testimonial-slider\">\r\n                <div class=\"has-text-centered testimonial-content\">\r\n                    <i class=\"fa-solid fa-quote-left fa-2xl mb-50\"></i>\r\n                    <h3 class=\"mb-10\"> 한눈에 교육 정보를 체계적으로, 학습 관리를 똑똑하게! </h3>\r\n                    <h4 class=\"mb-50\"> 스마트한 학부모를 위한 토탈 교육 플랫폼, 티스푼\uD83D\uDE80 </h4>\r\n                    <i class=\"fa-solid fa-quote-right fa-2xl\"></i>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"columns is-centered\">\r\n            <div class=\"column has-text-centered rounded-lg p-5\" style=\"border: 3px solid #ddd; margin: 0px 10px;\">\r\n                <i class=\"fa-solid fa-children fa-flip fa-2xl mb-40\" style=\"color: #007cf0;\"></i><br>\r\n                아이 교육의 핵심, 티스푼과 함께!\r\n            </div>\r\n            <div class=\"column has-text-centered rounded-lg p-5\" style=\"border: 3px solid #ddd; margin: 0px 10px;\">\r\n                <i class=\"fa-solid fa-school fa-flip fa-2xl mb-40\" style=\"color: #007cf0;\"></i><br>\r\n                티스푼과 함께 대비하는 새학기!\r\n            </div>\r\n            <div class=\"column has-text-centered rounded-lg p-5\" style=\"border: 3px solid #ddd; margin: 0px 10px;\">\r\n                <i class=\"fa-solid fa-circle-info fa-flip fa-2xl mb-40\" style=\"color: #007cf0;\"></i><br>\r\n                쉽게 제공받는 천재교육 계열사의 정보,<br>티스푼에서 한 번에 확인해요!\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- bg shapes -->\r\n    <img src=\"${path}/resources/images/backgrounds/map.png\" alt=\"map\" class=\"image bg-map\">\r\n    <img src=\"${path}/resources/images/illustrations/leaf-orange.png\" alt=\"bg-shape\" class=\"image bg-shape-2\">\r\n    <img src=\"${path}/resources/images/illustrations/dots-group-sm.png\" alt=\"bg-shape\" class=\"image bg-shape-3\">\r\n    <img src=\"${path}/resources/images/illustrations/leaf-pink-round.png\" alt=\"bg-shape\" class=\"image bg-shape-4\">\r\n    <img src=\"${path}/resources/images/illustrations/leaf-cyan.png\" alt=\"bg-shape\" class=\"image bg-shape-5\">\r\n</section>\r\n<!-- section1(소개) 영역 끝 -->
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/main/section1.jsp b/src/main/webapp/WEB-INF/views/main/section1.jsp
+--- a/src/main/webapp/WEB-INF/views/main/section1.jsp	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ b/src/main/webapp/WEB-INF/views/main/section1.jsp	(date 1695272491493)
+@@ -38,7 +38,6 @@
+     <!-- bg shapes -->
+     <img src="${path}/resources/images/backgrounds/map.png" alt="map" class="image bg-map">
+     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="bg-shape" class="image bg-shape-2">
+-    <img src="${path}/resources/images/illustrations/dots-group-sm.png" alt="bg-shape" class="image bg-shape-3">
+     <img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="bg-shape" class="image bg-shape-4">
+     <img src="${path}/resources/images/illustrations/leaf-cyan.png" alt="bg-shape" class="image bg-shape-5">
+ </section>
+Index: .idea/jpa-buddy.xml
+===================================================================
+diff --git a/.idea/jpa-buddy.xml b/.idea/jpa-buddy.xml
+deleted file mode 100644
+--- a/.idea/jpa-buddy.xml	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ /dev/null	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="JpaBuddyIdeaProjectConfig">
+-    <option name="defaultUnitInitialized" value="true" />
+-    <option name="renamerInitialized" value="true" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/views/layout/sidemenu.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/layout/sidemenu.jsp b/src/main/webapp/WEB-INF/views/layout/sidemenu.jsp
+new file mode 100644
+--- /dev/null	(date 1695276305846)
++++ b/src/main/webapp/WEB-INF/views/layout/sidemenu.jsp	(date 1695276305846)
+@@ -0,0 +1,46 @@
++<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
++<c:set var="path" value="<%=request.getContextPath() %>" />
++<style>
++    div, ul, li {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0}
++    a {text-decoration:none;}
++
++    .menu {position:absolute;width:100px;top:50%;margin-top:-50px;right:10px;background:#fff; border-radius: 20px; border: 1px solid #333333}
++    .menu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;}
++    .menu ul li {float:left;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
++    .menu ul li a {position:relative;float:left;width:100%;height:40px;line-height:30px;text-align:center;color:#333333;font-size:9.5pt; padding-top: 7px;}
++    .menu ul li a:hover {color:#000;}
++    .menu ul li:last-child {border-bottom:0;}
++</style>
++
++<div class="menu">
++    <ul>
++        <li>
++            <a href="${path}"><i class="fa-solid fa-house"></i> Home</a>
++        </li>
++        <li>
++            <a href="#about-me"><i class="fa-solid fa-user-tie"></i> 소개</a>
++        </li>
++        <li>
++            <a href="#services"><i class="fa-solid fa-gift"></i></i> 서비스</a>
++        </li>
++        <li>
++            <a href="#skills"><i class="fa-brands fa-youtube"></i> 추천 강의</a>
++        </li>
++        <li>
++            <a href="#my-work"><i class="fa-solid fa-book"></i> 추천 교재</a>
++        </li>
++        <li>
++            <a href="#location"><i class="fa-solid fa-map"></i> 회사 위치</a>
++        </li>
++    </ul>
++</div>
++
++<script>
++    $(document).ready(function(){
++        var currentPosition = parseInt($(".menu").css("top"));
++        $(window).scroll(function() {
++            var position = $(window).scrollTop();
++            $(".menu").stop().animate({"top":position+currentPosition+"px"},500);
++        });
++    });
++</script>
+\ No newline at end of file
+Index: out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Manifest-Version: 1.0\r\nCreated-By: IntelliJ IDEA\r\nBuilt-By: 김현경\r\nBuild-Jdk: Azul Zulu version 17.0.8\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF b/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF
+--- a/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ b/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF	(date 1695276307157)
+@@ -1,5 +1,5 @@
+ Manifest-Version: 1.0
+ Created-By: IntelliJ IDEA
+-Built-By: 김현경
+-Build-Jdk: Azul Zulu version 17.0.8
++Built-By: db400tea
++Build-Jdk: Azul Zulu version 17.0.7
+ 
+Index: .idea/artifacts/team33_war_exploded.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/team33_war_exploded.xml b/.idea/artifacts/team33_war_exploded.xml
+new file mode 100644
+--- /dev/null	(date 1695262439960)
++++ b/.idea/artifacts/team33_war_exploded.xml	(date 1695262439960)
+@@ -0,0 +1,121 @@
++<component name="ArtifactManager">
++  <artifact type="exploded-war" name="team33:war exploded">
++    <output-path>$PROJECT_DIR$/out/artifacts/team33_war_exploded</output-path>
++    <root id="root">
++      <element id="directory" name="WEB-INF">
++        <element id="directory" name="classes">
++          <element id="module-output" name="team33" />
++        </element>
++        <element id="directory" name="lib">
++          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.20" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.20" />
++          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.9.0" />
++          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.0" />
++          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:2.0.0" />
++          <element id="library" level="project" name="Maven: org.slf4j:slf4j-reload4j:2.0.0" />
++          <element id="library" level="project" name="Maven: ch.qos.reload4j:reload4j:1.2.19" />
++          <element id="library" level="project" name="Maven: log4j:log4j:1.2.15" />
++          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
++          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.3.20" />
++          <element id="library" level="project" name="Maven: org.apache.maven.plugins:maven-war-plugin:3.2.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-plugin-api:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-model:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-artifact:3.0" />
++          <element id="library" level="project" name="Maven: org.sonatype.sisu:sisu-inject-plexus:1.4.2" />
++          <element id="library" level="project" name="Maven: org.sonatype.sisu:sisu-inject-bean:1.4.2" />
++          <element id="library" level="project" name="Maven: org.sonatype.sisu:sisu-guice:noaop:2.1.7" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-core:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-settings:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-settings-builder:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-repository-metadata:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-model-builder:3.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-aether-provider:3.0" />
++          <element id="library" level="project" name="Maven: org.sonatype.aether:aether-impl:1.7" />
++          <element id="library" level="project" name="Maven: org.sonatype.aether:aether-spi:1.7" />
++          <element id="library" level="project" name="Maven: org.sonatype.aether:aether-api:1.7" />
++          <element id="library" level="project" name="Maven: org.sonatype.aether:aether-util:1.7" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-classworlds:2.2.3" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-component-annotations:1.5.5" />
++          <element id="library" level="project" name="Maven: org.sonatype.plexus:plexus-sec-dispatcher:1.3" />
++          <element id="library" level="project" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" />
++          <element id="library" level="project" name="Maven: org.apache.maven:maven-archiver:3.2.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven.shared:maven-shared-utils:3.2.0" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-archiver:3.5" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-io:3.0.0" />
++          <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.14" />
++          <element id="library" level="project" name="Maven: org.iq80.snappy:snappy:0.4" />
++          <element id="library" level="project" name="Maven: org.tukaani:xz:1.6" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-interpolation:1.24" />
++          <element id="library" level="project" name="Maven: com.thoughtworks.xstream:xstream:1.4.9" />
++          <element id="library" level="project" name="Maven: xmlpull:xmlpull:1.1.3.1" />
++          <element id="library" level="project" name="Maven: xpp3:xpp3_min:1.1.4c" />
++          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-utils:3.1.0" />
++          <element id="library" level="project" name="Maven: org.apache.maven.shared:maven-filtering:3.1.1" />
++          <element id="library" level="project" name="Maven: org.sonatype.plexus:plexus-build-api:0.0.7" />
++          <element id="library" level="project" name="Maven: org.apache.maven.shared:maven-mapping:3.0.0" />
++          <element id="library" level="project" name="Maven: org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.20" />
++          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
++          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
++          <element id="library" level="project" name="Maven: org.mariadb.jdbc:mariadb-java-client:3.1.4" />
++          <element id="library" level="project" name="Maven: com.github.waffle:waffle-jna:3.2.0" />
++          <element id="library" level="project" name="Maven: net.java.dev.jna:jna:5.12.1" />
++          <element id="library" level="project" name="Maven: net.java.dev.jna:jna-platform:5.12.1" />
++          <element id="library" level="project" name="Maven: com.github.ben-manes.caffeine:caffeine:2.9.3" />
++          <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.10.0" />
++          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.23.0" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.20" />
++          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.0" />
++          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.2" />
++          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.7" />
++          <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.12.1" />
++          <element id="library" level="project" name="Maven: org.json:json:20200518" />
++          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.4" />
++          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
++          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.4" />
++          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
++          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
++          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.4.0" />
++          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.4.0" />
++          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.4.0" />
++          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.2" />
++          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
++          <element id="library" level="project" name="Maven: org.imgscalr:imgscalr-lib:4.0" />
++          <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.4.7" />
++          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.3.20" />
++          <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.1.Final" />
++          <element id="library" level="project" name="Maven: org.hibernate:hibernate-annotations:3.5.6-Final" />
++          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:3.5.6-Final" />
++          <element id="library" level="project" name="Maven: antlr:antlr:2.7.6" />
++          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.1" />
++          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
++          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
++          <element id="library" level="project" name="Maven: javax.transaction:jta:1.1" />
++          <element id="library" level="project" name="Maven: org.hibernate:hibernate-commons-annotations:3.2.0.Final" />
++          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final" />
++          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.0.8.Final" />
++          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
++          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.4" />
++          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.0" />
++          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter:5.10.0" />
++          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.10.0" />
++          <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.3.0" />
++          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.10.0" />
++          <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.2" />
++          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-params:5.10.0" />
++          <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.10.0" />
++          <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-engine:1.10.0" />
++        </element>
++      </element>
++      <element id="javaee-facet-resources" facet="team33/web/Web" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"zulu-17\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"jpab\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ b/.idea/misc.xml	(date 1695262384861)
+@@ -1,9 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="FrameworkDetectionExcludesConfiguration">
+-    <file type="web" url="file://$PROJECT_DIR$" />
+-  </component>
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>
+@@ -11,8 +8,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="zulu-17" project-jdk-type="JavaSDK" />
+-  <component name="ProjectType">
+-    <option name="id" value="jpab" />
+-  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/artifacts/team33.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/team33.xml b/.idea/artifacts/team33.xml
+new file mode 100644
+--- /dev/null	(date 1695262439950)
++++ b/.idea/artifacts/team33.xml	(date 1695262439950)
+@@ -0,0 +1,8 @@
++<component name="ArtifactManager">
++  <artifact type="war" name="team33">
++    <output-path>$PROJECT_DIR$/out/artifacts/team33_war</output-path>
++    <root id="archive" name="team33.war">
++      <element id="artifact" artifact-name="team33:war exploded" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"team33:war\" />\r\n      <artifact name=\"team33:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"281beefe-bce0-4905-9104-1ba33944ab6b\" name=\"변경\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Jsp File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"isToolWindowVisible\" value=\"false\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2VcSG17HhLybjIDVEkC5RrlS4wn\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;D:/github/teamproject03/src/main/webapp/resources/images/main&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;spring.configuration.checksum&quot;: &quot;8b1dc0e6e12e79ab401aa775b638e116&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\github\\teamproject03\\src\\main\\webapp\\resources\\images\\main\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\github\\teamproject03\\src\\main\\webapp\\resources\\images\\main\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tomcat 9.0.78\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.78\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"BROWSER_ID\" value=\"98ca6316-2f89-46d9-a9e5-fa9e2b0625b3\" />\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"team33:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/team33_war\" />\r\n          </settings>\r\n        </artifact>\r\n        <artifact name=\"team33:war exploded\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/team33\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"efc7540f-f373-4049-a1e1-95b175340fb8\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"53561\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"team33:war\" />\r\n          <artifact name=\"team33:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"281beefe-bce0-4905-9104-1ba33944ab6b\" name=\"변경\" comment=\"\" />\r\n      <created>1695133779076</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1695133779076</updated>\r\n      <workItem from=\"1695133780625\" duration=\"318000\" />\r\n      <workItem from=\"1695134114051\" duration=\"5271000\" />\r\n      <workItem from=\"1695167670477\" duration=\"30149000\" />\r\n      <workItem from=\"1695253890235\" duration=\"7972000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EventController.java</url>\r\n          <line>98</line>\r\n          <option name=\"timeStamp\" value=\"5\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 375590f09adb268f47edfb14632bd8de51d9dce1)
++++ b/.idea/workspace.xml	(date 1695276134441)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ArtifactsWorkspaceSettings">
+     <artifacts-to-build>
+-      <artifact name="team33:war" />
++      <artifact name="team33" />
+       <artifact name="team33:war exploded" />
+     </artifacts-to-build>
+   </component>
+@@ -10,8 +10,16 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="281beefe-bce0-4905-9104-1ba33944ab6b" name="변경" comment="">
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section2.jsp" afterDir="false" />
++    <list default="true" id="1c200643-f9c6-4dd7-ab54-4f6af114392f" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/artifacts/team33.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/artifacts/team33_war_exploded.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/sidemenu.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/team33_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/section1.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,16 +29,12 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="Class" />
+         <option value="Jsp File" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="JpbToolWindowState">
+-    <option name="isToolWindowVisible" value="false" />
+   </component>
+   <component name="LogFilters">
+     <option name="FILTER_ERRORS" value="false" />
+@@ -38,9 +42,6 @@
+     <option name="FILTER_INFO" value="true" />
+     <option name="FILTER_DEBUG" value="true" />
+     <option name="CUSTOM_FILTER" />
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+   </component>
+   <component name="MavenImportPreferences">
+     <option name="generalSettings">
+@@ -49,55 +50,46 @@
+       </MavenGeneralSettings>
+     </option>
+   </component>
+-  <component name="ProjectId" id="2VcSG17HhLybjIDVEkC5RrlS4wn" />
++  <component name="ProjectId" id="2VgenTfDKi4uBI7Pk3Cq0HBQZB3" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;D:/github/teamproject03/src/main/webapp/resources/images/main&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;spring.configuration.checksum&quot;: &quot;8b1dc0e6e12e79ab401aa775b638e116&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-  }
+-}</component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="D:\github\teamproject03\src\main\webapp\resources\images\main" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="D:\github\teamproject03\src\main\webapp\resources\images\main" />
+-    </key>
+-  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "D:/kim/project/tproj/TeamProject3",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Artifacts",
++    "project.structure.proportion": "0.15917969",
++    "project.structure.side.proportion": "0.2",
++    "spring.configuration.checksum": "8b1dc0e6e12e79ab401aa775b638e116",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
+   <component name="RunManager">
+     <configuration name="Tomcat 9.0.78" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.78" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+       <option name="UPDATING_POLICY" value="restart-server" />
+       <deployment>
+-        <artifact name="team33:war">
++        <artifact name="team33">
+           <settings>
+-            <option name="CONTEXT_PATH" value="/team33_war" />
++            <option name="CONTEXT_PATH" value="/team33" />
+           </settings>
+         </artifact>
+         <artifact name="team33:war exploded">
+           <settings>
+-            <option name="CONTEXT_PATH" value="/team33" />
++            <option name="CONTEXT_PATH" value="/team33_war_exploded" />
+           </settings>
+         </artifact>
+       </deployment>
+       <server-settings>
+-        <option name="BASE_DIRECTORY_NAME" value="efc7540f-f373-4049-a1e1-95b175340fb8" />
++        <option name="BASE_DIRECTORY_NAME" value="1c301049-b658-45e9-ab7f-c4b7551884fe" />
+       </server-settings>
+       <predefined_log_file enabled="true" id="Tomcat" />
+       <predefined_log_file enabled="true" id="Tomcat Catalina" />
+@@ -105,7 +97,7 @@
+       <predefined_log_file id="Tomcat Host Manager" />
+       <predefined_log_file id="Tomcat Localhost Access" />
+       <RunnerSettings RunnerId="Debug">
+-        <option name="DEBUG_PORT" value="53561" />
++        <option name="DEBUG_PORT" value="60768" />
+       </RunnerSettings>
+       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+         <option name="USE_ENV_VARIABLES" value="true" />
+@@ -170,50 +162,26 @@
+       <method v="2">
+         <option name="Make" enabled="true" />
+         <option name="BuildArtifacts" enabled="true">
+-          <artifact name="team33:war" />
++          <artifact name="team33" />
+           <artifact name="team33:war exploded" />
+         </option>
+       </method>
+     </configuration>
+   </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task active="true" id="Default" summary="디폴트 작업">
+-      <changelist id="281beefe-bce0-4905-9104-1ba33944ab6b" name="변경" comment="" />
+-      <created>1695133779076</created>
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="1c200643-f9c6-4dd7-ab54-4f6af114392f" name="Changes" comment="" />
++      <created>1695262318402</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1695133779076</updated>
+-      <workItem from="1695133780625" duration="318000" />
+-      <workItem from="1695134114051" duration="5271000" />
+-      <workItem from="1695167670477" duration="30149000" />
+-      <workItem from="1695253890235" duration="7972000" />
++      <updated>1695262318402</updated>
++      <workItem from="1695262319439" duration="1156000" />
++      <workItem from="1695271010345" duration="4447000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" type="java-line">
+-          <url>file://$PROJECT_DIR$/src/main/java/kr/co/teaspoon/controller/EventController.java</url>
+-          <line>98</line>
+-          <option name="timeStamp" value="5" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+ </project>
+\ No newline at end of file

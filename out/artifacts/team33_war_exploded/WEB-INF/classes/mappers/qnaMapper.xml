@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna">
+
+    <!--전체 QnA 목록-->
+    <select id="qnaList" resultType="kr.co.teaspoon.dto.Qna">
+        SELECT a.qno AS qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.lev AS lev, a.par AS par, b.name AS NAME
+        FROM qna a, member b
+        WHERE a.author=b.id
+        order BY a.par DESC, a.lev ASC, a.qno ASC, qno desc limit #{postStart}, #{postCount}
+    </select>
+
+    <!--상세보기-->
+    <select id="qnaDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where qno=#{qno}
+    </select>
+
+    <!--질문 상세보기-->
+    <select id="questionDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where par=#{par} and lev=0
+    </select>
+
+    <!--답변 상세보기-->
+    <select id="answerDetail" resultType="kr.co.teaspoon.dto.Qna">
+        select * from qna where par=#{par} and lev=1
+    </select>
+
+    <!--QnA 글 카운트-->
+    <select id="getCount" resultType="integer">
+        select count(*) from qna
+    </select>
+
+    <select id="noAnswerList" resultType="kr.co.teaspoon.dto.Qna">
+    <![CDATA[
+        select qno, title, name, q.resdate from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par) < 2)
+        order BY qno desc limit #{postStart}, #{postCount}
+        ]]>
+    </select>
+
+    <!--미답변 질문 글 카운트-->
+    <select id="noAnswerCount" resultType="integer">
+        <![CDATA[
+        select count(*) from qna q join member m on(q.author=m.id) where par in (select par from qna group by par having count(par)<2)
+        ]]>
+    </select>
+
+    <select id="noAnswerCnt" resultType="integer">
+        SELECT COUNT(*) FROM qna GROUP BY par HAVING COUNT(par) = 1
+    </select>
+
+    <!--질문 글 등록-->
+    <insert id="questionInsert">
+        insert into qna values (default, #{title}, #{content}, #{author}, default, 0, default)
+    </insert>
+
+    <!-- 질문 par = qno-->
+    <update id="parUpdate">
+        update qna set par=qno where par=0 and lev=0
+    </update>
+
+    <!--답변 글 등록-->
+    <insert id="answerInsert">
+        insert into qna values (default, #{title}, #{content}, #{author}, default, 1, #{par})
+    </insert>
+
+    <!-- 글 수정-->
+    <update id="qnaEdit">
+        update qna set title=#{title}, content=#{content} where qno=#{qno}
+    </update>
+
+    <!--질문 글 삭제-->
+    <delete id="qnaDelete">
+        delete from qna where qno=#{qno}
+    </delete>
+
+</mapper>

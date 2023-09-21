@@ -38,7 +38,6 @@
     <!-- bg shapes -->
     <img src="${path}/resources/images/backgrounds/map.png" alt="map" class="image bg-map">
     <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="bg-shape" class="image bg-shape-2">
-    <img src="${path}/resources/images/illustrations/dots-group-sm.png" alt="bg-shape" class="image bg-shape-3">
     <img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="bg-shape" class="image bg-shape-4">
     <img src="${path}/resources/images/illustrations/leaf-cyan.png" alt="bg-shape" class="image bg-shape-5">
 </section>
