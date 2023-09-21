@@ -27,4 +27,5 @@ public class AttendanceDAOImpl implements AttendanceDAO {
     public void addAttend(String id) throws Exception {
         sqlSession.insert("attendance.addAttend", id);
     }
+
 }

@@ -1,5 +1,6 @@
 package kr.co.teaspoon.dao;
 
+import kr.co.teaspoon.dto.AdminChartVO;
 import kr.co.teaspoon.dto.Member;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface MemberDAO {
     public void memberEdit(Member member) throws Exception;
     public void memberDelete(String id) throws Exception;
     public int memberCnt() throws Exception;
+    public List<AdminChartVO> adminChart() throws Exception;
 }

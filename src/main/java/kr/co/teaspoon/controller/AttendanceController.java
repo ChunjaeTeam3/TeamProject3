@@ -43,7 +43,9 @@ public class AttendanceController {
     @GetMapping("addAttend.do")
     public String addAttend(HttpServletRequest request, Model model) throws Exception {
         String id = (String) session.getAttribute("sid");
-        attendanceService.addAttend(id);
+        if(!attendanceService.isAttendance(id)) {
+            attendanceService.addAttend(id);
+        }
 
         return "redirect:/attendance/attendance.do";
     }

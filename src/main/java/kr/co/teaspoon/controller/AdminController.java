@@ -4,6 +4,7 @@ import kr.co.teaspoon.dto.*;
 import kr.co.teaspoon.service.*;
 import kr.co.teaspoon.util.*;
 
+import org.json.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.util.List;
 
 @Controller
@@ -25,23 +27,20 @@ public class AdminController {
     HttpSession session;
     @Autowired
     private FileboardService fileboardService;
-
     @Autowired
     private FileInfoService fileInfoService;
     @Autowired
     private MemberService memberService;
     @Autowired
+    private AttendanceService attendanceService;
+    @Autowired
     private FilterWordService filterWordService;
-
     @Autowired
     private WinnerService winnerService;
-
     @Autowired
     private CommunityService communityService;
-
     @Autowired
     private QnaService qnaService;
-
     @Autowired
     private EventService eventService;
     @Autowired
@@ -154,6 +153,25 @@ public class AdminController {
         return "/admin/adminList";
     }
 
+    @PostMapping("getAdminChart.do")
+    public void getAdminChart(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        List<AdminChartVO> adminChart = memberService.adminChart();
+        JSONArray jsonArray = new JSONArray();
+
+        for(AdminChartVO vo : adminChart) {
+            JSONObject obj = new JSONObject();
+            obj.put("label", vo.getLabel());
+            obj.put("memberCnt", vo.getMemberCnt());
+            obj.put("attendCnt", vo.getAttendCnt());
+            jsonArray.put(obj);
+        }
+
+        PrintWriter out = response.getWriter();
+        out.println(jsonArray);
+
+        System.out.println(adminChart);
+    }
+
     @GetMapping("adminFileList.do")		//board/list.do
     public String getBoardList(Model model) throws Exception {
         List<Fileboard> fileboardList = fileboardService.fileList();
@@ -261,7 +279,6 @@ public class AdminController {
         dto.setContent(request.getParameter("content"));
         dto.setAuthor((String) session.getAttribute("sid"));
         winnerService.winnerInsert(dto);
-
 
         return "redirect:/winner/list.do";
     }

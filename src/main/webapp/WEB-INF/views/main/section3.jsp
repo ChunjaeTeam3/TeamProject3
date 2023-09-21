@@ -11,7 +11,7 @@
         </div>
         <div class="columns" style="margin-top: 50px">
             <div class="column is-half">
-                <h4 class="section-title mb-0" style="font-weight: bold;"> 공지사항 <i class="fa-solid fa-star" style="color: #007cf0;"></i> </h4>
+                <h4 class="section-title mb-0" style="font-weight: bold;"> 공지사항 <i class="fa-solid fa-star" style="color: #41228e;"></i> </h4>
                 <table class="table is-fullwidth is-striped is-hoverable">
                     <c:forEach var="notice" items="${noticeList}">
                         <tr onclick="javascript: location.href='${path}/notice/detail.do?seq=${notice.seq}'" style="cursor: pointer;">
@@ -23,7 +23,7 @@
                 </table>
             </div>
             <div class="column is-half">
-                <h4 class="section-title mb-0" style="font-weight: bold;"> 진행 중인 이벤트 <i class="fa-solid fa-trophy" style="color: #007cf0;"></i> </h4>
+                <h4 class="section-title mb-0" style="font-weight: bold;"> 진행 중인 이벤트 <i class="fa-solid fa-trophy" style="color: #41228e;"></i> </h4>
                 <table class="table is-fullwidth is-striped is-hoverable">
                     <c:forEach var="event" items="${eventList}" varStatus="state">
                         <tr onclick="javascript: location.href='${path}/event/detail.do?eno=${event.eno}'" style="cursor:pointer;">
