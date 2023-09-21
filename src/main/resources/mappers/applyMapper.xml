@@ -3,7 +3,7 @@
 <mapper namespace="apply">
     <!-- 신청차 정보 조회-->
     <select id="getApply" resultType="kr.co.teaspoon.dto.Apply">
-        select * from apply where id = #{id} and eno=#{eno} order by appno desc limit #{postStart}, #{postCount}
+        select * from apply where id = #{id} and eno=#{eno}
     </select>
 
     <!-- 이벤트 신청하기 -->
