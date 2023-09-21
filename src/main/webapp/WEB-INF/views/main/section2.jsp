@@ -38,7 +38,7 @@
                         </div>
                     </c:if>
                     <c:if test="${sid ne null}">
-                        <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/event/list.do'" style="cursor:pointer;">
+                        <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/attendance/attendance.do'" style="cursor:pointer;">
                             <img src="${path}/resources/images/icons/check1.png" alt="dailycheck" class="ti-palette icon mb-10 is-inline-block" />
                             <h4 class="mb-20" style="font-weight: bold;">출석체크</h4>
                             <p>매일 버튼을 눌러 출석체크를 할 수 있습니다.</p>
@@ -48,7 +48,7 @@
             </div>
             <div class="column">
                 <div class="card hover-wrapper">
-                    <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/attendance/attendance.do'" style="cursor:pointer;">
+                    <div class="card-content has-text-centered" onclick="javascript:location.href='${path}/event/list.do'" style="cursor:pointer;">
                         <img src="${path}/resources/images/icons/board2.png" alt="board" class="ti-palette icon mb-10 is-inline-block"/>
                         <h4 class="mb-20"  style="font-weight: bold;">이벤트</h4>
                         <p>이벤트에 참여해 무료 도서를 획득할 수 있습니다.</p>
