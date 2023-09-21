@@ -98,6 +98,7 @@ public class MemberController {
         // 로그인 성공 시
         if(ps){
             session.setAttribute("sid", id);
+            memberService.updateVisited(id);
             return "redirect:/";
         } else {
             return "redirect:login.do";
@@ -120,6 +121,14 @@ public class MemberController {
     public String memberLogout(HttpSession session) throws Exception {
         session.invalidate();
         return "redirect:/";
+    }
+
+    @GetMapping("myInfo.do")
+    public String myInfo(Model model) throws Exception {
+        String id = (String) session.getAttribute("sid");
+        Member member = memberService.getMember(id);
+        model.addAttribute("member", member);
+        return "/member/myInfo";
     }
 
     @GetMapping("mypage.do")

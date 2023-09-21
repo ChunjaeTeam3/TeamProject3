@@ -37,27 +37,25 @@
 <!-- 배너 영역 끝 -->
 <form action="${path }/member/loginpro2.do" method="post" name="loginForm">
     <div class="container is-max-desktop" style="margin-top: 150px; margin-bottom: 150px">
-        <table class="table"  style="margin-left: 300px">
-            <tbody>
-            <tr>
-                <p style="margin-left: 200px;margin-bottom: 30px"> <strong style="font-size: 26px; font-weight: bold;">보안을 위해 비밀번호를 다시 한번 입력 해주세요.</strong></p>
-            </tr>
-            <tr>
-                <th><label for="pw">비밀번호</label></th>
-                <td><input type="password" name="pw" id="pw"  class="input" placeholder="비밀번호 입력" required>
-                    <!--  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" class="button is-primary" value="로그인">
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <p style="margin-left: 200px; margin-bottom: 30px"> <strong style="font-size: 26px; font-weight: bold;">보안을 위해 비밀번호를 다시 한번 입력 해주세요.</strong></p>
+        <div class="columns is-center">
+            <div class="column is-one-fifth has-text-right">
+                <label for="pw" style="line-height:40px">비밀번호</label>
+            </div>
+            <div class="column">
+                <input type="password" name="pw" id="pw"  class="input" placeholder="비밀번호 입력" required>
+            </div>
+            <div class="column is-one-fifth"><input type="submit" class="button is-primary" value="로그인"></div>
+        </div>
     </div>
 </form>
 
 <jsp:include page="../layout/footer.jsp"/>
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 </body>
 </html>

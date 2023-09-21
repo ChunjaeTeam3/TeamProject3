@@ -23,6 +23,12 @@
         select id, pw, name from member where id = #{id }
     </select>
 
+    <!-- 방문수 업데이트 -->
+    <update id="updateVisited">
+        update member set visited=visited+1
+        where id=#{id}
+    </update>
+
     <!-- 회원 정보 수정 -->
     <update id="memberEdit">
         update member set pw=#{pw }, name=#{name }, email=#{email }, tel=#{tel }, birth=#{birth }, addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }

@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title> 나의 정보 수정 </title>
+    <title> 마이페이지 </title>
     <jsp:include page="../setting/head.jsp" />
 </head>
 <body>
@@ -24,7 +24,7 @@
 <section class="page-title background-primary is-relative">
     <div class="container">
         <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> 나의 정보 수정 </h1>
+            <h1 class="has-text-white font-tertiary"> 마이페이지 </h1>
         </div>
     </div>
     <!-- background shapes -->
@@ -42,61 +42,39 @@
         <div class="columns is-centered">
             <div class="column is-8-desktop">
                 <div class="has-background-white card-content shadow-down p-6">
-                    <h3 class="has-text-centered"> 나의 정보 수정 </h3>
+                    <h3 class="has-text-centered"> 개인정보 </h3>
                     <hr>
-                    <form name="frm1" id="frm1" action="${path}/member/update.do" class="columns is-multiline is-centered" method="post" onsubmit="return updateCheck(this)">
+                    <div class="columns is-multiline is-centered">
                         <div class="column is-10-tablet">
                             <label for="id" class="label"> 아이디 </label>
                             <div class="control">
-                                <input type="text" class="input" name="id" id="id" size="100" class="input" value="${member.id }" readonly required>
-                            </div>
-                        </div>
-                        <div class="column is-10-tablet">
-                            <label for="pw" class="label"> 비밀번호 </label>
-                            <div class="control">
-                                <input type="password" class="input" name="pw" id="pw"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                                <p>(최소 8자리에서 최대 16자리까지, 숫자, 영문 대소문자, 특수문자가 각 1 문자 이상 포함되어야 함)</p>
-                            </div>
-                        </div>
-                        <div class="column is-10-tablet">
-                            <label for="pw2" class="label"> 비밀번호 확인 </label>
-                            <div class="control">
-                                <input type="password" class="input" name="pw2" id="pw2"  class="input"  required>
+                                <input type="text" class="input" name="id" id="id" size="100" class="input" value="${member.id }" readonly>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
                             <label for="name" class="label"> 이름 </label>
                             <div class="control">
-                                <input type="text" class="input" name="name" id="name" class="input"  value="${member.name }" required>
+                                <input type="text" class="input" name="name" id="name" class="input"  value="${member.name }" readonly>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
                             <label for="email" class="label"> 이메일 </label>
                             <div class="control">
-                                <input type="email" name="email" id="email" class="input" value="${member.email }" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                                <input type="email" name="email" id="email" class="input" value="${member.email }" readonly>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
                             <label for="tel" class="label"> 전화번호 </label>
                             <div class="control">
-                                <input type="tel" class="input" name="tel" id="tel" class="input"  value="${member.tel }" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" required>
+                                <input type="tel" class="input" name="tel" id="tel" class="input"  value="${member.tel }" readonly>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
                             <label for="tel" class="label"> 주소 </label>
                             <div class="control">
-                                <input type="text" name="addr1" id="addr1" class="input" value="${member.addr1 }"  >
-                                <input type="text" name="addr2" id="addr2" class="input mt-3" value="${member.addr2 }">
-                                <div class="columns mt-1">
-                                    <div class="column is-9-tablet">
-                                        <div class="control">
-                                            <input type="text" id="postcode" name="postcode" value="${member.postcode }" class="input" >
-                                        </div>
-                                    </div>
-                                    <div class="column is-3-tablet pl-0">
-                                        <button type="button" class="button is-link is-fullwidth" onclick="findAddr()"> 우편번호 검색 </button>
-                                    </div>
-                                </div>
+                                <input type="text" name="addr1" id="addr1" class="input" value="${member.addr1 }" readonly>
+                                <input type="text" name="addr2" id="addr2" class="input mt-3" value="${member.addr2 }" readonly>
+                                <input type="text" name="addr2" id="postcode" class="input mt-3" value="${member.postcode }" readonly>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
@@ -104,22 +82,30 @@
                             <div class="control">
                                 <fmt:parseDate value="${member.birth }" var="birth" pattern="yyyy-MM-dd" />
                                 <span style="display:none"><fmt:formatDate var="br" value="${birth }" pattern="yyyy-MM-dd" /></span>
-                                <input type="birth" name="birth" id="birth" max="${minYear}-12-31" value="${br }" class="input">
+                                <input type="birth" name="birth" id="birth" value="${br }" class="input" readonly>
+                            </div>
+                        </div>
+                        <div class="column is-10-tablet">
+                            <div class="columns has-text-centered mb-30">
+                                <div class="column" style="margin: 20px; border: 1px solid #dbdbdb; border-radius: 10px;">
+                                    <h5 class="mb-10"> 방문횟수 <i class="fa-solid fa-heart" style="color: #ff4242;"></i> </h5>
+                                    <h4 style="font-family: 'Roboto', sans-serif"> ${member.visited} 번 </h4>
+                                </div>
+                                <div class="column" style="margin: 20px; border: 1px solid #dbdbdb; border-radius: 10px;">
+                                    <h5 class="mb-10"> 포인트 <i class="fa-solid fa-coins" style="color: #e7f070;"></i> </h5>
+                                    <h4 style="font-family: 'Roboto', sans-serif"> ${member.pt} pt </h4>
+                                </div>
                             </div>
                         </div>
                         <div class="buttons is-right">
                             <c:if test="${sid!='admin' }">
-                                <a href="${path}/member/myInfo.do" class="button"> 개인정보 페이지로 이동 </a>
-                            </c:if>
-                            <input type="submit" class="button btn-writer" value="회원정보수정">
-                            <c:if test="${sid!='admin' }">
-                                <a href="${path }/member/delete.do?id=${sid }" class="button is-danger">회원 탈퇴</a>
+                                <a href="${path }/member/login2.do" class="button is-primary"> 회원 정보 수정 </a>
                             </c:if>
                             <c:if test="${sid=='admin' }">
                                 <a href="${path }/member/list.do" class="button is-primary">회원 목록</a>
                             </c:if>
                         </div>
-                    </form>
+                    </div>
                     <script>
                         function updateCheck(f){
                             if(f.userpw.value!=f.userpw2.value){

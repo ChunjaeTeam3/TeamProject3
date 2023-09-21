@@ -52,7 +52,7 @@
                                         <a href="${path}/member/login.do" class="navbar-item">Log in</a>
                                     </c:if>
                                     <c:if test="${sid ne null and sid ne 'admin'}">
-                                        <a href="${path}/member/login2.do" class="navbar-item">MyPage</a>
+                                        <a href="${path}/member/myInfo.do" class="navbar-item">MyPage</a>
                                         <a href="${path}/member/logout.do" class="navbar-item">LogOut</a>
                                     </c:if>
                                     <c:if test="${sid ne null and sid eq 'admin'}">
@@ -104,7 +104,7 @@
                         </a>
                     </c:if>
                     <c:if test="${sid ne null and sid ne 'admin'}">
-                        <a href="${path}/member/login2.do" class="button is-primary">
+                        <a href="${path}/member/myInfo.do" class="button is-primary">
                             <strong>MyPage</strong>
                         </a>
                         <a href="${path}/member/logout.do" class="button is-light">
