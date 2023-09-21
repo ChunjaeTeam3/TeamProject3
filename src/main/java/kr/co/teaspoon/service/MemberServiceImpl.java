@@ -44,8 +44,8 @@ public class MemberServiceImpl implements MemberService {
     public boolean loginCheck(String id, String pw) throws Exception {
         boolean comp = false;
         Member member = memberDAO.loginCheck(id);
-        boolean loginSuccess = pwEncoder.matches(pw, member.getPw());
-        if(member!=null && loginSuccess){
+
+        if(member!=null && pwEncoder.matches(pw, member.getPw())){
             comp = true;
         } else {
             comp = false;

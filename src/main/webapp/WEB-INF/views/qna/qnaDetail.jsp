@@ -58,7 +58,7 @@
 
             <div class="buttons is-right mb-100">
                 <a class="button" href="${path }/qna/list.do">목록</a>
-                <c:if test='${sid eq "admin" && not empty sid && dto.par == 0}'>
+                <c:if test='${sid eq "admin" && dto.lev == 0}'>
                     <a class="button" href="${path }/qna/answerInsert.do?qno=${dto.qno}">답변 등록</a>
                 </c:if>
                 <c:if test='${(sid eq dto.author || sid eq "admin") && not empty sid}'>

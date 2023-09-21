@@ -37,6 +37,7 @@
     </div>
 </section>
 
+<br>
 <div class="container mb-100" style="margin-top: 50px">
     <div class="columns">
         <div class="column is-3 ">
@@ -45,7 +46,7 @@
                     <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
                     <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
-                    <li><a href="${path}/admin/filterInsert.do">게시판 관리</a></li>
+                    <li><a href="${path}/admin/filterInsert.do">필터링 단어 관리</a></li>
                     <li><a href="${path}/admin/questionList.do">QnA 관리</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                 </ul>
@@ -54,7 +55,7 @@
         <div class="column is-9">
             <section class="info-tiles">
                 <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent hover-shadow">
+                    <div class="tile is-parent">
                         <article class="tile is-child box">
                             <p class="subtitle"> <i class="fa-solid fa-user"></i> 회원 수 </p>
                             <p class="title"> ${memberCnt}명 </p>
@@ -122,12 +123,10 @@
 <!-- 푸터 영역 끝 -->
 
 <form action="#">
-    <input type="hidden" id="cno" name="cno" value="${detail.cno}">
     <button id="toTop" title="Go to top">
         <i class="fas fa-angle-up"></i>
     </button>
 </form>
-
 
 <script>
     $(document).ready(function() {

@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>이벤트 참여자 목록</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
-
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </head>
@@ -69,8 +68,8 @@
                 $("#apply-table").DataTable();
             })
         </script>
-        <div class="button-group" style="margin-top: 30px; margin-bottom: 100px;">
-            <a class="button is-primary" href="${path}/admin/winners.do?eno=${eno}" style="float:right;"> 당첨자 추첨 </a>
+        <div class="buttons is-right mb-100" style="margin-top: 30px;">
+            <a class="button is-primary" href="${path}/admin/winners.do?eno=${eno}"> 당첨자 추첨 </a>
         </div>
     </div>
 </div>

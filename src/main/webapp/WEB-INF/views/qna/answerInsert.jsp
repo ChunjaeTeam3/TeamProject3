@@ -76,5 +76,16 @@
         </div>
     </div>
 </div>
+
+<!-- 푸터 영역 시작 -->
+<jsp:include page="../layout/footer.jsp"></jsp:include>
+<!-- 푸터 영역 종료 -->
+
+<form action="#">
+    <input type="hidden" name="qno" value="${dto.qno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 </body>
 </html>

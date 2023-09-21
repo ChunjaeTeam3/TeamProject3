@@ -33,37 +33,46 @@
 </section>
 <!-- 헤더 사이드 영역 끝 -->
 
-<!--QnA 상세보기-->
-
+<!--당첨자 추첨 상세보기-->
 <div class="content" id="content" style="margin-top: 100px;">
-    <div class="row column text-center">
-        <div class="container">
-            <table id="table">
-                <tobody>
-                    <tr style="border-top: solid grey 1px;">
-                        <td style="font-weight: bold; font-size: 30px;">${dto.title }</td>
-                        <td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
-                            작성자 | ${dto.author}
-                        </td>
-                        <td style="width: 170px; padding-right: 0px; padding-top:30px;">
-                            작성일 | <fmt:parseDate value="${dto.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
-                            <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
-                        </td>
-                    </tr>
-                    <tr style="border-bottom: solid grey 1px;">
-                        <td style="padding-top: 50px; padding-bottom: 50px;"><p>${dto.content }</p></td>
-                    </tr>
-                </tobody>
-            </table>
-            <div class="button-group" style="margin-top: 30px; float: right; margin-bottom: 100px;">
-                <a class="button" href="${path }/winner/list.do">목록</a>
-                <c:if test='${sid eq "admin" && not empty sid}'>
-                    <a class="button" href="${path }/winner/delete.do?wno=${dto.wno}">삭제</a>
-                </c:if>
-            </div>
+    <div class="container">
+        <table id="table">
+            <tbody>
+                <tr style="border-top: solid grey 1px;">
+                    <td style="font-weight: bold; font-size: 30px;">${dto.title }</td>
+                    <td style="min-width:10%; max-width: 15%; text-align: right; padding-top:30px;">
+                        작성자 | ${dto.author}
+                    </td>
+                    <td style="width: 170px; padding-right: 0px; padding-top:30px;">
+                        작성일 | <fmt:parseDate value="${dto.resdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
+                        <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
+                    </td>
+                </tr>
+                <tr style="border-bottom: solid grey 1px;">
+                    <td style="padding-top: 50px; padding-bottom: 50px;"><p>${dto.content }</p></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttons is-right mb-100" style="margin-top: 30px;">
+            <a class="button" href="${path }/winner/list.do">목록</a>
+            <c:if test='${sid eq "admin" && not empty sid}'>
+                <a class="button" href="${path }/winner/delete.do?wno=${dto.wno}">삭제</a>
+            </c:if>
         </div>
     </div>
 </div>
+
+<!-- 푸터 영영 시작 -->
+<jsp:include page="../layout/footer.jsp"/>
+<!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <input type="hidden" id="wno" name="wno" value="${dto.wno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
+
 <script src="${path}/resources/js/firework.js"></script>
 </body>
 </html>

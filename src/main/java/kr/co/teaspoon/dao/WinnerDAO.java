@@ -12,6 +12,7 @@ public interface WinnerDAO {
     public void random(int eno) throws Exception;
     //당첨자 리스트
     public List<WinnerList> winners(int eno) throws Exception;
+    public void closeEvent(int eno) throws Exception;
     //당첨자 발표 게시글 목록
     public List<Winner> winnerList (Page page) throws Exception;
     public int winnerListCount(Page page) throws Exception;

@@ -122,6 +122,6 @@ public class QnaController {
         dto.setPar(Integer.parseInt(request.getParameter("par")));
         dto.setAuthor((String) session.getAttribute("sid"));
         qnaService.answerInsert(dto);
-        return "/admin/noAnswerList";
+        return "redirect:/admin/questionList.do";
     }
 }

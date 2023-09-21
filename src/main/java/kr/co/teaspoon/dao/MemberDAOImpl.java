@@ -2,11 +2,13 @@ package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.AdminChartVO;
 import kr.co.teaspoon.dto.Member;
+import kr.co.teaspoon.dto.MemberPtVO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -33,6 +35,11 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
     public void updateVisited(String id) throws Exception {
         sqlSession.update("member.updateVisited", id);
+    }
+
+    @Override
+    public void updatePt(MemberPtVO data) throws Exception {
+        sqlSession.update("member.updatePt", data);
     }
 
     @Override

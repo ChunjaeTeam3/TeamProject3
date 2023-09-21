@@ -151,5 +151,13 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <input type="hidden" name="eno" value="${event.eno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
+
 </body>
 </html>

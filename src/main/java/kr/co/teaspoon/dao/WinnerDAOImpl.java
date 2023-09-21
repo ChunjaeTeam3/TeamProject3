@@ -29,6 +29,11 @@ public class WinnerDAOImpl implements WinnerDAO{
     }
 
     @Override
+    public void closeEvent(int eno) throws Exception {
+        sqlSession.update("winner.closeEvent", eno);
+    }
+
+    @Override
     public List<Winner> winnerList(Page page) throws Exception {
         return sqlSession.selectList("winner.winnerList", page);
     }

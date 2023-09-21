@@ -220,7 +220,7 @@ public class AdminController {
     public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
         memberService.memberDelete(id);
         session.invalidate();
-        return "/admin/adminMemberList";
+        return "redirect: adminMemberList.do";
     }
 
     //이벤트 참여자 리스트

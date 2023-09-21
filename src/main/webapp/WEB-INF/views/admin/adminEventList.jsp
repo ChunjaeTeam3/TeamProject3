@@ -46,24 +46,24 @@
                     <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
                     <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
-                    <li><a href="${path}/admin/filterInsert.do">게시판 관리</a></li>
+                    <li><a href="${path}/admin/filterInsert.do">필터링 단어 관리</a></li>
                     <li><a href="${path}/admin/questionList.do">QnA 관리</a></li>
                     <li><a href="${path}/admin/adminFileList.do">자료실</a></li>
                 </ul>
             </aside>
         </div>
-        <div class="row column text-center">
-            <br>
-            <div class="container">
-                <div>
-                    <%--이벤트 목록--%>
-                    <table class="table" id="event-table">
+        <div class="column is-9">
+            <div class="row column text-center">
+                <br>
+                <div class="container">
+                    <div>
+                        <%--이벤트 목록--%>
+                        <table class="table" id="event-table">
                             <thead>
                             <tr>
                                 <th width="80">번호</th>
                                 <th>제목</th>
                                 <th width="200">이벤트상태</th>
-                                <th width="100">작성자</th>
                                 <th width="120">작성일</th>
                                 <th width="100">당첨</th>
                             </tr>
@@ -74,12 +74,11 @@
                                     <td>${event.eno }</td>
                                     <td ><a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none;">${event.title }</a></td>
                                     <c:if test='${event.status eq "1"}'>
-                                        <td>이벤트 진행중</td>
+                                        <td><span class="tag is-success is-light is-medium">진행 중</span></td>
                                     </c:if>
                                     <c:if test='${event.status eq "0"}'>
-                                        <td>이벤트 종료</td>
+                                        <td><span class="tag is-danger is-light is-medium">종료</span></td>
                                     </c:if>
-                                    <td>${event.author }</td>
                                     <td>
                                         <fmt:parseDate value="${event.regdate }" var="resdate" pattern="yyyy-MM-dd HH:mm:ss" />
                                         <fmt:formatDate value="${resdate }" pattern="yyyy-MM-dd" />
@@ -98,6 +97,7 @@
                             </c:if>
                             </tbody>
                         </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,5 +113,12 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
+
 </body>
 </html>

@@ -13,7 +13,12 @@
     <select id="winners" resultType="kr.co.teaspoon.dto.WinnerList">
         SELECT * FROM winnerList where eno=#{eno};
     </select>
-
+    <!-- 당첨자 추첨 완료된 이벤트 종료 -->
+    <update id="closeEvent">
+        UPDATE event
+        SET STATUS = 0, edate = CURRENT_DATE
+        WHERE eno = #{eno}
+    </update>
     <!-- 당첨자 발표 게시글 목록 -->
     <select id="winnerList" resultType="kr.co.teaspoon.dto.Winner">
         select * from winner order by resdate desc

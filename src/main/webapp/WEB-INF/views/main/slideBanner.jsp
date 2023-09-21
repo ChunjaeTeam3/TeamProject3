@@ -7,6 +7,7 @@
 <style>
     .swiper {
         min-height: 430px;
+        z-index: 2;
     }
 </style>
 
