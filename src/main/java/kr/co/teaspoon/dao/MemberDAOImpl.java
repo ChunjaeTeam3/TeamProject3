@@ -30,6 +30,11 @@ public class MemberDAOImpl implements MemberDAO {
     public Member loginCheck(String id) throws Exception { return sqlSession.selectOne("member.loginCheck", id); }
 
     @Override
+    public void updateVisited(String id) throws Exception {
+        sqlSession.update("member.updateVisited", id);
+    }
+
+    @Override
     public void memberEdit(Member member) { sqlSession.update("member.memberEdit", member); }
 
     @Override
