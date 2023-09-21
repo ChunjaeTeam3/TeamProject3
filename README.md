@@ -6,19 +6,11 @@
 "teaspoon" 이라는 학부모 교육 커뮤니티 사이트입니다.
 <br><br>
 
-### 📌 주요기능
-* **회원기능** (로그인, 로그아웃, 회원가입)
-* **마이페이지** (본인확인, 개인정보수정)
-* **관리자페이지** (회원관리, 이벤트관리, 커뮤니티관리, 욕설 필터 기능, QnA[미답변 질문글] 관리, 자료실 관리, 페이징 처리)
-* **커뮤니티** (카테코리, 글 목록, 글 상세보기, 글[이미지 첨부] 등록하기, 글 수정하기, 글 삭제하기, 댓글, 페이징 처리, 검색 기능)
-* **자료실** (글 목록, 글 상세보기, 글[파일 첨부] 등록하기, 글 수정하기, 글 삭제하기, 페이징 처리, 검색 기능)
-* **교육 뉴스** (뉴스 목록[크롤러], 뉴스 링크 이동)
-* **이벤트** (글 목록, 글 상세보기, 글[이미지 첨부] 등록하기, 글 수정하기, 글 삭제하기, 신청하기, 페이징 처리)
-* **이벤트 당첨** (신청자 목록, 당첨자 추첨하기, 당첨글 등록하기, 당첨글 삭제하기)
-* **출석체크** (출석체크 목록, 출석체크하기)
-* **공지사항** (글 목록, 글 상세보기, 글 등록하기, 글 수정하기, 글 삭제하기, 페이징 처리, 검색기능)
-* **QnA** (글 목록, 글 상세보기, 글[질문글, 답변글] 등록하기, 글 수정하기, 글 삭제하기, 페이징 처리) 
-* **FAQ**
+<p align="center"><img alt="member" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/12b7d5c2-f2ae-45cf-8f9c-8e9c7969a18a"></p>
+<p align="center"><img alt="member" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/458e7083-81e3-4e3a-8f07-4534fa04a16a"></p>
+<p align="center"><img alt="member" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/6ca68732-1591-40fc-89b0-2814cf113143"></p>
+<p align="center"><img alt="member" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/79cb8d0d-9d57-4e5f-94d3-e1f970f8dbc4"></p>
+<br>
 
 ## 🕰️ 개발 기간
 * 23.09.04일 - 23.09.22일
@@ -209,3 +201,15 @@
 ## 🗂 회원 기능
 ### 1. 로그인
 #### (1) 일반 로그인
+- DB값 검증
+- 로그인 시 쿠키(Cookie) 및 세션(Session) 생성
+- 로그아웃
+- 아이디 저장
+  
+#### (2) 회원가입
+- 주소 API 연동
+- ID 중복 체크
+- 비밀번호 유효성 검사
+<br>
+
+![login_join](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/2294b0da-b489-41a1-bdd1-2ccafcbd8596)
