@@ -134,16 +134,16 @@
 <p align="center"><img alt="attendance" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/a6038b73-7c27-4a66-b216-c2f9fe10cd3c"></p>
 
 #### APPLY
-<p align="center"><img alt="apply" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/cb61fb01-4768-4798-a534-0edbead3416a></p>
+<p align="center"><img alt="apply" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/cb61fb01-4768-4798-a534-0edbead3416a"></p>
                     
 #### EVENT
-<p align="center"><img alt="event" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e05b56d2-a19a-4704-b525-65ad424295d4></p>
+<p align="center"><img alt="event" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e05b56d2-a19a-4704-b525-65ad424295d4"></p>
                     
 #### WINNER
-<p align="center"><img alt="winner" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/fd08e7af-5061-4103-a1c1-c5e9c4f71e17></p>
+<p align="center"><img alt="winner" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/fd08e7af-5061-4103-a1c1-c5e9c4f71e17"></p>
                     
 #### WINNERLIST
-<p align="center"><img alt="winnerlist" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/0beb90a0-5d20-4cb7-a97b-2459361d1e40></p>
+<p align="center"><img alt="winnerlist" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/0beb90a0-5d20-4cb7-a97b-2459361d1e40"></p>
 <br><br>
 
 ### 📂CLASS DIAGRAM
