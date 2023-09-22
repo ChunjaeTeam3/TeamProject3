@@ -21,28 +21,27 @@
 <!-- 헤더 영역 끝 -->
 
 <!-- 배너 영역 시작 -->
-<section class="page-title background-primary is-relative">
-    <div class="container">
-        <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary" style="font-size: 40px;"> 이벤트 관리 </h1>
+<section class="hero is-info welcome is-medium">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title mb-40">
+                Hello, Admin.
+            </h1>
+            <h2 class="subtitle">
+                I hope you are having a great day!
+            </h2>
         </div>
     </div>
-    <!-- background shapes -->
-    <img src="${path}/resources/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-    <img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
-    <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
-    <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
-    <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 
 <br>
-<div class="container" style="margin-bottom: 200px;">
+<div class="container mb-100" style="margin-top: 50px">
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
                 <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
                     <br>
+                    <li><a href="${path}/admin/list.do"> 대시보드</a></li>
                     <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
                     <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>

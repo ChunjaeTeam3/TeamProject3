@@ -134,16 +134,16 @@
 <p align="center"><img alt="attendance" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/a6038b73-7c27-4a66-b216-c2f9fe10cd3c"></p>
 
 #### APPLY
-<p align="center"><img alt="apply" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/cb61fb01-4768-4798-a534-0edbead3416a></p>
+<p align="center"><img alt="apply" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/cb61fb01-4768-4798-a534-0edbead3416a"></p>
                     
 #### EVENT
-<p align="center"><img alt="event" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e05b56d2-a19a-4704-b525-65ad424295d4></p>
+<p align="center"><img alt="event" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e05b56d2-a19a-4704-b525-65ad424295d4"></p>
                     
 #### WINNER
-<p align="center"><img alt="winner" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/fd08e7af-5061-4103-a1c1-c5e9c4f71e17></p>
+<p align="center"><img alt="winner" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/fd08e7af-5061-4103-a1c1-c5e9c4f71e17"></p>
                     
 #### WINNERLIST
-<p align="center"><img alt="winnerlist" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/0beb90a0-5d20-4cb7-a97b-2459361d1e40></p>
+<p align="center"><img alt="winnerlist" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/0beb90a0-5d20-4cb7-a97b-2459361d1e40"></p>
 <br><br>
 
 ### 📂CLASS DIAGRAM
@@ -200,16 +200,71 @@
 
 ## 🗂 회원 기능
 ### 1. 로그인
-#### (1) 일반 로그인
 - DB값 검증
 - 로그인 시 쿠키(Cookie) 및 세션(Session) 생성
 - 로그아웃
 - 아이디 저장
   
-#### (2) 회원가입
+### 2. 회원가입
 - 주소 API 연동
 - ID 중복 체크
 - 비밀번호 유효성 검사
 <br>
 
 ![login_join](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/2294b0da-b489-41a1-bdd1-2ccafcbd8596)
+
+## 🗂 마이페이지
+### 1. 본인확인
+### 2. 회원 정보 수정
+- 주소 API 연동
+- 회원정보 변경
+- 탈퇴 기능 구현
+- 로그인시 방문 횟수 증가
+<br>
+
+![mypage](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d40984bd-4b35-4826-b3b1-8a5d99391de1)
+
+## 🗂 뉴스
+- 뉴스 크롤링 기능 구현
+- 뉴스 클릭시 해당 뉴스 링크로 이동
+<br>
+
+![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/05f5b96f-ec9f-428f-b2f2-95daf33fdf33)
+
+## 🗂 이벤트
+### 1. 이벤트 관리
+- CURD
+- 관리자: 이벤트 등록[파일 첨부], 이벤트 글 수정, 이벤트 글 삭제
+- 회원: 읽기
+### 2. 이벤트 신청
+- 한번 신청한 회원 중복 신청 방지 구현
+- 한 회원이 여러 이벤트 신청 가능하도록 구현
+- 미로그인시 이벤트 신청 버튼 안보이도록 구현
+<br>
+
+![event](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/58dd0d78-ac1c-49af-b9dc-0093286c27d2)
+
+## 🗂 이벤트 당첨
+### 1. 이벤트 신청자 목록
+- 관리자 : 이벤트 신청자 목록 확인
+- 추첨하기 링크로 이동
+### 2. 이벤트 당첨
+- 랜덤으로 원하는 당첨자수 선정하도록 구현
+- 추첨 후 당첨자 발표글에 당첨자 익명 처리 구현
+- 당첨자 발표글 클릭시 당첨자만 폭죽 효과 나오도록 구현
+<br>
+
+![eventApply](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/344a8e4b-2d1f-4bc4-8573-b27df9b167e0)
+
+## 🗂 출석체크
+- 미로그인시 로그인 페이지로 이동
+- 출석체크 클릭시 달력에 표시 및 포인트 추가 창 팝업
+- 추가된 포인트 DB에 저장
+<br>
+
+![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/c05afae0-aed5-44cc-84e0-9bdb03a36137)
+
+
+
+
+

@@ -64,6 +64,7 @@
                             <div class="control">
                                 <input type="password" id="pw" name="pw" placeholder="숫자, 영문, 특수문자 1개 이상 / 8자리 이상 16자리 이하" class="input"
                                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$" maxlength="16" required>
+                                <p>8~16자리로,숫자,영문 대소문자,특수문자가 각 1 문자 이상 포함하여 작성해주세요</p>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
@@ -89,7 +90,8 @@
                         <div class="column is-10-tablet">
                             <label for="tel" class="label"> 전화번호 </label>
                             <div class="control">
-                                <input type="tel" id="tel" name="tel" placeholder="전화번호를 입력해주세요" class="input" autocomplete="off" required>
+                                <input type="tel" id="tel" name="tel" placeholder="전화번호를 입력해주세요" class="input" autocomplete="off" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" required>
+                                <p>000-0000-0000 특수기호 포함하여 입력해주세요</p>
                             </div>
                         </div>
                         <div class="column is-10-tablet">

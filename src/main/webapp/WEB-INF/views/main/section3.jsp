@@ -13,7 +13,7 @@
             <div class="column is-half">
                 <div style="position: relative">
                     <h4 class="section-title mb-0" style="font-weight: bold; display: inline-block;"> 공지사항 <i class="fa-solid fa-star" style="color: #41228e;"></i> </h4>
-                    <a href="${path}/notice/list.do" class="button is-rounded is-primary" style="position: absolute; right: 10px;"> 더보기 </a>
+                    <a href="${path}/notice/list.do" class="button is-rounded" style="position: absolute; right: 10px;"> 더보기 </a>
                 </div>
                 <table class="table is-fullwidth is-striped is-hoverable">
                     <c:forEach var="notice" items="${noticeList}">
@@ -28,7 +28,7 @@
             <div class="column is-half">
                 <div style="position: relative">
                     <h4 class="section-title mb-0" style="font-weight: bold; display: inline-block;"> 진행 중인 이벤트 <i class="fa-solid fa-trophy" style="color: #41228e;"></i> </h4>
-                    <a href="${path}/event/list.do" class="button is-rounded is-primary" style="position: absolute; right: 10px;"> 더보기 </a>
+                    <a href="${path}/event/list.do" class="button is-rounded" style="position: absolute; right: 10px;"> 더보기 </a>
                 </div>
                 <table class="table is-fullwidth is-striped is-hoverable">
                     <c:forEach var="event" items="${eventList}" varStatus="state">
