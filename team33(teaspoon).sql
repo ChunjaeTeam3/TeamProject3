@@ -16,7 +16,7 @@ CREATE TABLE MEMBER(
   regdate DATETIME DEFAULT CURRENT_TIMESTAMP(),
   birth DATE,
   pt INT(11) DEFAULT 0,
-  visted INT(11) DEFAULT 0);
+  visited INT(11) DEFAULT 0);
 
 UPDATE member SET regdate='2022-09-01' WHERE id='admin'
 UPDATE member SET regdate='2023-08-01' WHERE id='shin'
