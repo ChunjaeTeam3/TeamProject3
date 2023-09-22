@@ -3,7 +3,6 @@
 <style>
     div, ul, li {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0}
     a {text-decoration:none;}
-
     .menu {position:absolute;width:100px;top:50%;margin-top:-50px;right:10px;background:#fff; border-radius: 20px; border: 1px solid #333333; z-index: 1;}
     .menu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;}
     .menu ul li {float:left;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
