@@ -229,7 +229,7 @@
 - 뉴스 클릭시 해당 뉴스 링크로 이동
 <br>
 
-![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/05f5b96f-ec9f-428f-b2f2-95daf33fdf33)
+![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/aec6ecb5-f08e-4ba5-89f6-89b7807ed9a4)
 
 ## 🗂 이벤트
 ### 1. 이벤트 관리
