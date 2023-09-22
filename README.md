@@ -224,6 +224,27 @@
 
 ![mypage](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d40984bd-4b35-4826-b3b1-8a5d99391de1)
 
+## 🗂 관리자페이지
+### 1. 대시보드
+- 회원 수, 전체 게시글, 이벤트 참여자 수, 미완료 질문글 수 출력
+- 현재 진행 중인 이벤트 랜덤으로 6개 출력
+- chart.js를 활용하여 비동기 방식으로 차트 출력
+### 2. 회원 관리
+- 전체 회원 목록 출력
+- 강퇴 버튼을 눌러 회원 강퇴 가능
+### 3. 필터링단어 관리
+- 커뮤니티에서 필터링할 단어 추가 및 삭제 구현
+- 현재 추가된 필터링 단어 목록 출력
+### 4. 커뮤니티 관리
+- 필터링 단어가 포함되어 있는 게시글 목록 출력
+- 삭제 버튼을 눌러 커뮤니티 게시글 강제 삭제 가능
+### 5. 자료실 관리
+- 자료실에 등록된 글 목록 출력
+- 삭제 버튼을 눌러 자료실 글 강제 삭제 가능
+<br>
+
+![admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/066cbf63-a31d-415d-a70b-bdf1daf81afc)
+
 ## 🗂 자료실
 - CURD
 - 관리자: 자료실 등록[다수의 파일 첨부 가능], 자료실 글[파일 포함] 수정, 자료실 글 삭제
@@ -271,7 +292,22 @@
 - 추가된 포인트 DB에 저장
 <br>
 
-![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/c05afae0-aed5-44cc-84e0-9bdb03a36137)
+![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/dca27c8d-b3fc-43dc-a6ca-a53cddb41752)
+
+## 🗂 커뮤니티
+### 1. 커뮤니티
+- 커뮤니티 게시글 작성, 읽기, 수정, 삭제 구현
+- ckEditor를 활용하여 HTML 태그를 저장함으로써 게시글 내용을 자유롭게 작성 가능
+- Page util 생성하여 페이징 기능 구현
+- 커뮤니티의 카테고리 동적 구현
+### 2. 댓글
+- 댓글 작성, 삭제 구현
+- 댓글 페이징 처리
+- 미로그인시 댓글 작성 폼 비활성화
+- 게시글 작성자와 관리자만 게시글 수정, 삭제 가능
+<br>
+
+![community](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/d3f14170-0c54-412a-a925-9280755f5d59)
 
 
 ## 🗂 FAQ
