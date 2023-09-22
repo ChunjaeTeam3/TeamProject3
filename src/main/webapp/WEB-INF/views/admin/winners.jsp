@@ -19,19 +19,17 @@
 <!--헤더 영역 시작 -->
 <jsp:include page="../layout/header.jsp"/>
 <!--헤더 영역 끝 -->
-<section class="page-title background-primary is-relative">
-    <div class="container">
-        <div class="has-text-centered">
-            <h1 class="has-text-white font-tertiary"> 이벤트 당첨자 목록 </h1>
+<section class="hero is-info welcome is-medium">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title mb-40">
+                Hello, Admin.
+            </h1>
+            <h2 class="subtitle">
+                I hope you are having a great day!
+            </h2>
         </div>
     </div>
-    <!-- background shapes -->
-    <img src="${path}/resources/images/illustrations/page-title.png" alt="illustrations" class="bg-shape-1 w-100">
-    <img src="${path}/resources/images/illustrations/leaf-pink-round.png" alt="illustrations" class="bg-shape-2">
-    <img src="${path}/resources/images/illustrations/dots-cyan.png" alt="illustrations" class="bg-shape-3">
-    <img src="${path}/resources/images/illustrations/leaf-orange.png" alt="illustrations" class="bg-shape-4">
-    <img src="${path}/resources/images/illustrations/leaf-yellow.png" alt="illustrations" class="bg-shape-5">
-    <img src="${path}/resources/images/illustrations/leaf-cyan-lg.png" alt="illustrations" class="bg-shape-7">
 </section>
 <!-- 헤더 사이드 영역 끝 -->
 

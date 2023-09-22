@@ -41,7 +41,9 @@
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
-                <ul class="menu-list">
+                <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
+                    <br>
+                    <li><a href="${path}/admin/list.do">통계</a></li>
                     <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
                     <li><a href="${path}/admin/communityMgmt.do">커뮤니티 관리</a></li>
