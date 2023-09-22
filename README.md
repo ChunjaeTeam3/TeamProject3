@@ -16,7 +16,7 @@
 * 23.09.04일 - 23.09.22일
 <br><br>
 
-### 🧑‍🤝‍🧑 맴버구성
+### 🧑‍🤝‍🧑 멤멤버구성
 
 **팀장 : [김이호](https://github.com/leeho7029)**
 * 화면설계서 작성
@@ -65,14 +65,14 @@
     * 욕설 필터 기능 구현
     * 커뮤니티 관리 기능 구현
 * 출석체크 기능 구현
-* 마이페이지
-  * 로그인 아이디 기억하기 기능구현
+* 회원 기능
+  * 로그인 아이디 기억하기 기능 구현
   * 회원가입 기능 구현
 * 관리자페이지
   * 관리자 페이지 화면 제작
   * 통계페이지 기능 구현
   * 방문자수, 포인트 기능 구현
-* 메이페이지 화면 제작
+* 메인페이지 화면 제작
 
 
 
@@ -198,6 +198,7 @@
 
 ![main](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/709082d2-0979-4eca-8012-eb60952c42aa)
 
+<br><br>
 ## 🗂 회원 기능
 ### 1. 로그인
 - DB값 검증
@@ -213,6 +214,7 @@
 
 ![login_join](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/2294b0da-b489-41a1-bdd1-2ccafcbd8596)
 
+<br><br>
 ## 🗂 마이페이지
 ### 1. 본인확인
 ### 2. 회원 정보 수정
@@ -224,6 +226,7 @@
 
 ![mypage](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d40984bd-4b35-4826-b3b1-8a5d99391de1)
 
+<br><br>
 ## 🗂 관리자페이지
 ### 1. 대시보드
 - 회원 수, 전체 게시글, 이벤트 참여자 수, 미완료 질문글 수 출력
@@ -245,14 +248,16 @@
 
 ![admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/066cbf63-a31d-415d-a70b-bdf1daf81afc)
 
+<br><br>
 ## 🗂 자료실
-- CURD
-- 관리자: 자료실 등록[다수의 파일 첨부 가능], 자료실 글[파일 포함] 수정, 자료실 글 삭제
-- 회원: 읽기
+- CRUD
+- 관리자: 자료실 등록[다수의 파일 첨부 가능], 자료실 글[파일 포함] 수정, 자료실 글 삭제 가능
+- 회원: 자료실 글 상세 보기만 가능
 <br>
 
 ![자료실](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/9291138c-32d4-4391-93a2-9295ec08a8aa)
 
+<br><br>
 ## 🗂 뉴스
 - 뉴스 크롤링 기능 구현
 - 뉴스 클릭시 해당 뉴스 링크로 이동
@@ -260,20 +265,21 @@
 
 ![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/aec6ecb5-f08e-4ba5-89f6-89b7807ed9a4)
 
+<br><br>
 ## 🗂 이벤트
 ### 1. 이벤트 관리
-- CURD
+- CRUD
 - 관리자: 이벤트 등록[파일 첨부], 이벤트 글 수정, 이벤트 글 삭제
-- 회원: 읽기
+- 회원: 이벤트 글 상세보기만 가능
 ### 2. 이벤트 신청
 - 한번 신청한 회원 중복 신청 방지 구현
 - 한 회원이 여러 이벤트 신청 가능하도록 구현
-- 미로그인시 이벤트 신청 버튼 안보이도록 구현
+- 비로그인시 이벤트 신청 버튼 안보이도록 구현
 <br>
 
 ![이벤트](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/69a6260a-b140-4897-86d9-176e2d4923ea)
 
-
+<br><br>
 ## 🗂 이벤트 당첨
 ### 1. 이벤트 신청자 목록
 - 관리자 : 이벤트 신청자 목록 확인
@@ -286,14 +292,17 @@
 
 ![eventApply](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/344a8e4b-2d1f-4bc4-8573-b27df9b167e0)
 
+<br><br>
 ## 🗂 출석체크
-- 미로그인시 로그인 페이지로 이동
-- 출석체크 클릭시 달력에 표시 및 포인트 추가 창 팝업
-- 추가된 포인트 DB에 저장
+- 비로그인 시 로그인 페이지로 이동
+- 출석체크 클릭 시 달력의 오늘 날짜에 스타일 변경 및 포인트 획득 창 출력
+- 출석체크 시 10부터 100까지 10단위의 랜덤한 숫자의 포인트 획득 가능
+- 출석체크 데이터와 추가된 포인트 데이터를 DB에 INSERT
 <br>
 
 ![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/dca27c8d-b3fc-43dc-a6ca-a53cddb41752)
 
+<br><br>
 ## 🗂 커뮤니티
 ### 1. 커뮤니티
 - 커뮤니티 게시글 작성, 읽기, 수정, 삭제 구현
@@ -303,41 +312,40 @@
 ### 2. 댓글
 - 댓글 작성, 삭제 구현
 - 댓글 페이징 처리
-- 미로그인시 댓글 작성 폼 비활성화
+- 비로그인시 댓글 작성 폼 비활성화
 - 게시글 작성자와 관리자만 게시글 수정, 삭제 가능
 <br>
 
 ![community](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/d3f14170-0c54-412a-a925-9280755f5d59)
 
-
+<br><br>
 ## 🗂 FAQ
-- FAQ 글 목록 확인
+- FAQ 글 목록 화면 및 기능 구현
 <br>
 
 ![faq](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/01df1da7-2f8a-4234-8f26-f065e6b071d3)
 
-
-
-## 🗂 Notice
-- 관리자 : CRUD
-- 회원 : 읽기
+<br><br>
+## 🗂 공지사항
+- 관리자만 공지사항 글 쓰기, 수정, 삭제 가능하도록 구현
+- 회원은 공지사항 글 상세 보기만 가능하도록 구현
 <br>
 
 ![notice](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/8aab807e-f155-439e-99e7-c41422daf67c)
 
-
-
+<br><br>
 ## 🗂 Q & A
-- 비회원 : 목록 확인
-- 회원 : 질문글 CRUD
+### 1. 비로그인 및 회원 로그인 시
+- 비로그인 시 Q & A 목록만 확인 가능하도록 구현
+- 회원 로그인 시 질문글만 작성 가능
+- 질문글을 작성한 사용자만 글 수정, 삭제 가능
 <br>
 
 ![qna_member](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/78173d1f-25a8-4b92-90c9-e56b5c93b27f)
 
-
-
-- 관리자 : 미답변 질문 글 답변 등록, 전체 게시글 CRUD
-
+### 2. 관리자 로그인 시
+- 관리자 로그인 시 전체 게시글 CRUD 가능하도록 구현
+- 관리자 페이지에서 미답변 질문 글 목록을 확인 후 바로 답변할 수 있도록 구현
 <br>
 
 ![qna_admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/e0e5aedc-994e-4576-86c2-a297b41fdc4d)
