@@ -75,22 +75,22 @@
                 <h4 class="mb-40" style="font-family: 'Poppins', sans-serif;color: #007cf0;font-weight: bold;"> 출석체크하고 포인트 받자 <i class="fa-solid fa-face-laugh-squint fa-bounce"></i> </h4>
                 <c:forEach var="i" begin="0" end="5">
                     <div class="columns">
-                    <c:forEach var="j" begin="0" end="6">
-                        <c:set var="date" value="${(7 * i + j) - (calendarInfo.startDayOfWeek - 1)}"></c:set>
-                        <c:if test="${date < 1 or date > calendarInfo.endDay}">
-                            <div class="column m-1 rounded-lg" style="height: 80px;"></div>
-                        </c:if>
-                        <c:if test="${date > 0 and date <= calendarInfo.endDay and !fn:contains(list, ' '+=date+=' ')}">
-                            <div class="column m-1 rounded-lg" style="height: 80px; background-color: #DDD;">
-                                <h5 style="font-family: sans-serif"> ${date} </h5>
-                            </div>
-                        </c:if>
-                        <c:if test="${date > 0 and date <= calendarInfo.endDay and fn:contains(list, ' '+=date+=' ')}">
-                            <div class="column m-1 rounded-lg" style="height: 80px; background-color: #A2B29F">
-                                <h5 style="font-family: sans-serif"> ${date} </h5>
-                            </div>
-                        </c:if>
-                    </c:forEach>
+                        <c:forEach var="j" begin="0" end="6">
+                            <c:set var="date" value="${(7 * i + j) - (calendarInfo.startDayOfWeek - 1)}"></c:set>
+                            <c:if test="${date < 1 or date > calendarInfo.endDay}">
+                                <div class="column m-1 rounded-lg" style="height: 80px;"></div>
+                            </c:if>
+                            <c:if test="${date > 0 and date <= calendarInfo.endDay and !fn:contains(list, ' '+=date+=' ')}">
+                                <div class="column m-1 rounded-lg" style="height: 80px; background-color: #DDD;">
+                                    <h5 style="font-family: sans-serif"> ${date} </h5>
+                                </div>
+                            </c:if>
+                            <c:if test="${date > 0 and date <= calendarInfo.endDay and fn:contains(list, ' '+=date+=' ')}">
+                                <div class="column m-1 rounded-lg" style="height: 80px; background-color: #A2B29F">
+                                    <h5 style="font-family: sans-serif"> ${date} </h5>
+                                </div>
+                            </c:if>
+                        </c:forEach>
                     </div>
                 </c:forEach>
 
@@ -130,7 +130,7 @@
                     if(beforeNum != ranNum) {
                         break;
                     }
-                    ranNum = Math.floor(Math.random()*10+1);
+                    ranNum = Math.floor(Math.random()*100+10);
                 }
                 $(".point").text(ranNum + ' point');
             }, 50);
