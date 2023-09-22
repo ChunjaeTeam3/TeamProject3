@@ -29,25 +29,29 @@ public class NewsController {
         ArrayList<String> al2 = new ArrayList<>();
         ArrayList<String> al3 = new ArrayList<>();
         ArrayList<String> al4 = new ArrayList<>();
+        ArrayList<String> al5 = new ArrayList<>();
 
         while (page < 20) {
             String address = "https://www.hangyo.com/news/section_list_all.html?sec_no=1648&page=" + Integer.toString(page); //크롤링하고 싶은 페이지
             Document rawData = Jsoup.connect(address).timeout(5000).get();
-            System.out.println(address);
+
             Elements newsItems = rawData.select("li"); //li태그 안에 있는 요소를 크롤링
             String realURL = "";
             String realTitle = "";
             String realContent = "";
             String realregdate = "";
+            String img = "";
             for (Element option : newsItems) {
                 realURL = "https://www.hangyo.com" + option.select("a").attr("href"); //a태그
                 realTitle = option.select("h2").text();//h2태그
                 realContent = option.select("p").text();//p태그
                 realregdate = option.select("em").text();//em태그 안의 요소를 크롤링한다
+                img = option.select("img").attr("src");
                 al1.add(realURL);
                 al2.add(realTitle);
                 al3.add(realContent);
                 al4.add(realregdate);
+                al5.add(img);
             }
             page += 10;
         }
@@ -55,6 +59,7 @@ public class NewsController {
         model.addAttribute("titles", al2);
         model.addAttribute("contents", al3);
         model.addAttribute("regdates", al4);
+        model.addAttribute("img",al5);
 
         return "/news/newsList";
     }

@@ -43,9 +43,19 @@
             <div class="container mb-80">
                 <c:forEach var="url" items="${urls}" varStatus="status" begin="64" end="72"> <%-- 가져온 url중 64-72번째만 나오게한다--%>
                     <br>
-                    <p class="mb-50" style="margin-top:10px">
-                        <a href="${url}" target="_blank"><strong style="color: black;font-size: 30px;font-weight: bold;">${titles[status.index]}</strong></a>   <small>${regdates[status.index]}</small>
-                        <br><br>
+                    <div class="columns">
+                        <div>
+                            <img src="${img[status.index]}" style="margin-right: 50px;">
+                        </div>
+                        <div class="column">
+                             <strong style="color: black;font-size: 30px;font-weight: bold; display: block">${titles[status.index]}</strong>
+                            <small>${regdates[status.index]}</small>
+                        </div>
+                    </div>
+                    <br>
+                    <p class="mb-30" style="margin-top:10px">
+                        <a href="${url}" target="_blank"><span></span>
+                            </a>
                             ${contents[status.index]}..<a href="${url}" style="color: black">더보기</a>
                         <hr>
                     </p>
