@@ -30,15 +30,7 @@
 <!-- 헤더 영역 끝 -->
 
 <!-- 배너 영역 시작 -->
-<section class="hero is-info welcome is-medium">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title mb-40">
-                Hello, Admin.
-            </h1>
-            <h2 class="subtitle">
-                I hope you are having a great day!
-            </h2>
+
 <section class="hero is-info welcome is-medium">
     <div class="hero-body">
         <div class="container">
@@ -57,7 +49,8 @@
     <div class="columns">
         <div class="column is-3 ">
             <aside class="menu is-hidden-mobile">
-                <ul class="menu-list" style="font-weight: bold">
+                <ul class="menu-list" style="text-align: left; height: 400px;color: orange;font-weight: bold; border-right: solid 3px;width: 250px;">
+                    <br>
                     <li><a href="${path}/admin/list.do"> 대시보드</a></li>
                     <li><a href="${path}/admin/adminMemberList.do"> 회원 관리</a></li>
                     <li><a href="${path}/admin/adminEventList.do">이벤트 관리</a></li>
