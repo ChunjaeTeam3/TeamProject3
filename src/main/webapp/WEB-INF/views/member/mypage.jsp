@@ -80,6 +80,7 @@
                             <label for="tel" class="label"> 전화번호 </label>
                             <div class="control">
                                 <input type="tel" class="input" name="tel" id="tel" class="input"  value="${member.tel }" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" required>
+                                <p>(특수기호 포함하여 000-0000-0000 으로 입력해주세요)</p>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
