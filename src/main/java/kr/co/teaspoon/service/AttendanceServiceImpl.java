@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
@@ -37,8 +38,9 @@ public class AttendanceServiceImpl implements AttendanceService {
     public int addAttend(String id) throws Exception {
         attendanceDAO.addAttend(id);
 
-        // 랜덤 포인트
-        int point = (int) (Math.random()*(10-1)) + 1;
+        // 랜덤 포인트 (10~100)
+        Random random = new Random();
+        int point = (int) (random.nextInt(10) + 1) * 10;
         MemberPtVO ranPoint = new MemberPtVO(id, point);
         memberDAO.updatePt(ranPoint);
 

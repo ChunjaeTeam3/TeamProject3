@@ -36,23 +36,23 @@
     <div class="container">
         <div class="buttons has-addons is-centered mb-5">
             <c:if test="${empty curCategory}">
-                <label class="button is-primary is-active">
-            </c:if>
-            <c:if test="${!empty curCategory}">
+            <label class="button is-primary is-active">
+                </c:if>
+                <c:if test="${!empty curCategory}">
                 <label class="button is-primary">
-            </c:if>
-                <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do'"/> 전체
+                    </c:if>
+                    <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do'"/> 전체
                 </label>
-            <c:forEach var="cate" items="${categories}">
+                <c:forEach var="cate" items="${categories}">
                 <c:if test="${cate.cate eq curCategory}">
-                    <label class="button is-primary is-active">
-                </c:if>
-                <c:if test="${cate.cate ne curCategory}">
+                <label class="button is-primary is-active">
+                    </c:if>
+                    <c:if test="${cate.cate ne curCategory}">
                     <label class="button is-primary">
-                </c:if>
-                    <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do?cate=${cate.cate}'"/> ${cate.cateName}
+                        </c:if>
+                        <input type="radio" checked="checked" onclick="javascript:location.href='${path}/community/list.do?cate=${cate.cate}'"/> ${cate.cateName}
                     </label>
-            </c:forEach>
+                    </c:forEach>
         </div>
 
         <div class="container">
@@ -80,12 +80,12 @@
             <table class="table is-hoverable is-fullwidth">
                 <thead>
                 <tr>
-                    <th class="has-text-centered"> # </th>
-                    <th class="has-text-centered"> 카테고리 </th>
+                    <th class="has-text-centered" width="100"> # </th>
+                    <th class="has-text-centered" width="130"> 카테고리 </th>
                     <th class="has-text-centered"> 제목 </th>
-                    <th class="has-text-centered"> 작성자 </th>
-                    <th class="has-text-centered"> 작성일 </th>
-                    <th class="has-text-centered"> 조회수 </th>
+                    <th class="has-text-centered" width="150"> 작성자 </th>
+                    <th class="has-text-centered" width="150"> 작성일 </th>
+                    <th class="has-text-centered" width="80"> 조회수 </th>
                 </tr>
                 </thead>
                 <tbody>
