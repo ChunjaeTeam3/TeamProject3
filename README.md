@@ -278,7 +278,8 @@
 - FAQ 글 목록 확인
 <br>
 
-![faq](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/e5cc4b02-a53e-4d4f-833d-2d3dc39bea37)
+![faq](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/01df1da7-2f8a-4234-8f26-f065e6b071d3)
+
 
 
 ## 🗂 Notice
@@ -286,7 +287,8 @@
 - 회원 : 읽기
 <br>
 
-![notice](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/cc07cd32-151f-4330-8f26-d78e2a5403d6)
+![notice](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/8aab807e-f155-439e-99e7-c41422daf67c)
+
 
 
 ## 🗂 Q & A
@@ -294,12 +296,14 @@
 - 회원 : 질문글 CRUD
 <br>
 
-![qna_member](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/c2a87d49-b7d4-4291-b1f7-dc180ac42fe1)
+![qna_member](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/78173d1f-25a8-4b92-90c9-e56b5c93b27f)
+
 
 
 - 관리자 : 미답변 질문 글 답변 등록, 전체 게시글 CRUD
 
 <br>
 
-![qna_admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/8dcb6d28-4633-45dc-8bb4-e069b1b89e6d)
+![qna_admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/e0e5aedc-994e-4576-86c2-a297b41fdc4d)
+
 
