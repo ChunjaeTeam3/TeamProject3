@@ -29,6 +29,12 @@
         where id=#{id}
     </update>
 
+    <!-- 포인트 획득! -->
+    <update id="updatePt">
+        update member set pt=pt+#{pt}
+        where id=#{id}
+    </update>
+
     <!-- 회원 정보 수정 -->
     <update id="memberEdit">
         update member set pw=#{pw }, name=#{name }, email=#{email }, tel=#{tel }, birth=#{birth }, addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode } where id = #{id }

@@ -61,7 +61,7 @@
                 <tbody>
                 <c:forEach items="${eventList }" var="event" varStatus="status">
                     <tr>
-                        <td class="has-text-centered" style="line-height: 83px">${status.count }</td>
+                        <td class="has-text-centered" style="line-height: 83px">${event.eno }</td>
                         <td >
                             <a href="${path}/event/detail.do?eno=${event.eno }" style="color: #000000; text-decoration: none; line-height: 83px;">${event.title }</a>
                         </td>
@@ -118,6 +118,12 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 
 </body>
 </html>

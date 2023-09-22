@@ -5,7 +5,7 @@
     <select id="eventList" resultType="kr.co.teaspoon.dto.Event">
         select * from event
         <![CDATA[
-            ORDER BY sdate desc, edate desc LIMIT #{postStart}, #{postCount}
+            ORDER BY status desc, sdate desc, edate desc LIMIT #{postStart}, #{postCount}
         ]]>
     </select>
     <!-- 이벤트 상세보기 -->

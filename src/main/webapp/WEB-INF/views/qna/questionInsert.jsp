@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>질문 등록하기</title>
     <jsp:include page="../setting/head.jsp"></jsp:include>
-
-
 </head>
 <body>
 
@@ -78,5 +76,11 @@
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 </body>
 </html>

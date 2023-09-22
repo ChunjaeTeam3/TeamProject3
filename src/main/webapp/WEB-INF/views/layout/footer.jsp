@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="<%=request.getContextPath() %>"/>
-<footer class="footer mb-0">
+<footer class="footer mb-0" style="padding-top:80px">
     <div class="container">
         <div class="footer-link">
             <div class="columns">
@@ -47,15 +47,15 @@
                         <a href="${path}/faq/list.do">FAQ</a>
                     </p>
                     <p class="bd-footer-link">
-                        <a href="${path}/qna/list.do">Q&A</a>
+                        <a href="${path}/qna/list.do">Q&amp;A</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="content has-text-centered">
-            <p style="color:#fff">
-                <a href="${path}"><strong> 티스푼 </strong></a><br>
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            <p style="color:#fff; margin-top:100px">
+                <a href="${path}" style="margin-top: 20px"><strong> 티스푼 </strong></a><br>
+                Copyright ©<script>document.write(new Date().getFullYear());</script>2023
                 All rights reserved by Chunjae_Team3
             </p>
         </div>

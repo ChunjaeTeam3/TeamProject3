@@ -54,7 +54,7 @@
                         <div class="column is-10-tablet">
                             <label for="pw" class="label"> 비밀번호 </label>
                             <div class="control">
-                                <input type="password" class="input" name="pw" id="pw"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                <input type="password" id="pw" name="pw" class="input" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$" maxlength="16" required>
                                 <p>(최소 8자리에서 최대 16자리까지, 숫자, 영문 대소문자, 특수문자가 각 1 문자 이상 포함되어야 함)</p>
                             </div>
                         </div>

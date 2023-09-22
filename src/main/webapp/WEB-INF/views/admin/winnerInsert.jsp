@@ -81,8 +81,16 @@ ${status.count}. id : ${win.id} / 이름 : ${win.name} <br>
         </div>
     </div>
 </div>
+
 <!-- 푸터 영영 시작 -->
 <jsp:include page="../layout/footer.jsp"/>
 <!-- 푸터 영역 끝 -->
+
+<form action="#">
+    <input type="hidden" id="eno" name="eno" value="${event.eno}">
+    <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+</form>
 </body>
 </html>
