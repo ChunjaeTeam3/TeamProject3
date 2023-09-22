@@ -224,6 +224,13 @@
 
 ![mypage](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d40984bd-4b35-4826-b3b1-8a5d99391de1)
 
+## 🗂 뉴스
+- 뉴스 크롤링 기능 구현
+- 뉴스 클릭시 해당 뉴스 링크로 이동
+<br>
+
+![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/05f5b96f-ec9f-428f-b2f2-95daf33fdf33)
+
 ## 🗂 이벤트
 ### 1. 이벤트 관리
 - CURD
@@ -256,5 +263,8 @@
 <br>
 
 ![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/c05afae0-aed5-44cc-84e0-9bdb03a36137)
+
+
+
 
 
