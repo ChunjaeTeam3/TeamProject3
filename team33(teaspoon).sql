@@ -18,6 +18,9 @@ CREATE TABLE MEMBER(
   pt INT(11) DEFAULT 0,
   visted INT(11) DEFAULT 0);
 
+UPDATE member SET regdate='2022-09-01' WHERE id='admin'
+UPDATE member SET regdate='2023-08-01' WHERE id='shin'
+
 -- 회원 테이블 더미데이터
 INSERT INTO member 
 VALUES('admin','$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO','관리자','admin@tspoon.com','010-1234-5678',NULL, NULL, NULL,'2023-07-01', '1990-01-01', DEFAULT, DEFAULT);
