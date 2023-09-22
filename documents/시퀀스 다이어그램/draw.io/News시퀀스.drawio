@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" modified="2023-09-19T12:21:53.904Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="ykpTsPT90sRXEWuerbvk" version="21.7.1" type="device">
+  <diagram name="페이지-1" id="QMUKNZ402Q7G6LzVTfkH">
+    <mxGraphModel dx="1674" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Yh29m57McLTzNuFo5q81-1" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;NewsController&lt;br&gt;.java&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8FFBFF;" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.55;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Yh29m57McLTzNuFo5q81-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="430" as="sourcePoint" />
+            <mxPoint x="437" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;list.do&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=#FFFF78;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="440" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="440" y="540" as="sourcePoint" />
+            <mxPoint x="439.5" y="630.96" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-5" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;newsList.jsp&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="630" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-6" value="뉴스 페이지로 이동" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="570" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Yh29m57McLTzNuFo5q81-7" value="뉴스 페이지로 이동 요청" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="350" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
