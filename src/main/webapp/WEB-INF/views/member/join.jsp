@@ -64,6 +64,7 @@
                             <div class="control">
                                 <input type="password" id="pw" name="pw" placeholder="숫자, 영문, 특수문자 1개 이상 / 8자리 이상 16자리 이하" class="input"
                                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$" maxlength="16" required>
+                                <p>8~16자리로,숫자,영문 대소문자,특수문자가 각 1 문자 이상 포함하여 작성해주세요</p>
                             </div>
                         </div>
                         <div class="column is-10-tablet">
