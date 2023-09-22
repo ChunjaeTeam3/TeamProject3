@@ -250,7 +250,8 @@
 - 미로그인시 이벤트 신청 버튼 안보이도록 구현
 <br>
 
-![event](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/58dd0d78-ac1c-49af-b9dc-0093286c27d2)
+![이벤트](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/69a6260a-b140-4897-86d9-176e2d4923ea)
+
 
 ## 🗂 이벤트 당첨
 ### 1. 이벤트 신청자 목록
@@ -273,6 +274,27 @@
 ![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/c05afae0-aed5-44cc-84e0-9bdb03a36137)
 
 
+## 🗂 FAQ
+- FAQ 글 목록 확인
+<br>
 
+![faq](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/dfe5c626-6310-4085-90d1-f20f58768fc7)
 
+## 🗂 Notice
+- 관리자 : CRUD
+- 회원 : 읽기
+<br>
 
+![notice](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/135925cd-b974-4040-936e-13b4399c2427)
+
+## 🗂 Q & A
+- 비회원 : 목록 확인
+- 회원 : 질문글 CRUD
+<br>
+
+![qna_member](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/9cf6c581-cd4e-4f28-9bd5-a1c7584c53af)
+
+- 관리자 : 미답변 질문 글 답변 등록, 전체 게시글 CRUD
+
+<br>
+![qna_admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/1406a620-8444-4a58-8b09-29464e417255)
