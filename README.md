@@ -14,17 +14,17 @@
 
 ## 🕰️ 개발 기간
 * 23.09.04일 - 23.09.22일
-<br><br>
+  <br><br>
 
-### 🧑‍🤝‍🧑 맴버구성
+### 🧑‍🤝‍🧑 멤버구성
 
 **팀장 : [김이호](https://github.com/leeho7029)**
 * 화면설계서 작성
 * 시퀀스 다이어그램 작성
 * 자료실 기능 구현
-   * 파일첨부 기능 구현
-   * 관리자 페이지 자료실 관리 기능구현
-   * 페이징 처리 기능 구현
+  * 파일첨부 기능 구현
+  * 관리자 페이지 자료실 관리 기능구현
+  * 페이징 처리 기능 구현
 * 마이페이지
   * 본인확인 기능 구현
   * 나의 정보 수정 기능 구현
@@ -45,7 +45,7 @@
   * 당첨자 발표 기능 구현
   * 당첨자 익명처리 기능 구현
 * 메인페이지 화면 제작
-  
+
 <br><br>
 **팀원 : [김현경](https://github.com/beubeu95)**
 * usecasediagram 작성
@@ -60,28 +60,28 @@
 <br><br>
 **팀원 : [신예은](https://github.com/shinyeeun789)**
 * 커뮤니티 기능 구현
-    * 검색 기능 구현
-    * 페이징 처리 기능 구현
-    * 욕설 필터 기능 구현
-    * 커뮤니티 관리 기능 구현
+  * 검색 기능 구현
+  * 페이징 처리 기능 구현
+  * 욕설 필터 기능 구현
+  * 커뮤니티 관리 기능 구현
 * 출석체크 기능 구현
-* 마이페이지
-  * 로그인 아이디 기억하기 기능구현
+* 회원 기능
+  * 로그인 아이디 기억하기 기능 구현
   * 회원가입 기능 구현
 * 관리자페이지
   * 관리자 페이지 화면 제작
   * 통계페이지 기능 구현
   * 방문자수, 포인트 기능 구현
-* 메이페이지 화면 제작
+* 메인페이지 화면 제작
 
 
 
 <br><br>
 ### ⚙️ 개발 환경
-#### ✅FRONTEND : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-0769AD?style=for-the-badge&logo=css&logoColor=white"><img src="https://img.shields.io/badge/bulma-00D1B2?style=for-the-badge&logo=bulma&logoColor=white"><img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> 
+#### ✅FRONTEND : <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img src="https://img.shields.io/badge/css-0769AD?style=for-the-badge&logo=css&logoColor=white"><img src="https://img.shields.io/badge/bulma-00D1B2?style=for-the-badge&logo=bulma&logoColor=white"><img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
 #### ✅BACKEND : <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"><img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"><img src="https://img.shields.io/badge/intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
 
-#### ✅DATABASE : <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"><img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+#### ✅DATABASE : <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
 
 #### ✅Server : <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
 <br><br>
@@ -135,13 +135,13 @@
 
 #### APPLY
 <p align="center"><img alt="apply" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/cb61fb01-4768-4798-a534-0edbead3416a"></p>
-                    
+
 #### EVENT
 <p align="center"><img alt="event" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e05b56d2-a19a-4704-b525-65ad424295d4"></p>
-                    
+
 #### WINNER
 <p align="center"><img alt="winner" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/fd08e7af-5061-4103-a1c1-c5e9c4f71e17"></p>
-                    
+
 #### WINNERLIST
 <p align="center"><img alt="winnerlist" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/0beb90a0-5d20-4cb7-a97b-2459361d1e40"></p>
 <br><br>
@@ -185,7 +185,7 @@
 #### 이벤트 신청
 <p align="center"><img alt="시퀀스다이아그램11" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d008e280-199e-4a29-9114-51486016beeb"></p>
 
-#### 당첨자 
+#### 당첨자
 <p align="center"><img alt="시퀀스다이아그램12" src="https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/e6f79e13-f0b7-4249-95be-4003ea1de11f"></p>
 
 <br><br>
@@ -194,25 +194,27 @@
 # 📎기능 구현
 ## 🗂 메인 페이지
 - 사이드바
-<br>
+  <br>
 
 ![main](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/709082d2-0979-4eca-8012-eb60952c42aa)
 
+<br><br>
 ## 🗂 회원 기능
 ### 1. 로그인
 - DB값 검증
 - 로그인 시 쿠키(Cookie) 및 세션(Session) 생성
 - 로그아웃
 - 아이디 저장
-  
+
 ### 2. 회원가입
 - 주소 API 연동
 - ID 중복 체크
 - 비밀번호 유효성 검사
-<br>
+  <br>
 
 ![login_join](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/2294b0da-b489-41a1-bdd1-2ccafcbd8596)
 
+<br><br>
 ## 🗂 마이페이지
 ### 1. 본인확인
 ### 2. 회원 정보 수정
@@ -220,10 +222,11 @@
 - 회원정보 변경
 - 탈퇴 기능 구현
 - 로그인시 방문 횟수 증가
-<br>
+  <br>
 
 ![mypage](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/d40984bd-4b35-4826-b3b1-8a5d99391de1)
 
+<br><br>
 ## 🗂 관리자페이지
 ### 1. 대시보드
 - 회원 수, 전체 게시글, 이벤트 참여자 수, 미완료 질문글 수 출력
@@ -241,31 +244,42 @@
 ### 5. 자료실 관리
 - 자료실에 등록된 글 목록 출력
 - 삭제 버튼을 눌러 자료실 글 강제 삭제 가능
-<br>
+  <br>
 
 ![admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/066cbf63-a31d-415d-a70b-bdf1daf81afc)
 
+<br><br>
+## 🗂 자료실
+- CRUD
+- 관리자: 자료실 등록[다수의 파일 첨부 가능], 자료실 글[파일 포함] 수정, 자료실 글 삭제 가능
+- 회원: 자료실 글 상세 보기만 가능
+  <br>
 
+![자료실](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/9291138c-32d4-4391-93a2-9295ec08a8aa)
+
+<br><br>
 ## 🗂 뉴스
 - 뉴스 크롤링 기능 구현
 - 뉴스 클릭시 해당 뉴스 링크로 이동
-<br>
+  <br>
 
-![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/05f5b96f-ec9f-428f-b2f2-95daf33fdf33)
+![news](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/aec6ecb5-f08e-4ba5-89f6-89b7807ed9a4)
 
+<br><br>
 ## 🗂 이벤트
 ### 1. 이벤트 관리
 - CRUD
 - 관리자: 이벤트 등록[파일 첨부], 이벤트 글 수정, 이벤트 글 삭제
-- 회원: 읽기
+- 회원: 이벤트 글 상세보기만 가능
 ### 2. 이벤트 신청
 - 한번 신청한 회원 중복 신청 방지 구현
 - 한 회원이 여러 이벤트 신청 가능하도록 구현
-- 미로그인시 이벤트 신청 버튼 안보이도록 구현
-<br>
+- 비로그인시 이벤트 신청 버튼 안보이도록 구현
+  <br>
 
-![event](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/58dd0d78-ac1c-49af-b9dc-0093286c27d2)
+![이벤트](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/69a6260a-b140-4897-86d9-176e2d4923ea)
 
+<br><br>
 ## 🗂 이벤트 당첨
 ### 1. 이벤트 신청자 목록
 - 관리자 : 이벤트 신청자 목록 확인
@@ -274,18 +288,21 @@
 - 랜덤으로 원하는 당첨자수 선정하도록 구현
 - 추첨 후 당첨자 발표글에 당첨자 익명 처리 구현
 - 당첨자 발표글 클릭시 당첨자만 폭죽 효과 나오도록 구현
-<br>
+  <br>
 
 ![eventApply](https://github.com/ChunjaeTeam3/TeamProject3/assets/138674233/344a8e4b-2d1f-4bc4-8573-b27df9b167e0)
 
+<br><br>
 ## 🗂 출석체크
-- 미로그인시 로그인 페이지로 이동
-- 출석체크 클릭시 달력에 표시 및 포인트 추가 창 팝업
-- 추가된 포인트 DB에 저장
-<br>
+- 비로그인 시 로그인 페이지로 이동
+- 출석체크 클릭 시 달력의 오늘 날짜에 스타일 변경 및 포인트 획득 창 출력
+- 출석체크 시 10부터 100까지 10단위의 랜덤한 숫자의 포인트 획득 가능
+- 출석체크 데이터와 추가된 포인트 데이터를 DB에 INSERT
+  <br>
 
 ![attendance](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/dca27c8d-b3fc-43dc-a6ca-a53cddb41752)
 
+<br><br>
 ## 🗂 커뮤니티
 ### 1. 커뮤니티
 - 커뮤니티 게시글 작성, 읽기, 수정, 삭제 구현
@@ -295,11 +312,42 @@
 ### 2. 댓글
 - 댓글 작성, 삭제 구현
 - 댓글 페이징 처리
-- 미로그인시 댓글 작성 폼 비활성화
+- 비로그인시 댓글 작성 폼 비활성화
 - 게시글 작성자와 관리자만 게시글 수정, 삭제 가능
-<br>
+  <br>
 
 ![community](https://github.com/ChunjaeTeam3/TeamProject3/assets/70800414/d3f14170-0c54-412a-a925-9280755f5d59)
 
+<br><br>
+## 🗂 FAQ
+- FAQ 글 목록 화면 및 기능 구현
+  <br>
+
+![faq](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/01df1da7-2f8a-4234-8f26-f065e6b071d3)
+
+<br><br>
+## 🗂 공지사항
+- 관리자만 공지사항 글 쓰기, 수정, 삭제 가능하도록 구현
+- 회원은 공지사항 글 상세 보기만 가능하도록 구현
+  <br>
+
+![notice](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/8aab807e-f155-439e-99e7-c41422daf67c)
+
+<br><br>
+## 🗂 Q & A
+### 1. 비로그인 및 회원 로그인 시
+- 비로그인 시 Q & A 목록만 확인 가능하도록 구현
+- 회원 로그인 시 질문글만 작성 가능
+- 질문글을 작성한 사용자만 글 수정, 삭제 가능
+  <br>
+
+![qna_member](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/78173d1f-25a8-4b92-90c9-e56b5c93b27f)
+
+### 2. 관리자 로그인 시
+- 관리자 로그인 시 전체 게시글 CRUD 가능하도록 구현
+- 관리자 페이지에서 미답변 질문 글 목록을 확인 후 바로 답변할 수 있도록 구현
+  <br>
+
+![qna_admin](https://github.com/ChunjaeTeam3/TeamProject3/assets/139138265/e0e5aedc-994e-4576-86c2-a297b41fdc4d)
 
 

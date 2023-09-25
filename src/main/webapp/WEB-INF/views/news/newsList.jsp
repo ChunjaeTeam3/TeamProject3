@@ -45,16 +45,16 @@
                     <br>
                     <div class="columns">
                         <div>
-                            <img src="${img[status.index]}" style="margin-right: 50px;">
+                            <a href="${url}" target="_blank"><span><img src="${img[status.index]}" style="margin-right: 50px;"></span></a>
                         </div>
                         <div class="column">
-                             <strong style="color: black;font-size: 30px;font-weight: bold; display: block">${titles[status.index]}</strong>
+                            <a href="${url}" target="_blank">   <strong style="color: black;font-size: 30px;font-weight: bold; display: block">${titles[status.index]}</strong></a>
                             <small>${regdates[status.index]}</small>
                         </div>
                     </div>
                     <br>
                     <p class="mb-30" style="margin-top:10px">
-                        <a href="${url}" target="_blank"><span></span>
+                        <a href="${url}" target="_blank">
                             </a>
                             ${contents[status.index]}..<a href="${url}" style="color: black">더보기</a>
                         <hr>
