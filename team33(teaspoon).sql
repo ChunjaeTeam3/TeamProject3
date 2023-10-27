@@ -18,9 +18,6 @@ CREATE TABLE MEMBER(
   pt INT(11) DEFAULT 0,
   visited INT(11) DEFAULT 0);
 
-UPDATE member SET regdate='2022-09-01' WHERE id='admin'
-UPDATE member SET regdate='2023-08-01' WHERE id='shin'
-
 -- 회원 테이블 더미데이터
 INSERT INTO member 
 VALUES('admin','$2a$10$piyWPHz4GuwW0GxHZZfy1ORWtzKu7KPr9M0mFpw90hQJRQditQqJO','관리자','admin@tspoon.com','010-1234-5678',NULL, NULL, NULL,'2023-07-01', '1990-01-01', DEFAULT, DEFAULT);
@@ -32,7 +29,6 @@ INSERT INTO MEMBER
 VALUES('shinname1', '$2a$10$RZPVsTktT7RmMp7Qoj9pd.xGfZmsvYgsnbalImORzqx5hRNIoqPnm', '신이름', 'shin@tspoon.com', '010-1568-5422', NULL, NULL, NULL, '2023-09-01', '1999-01-01', DEFAULT, DEFAULT);
 
 SELECT * FROM MEMBER;
-DELETE FROM attendance WHERE ano=6;
 
 
 -- 커뮤니티 카테고리 테이블 생성
